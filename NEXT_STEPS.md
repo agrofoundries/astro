@@ -1,40 +1,11 @@
-# NEXT_STEPS.md — PRECASTPRO Website
+# PRECASTPRO — Recommended Next Steps
 
-## Priority Queue
+## 1. CRM & Form Backend Hookup
+- Connect the frontend quote submission form in `app/quote/page.tsx` and contact form in `app/contact/page.tsx` to an API route (e.g., `app/api/quote/route.ts`) integrated with HubSpot, Procore, or direct SMTP email notification.
+- Configure cloud blob storage (AWS S3, Azure Blob, or Cloudflare R2) for handling multi-gigabyte client CAD and DWG plan uploads.
 
-### Immediate (Phase 1 completion)
-1. ✅ Wait for `create-next-app` to complete
-2. Move logo to `public/images/logo.jpg`
-3. Inspect generated `package.json` — verify Next.js, React, TypeScript versions
-4. Inspect `tsconfig.json`, `tailwind.config.ts`, `next.config.ts`
-5. Inspect scaffolded `app/` directory
-6. Run `npm run dev` and confirm successful start
+## 2. Real Company Contact Information
+- Replace placeholder phone numbers, emails, and street addresses in `lib/constants.ts` with the client's verified headquarters and plant locations.
 
-### Next (Phase 2 — Design System)
-1. Install `lucide-react`
-2. Configure `next/font/google` for Manrope + Inter
-3. Define CSS variables in `globals.css` with brand tokens
-4. Extend Tailwind config with brand colors, spacing, fonts
-5. Create `docs/DESIGN_SYSTEM.md`
-6. Build reusable UI components: Button, SectionHeading, Accordion
-
-### Then (Phase 3 — Foundation)
-1. Implement root `layout.tsx` with fonts, metadata, global structure
-2. Implement header component
-3. Implement footer component
-4. Verify dev server and production build
-
-### Following (Phase 4–6 — Layout + Homepage)
-1. Build header with desktop + mobile navigation
-2. Build 20-section homepage following the business story
-3. Generate/source imagery for each section
-
-### Later (Phase 7–10)
-1. Build subpages (Products, Applications, etc.)
-2. Build Request a Quote form with validation
-3. Responsive QA at all breakpoints
-4. Production build, linting, type checking
-5. Final handoff report
-
-## Blockers
-- None identified yet
+## 3. Analytics & Conversion Tracking
+- Integrate Google Tag Manager / Google Analytics 4 to track conversions on "Request a Quote", phone call clicks, and CSI specification PDF downloads.
