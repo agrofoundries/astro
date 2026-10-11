@@ -99,10 +99,10 @@ export function Footer() {
           <div className="lg:col-span-4 space-y-6">
             {/* White Logo Emblem Card */}
             <div className="inline-block bg-white px-4 py-2.5 rounded-lg shadow-sm border border-slate-200">
-              <Link href="/" aria-label="PRECAST ENGINEERS Home">
+              <Link href="/" aria-label="PRECAST PRO Home">
                 <Image
-                  src="/images/logo.png"
-                  alt="PRECAST ENGINEERS - Empowering Precasters"
+                  src="/logo.png"
+                  alt="PRECAST PRO - Empowering Precasters"
                   width={210}
                   height={50}
                   className="h-9 w-auto object-contain"
