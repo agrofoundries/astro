@@ -76,13 +76,13 @@ export function HeroSection() {
 
           {/* High-Impact Headline in Bold USA Navy & USA Red */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.08] uppercase mb-4 text-[#01255F]">
-            Precision{" "}
+            Heavy Precast{" "}
             <span className="text-[#D7030F]">
-              Precast Infrastructure
+              Manufacturing
             </span>
             <br />
             <span className="text-[#01255F]">
-              &amp; Civil Engineering
+              &amp; Civil Supply
             </span>
           </h1>
 
@@ -90,13 +90,13 @@ export function HeroSection() {
           <div className="flex items-center gap-2 mb-5">
             <span className="w-8 h-1 bg-[#D7030F] rounded-full" />
             <span className="text-xs sm:text-sm font-extrabold tracking-widest text-[#01255F] uppercase">
-              Heavy Civil · DOT Drainage · 3D BIM Detailing · PE Stamping
+              Box Culverts · Storm Drains · Catch Basins · Concrete Tanks
             </span>
           </div>
 
           {/* Clear Supporting Description */}
           <p className="text-sm sm:text-base lg:text-lg text-[#1E293B] leading-relaxed font-medium max-w-2xl mb-8">
-            Empowering precast producers, civil contractors, and DOT agencies nationwide with licensed PE calculations, Tekla 3D BIM shop drawings, and precision drainage products.
+            Direct precast concrete manufacturing for highway contractors and civil builders. High-capacity plant production, DOT-certified quality control, and timely jobsite delivery.
           </p>
 
           {/* Action CTAs in USA Red & Navy */}

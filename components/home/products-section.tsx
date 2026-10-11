@@ -8,70 +8,61 @@ import {
   ShieldCheck,
   CheckCircle2,
   PhoneCall,
-  FileText,
   SlidersHorizontal,
+  Factory,
 } from "lucide-react";
 
-// ─── 1. HEAVY CIVIL & SPOTLIGHT PRODUCTS (HEAVY PRODUCTS FIRST) ──────────────
+// ─── 1. HEAVY MANUFACTURING SHOWCASE (HEAVY FIRST: BOX CULVERT & CIVIL) ─────
 
-const HEAVY_SPOTLIGHT_PRODUCTS = [
+const HEAVY_MANUFACTURING_HEROES = [
   {
     id: "box-culvert-heavy",
-    title: "Heavy Precast Concrete Box Culverts",
-    subtitle: "Highway & Creek Stream Crossings · Stormwater Corridors",
+    title: "Heavy Precast Box Culvert Tunnels",
+    tagline: "Highway & Creek Stream Crossings · ASTM C1577",
     category: "heavy",
     image: "/images/infrastructure.jpg",
     badge: "★ HEAVY CIVIL INFRASTRUCTURE",
-    specs: "Spans: 6 ft to 16 ft wide · Heights: 3 ft to 12 ft · AASHTO HS-20/HS-25 Traffic Rated",
-    description:
-      "Massive rectangular concrete tunnel blocks placed beneath roads, highways, and railroads. They allow creeks, rivers, and heavy storm water to flow naturally underneath traffic without washing out the roadway.",
-    features: [
-      "Engineered to carry full semi-truck and highway traffic immediately after placement",
-      "Fast 1 to 2 day installation that drastically shortens road closure times",
-      "Watertight rubber gasket joints that prevent dirt washouts and road sinkholes",
-      "Over 100-year design life with virtually zero maintenance required",
+    specs: "Spans 6' to 16' · Rise 3' to 12' · AASHTO HS-25 Highway Traffic",
+    useFor: "Under-road stream crossings, deep storm runoff tunnels, and rail underpasses.",
+    bullets: [
+      "Poured with 6,000+ PSI high-strength concrete for heavy semi-truck axle loads",
+      "Fast 1–2 day highway installation — cuts road closures to hours instead of weeks",
+      "Watertight rubber gasket tongue-and-groove joints stop soil erosion and sinkholes",
     ],
-    plainEnglishUse: "Used for highway stream crossings, large stormwater canals, underground retention tunnels, and pedestrian underpasses.",
   },
   {
-    id: "bridge-crossing-system",
-    title: "3-Sided Concrete Bridge Culverts",
-    subtitle: "Natural Stream Bed Preservation · Short-Span Bridges",
+    id: "bridge-system",
+    title: "3-Sided Concrete Bridge Systems",
+    tagline: "Natural Riverbed Preservation · Short-Span Highway Bridges",
     category: "heavy",
     image: "/images/hero-bridge.jpg",
-    badge: "STATE HIGHWAY BRIDGE SYSTEM",
-    specs: "Spans: 12 ft to 45 ft clear span · Heights: 4 ft to 14 ft · Precast Foundation Footings",
-    description:
-      "Sturdy arch and flat-top concrete bridge segments with an open natural bottom. They preserve natural river gravel and fish habitats while providing a heavy-duty road bridge on top.",
-    features: [
-      "Open-bottom design preserves natural stream beds and easily meets environmental rules",
-      "Spans up to 45 feet for rural roads, highway bridges, and golf course crossings",
-      "Rapid crane placement onto precast footings in just a few hours",
-      "High-strength 6,000+ PSI concrete built to resist freezing winters and deicing salts",
+    badge: "DOT HIGHWAY BRIDGE",
+    specs: "Clear Spans 12' to 45' · Heights 4' to 14' · Precast Footings Included",
+    useFor: "Environmentally sensitive creeks and rural highway bridge replacements.",
+    bullets: [
+      "Open-bottom arch leaves the natural stream bed undisturbed for fish and water flow",
+      "Precast modular design sets directly on concrete footings in a single crane shift",
+      "Maximum durability against winter freeze-thaw cycles and highway deicing salt",
     ],
-    plainEnglishUse: "Perfect for creek bridges where environmental permits require leaving the natural stream floor undisturbed.",
   },
   {
-    id: "wingwall-retaining-dot",
+    id: "wingwall-retaining",
     title: "Precast Bridge Wing Walls & Retaining Panels",
-    subtitle: "Bridge Slope Retaining Walls · Erosion Prevention",
+    tagline: "Bridge Slopes & Soil Landslide Protection · State DOT",
     category: "heavy",
     image: "/images/products/wingwall-dot.png",
-    badge: "DOT APPROVED BRIDGE WALL",
-    specs: "Heights: 4 ft to 16 ft · Thickness: 8\" to 14\" · Straight or 30°/45° Flared Wings",
-    description:
-      "Heavy vertical concrete retaining panels installed on the sides of bridge culverts. They hold back steep dirt banks, prevent soil landslides, and guide floodwaters smoothly into the culvert opening.",
-    features: [
-      "Locks securely onto box culverts and bridge footings for total earth retention",
-      "Stops dirt slopes from eroding during heavy 100-year rainstorms and flash floods",
-      "Precast with lifting anchors so crane crews can set each wall section in minutes",
-      "Meets Department of Transportation (DOT) highway standards across all 50 states",
+    badge: "DOT HIGHWAY STANDARD",
+    specs: "Heights 4' to 16' · Thickness 8\" to 14\" · Straight & 30°/45° Flared",
+    useFor: "Holding back steep earth embankments at bridge and culvert entrances.",
+    bullets: [
+      "Anchors tight against box culverts to guide floodwater smoothly through the channel",
+      "Stops dirt slopes from eroding or sliding during 100-year heavy rainstorms",
+      "Cast-in heavy lifting hardware allows quick crane positioning in minutes",
     ],
-    plainEnglishUse: "Installed at both ends of culvert bridges to keep dirt from sliding into the water channel.",
   },
 ];
 
-// ─── 2. COMPLETE PRODUCT CATALOG (COPIED FROM PRECAST EXCHANGE + HEAVY CIVIL) ──
+// ─── 2. PRODUCT CATALOG (PRECAST EXCHANGE + HEAVY CIVIL + TANKS) ───────────
 
 export interface ProductItem {
   id: string;
@@ -79,481 +70,452 @@ export interface ProductItem {
   category: "heavy" | "drainage" | "tanks";
   categoryLabel: string;
   image: string;
-  sourceBadge: string;
-  simpleDescription: string;
-  practicalSize: string;
+  badge: string;
+  shortDesc: string;
+  size: string;
   standard: string;
-  bestFor: string;
 }
 
-const ALL_PRODUCTS: ProductItem[] = [
-  // ─── HEAVY CIVIL FIRST ──────────────────────────────────────────
+const PRODUCTS: ProductItem[] = [
+  // ─── HEAVY PRODUCTS FIRST ──────────────────────────────────────────
   {
     id: "box-culvert",
-    name: "Heavy Precast Concrete Box Culvert Sections",
+    name: "Heavy Precast Concrete Box Culvert",
     category: "heavy",
     categoryLabel: "Heavy Civil Infrastructure",
     image: "/images/infrastructure.jpg",
-    sourceBadge: "Heavy Infrastructure",
-    simpleDescription:
-      "Massive reinforced concrete tunnels installed under highways to let floodwaters and streams pass underneath safely.",
-    practicalSize: "Sizes from 6'×3' up to 16'×12' · Lengths: 6' to 8' per section",
+    badge: "Heavy Infrastructure",
+    shortDesc: "Giant hollow rectangular concrete tunnel sections placed beneath highways to carry streams and storm runoff.",
+    size: "Spans 6'×3' up to 16'×12'",
     standard: "ASTM C1577 / AASHTO HS-25",
-    bestFor: "Highway crossings, stream bridges, and large stormwater tunnels",
   },
   {
-    id: "wingwall-retaining",
-    name: "Precast Bridge Wing Walls & Retaining Panels",
+    id: "wingwall-dot",
+    name: "Precast Bridge Wing Wall Panels",
     category: "heavy",
     categoryLabel: "Heavy Civil Infrastructure",
     image: "/images/products/wingwall-dot.png",
-    sourceBadge: "DOT Highway Standard",
-    simpleDescription:
-      "Heavy-duty concrete retaining walls that hold back dirt slopes around bridge openings to stop mudslides and erosion.",
-    practicalSize: "Heights from 4 ft to 16 ft · Flared 30° and 45° angles",
-    standard: "State DOT Specifications",
-    bestFor: "Bridge abutments, culvert outfalls, and steep roadside banks",
+    badge: "DOT Highway Standard",
+    shortDesc: "Heavy concrete retaining wings installed on bridge sides to hold back steep dirt banks and stop mudslides.",
+    size: "Heights: 4 ft to 16 ft",
+    standard: "State DOT Approved",
   },
   {
-    id: "triple-endwall",
+    id: "endwall-triple",
     name: "Triple-Opening Culvert End Walls",
     category: "heavy",
     categoryLabel: "Heavy Civil Infrastructure",
     image: "/images/products/endwall-dot-triple.png",
-    sourceBadge: "DOT Highway Standard",
-    simpleDescription:
-      "A wide concrete wall designed to receive three parallel drainage pipes at once, keeping all three pipes locked and stable.",
-    practicalSize: "Multi-pipe configuration · Heavy monolithic precast base",
-    standard: "Maine DOT / AASHTO HS-20",
-    bestFor: "Large road ditches and major stormwater outflow channels",
+    badge: "DOT Highway Standard",
+    shortDesc: "Wide precast concrete headwall built to receive three parallel drainage pipes cleanly at major ditch exits.",
+    size: "Multi-Pipe Monolithic Base",
+    standard: "Maine DOT / HS-20",
   },
   {
-    id: "corner-endwall",
-    name: "Corner L-Configuration Retaining End Walls",
+    id: "endwall-corner",
+    name: "Corner L-End Retaining Walls",
     category: "heavy",
     categoryLabel: "Heavy Civil Infrastructure",
     image: "/images/products/endwall-dot-corner.png",
-    sourceBadge: "DOT Highway Standard",
-    simpleDescription:
-      "L-shaped concrete retaining walls that wrap around road corners to hold back soil while allowing drainage pipes to discharge.",
-    practicalSize: "Heavy 90-degree corner geometry · Monolithic footing",
+    badge: "DOT Highway Standard",
+    shortDesc: "90-degree corner concrete walls that support roadside slopes while letting storm drainage pipes pass through.",
+    size: "L-Shape Corner Base",
     standard: "Maine DOT Standard",
-    bestFor: "Road intersections, property boundary ditches, and culvert exits",
   },
   {
-    id: "headwall-nh-24",
-    name: "24\" Pipe Precast Concrete Headwalls",
+    id: "headwall-24",
+    name: "24\" Pipe Highway Headwalls",
     category: "heavy",
     categoryLabel: "Heavy Civil Infrastructure",
     image: "/images/products/headwall-nh-24.png",
-    sourceBadge: "DOT Standard Culvert",
-    simpleDescription:
-      "Heavy concrete end blocks placed around 24-inch drainage pipes to anchor the pipe in place and prevent road soil washouts.",
-    practicalSize: "Engineered for 24\" pipes · Heavy bottom footing block",
-    standard: "NH DOT Standard / HS-20",
-    bestFor: "Highway roadside ditches, culvert inlets, and driveway drainage",
+    badge: "DOT Culvert Standard",
+    shortDesc: "Solid precast end block for 24-inch drainage pipes that stops road shoulder washouts and anchors the pipe.",
+    size: "Fits 24\" Culvert Pipes",
+    standard: "NH DOT / HS-20",
   },
   {
-    id: "headwall-nh-12",
+    id: "headwall-12",
     name: "12\" Pipe Precast Concrete Headwalls",
     category: "heavy",
     categoryLabel: "Heavy Civil Infrastructure",
     image: "/images/products/headwall-nh-12.png",
-    sourceBadge: "DOT Standard Culvert",
-    simpleDescription:
-      "Solid concrete headwall unit for 12-inch drainage pipes that stops driveway erosion and secures pipe ends cleanly.",
-    practicalSize: "Engineered for 12\" pipes · Precision knockout pipe opening",
-    standard: "NH DOT Standard / HS-20",
-    bestFor: "Driveway crossings, parking lot drainage, and secondary roads",
+    badge: "DOT Culvert Standard",
+    shortDesc: "Precast concrete end wall for 12-inch drainage pipes on driveways, parking lots, and secondary roads.",
+    size: "Fits 12\" Culvert Pipes",
+    standard: "NH DOT / HS-20",
   },
   {
     id: "headwall-custom",
-    name: "Custom Sized Culvert Headwalls & V-Notch Weirs",
+    name: "Custom Culvert Headwalls & Weirs",
     category: "heavy",
     categoryLabel: "Heavy Civil Infrastructure",
     image: "/images/products/headwall-custom.png",
-    sourceBadge: "Engineered Custom Precast",
-    simpleDescription:
-      "Custom-cast concrete headwalls with special pipe angles or water-measuring notches built according to project civil plans.",
-    practicalSize: "Custom dimensions built to engineering drawing specifications",
-    standard: "PE Stamped / DOT Approved",
-    bestFor: "Complex pipe intersections, detention pond outflows, and retention dams",
+    badge: "Engineered Precast",
+    shortDesc: "Custom-poured concrete headwalls with engineered pipe openings and water-measuring weir cutouts.",
+    size: "Custom Sized to Plans",
+    standard: "PE Stamped / DOT",
   },
 
-  // ─── DRAINAGE & STORMWATER (COPIED FROM PRECAST EXCHANGE) ─────────
+  // ─── DRAINAGE & STORMWATER (COPIED DIRECTLY FROM PRECAST EXCHANGE) ──
   {
-    id: "storm-inlet-case1",
-    name: "Highway Storm Drain Inlet (600 × 900 mm — Case 1)",
+    id: "storm-inlet-1",
+    name: "1.2m Storm Drain Inlet (600×900mm) — Case 1",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/storm-drain-inlet-1.webp",
-    sourceBadge: "Precast Exchange Catalog",
-    simpleDescription:
-      "A deep heavy concrete drain box installed beneath road curbs to catch rainwater from streets during heavy downpours.",
-    practicalSize: "Opening: 600 × 900 mm (24\"×36\") · Depth: 1.2 meters (4 ft)",
+    badge: "Precast Exchange Product",
+    shortDesc: "Heavy precast concrete box installed beneath street curbs to catch rushing rainwater during storms.",
+    size: "600 × 900 mm · 1.2m Depth",
     standard: "ASTM C478 / Traffic Rated",
-    bestFor: "City avenues, highway gutters, and commercial parking areas",
   },
   {
-    id: "storm-inlet-case2",
-    name: "Highway Storm Drain Inlet (600 × 900 mm — Case 2)",
+    id: "storm-inlet-2",
+    name: "1.2m Storm Drain Inlet (600×900mm) — Case 2",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/storm-drain-inlet-2.webp",
-    sourceBadge: "Precast Exchange Catalog",
-    simpleDescription:
-      "Precast concrete street drain box with knockouts on multiple sides so connecting pipes can enter at different road angles.",
-    practicalSize: "Opening: 600 × 900 mm · High-strength monolithic walls",
-    standard: "ASTM C478 / AASHTO HS-20",
-    bestFor: "Street corners, intersection drainage, and highway curbs",
+    badge: "Precast Exchange Product",
+    shortDesc: "Deep street drain inlet box with multi-direction pipe knockouts for road intersections and curb gutters.",
+    size: "600 × 900 mm · 1.2m Depth",
+    standard: "ASTM C478 / HS-20",
   },
   {
-    id: "catch-basin-b01b",
-    name: "Standard Roadside Catch Basin (B-01B Series)",
+    id: "storm-inlet-opening-1",
+    name: "600×900mm Opening Storm Drain Inlet Case 1",
+    category: "drainage",
+    categoryLabel: "Road & Storm Drainage",
+    image: "/images/products/storm-drain-inlet-case1-logo.webp",
+    badge: "Precast Exchange Product",
+    shortDesc: "Precast storm inlet basin engineered for high-volume roadway water collection and easy pipe hookup.",
+    size: "600 × 900 mm Top Opening",
+    standard: "ASTM C478 / DOT Ready",
+  },
+  {
+    id: "storm-inlet-opening-2",
+    name: "600×900mm Opening Storm Drain Inlet Case 2",
+    category: "drainage",
+    categoryLabel: "Road & Storm Drainage",
+    image: "/images/products/storm-drain-inlet-case2-logo.webp",
+    badge: "Precast Exchange Product",
+    shortDesc: "Heavy-duty storm drain box with cast-in knockout walls for municipal roadway storm sewer tie-ins.",
+    size: "600 × 900 mm Top Opening",
+    standard: "ASTM C478 / Traffic",
+  },
+  {
+    id: "cb-b01b",
+    name: "B-01B Precast Road Catch Basin",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/b-01b.webp",
-    sourceBadge: "Precast Exchange Catalog",
-    simpleDescription:
-      "The classic rectangular concrete catch basin installed beneath iron grates along streets to collect water and trap dirt.",
-    practicalSize: "Standard DOT road dimensions with pre-formed pipe entry holes",
-    standard: "ASTM C478 / DOT Approved",
-    bestFor: "Subdivision roadways, commercial parking lots, and municipal streets",
+    badge: "Precast Exchange Product",
+    shortDesc: "Monolithic roadside catchpit box that catches street runoff and traps gravel before water enters sewers.",
+    size: "DOT Standard Road Size",
+    standard: "ASTM C478 / DOT",
   },
   {
-    id: "catch-basin-b01d",
-    name: "Heavy Curb Catch Basin (B-01D Series)",
+    id: "cb-b01d",
+    name: "B-01D Heavy Curb Catch Basin",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/b-01d.webp",
-    sourceBadge: "Precast Exchange Catalog",
-    simpleDescription:
-      "Reinforced concrete catchpit box engineered to sit tight against concrete street curbs and support heavy traffic wheels.",
-    practicalSize: "Heavy-duty reinforced walls · Curb inlet frame ready",
-    standard: "AASHTO HS-20 Traffic Rated",
-    bestFor: "Bus routes, shopping plazas, and industrial park roadways",
+    badge: "Precast Exchange Product",
+    shortDesc: "Reinforced catch basin built to sit directly beneath street curbs and support heavy semi-truck wheel loads.",
+    size: "Heavy Curb Inlet Profile",
+    standard: "AASHTO HS-20 Traffic",
   },
   {
-    id: "catch-basin-b01e",
-    name: "Deep Sump Catch Basin (B-01E Series)",
+    id: "cb-b01e",
+    name: "B-01E Deep Sump Catch Basin",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/b-01e.webp",
-    sourceBadge: "Precast Exchange Catalog",
-    simpleDescription:
-      "A deeper concrete basin with an extra sediment pit at the bottom so sand and road gravel settle out instead of clogging city sewer pipes.",
-    practicalSize: "Extra deep bottom sump area for dirt and sediment collection",
-    standard: "ASTM C478 / Municipal Standard",
-    bestFor: "Eco-sensitive storm networks, industrial facilities, and parking decks",
+    badge: "Precast Exchange Product",
+    shortDesc: "Catch basin with an extra deep bottom reservoir that traps sand, leaves, and street grime cleanly.",
+    size: "Deep Sump Sediment Pit",
+    standard: "ASTM C478 Municipal",
   },
   {
-    id: "catch-basin-side-inlet",
+    id: "cb-side-inlet",
     name: "Catch Basin with Side Inlet Frame & Cover",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/catch-basin-side-inlet.webp",
-    sourceBadge: "Precast Exchange Catalog",
-    simpleDescription:
-      "Complete precast drain unit with integrated side-opening steel frame that swallows rushing gutter water directly from the curb face.",
-    practicalSize: "Monolithic concrete box + cast iron side inlet grate",
-    standard: "DOT Curb Inlet Standard",
-    bestFor: "Steep hill roads, highway shoulders, and major city intersections",
+    badge: "Precast Exchange Product",
+    shortDesc: "All-in-one precast basin with heavy cast-iron side curb frame that swallows water rushing along street gutters.",
+    size: "Monolithic Box + Iron Frame",
+    standard: "DOT Curb Standard",
   },
   {
-    id: "manhole-1050mm",
-    name: "Deep Round Drainage Manhole (1050 mm / 42\" Diameter)",
+    id: "cb-cb6",
+    name: "CB-6 Series Roadway Catch Basin",
+    category: "drainage",
+    categoryLabel: "Road & Storm Drainage",
+    image: "/images/products/cb-6-catch-basin.webp",
+    badge: "Precast Exchange Product",
+    shortDesc: "Standard road construction catchpit basin for parking lots, business parks, and residential subdivisions.",
+    size: "Standard CB-6 DOT Geometry",
+    standard: "ASTM C478 / HS-20",
+  },
+  {
+    id: "manhole-1050",
+    name: "Round Drainage Manhole (1050mm / 42\" Dia)",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/manhole-1050mm.webp",
-    sourceBadge: "Precast Exchange Catalog",
-    simpleDescription:
-      "A strong circular concrete access chamber that lets municipal workers inspect, clean, and connect underground drainage pipes safely.",
-    practicalSize: "Diameter: 1050 mm (approx. 42 inches) · Stackable riser sections",
-    standard: "ASTM C478 / AASHTO HS-20",
-    bestFor: "Main sewer lines, pipe junctions, and deep street utility access",
+    badge: "Precast Exchange Product",
+    shortDesc: "Deep circular concrete access shaft allowing utility workers to inspect and maintain underground pipes safely.",
+    size: "1050 mm (42\") Diameter",
+    standard: "ASTM C478 / HS-20",
   },
   {
-    id: "catch-basin-2ft",
-    name: "2 FT Monolithic Square Catch Basin (Catchpit)",
+    id: "manhole-reinforced",
+    name: "Reinforced Catch Basin Manhole (1050mm)",
+    category: "drainage",
+    categoryLabel: "Road & Storm Drainage",
+    image: "/images/products/precast-reinforced-manhole.webp",
+    badge: "Precast Exchange Product",
+    shortDesc: "Heavy reinforced circular manhole chamber with pipe gaskets designed for deep utility installations.",
+    size: "1050 mm Reinforced Shell",
+    standard: "ASTM C478 Heavy Duty",
+  },
+  {
+    id: "cb-2ft",
+    name: "2 FT Monolithic Square Catch Basin",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/catch-basin-2ft.png",
-    sourceBadge: "Heavy-Duty Precast",
-    simpleDescription:
-      "Square concrete basin with seamless leak-proof base and pre-cast pipe knockouts for rapid connection to 4\" to 12\" drain pipes.",
-    practicalSize: "Sizes: 24\"×24\" to 48\"×48\" · Depths up to 12 feet",
+    badge: "DOT Approved",
+    shortDesc: "Monolithic seamless concrete box with clean pipe knockouts for parking lots, driveways, and road sumps.",
+    size: "24\"×24\" to 48\"×48\"",
     standard: "ASTM C478 / HS-20",
-    bestFor: "Commercial driveways, apartment complexes, and warehouse yards",
   },
   {
-    id: "leaching-galley-lc6",
-    name: "Subsurface Leaching Galleys (Maine DOT LC-6)",
+    id: "leaching-lc6",
+    name: "Maine DOT LC-6 Subsurface Leaching Galleys",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/leaching-galley-lc6.png",
-    sourceBadge: "Maine DOT Specification",
-    simpleDescription:
-      "Underground open-bottom concrete chambers with perforated side holes that soak huge volumes of storm rainwater naturally into the ground.",
-    practicalSize: "High-capacity LC-6 Maine DOT geometry · Heavy traffic roof",
-    standard: "Maine DOT Standard / H-20",
-    bestFor: "Underground parking lot retention, aquifer recharge, and flood control",
+    badge: "Maine DOT Specification",
+    shortDesc: "Underground perforated concrete chambers that naturally soak rainwater runoff into the soil beneath parking lots.",
+    size: "High-Capacity LC-6 Gallery",
+    standard: "Maine DOT / H-20",
   },
   {
-    id: "leaching-galley-2ft",
-    name: "2 FT Subsurface Rainwater Infiltration Galleys",
+    id: "leaching-2ft",
+    name: "2 FT Underground Infiltration Galleys",
     category: "drainage",
     categoryLabel: "Road & Storm Drainage",
     image: "/images/products/leaching-galley.png",
-    sourceBadge: "Maine DOT Specification",
-    simpleDescription:
-      "Compact underground concrete soakaway chambers that eliminate ugly surface retention ponds so land above can be paved as parking.",
-    practicalSize: "2 ft tall modular units · Interlocks end-to-end in continuous rows",
-    standard: "Maine DOT / HS-20 Traffic",
-    bestFor: "Retail shopping centers, office parks, and tight commercial sites",
+    badge: "Maine DOT Specification",
+    shortDesc: "Modular underground soakaway galleries that replace surface retention ponds and save usable site land.",
+    size: "2 FT Modular Infiltration",
+    standard: "Maine DOT / HS-20",
   },
 
-  // ─── UNDERGROUND TANKS & SANITARY UTILITIES ───────────────────────
+  // ─── UNDERGROUND TANKS & SANITARY ─────────────────────────────────
   {
-    id: "pump-station-system",
-    name: "Multi-Chamber Stormwater Pump & Sump Station",
+    id: "pump-station",
+    name: "Multi-Chamber Storm Sump & Pump Station",
     category: "tanks",
     categoryLabel: "Underground Tanks & Utilities",
     image: "/images/products/catch-basin-system.png",
-    sourceBadge: "Dual-Chamber Station",
-    simpleDescription:
-      "An engineered double-room concrete vault that separates heavy dirt in room 1 and houses powerful electric water pumps in room 2.",
-    practicalSize: "Dual monolithic chambers · 5,000+ PSI air-entrained concrete",
-    standard: "ASTM C478 / Heavy Industrial",
-    bestFor: "Lift stations, flood-prone commercial basements, and highway sumps",
+    badge: "Industrial Pump Station",
+    shortDesc: "Dual-room concrete station: room 1 separates dirt and sediment; room 2 houses electric water pumps.",
+    size: "Dual Monolithic Chambers",
+    standard: "ASTM C478 Industrial",
   },
   {
-    id: "grease-trap-1000g",
-    name: "1,000 Gallon Commercial Kitchen Grease Interceptor",
+    id: "grease-1000",
+    name: "1,000 Gallon Commercial Kitchen Grease Trap",
     category: "tanks",
     categoryLabel: "Underground Tanks & Utilities",
     image: "/images/products/grease-trap-1000g.png",
-    sourceBadge: "Commercial Plumbing",
-    simpleDescription:
-      "Heavy underground concrete tank that traps restaurant oils, animal fats, and cooking grease so they cannot clog city sewer lines.",
-    practicalSize: "Capacity: 1,000 Gallons · Dual interior separation compartments",
+    badge: "Commercial Plumbing",
+    shortDesc: "Heavy concrete underground tank that traps restaurant grease and oil so they cannot clog city sewer lines.",
+    size: "Capacity: 1,000 Gallons",
     standard: "IAPMO / UPC Compliant",
-    bestFor: "Restaurants, hotel dining facilities, schools, and food processing plants",
   },
   {
-    id: "grease-trap-1500g",
+    id: "grease-1500",
     name: "1,500 Gallon High-Capacity Grease Trap",
     category: "tanks",
     categoryLabel: "Underground Tanks & Utilities",
     image: "/images/products/grease-trap-1500g.png",
-    sourceBadge: "Commercial Plumbing",
-    simpleDescription:
-      "Extra-large concrete grease interceptor for high-volume commercial kitchens with dual inspection risers for easy pump-out trucks.",
-    practicalSize: "Capacity: 1,500 Gallons · Watertight gasket seals · Traffic covers",
-    standard: "IAPMO / UPC / ASTM C1227",
-    bestFor: "Hospital cafeterias, large supermarket bakeries, and sports arenas",
+    badge: "Commercial Plumbing",
+    shortDesc: "High-volume grease interceptor with dual inspection risers for busy restaurants, hotels, and schools.",
+    size: "Capacity: 1,500 Gallons",
+    standard: "UPC / ASTM C1227",
   },
   {
-    id: "septic-tank-1000g",
+    id: "septic-1000",
     name: "1,000 Gallon Watertight Concrete Septic Tank",
     category: "tanks",
     categoryLabel: "Underground Tanks & Utilities",
     image: "/images/products/septic-tank-1000g.png",
-    sourceBadge: "Watertight Precast",
-    simpleDescription:
-      "Strong monolithic precast concrete tank that safely collects and treats household sewage water underground.",
-    practicalSize: "Capacity: 1,000 Gallons · Single or two-compartment options",
-    standard: "ASTM C1227 / NPCA Certified",
-    bestFor: "Single-family homes, vacation cabins, and small rural offices",
+    badge: "Watertight Precast",
+    shortDesc: "One-piece poured concrete tank that safely treats household sewage underground without leaking.",
+    size: "Capacity: 1,000 Gallons",
+    standard: "ASTM C1227 / NPCA",
   },
   {
-    id: "septic-tank-1500g",
-    name: "1,500 Gallon Monolithic Precast Septic Tank",
+    id: "septic-1500",
+    name: "1,500 Gallon Monolithic Septic Tank",
     category: "tanks",
     categoryLabel: "Underground Tanks & Utilities",
     image: "/images/products/septic-tank-1500g.png",
-    sourceBadge: "Watertight Precast",
-    simpleDescription:
-      "One-piece poured concrete septic tank with internal baffle wall, guaranteed leak-proof to protect groundwater and drinking wells.",
-    practicalSize: "Capacity: 1,500 Gallons · Reinforced concrete roof slab",
-    standard: "ASTM C1227 / NPCA Certified",
-    bestFor: "Large residential homes, rural medical clinics, and duplex buildings",
+    badge: "Watertight Precast",
+    shortDesc: "One-piece concrete septic tank with internal dividing wall, 100% leak-proof to protect groundwater.",
+    size: "Capacity: 1,500 Gallons",
+    standard: "ASTM C1227 / NPCA",
   },
   {
-    id: "septic-tank-2000g",
-    name: "2,000 Gallon Heavy Commercial Septic Tank",
+    id: "septic-2000",
+    name: "2,000 Gallon Commercial Precast Septic Tank",
     category: "tanks",
     categoryLabel: "Underground Tanks & Utilities",
     image: "/images/products/septic-tank-2000g.png",
-    sourceBadge: "Watertight Precast",
-    simpleDescription:
-      "Heavy commercial-grade wastewater tank engineered with thick concrete walls to handle heavy vehicle traffic above if installed under driveways.",
-    practicalSize: "Capacity: 2,000 Gallons · HS-20 wheel load certified options",
-    standard: "ASTM C1227 / AASHTO HS-20",
-    bestFor: "Commercial rest stops, RV campgrounds, rural schools, and small hotels",
+    badge: "Watertight Precast",
+    shortDesc: "Large commercial-grade wastewater tank built with thick walls to withstand heavy vehicle wheel traffic above.",
+    size: "Capacity: 2,000 Gallons",
+    standard: "ASTM C1227 / HS-20 Traffic",
   },
 ];
-
-// ─── 3. MAIN COMPONENT ────────────────────────────────────────────────────────
 
 export function ProductsSection() {
   const [activeFilter, setActiveFilter] = useState<"all" | "heavy" | "drainage" | "tanks">("all");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const filteredProducts =
-    activeFilter === "all"
-      ? ALL_PRODUCTS
-      : ALL_PRODUCTS.filter((p) => p.category === activeFilter);
+  const filtered =
+    activeFilter === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeFilter);
 
   return (
-    <section
-      id="products"
-      className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] py-16 sm:py-24"
-    >
-      {/* ── SECTION HEADER ────────────────────────────────────────── */}
-      <div className="section-container-wide mb-12 sm:mb-16">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#DCE5F0]">
+    <section id="products" className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] py-14 sm:py-20">
+      {/* ── TOP HEADER ───────────────────────────────────────────── */}
+      <div className="section-container-wide mb-10 sm:mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 pb-6 border-b border-[#DCE5F0]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#D7030F] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#D7030F] animate-pulse" />
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#01255F] font-mono">
-                Real Precast Products · DOT Approved &amp; Certified
+                Direct Precast Manufacturing · Fast Jobsite Delivery
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#01255F] tracking-tight uppercase">
-              Heavy Infrastructure <span className="text-[#D7030F]">&amp; Precast Products</span>
+              Precast Products <span className="text-[#D7030F]">&amp; Manufacturing</span>
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-[#334155] max-w-3xl leading-relaxed">
-              We build heavy-duty precast concrete products for contractors, civil engineers, and municipalities.
-              From massive highway box culverts and bridge walls to street storm drains, catch basins, and underground water tanks — explained in simple, everyday language.
+            <p className="mt-2 text-sm sm:text-base text-[#334155] max-w-2xl leading-relaxed">
+              Real manufactured precast concrete for contractors, civil builders, and municipalities.
+              Heavy products like highway box culverts and bridges shown first, followed by street storm drains and underground utility tanks.
             </p>
           </div>
 
-          <div className="shrink-0 flex flex-col sm:flex-row gap-3">
+          <div className="shrink-0 flex flex-wrap gap-3">
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#D7030F] hover:bg-[#B31217] text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md group cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#D7030F] hover:bg-[#B31217] text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-sm transition-all cursor-pointer"
             >
-              <span>Get a Fast Project Quote</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <span>Get Fast Pricing</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:6314581111"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg border-2 border-[#01255F] text-[#01255F] hover:bg-[#01255F] hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border-2 border-[#01255F] text-[#01255F] hover:bg-[#01255F] hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer"
             >
               <PhoneCall className="w-4 h-4 text-[#D7030F]" />
-              <span>Call (631) 458-1111</span>
+              <span>(631) 458-1111</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* ── 1. HEAVY PRODUCTS FIRST: LARGE SPOTLIGHT CARDS ────────── */}
-      <div className="section-container-wide mb-16 sm:mb-20">
-        <div className="bg-white border-2 border-[#01255F]/20 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xl">
-          {/* Spotlight Header */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-8 border-b border-[#DCE5F0] gap-4">
+      {/* ── 1. HEAVY MANUFACTURING FIRST (PHOTO-HEAVY SPOTLIGHT) ─── */}
+      <div className="section-container-wide mb-14 sm:mb-18">
+        <div className="bg-white border-2 border-[#01255F]/20 rounded-2xl p-5 sm:p-8 shadow-lg">
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-6 border-b border-[#DCE5F0] gap-3">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D7030F] mb-1">
-                <span className="w-4 h-0.5 bg-[#D7030F]" />
-                <span>HEAVY PRODUCTS FIRST · TOP CIVIL SPOTLIGHT</span>
+                <Factory className="w-4 h-4" />
+                <span>HEAVY PRODUCTS FIRST · CIVIL MANUFACTURING SPOTLIGHT</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black text-[#01255F] uppercase tracking-tight">
-                Heavy Highway Box Culverts &amp; Bridge Systems
+              <h3 className="text-xl sm:text-2xl font-black text-[#01255F] uppercase tracking-tight">
+                Highway Box Culverts &amp; Bridge Infrastructure
               </h3>
-              <p className="text-xs sm:text-sm text-[#475569] mt-1">
-                Our largest, heaviest precast structures designed to carry loaded semi-trucks, cross active rivers, and stabilize highway slopes.
-              </p>
             </div>
-
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#FFF2F2] border border-[#FCD2D4] text-[11px] font-bold text-[#D7030F] uppercase">
-                <ShieldCheck className="w-4 h-4 text-[#D7030F]" />
-                <span>AASHTO HS-25 &amp; DOT Certified</span>
-              </span>
-            </div>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#FFF2F2] border border-[#FCD2D4] text-[11px] font-bold text-[#D7030F] uppercase self-start sm:self-auto">
+              <ShieldCheck className="w-4 h-4" />
+              <span>AASHTO HS-25 &amp; DOT Certified</span>
+            </span>
           </div>
 
-          {/* 3 Heavy Product Spotlight Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {HEAVY_SPOTLIGHT_PRODUCTS.map((prod) => (
+          {/* 3 Heavy Photo Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {HEAVY_MANUFACTURING_HEROES.map((item) => (
               <div
-                key={prod.id}
-                className="flex flex-col rounded-xl overflow-hidden bg-white border-2 border-[#DCE5F0] hover:border-[#01255F] shadow-sm hover:shadow-2xl transition-all duration-300 group"
+                key={item.id}
+                className="flex flex-col rounded-xl overflow-hidden bg-white border border-[#DCE5F0] hover:border-[#01255F] shadow-sm hover:shadow-xl transition-all duration-300 group"
               >
-                {/* Photo Stage */}
-                <div className="relative h-64 sm:h-72 w-full bg-[#06182E] overflow-hidden flex items-center justify-center">
+                {/* Visual Stage */}
+                <div className="relative h-60 sm:h-64 w-full bg-[#06182E] overflow-hidden">
                   <Image
-                    src={prod.image}
-                    alt={prod.title}
+                    src={item.image}
+                    alt={item.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#06182E]/90 via-transparent to-black/30 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                   {/* Top Badge */}
-                  <div className="absolute top-3 left-3 z-10">
-                    <span className="px-3 py-1 rounded bg-[#D7030F] text-white text-[10px] font-extrabold uppercase tracking-wider shadow-md">
-                      {prod.badge}
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2.5 py-1 rounded bg-[#D7030F] text-white text-[10px] font-extrabold uppercase tracking-wider shadow-sm">
+                      {item.badge}
                     </span>
                   </div>
 
-                  {/* Plain English "What it does" bottom overlay */}
-                  <div className="absolute bottom-3 inset-x-3 z-10">
-                    <p className="text-[11px] font-semibold text-white/90 bg-black/60 backdrop-blur-xs p-2 rounded border border-white/20 line-clamp-2">
-                      💡 {prod.plainEnglishUse}
-                    </p>
+                  {/* Size Pill */}
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <span className="inline-block px-2.5 py-1 rounded bg-black/70 backdrop-blur-xs text-white text-[11px] font-mono font-bold border border-white/20">
+                      📏 {item.specs}
+                    </span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7030F] block mb-1">
-                      {prod.subtitle}
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#D7030F] block mb-1">
+                      {item.tagline}
                     </span>
-                    <h4 className="text-lg sm:text-xl font-black text-[#01255F] leading-snug mb-2 group-hover:text-[#D7030F] transition-colors min-h-[52px]">
-                      {prod.title}
+                    <h4 className="text-base sm:text-lg font-black text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug mb-2">
+                      {item.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-[#334155] leading-relaxed mb-4 min-h-[60px]">
-                      {prod.description}
+
+                    {/* Simple Human Purpose */}
+                    <p className="text-xs text-[#334155] leading-relaxed mb-3 p-2 rounded bg-[#F8FAFD] border border-[#EBF1F8]">
+                      <strong>Use:</strong> {item.useFor}
                     </p>
 
-                    {/* Everyday Highlights in Clear English */}
-                    <div className="space-y-2 mb-5 pb-5 border-b border-slate-100 min-h-[140px]">
-                      {prod.features.map((feat, i) => (
+                    {/* Fast Bullet Points */}
+                    <div className="space-y-1.5 mb-4">
+                      {item.bullets.map((b, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
-                          <CheckCircle2 className="w-4 h-4 text-[#D7030F] shrink-0 mt-0.5" />
-                          <span className="text-xs leading-snug font-medium text-slate-800">{feat}</span>
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D7030F] shrink-0 mt-0.5" />
+                          <span className="text-[11px] leading-tight text-slate-800">{b}</span>
                         </div>
                       ))}
                     </div>
-
-                    {/* Simple Specs Box */}
-                    <div className="p-3 rounded-lg bg-[#F2F7FF] border border-[#DCE5F0] mb-4 text-[11px] text-[#01255F] font-mono font-semibold">
-                      📏 {prod.specs}
-                    </div>
                   </div>
 
-                  {/* Actions */}
-                  <div className="pt-2 flex items-center justify-between gap-3">
-                    <Link
-                      href="/#contact"
-                      className="inline-flex items-center gap-2 bg-[#D7030F] hover:bg-[#B31217] text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow-sm transition-colors cursor-pointer"
-                    >
-                      <span>Inquire This Product</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-
-                    <Link
-                      href="/#contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#01255F] hover:text-[#D7030F] transition-colors"
-                    >
-                      <FileText className="w-3.5 h-3.5" />
-                      <span>Ask Sizing</span>
-                    </Link>
-                  </div>
+                  {/* Action */}
+                  <Link
+                    href="/#contact"
+                    className="mt-2 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-[#01255F] hover:bg-[#D7030F] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+                  >
+                    <span>Inquire / Get Quote</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -561,177 +523,143 @@ export function ProductsSection() {
         </div>
       </div>
 
-      {/* ── 2. FULL PRODUCT CATALOG BROWSER WITH FILTER BUTTONS ─────── */}
-      <div className="section-container-wide mb-14">
-        {/* Title + Filter Tabs */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      {/* ── 2. VISUAL PRODUCT GALLERY (MORE IMAGES, LESS TEXT) ─────── */}
+      <div className="section-container-wide">
+        {/* Category Filter Pills */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div>
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D7030F] mb-1">
               <SlidersHorizontal className="w-3.5 h-3.5" />
-              <span>BROWSE ALL PRODUCTS · PLAIN HUMAN ENGLISH</span>
+              <span>VISUAL PRODUCT CATALOG ({filtered.length} PRODUCTS)</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-black text-[#01255F] uppercase tracking-tight">
-              Complete Precast Product Line ({filteredProducts.length} Items)
+            <h3 className="text-xl sm:text-2xl font-black text-[#01255F] uppercase tracking-tight">
+              Precast Manufacturing Inventory
             </h3>
           </div>
 
-          {/* Filter Pills */}
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => setActiveFilter("all")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "all"
-                  ? "bg-[#01255F] text-white shadow-md"
+                  ? "bg-[#01255F] text-white shadow-sm"
                   : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
               }`}
             >
-              All Products ({ALL_PRODUCTS.length})
+              All ({PRODUCTS.length})
             </button>
             <button
               type="button"
               onClick={() => setActiveFilter("heavy")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "heavy"
-                  ? "bg-[#D7030F] text-white shadow-md"
+                  ? "bg-[#D7030F] text-white shadow-sm"
                   : "bg-white text-[#D7030F] border border-[#FCD2D4] hover:bg-[#FFF2F2]"
               }`}
             >
-              ★ Heavy Civil &amp; Bridges (7)
+              ★ Heavy Civil &amp; Box Culverts (7)
             </button>
             <button
               type="button"
               onClick={() => setActiveFilter("drainage")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "drainage"
-                  ? "bg-[#01255F] text-white shadow-md"
+                  ? "bg-[#01255F] text-white shadow-sm"
                   : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
               }`}
             >
-              Road &amp; Storm Drains (9)
+              Storm Drains &amp; Basins (14)
             </button>
             <button
               type="button"
               onClick={() => setActiveFilter("tanks")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "tanks"
-                  ? "bg-[#01255F] text-white shadow-md"
+                  ? "bg-[#01255F] text-white shadow-sm"
                   : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
               }`}
             >
-              Underground Tanks (6)
+              Tanks &amp; Traps (6)
             </button>
           </div>
         </div>
 
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.map((item) => {
+        {/* Visual Product Grid: Compact Cards, High-Visibility Images, Short Text */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-5">
+          {filtered.map((item) => {
             const isHovered = hoveredId === item.id;
             return (
               <div
                 key={item.id}
                 onMouseEnter={() => setHoveredId(item.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="group flex flex-col rounded-xl overflow-hidden bg-white border border-[#DCE5F0] hover:border-[#01255F] shadow-xs hover:shadow-xl transition-all duration-200"
+                className="group flex flex-col rounded-xl overflow-hidden bg-white border border-[#DCE5F0] hover:border-[#01255F] shadow-xs hover:shadow-lg transition-all duration-200"
                 style={{
-                  transform: isHovered ? "translateY(-3px)" : "translateY(0)",
+                  transform: isHovered ? "translateY(-2px)" : "translateY(0)",
                 }}
               >
-                {/* Header Tag */}
-                <div className="flex items-center justify-between px-4 pt-4 pb-2">
-                  <span
-                    className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded tracking-wider ${
-                      item.category === "heavy"
-                        ? "bg-[#FFF2F2] text-[#D7030F] border border-[#FCD2D4]"
-                        : "bg-[#E8F3FF] text-[#01255F]"
-                    }`}
-                  >
-                    {item.sourceBadge}
-                  </span>
-                  <span className="text-[10px] font-mono font-bold text-[#64748B]">
-                    {item.standard}
-                  </span>
-                </div>
-
-                {/* Real Product Image Stage (No AI) */}
-                <div className="relative mx-3 my-2 rounded-lg overflow-hidden h-44 bg-[#F8FAFD] border border-[#EBF1F8] flex items-center justify-center p-3 group-hover:bg-[#F2F7FF] transition-colors">
+                {/* Product Image Stage (Large, Clean, No AI) */}
+                <div className="relative h-44 sm:h-48 w-full bg-[#F8FAFD] border-b border-[#EBF1F8] flex items-center justify-center p-3 overflow-hidden group-hover:bg-[#F2F7FF] transition-colors">
                   <Image
                     src={item.image}
                     alt={item.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   />
+                  {/* Top Badge */}
+                  <div className="absolute top-2 left-2 z-10">
+                    <span
+                      className={`text-[9px] sm:text-[10px] font-extrabold uppercase px-2 py-0.5 rounded tracking-wider ${
+                        item.category === "heavy"
+                          ? "bg-[#FFF2F2] text-[#D7030F] border border-[#FCD2D4]"
+                          : "bg-[#E8F3FF] text-[#01255F] border border-[#DCE5F0]"
+                      }`}
+                    >
+                      {item.badge}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Card Title & Plain-English Description */}
-                <div className="px-4 py-2 flex-1 flex flex-col justify-between">
+                {/* Compact Content */}
+                <div className="p-3.5 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#D7030F] block mb-1">
+                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#D7030F] block mb-0.5">
                       {item.categoryLabel}
                     </span>
-                    <h4 className="text-sm sm:text-base font-extrabold text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug min-h-[44px]">
+                    <h4 className="text-xs sm:text-sm font-extrabold text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-tight line-clamp-2 min-h-[34px]">
                       {item.name}
                     </h4>
 
-                    {/* Plain Human English Explanation */}
-                    <p className="mt-2 text-xs text-[#475569] leading-relaxed min-h-[50px]">
-                      {item.simpleDescription}
+                    {/* Short Human Explanation */}
+                    <p className="mt-1.5 text-[11px] sm:text-xs text-[#475569] leading-snug line-clamp-2 min-h-[30px]">
+                      {item.shortDesc}
                     </p>
 
-                    {/* Best For Tag */}
-                    <div className="mt-3 p-2 rounded bg-[#F8FAFC] border border-[#E2E8F0] text-[11px] text-[#334155] leading-tight font-medium">
-                      <span className="font-bold text-[#01255F]">Best For: </span>
-                      {item.bestFor}
+                    {/* Practical Size */}
+                    <div className="mt-2 text-[10px] font-mono text-[#01255F] font-bold bg-[#F4F8FD] px-2 py-1 rounded truncate">
+                      📏 {item.size}
                     </div>
-
-                    {/* Simple Practical Size */}
-                    <p className="mt-2 text-[10px] font-mono text-[#64748B] font-semibold">
-                      📏 {item.practicalSize}
-                    </p>
                   </div>
 
-                  {/* Bottom Action */}
-                  <div className="mt-4 pt-3 border-t border-[#F2F7FF] flex items-center justify-between">
+                  {/* Bottom Quick Quote */}
+                  <div className="mt-3 pt-2.5 border-t border-[#F2F7FF] flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-[#64748B] font-semibold truncate max-w-[110px]">
+                      {item.standard}
+                    </span>
                     <Link
                       href="/#contact"
-                      className="text-xs font-bold text-[#01255F] group-hover:text-[#D7030F] transition-colors inline-flex items-center gap-1.5"
+                      className="text-[11px] font-bold text-[#D7030F] hover:text-[#01255F] transition-colors inline-flex items-center gap-1 shrink-0"
                     >
-                      <span>Inquire / Get Price</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#D7030F] group-hover:translate-x-1 transition-transform" />
+                      <span>Inquire</span>
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </div>
               </div>
             );
           })}
-        </div>
-      </div>
-
-      {/* ── 3. ESTIMATING DESK BANNER ───────────────────────────────── */}
-      <div className="section-container-wide">
-        <div className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 px-8 sm:px-12 py-8 sm:py-10 rounded-2xl bg-[#06182E] bg-gradient-to-r from-[#06182E] via-[#0B2545] to-[#01255F] text-white border-t-4 border-[#D7030F] shadow-2xl">
-          <div>
-            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D7030F] mb-2">
-              <span className="w-3 h-0.5 bg-[#D7030F]" />
-              <span>PRECAST PRO ESTIMATING &amp; DRAWINGS DESK</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-snug uppercase">
-              Need Pricing for Box Culverts, Catch Basins, or Tanks?
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">
-              Send us your project plan sheets or item counts. Our team will review your drawings, calculate freight, and return a clear, competitive precast quote in simple, human-friendly terms.
-            </p>
-          </div>
-
-          <Link
-            href="/#contact"
-            className="shrink-0 inline-flex items-center gap-2.5 bg-[#D7030F] hover:bg-[#B31217] text-white text-xs sm:text-sm font-black uppercase tracking-wider px-7 py-4 rounded-lg shadow-lg shadow-red-600/30 transition-all duration-200 group whitespace-nowrap cursor-pointer"
-          >
-            <span>Send Plans for Free Takeoff</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
         </div>
       </div>
     </section>
