@@ -163,28 +163,32 @@ export function LocationsSection() {
   return (
     <section
       id="locations"
-      className="relative w-full min-h-screen lg:h-screen lg:max-h-screen bg-[#F8FAFC] text-slate-800 py-6 sm:py-8 lg:py-6 flex flex-col justify-center border-b border-[#DCE5F0] overflow-hidden"
+      className="relative w-full min-h-screen lg:h-screen lg:max-h-screen bg-[#030F21] text-white py-5 sm:py-6 lg:py-6 flex flex-col justify-center border-b border-[#01255F] overflow-hidden"
     >
       <div className="section-container-wide w-full flex flex-col justify-center max-w-7xl">
-        {/* Header (Clean, Compact, Centered) */}
+        {/* Header with Red Accent and Clean Text */}
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-1.5 sm:gap-2 text-center mb-4 lg:mb-5">
-          <p className="text-[11px] font-extrabold uppercase tracking-widest text-[#D7030F]">
-            STRATEGIC FOOTPRINT
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="h-0.5 w-7 bg-[#D7030F]" aria-hidden="true" />
+            <p className="text-[11px] font-black uppercase tracking-widest text-[#D7030F]">
+              STRATEGIC FOOTPRINT
+            </p>
+            <span className="h-0.5 w-7 bg-[#D7030F]" aria-hidden="true" />
+          </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#01255F]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white uppercase">
             Seven offices, <span className="text-[#D7030F]">one delivery standard</span>
           </h2>
 
-          <p className="max-w-2xl text-xs sm:text-sm leading-relaxed text-slate-600 font-medium">
+          <p className="max-w-2xl text-xs sm:text-sm leading-relaxed text-slate-300 font-medium">
             Regional manufacturing nodes, engineering design hubs, and strategic dispatch centers supporting civil infrastructure across North America.
           </p>
         </div>
 
-        {/* Main Card Container */}
-        <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/40 p-4 sm:p-5 lg:p-6">
+        {/* Main Card Container in Deep Dark Navy */}
+        <div className="bg-[#020B18] rounded-3xl border border-slate-800 shadow-2xl p-4 sm:p-5 lg:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
-            {/* Left Column: 7 Office Buttons (Compact, fits all 7 without scroll) */}
+            {/* Left Column: 7 Office Buttons (Compact, fits all 7 within 100vh) */}
             <div className="lg:col-span-5 flex flex-col gap-2 justify-between">
               {LOCATIONS.map((loc) => {
                 const isSelected = loc.id === activeId;
@@ -196,17 +200,25 @@ export function LocationsSection() {
                     onClick={() => setActiveId(loc.id)}
                     className={`group relative flex w-full items-center justify-between gap-3 rounded-xl border px-3.5 py-2.5 text-left transition-all duration-200 cursor-pointer ${
                       isSelected
-                        ? "border-[#D7030F] bg-red-50/30 shadow-sm"
-                        : "border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/70"
+                        ? "border-[#D7030F] bg-[#031326] shadow-md shadow-red-950/30"
+                        : "border-slate-800/80 bg-[#030F21] hover:border-slate-700 hover:bg-[#071D36]"
                     }`}
                   >
+                    {/* Active Left Indicator Pill */}
+                    {isSelected && (
+                      <span
+                        className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-[#D7030F]"
+                        aria-hidden="true"
+                      />
+                    )}
+
                     {/* Left Icon + Title + Badge */}
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div
                         className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                           isSelected
-                            ? "bg-[#D7030F] text-white"
-                            : "bg-slate-100 text-slate-500 group-hover:text-slate-700"
+                            ? "bg-[#D7030F] text-white shadow-xs"
+                            : "bg-[#09223D] text-slate-300"
                         }`}
                       >
                         <MapPin className="w-3.5 h-3.5" />
@@ -216,7 +228,7 @@ export function LocationsSection() {
                         <div className="flex items-center gap-2">
                           <span
                             className={`text-xs sm:text-[13px] font-bold tracking-tight truncate ${
-                              isSelected ? "text-[#01255F]" : "text-slate-800"
+                              isSelected ? "text-white" : "text-slate-200"
                             }`}
                           >
                             {loc.region}
@@ -226,14 +238,14 @@ export function LocationsSection() {
                             className={`px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider shrink-0 ${
                               isSelected
                                 ? "bg-[#D7030F] text-white"
-                                : "bg-slate-100 text-slate-500"
+                                : "bg-[#09223D] text-slate-300"
                             }`}
                           >
                             {loc.role}
                           </span>
                         </div>
 
-                        <div className="text-[11px] text-slate-600 font-medium leading-tight">
+                        <div className="text-[11px] text-slate-400 font-medium leading-tight">
                           {loc.country}
                         </div>
                       </div>
@@ -244,7 +256,7 @@ export function LocationsSection() {
                       className={`w-4 h-4 shrink-0 transition-transform ${
                         isSelected
                           ? "text-[#D7030F] translate-x-0.5 -translate-y-0.5"
-                          : "text-slate-500 group-hover:text-slate-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          : "text-slate-500 group-hover:text-slate-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       }`}
                     />
                   </button>
@@ -253,7 +265,7 @@ export function LocationsSection() {
             </div>
 
             {/* Right Column: Active Office Detail & Dual Media Cards */}
-            <div className="lg:col-span-7 bg-[#FAFBFD] rounded-2xl border border-slate-200/80 p-5 sm:p-6 flex flex-col justify-between">
+            <div className="lg:col-span-7 bg-[#031326] rounded-2xl border border-slate-800 p-5 sm:p-6 flex flex-col justify-between">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
                 {/* Details Column */}
                 <div className="md:col-span-6 flex flex-col justify-between space-y-4">
@@ -262,19 +274,19 @@ export function LocationsSection() {
                       {activeLoc.role}
                     </span>
 
-                    <h3 className="text-xl sm:text-2xl font-black text-[#01255F] tracking-tight leading-tight mt-0.5">
+                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-tight mt-0.5">
                       {activeLoc.region}
                     </h3>
 
-                    <p className="text-xs font-semibold text-slate-600">
+                    <p className="text-xs font-semibold text-slate-300">
                       {activeLoc.country}
                     </p>
                   </div>
 
-                  {/* Contact Info Rows */}
+                  {/* Contact Info Rows with Red Accent Icons */}
                   <div className="space-y-2.5 text-xs">
-                    <div className="flex items-start gap-2.5 text-slate-700">
-                      <div className="w-5 h-5 rounded bg-red-100/60 text-[#D7030F] flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="flex items-start gap-2.5 text-slate-200">
+                      <div className="w-5 h-5 rounded bg-[#D7030F] text-white flex items-center justify-center shrink-0 mt-0.5">
                         <Building2 className="w-3 h-3" />
                       </div>
                       <span className="leading-snug font-medium">
@@ -282,38 +294,38 @@ export function LocationsSection() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2.5 text-slate-700">
-                      <div className="w-5 h-5 rounded bg-red-100/60 text-[#D7030F] flex items-center justify-center shrink-0">
+                    <div className="flex items-center gap-2.5 text-slate-200">
+                      <div className="w-5 h-5 rounded bg-[#D7030F] text-white flex items-center justify-center shrink-0">
                         <Phone className="w-3 h-3" />
                       </div>
                       <a
                         href={`tel:${activeLoc.phoneRaw}`}
-                        className="font-bold text-[#01255F] hover:text-[#D7030F] transition-colors"
+                        className="font-bold text-white hover:text-[#D7030F] transition-colors"
                       >
                         {activeLoc.phone}
                       </a>
                     </div>
 
-                    <div className="flex items-center gap-2.5 text-slate-700">
-                      <div className="w-5 h-5 rounded bg-red-100/60 text-[#D7030F] flex items-center justify-center shrink-0">
+                    <div className="flex items-center gap-2.5 text-slate-200">
+                      <div className="w-5 h-5 rounded bg-[#D7030F] text-white flex items-center justify-center shrink-0">
                         <Clock className="w-3 h-3" />
                       </div>
-                      <span className="font-mono text-[11px] text-slate-600">
+                      <span className="font-mono text-[11px] text-slate-300">
                         {activeLoc.timezone}
                       </span>
                     </div>
                   </div>
 
                   {/* Capabilities On Site */}
-                  <div className="pt-2 border-t border-slate-200">
-                    <p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-600 mb-2">
+                  <div className="pt-2 border-t border-slate-800">
+                    <p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-300 mb-2">
                       Capabilities on site
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {activeLoc.capabilities.map((cap, idx) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-white border border-slate-200 text-slate-700 shadow-2xs"
+                          className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#020B18] border border-slate-800 text-slate-200 hover:border-[#D7030F] transition-colors"
                         >
                           {cap}
                         </span>
@@ -325,7 +337,7 @@ export function LocationsSection() {
                 {/* Media Cards Column (Image + Map) */}
                 <div className="md:col-span-6 flex flex-col gap-3">
                   {/* Office Graphic / Photo Card */}
-                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs">
+                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-slate-800 bg-[#020B18] shadow-xs">
                     <Image
                       src={activeLoc.image}
                       alt={`${activeLoc.region} office at ${activeLoc.address}`}
@@ -333,7 +345,7 @@ export function LocationsSection() {
                       sizes="(max-width: 1024px) 100vw, 300px"
                       className="object-cover"
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-2">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-2">
                       <div className="flex items-center gap-1.5 text-white text-[10px] font-bold">
                         <Building2 className="w-3 h-3 text-[#D7030F]" />
                         <span>{activeLoc.region} office</span>
@@ -342,7 +354,7 @@ export function LocationsSection() {
                   </div>
 
                   {/* Embedded Google Map Preview */}
-                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs">
+                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-slate-800 bg-[#020B18] shadow-xs">
                     <iframe
                       src={`https://www.google.com/maps?q=${encodeURIComponent(
                         activeLoc.mapQuery
@@ -352,9 +364,9 @@ export function LocationsSection() {
                       referrerPolicy="no-referrer-when-downgrade"
                       className="absolute inset-0 h-full w-full border-0"
                     />
-                    <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-xs px-2 py-0.5 rounded text-[10px] font-bold text-[#01255F] shadow-xs flex items-center gap-1">
+                    <div className="absolute top-2 left-2 bg-slate-900/90 backdrop-blur-xs px-2 py-0.5 rounded text-[10px] font-bold text-white border border-slate-700 shadow-xs flex items-center gap-1">
                       <span>Maps</span>
-                      <ExternalLink className="w-2.5 h-2.5" />
+                      <ExternalLink className="w-2.5 h-2.5 text-[#D7030F]" />
                     </div>
                   </div>
 
@@ -365,37 +377,37 @@ export function LocationsSection() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wider text-[#01255F] hover:text-[#D7030F] transition-colors self-start"
+                    className="inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wider text-white hover:text-[#D7030F] transition-colors self-start"
                   >
                     <span>OPEN GOOGLE MAP</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#D7030F]" />
                   </a>
                 </div>
               </div>
 
               {/* Bottom Metrics Bar */}
-              <div className="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-slate-200 text-center">
+              <div className="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-slate-800 text-center">
                 <div>
-                  <div className="text-base sm:text-lg font-black text-[#01255F] leading-tight">
+                  <div className="text-base sm:text-lg font-black text-white leading-tight">
                     24/7
                   </div>
-                  <div className="text-[9px] uppercase font-bold text-slate-600">
+                  <div className="text-[9px] uppercase font-bold text-slate-400">
                     Support window
                   </div>
                 </div>
-                <div className="border-x border-slate-200">
+                <div className="border-x border-slate-800">
                   <div className="text-base sm:text-lg font-black text-[#D7030F] leading-tight">
                     &lt; 1 hr
                   </div>
-                  <div className="text-[9px] uppercase font-bold text-slate-600">
+                  <div className="text-[9px] uppercase font-bold text-slate-400">
                     First response
                   </div>
                 </div>
                 <div>
-                  <div className="text-base sm:text-lg font-black text-[#01255F] leading-tight">
+                  <div className="text-base sm:text-lg font-black text-white leading-tight">
                     Global
                   </div>
-                  <div className="text-[9px] uppercase font-bold text-slate-600">
+                  <div className="text-[9px] uppercase font-bold text-slate-400">
                     Site coverage
                   </div>
                 </div>
