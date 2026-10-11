@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/home/hero-section";
+import { SponsorMarquee } from "@/components/home/sponsor-marquee";
 import { CompanyIntro } from "@/components/home/company-intro";
 import { ProductsSection } from "@/components/home/products-section";
 import { ServicesSection } from "@/components/home/services-section";
@@ -10,6 +11,9 @@ export default function HomePage() {
     <>
       {/* 1. Hero Section (Precast Bridge Highway Infrastructure) */}
       <HeroSection />
+
+      {/* 1b. Association & Sponsor Marquee (NEPCA, NJPCA, PCANY, PCAV, PCMA, PPA) */}
+      <SponsorMarquee />
 
       {/* 2. Precision Precast Company Overview & Technical Credentials */}
       <CompanyIntro />

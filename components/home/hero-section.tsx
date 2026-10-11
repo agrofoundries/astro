@@ -60,7 +60,7 @@ export function HeroSection() {
       </div>
 
       {/* Main Hero Content */}
-      <div className="relative z-20 section-container-wide pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20">
+      <div className="relative z-20 section-container-wide pt-8 sm:pt-12 lg:pt-14 pb-8 sm:pb-10 lg:pb-12">
         <div className="max-w-2xl xl:max-w-3xl">
           {/* Eyebrow Pill Badge */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-5 shadow-xs">

@@ -79,10 +79,10 @@ const SERVICES: ServiceItem[] = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="w-full bg-[#06182E] bg-gradient-to-br from-[#06182E] via-[#0B2545] to-[#01255F] text-white py-16 sm:py-24 border-b border-[#01255F]">
+    <section id="services" className="w-full bg-[#06182E] bg-gradient-to-br from-[#06182E] via-[#0B2545] to-[#01255F] text-white py-10 sm:py-12 border-b border-[#01255F]">
       <div className="section-container-wide">
         {/* Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        <div className="max-w-3xl mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D7030F] mb-2">
             <span className="w-3 h-0.5 bg-[#D7030F]" />
             <span>PRECAST STRUCTURAL DISCIPLINES</span>

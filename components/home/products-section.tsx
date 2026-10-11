@@ -438,9 +438,9 @@ export function ProductsSection() {
       : ALL_PRODUCT_CARDS.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="products" className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] py-14 sm:py-20">
+    <section id="products" className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] pt-8 pb-12 sm:pt-10 sm:pb-14">
       {/* ── TOP HEADER ───────────────────────────────────────────── */}
-      <div className="section-container-wide mb-10 sm:mb-14">
+      <div className="section-container-wide mb-6 sm:mb-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 pb-6 border-b border-[#DCE5F0]">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-2.5">
@@ -479,7 +479,7 @@ export function ProductsSection() {
       </div>
 
       {/* ── 1. HEAVY MANUFACTURING FIRST (TOP CIVIL SPOTLIGHT) ───── */}
-      <div className="section-container-wide mb-14 sm:mb-18">
+      <div className="section-container-wide mb-8 sm:mb-10">
         <div className="bg-white border-2 border-[#01255F]/20 rounded-2xl p-6 sm:p-8 shadow-lg">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-6 border-b border-[#DCE5F0] gap-3">

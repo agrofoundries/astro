@@ -12,7 +12,7 @@ const CAPABILITY_POINTS = [
 
 export function CompanyIntro() {
   return (
-    <section id="company-intro" className="w-full bg-white py-14 lg:py-20 border-b border-[#DCE5F0]">
+    <section id="company-intro" className="w-full bg-white py-8 sm:py-10 border-b border-[#DCE5F0]">
       <div className="section-container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Manufacturing Plant Photo Stage */}

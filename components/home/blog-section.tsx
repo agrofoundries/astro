@@ -47,10 +47,10 @@ const BLOG_POSTS: BlogPost[] = [
 
 export function BlogSection() {
   return (
-    <section id="blog" className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] py-16 sm:py-24">
+    <section id="blog" className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] pt-8 pb-10 sm:pt-10 sm:pb-12">
       <div className="section-container-wide">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D7030F] mb-2">
               <span className="w-3 h-0.5 bg-[#D7030F]" />
