@@ -17,48 +17,39 @@ import {
 const HEAVY_MANUFACTURING_HEROES = [
   {
     id: "box-culvert-heavy",
-    title: "Heavy Precast Box Culvert Tunnels",
-    tagline: "Highway & Creek Stream Crossings · ASTM C1577",
+    title: "Heavy Precast Box Culverts",
+    tagline: "Highway Stream Crossings · ASTM C1577",
     category: "heavy",
     image: "/images/infrastructure.jpg",
     badge: "★ HEAVY CIVIL INFRASTRUCTURE",
-    specs: "Spans 6' to 16' · Rise 3' to 12' · AASHTO HS-25 Highway Traffic",
-    useFor: "Under-road stream crossings, deep storm runoff tunnels, and rail underpasses.",
-    bullets: [
-      "Poured with 6,000+ PSI high-strength concrete for heavy semi-truck axle loads",
-      "Fast 1–2 day highway installation — cuts road closures to hours instead of weeks",
-      "Watertight rubber gasket tongue-and-groove joints stop soil erosion and sinkholes",
-    ],
+    specs: "Spans 6' to 16' · AASHTO HS-25 Highway Traffic",
+    useFor: "Under-road stream crossings, rail underpasses, and large stormwater tunnels.",
+    highlight1: "Poured with 6,000+ PSI high-strength reinforced concrete",
+    highlight2: "Fast 1–2 day installation drastically cuts road closures",
   },
   {
     id: "bridge-system",
-    title: "3-Sided Concrete Bridge Systems",
-    tagline: "Natural Riverbed Preservation · Short-Span Highway Bridges",
+    title: "3-Sided Concrete Bridge Culverts",
+    tagline: "Stream Bed Preservation · Short-Span Bridges",
     category: "heavy",
     image: "/images/hero-bridge.jpg",
     badge: "DOT HIGHWAY BRIDGE",
-    specs: "Clear Spans 12' to 45' · Heights 4' to 14' · Precast Footings Included",
-    useFor: "Environmentally sensitive creeks and rural highway bridge replacements.",
-    bullets: [
-      "Open-bottom arch leaves the natural stream bed undisturbed for fish and water flow",
-      "Precast modular design sets directly on concrete footings in a single crane shift",
-      "Maximum durability against winter freeze-thaw cycles and highway deicing salt",
-    ],
+    specs: "Clear Spans 12' to 45' · Precast Footings Included",
+    useFor: "Environmentally sensitive creek bridges and highway road crossings.",
+    highlight1: "Open-bottom design leaves natural river beds completely undisturbed",
+    highlight2: "Precast modular segments set in place in a single crane shift",
   },
   {
     id: "wingwall-retaining",
-    title: "Precast Bridge Wing Walls & Retaining Panels",
-    tagline: "Bridge Slopes & Soil Landslide Protection · State DOT",
+    title: "Precast Bridge Wing Walls",
+    tagline: "Bridge Slopes & Retaining Panels · State DOT",
     category: "heavy",
     image: "/images/products/wingwall-dot.png",
     badge: "DOT HIGHWAY STANDARD",
-    specs: "Heights 4' to 16' · Thickness 8\" to 14\" · Straight & 30°/45° Flared",
-    useFor: "Holding back steep earth embankments at bridge and culvert entrances.",
-    bullets: [
-      "Anchors tight against box culverts to guide floodwater smoothly through the channel",
-      "Stops dirt slopes from eroding or sliding during 100-year heavy rainstorms",
-      "Cast-in heavy lifting hardware allows quick crane positioning in minutes",
-    ],
+    specs: "Heights 4' to 16' · Straight & 30°/45° Flared Wings",
+    useFor: "Holding back steep earth embankments at culvert and bridge entrances.",
+    highlight1: "Locks tight to box culverts to stop road shoulder erosion",
+    highlight2: "Cast-in lifting hardware enables rapid crane alignment",
   },
 ];
 
@@ -482,39 +473,45 @@ export function ProductsSection() {
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-5 flex-1 flex flex-col justify-between">
+                {/* Content with high line-height, clean breathing room, minimal text */}
+                <div className="p-6 flex-1 flex flex-col justify-between bg-white">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#D7030F] block mb-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7030F] block mb-2 font-mono">
                       {item.tagline}
                     </span>
-                    <h4 className="text-base sm:text-lg font-black text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug mb-2">
+                    <h4 className="text-xl font-black text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug mb-3.5">
                       {item.title}
                     </h4>
 
-                    {/* Simple Human Purpose */}
-                    <p className="text-xs text-[#334155] leading-relaxed mb-3 p-2 rounded bg-[#F8FAFD] border border-[#EBF1F8]">
-                      <strong>Use:</strong> {item.useFor}
+                    {/* Single Clean Sentence with high line-height */}
+                    <p className="text-sm text-[#334155] leading-relaxed mb-5 font-normal">
+                      {item.useFor}
                     </p>
 
-                    {/* Fast Bullet Points */}
-                    <div className="space-y-1.5 mb-4">
-                      {item.bullets.map((b, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D7030F] shrink-0 mt-0.5" />
-                          <span className="text-[11px] leading-tight text-slate-800">{b}</span>
-                        </div>
-                      ))}
+                    {/* 2 Clean Highlights with spacious line height */}
+                    <div className="space-y-3 mb-6 pt-4 border-t border-slate-100">
+                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
+                        <CheckCircle2 className="w-4 h-4 text-[#D7030F] shrink-0 mt-0.5" />
+                        <span className="text-xs leading-relaxed font-medium text-slate-800">
+                          {item.highlight1}
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
+                        <CheckCircle2 className="w-4 h-4 text-[#D7030F] shrink-0 mt-0.5" />
+                        <span className="text-xs leading-relaxed font-medium text-slate-800">
+                          {item.highlight2}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Action */}
+                  {/* Clean CTA Button */}
                   <Link
                     href="/#contact"
-                    className="mt-2 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-[#01255F] hover:bg-[#D7030F] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+                    className="inline-flex items-center justify-between w-full px-5 py-3 rounded-lg bg-[#01255F] hover:bg-[#D7030F] text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer group/btn"
                   >
-                    <span>Inquire / Get Quote</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Inquire Specifications</span>
+                    <ArrowRight className="w-4 h-4 text-[#D7030F] group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
                   </Link>
                 </div>
               </div>
