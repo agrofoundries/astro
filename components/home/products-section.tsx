@@ -474,31 +474,31 @@ export function ProductsSection() {
                 </div>
 
                 {/* Content with high line-height, clean breathing room, minimal text */}
-                <div className="p-6 flex-1 flex flex-col justify-between bg-white">
+                <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between bg-white">
                   <div>
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7030F] block mb-2 font-mono">
                       {item.tagline}
                     </span>
-                    <h4 className="text-xl font-black text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug mb-3.5">
+                    <h4 className="text-xl sm:text-2xl font-black text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug mb-4">
                       {item.title}
                     </h4>
 
-                    {/* Single Clean Sentence with high line-height */}
-                    <p className="text-sm text-[#334155] leading-relaxed mb-5 font-normal">
+                    {/* Single Clean Sentence with high line-height (leading-relaxed, text-slate-600) */}
+                    <p className="text-sm text-[#475569] leading-relaxed mb-6 font-normal">
                       {item.useFor}
                     </p>
 
-                    {/* 2 Clean Highlights with spacious line height */}
-                    <div className="space-y-3 mb-6 pt-4 border-t border-slate-100">
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
+                    {/* 2 Clean Highlights with spacious line height and comfortable spacing */}
+                    <div className="space-y-3.5 mb-8 pt-5 border-t border-slate-100">
+                      <div className="flex items-start gap-3 text-xs text-slate-700">
                         <CheckCircle2 className="w-4 h-4 text-[#D7030F] shrink-0 mt-0.5" />
-                        <span className="text-xs leading-relaxed font-medium text-slate-800">
+                        <span className="text-xs sm:text-sm leading-relaxed font-medium text-slate-800">
                           {item.highlight1}
                         </span>
                       </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
+                      <div className="flex items-start gap-3 text-xs text-slate-700">
                         <CheckCircle2 className="w-4 h-4 text-[#D7030F] shrink-0 mt-0.5" />
-                        <span className="text-xs leading-relaxed font-medium text-slate-800">
+                        <span className="text-xs sm:text-sm leading-relaxed font-medium text-slate-800">
                           {item.highlight2}
                         </span>
                       </div>
@@ -508,7 +508,7 @@ export function ProductsSection() {
                   {/* Clean CTA Button */}
                   <Link
                     href="/#contact"
-                    className="inline-flex items-center justify-between w-full px-5 py-3 rounded-lg bg-[#01255F] hover:bg-[#D7030F] text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer group/btn"
+                    className="inline-flex items-center justify-between w-full px-5 py-3.5 rounded-lg bg-[#01255F] hover:bg-[#D7030F] text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer group/btn"
                   >
                     <span>Inquire Specifications</span>
                     <ArrowRight className="w-4 h-4 text-[#D7030F] group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
@@ -523,9 +523,9 @@ export function ProductsSection() {
       {/* ── 2. VISUAL PRODUCT GALLERY (MORE IMAGES, LESS TEXT) ─────── */}
       <div className="section-container-wide">
         {/* Category Filter Pills */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D7030F] mb-1">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D7030F] mb-1.5 font-mono">
               <SlidersHorizontal className="w-3.5 h-3.5" />
               <span>VISUAL PRODUCT CATALOG ({filtered.length} PRODUCTS)</span>
             </div>
@@ -538,7 +538,7 @@ export function ProductsSection() {
             <button
               type="button"
               onClick={() => setActiveFilter("all")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "all"
                   ? "bg-[#01255F] text-white shadow-sm"
                   : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
@@ -549,7 +549,7 @@ export function ProductsSection() {
             <button
               type="button"
               onClick={() => setActiveFilter("heavy")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "heavy"
                   ? "bg-[#D7030F] text-white shadow-sm"
                   : "bg-white text-[#D7030F] border border-[#FCD2D4] hover:bg-[#FFF2F2]"
@@ -560,7 +560,7 @@ export function ProductsSection() {
             <button
               type="button"
               onClick={() => setActiveFilter("drainage")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "drainage"
                   ? "bg-[#01255F] text-white shadow-sm"
                   : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
@@ -571,7 +571,7 @@ export function ProductsSection() {
             <button
               type="button"
               onClick={() => setActiveFilter("tanks")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === "tanks"
                   ? "bg-[#01255F] text-white shadow-sm"
                   : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
@@ -582,8 +582,8 @@ export function ProductsSection() {
           </div>
         </div>
 
-        {/* Visual Product Grid: Compact Cards, High-Visibility Images, Short Text */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-5">
+        {/* Visual Product Grid: Spacious Cards, High-Visibility Images, Clean Line Heights */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5 sm:gap-6">
           {filtered.map((item) => {
             const isHovered = hoveredId === item.id;
             return (
@@ -606,9 +606,9 @@ export function ProductsSection() {
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Top Badge */}
-                  <div className="absolute top-2 left-2 z-10">
+                  <div className="absolute top-2.5 left-2.5 z-10">
                     <span
-                      className={`text-[9px] sm:text-[10px] font-extrabold uppercase px-2 py-0.5 rounded tracking-wider ${
+                      className={`text-[9px] sm:text-[10px] font-extrabold uppercase px-2.5 py-1 rounded tracking-wider shadow-xs ${
                         item.category === "heavy"
                           ? "bg-[#FFF2F2] text-[#D7030F] border border-[#FCD2D4]"
                           : "bg-[#E8F3FF] text-[#01255F] border border-[#DCE5F0]"
@@ -619,29 +619,29 @@ export function ProductsSection() {
                   </div>
                 </div>
 
-                {/* Compact Content */}
-                <div className="p-3.5 flex-1 flex flex-col justify-between">
+                {/* Compact Content with Generous Line Heights */}
+                <div className="p-4 sm:p-4.5 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#D7030F] block mb-0.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#D7030F] block mb-1 font-mono">
                       {item.categoryLabel}
                     </span>
-                    <h4 className="text-xs sm:text-sm font-extrabold text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-tight line-clamp-2 min-h-[34px]">
+                    <h4 className="text-xs sm:text-sm font-extrabold text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug line-clamp-2 min-h-[38px]">
                       {item.name}
                     </h4>
 
-                    {/* Short Human Explanation */}
-                    <p className="mt-1.5 text-[11px] sm:text-xs text-[#475569] leading-snug line-clamp-2 min-h-[30px]">
+                    {/* Short Human Explanation with Clean Line Height */}
+                    <p className="mt-2 text-[11px] sm:text-xs text-[#475569] leading-relaxed line-clamp-2 min-h-[36px]">
                       {item.shortDesc}
                     </p>
 
                     {/* Practical Size */}
-                    <div className="mt-2 text-[10px] font-mono text-[#01255F] font-bold bg-[#F4F8FD] px-2 py-1 rounded truncate">
+                    <div className="mt-3 text-[10px] font-mono text-[#01255F] font-bold bg-[#F4F8FD] px-2.5 py-1.5 rounded truncate border border-[#EBF1F8]">
                       📏 {item.size}
                     </div>
                   </div>
 
                   {/* Bottom Quick Quote */}
-                  <div className="mt-3 pt-2.5 border-t border-[#F2F7FF] flex items-center justify-between">
+                  <div className="mt-3.5 pt-3 border-t border-[#F2F7FF] flex items-center justify-between">
                     <span className="text-[10px] font-mono text-[#64748B] font-semibold truncate max-w-[110px]">
                       {item.standard}
                     </span>
