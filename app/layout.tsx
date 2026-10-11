@@ -1,46 +1,36 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700", "800"],
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "PRECAST ENGINEERS™ | Structural Precast Engineering & 3D BIM Detailing",
-    template: "%s | PRECAST ENGINEERS™",
+    default: "Precast Engineers | Empowering Precasters",
+    template: "%s | Precast Engineers",
+  },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   description:
-    "PRECAST ENGINEERS™ delivers licensed PE-stamped structural engineering, Tekla LOD 400 BIM shop detailing, connection design, and precast bid takeoffs — Empowering Precasters nationwide.",
+    "Precast Engineers provides structural engineering, Tekla LOD 400 BIM detailing, technical resources, and practical solutions for the precast concrete industry across the United States.",
   keywords: [
     "precast engineers",
-    "precast structural engineering",
-    "tekla lod 400 precast detailing",
+    "precast concrete engineering",
+    "structural precast engineering",
+    "prestressed concrete design",
     "precast connection design",
     "precast shop drawings",
-    "pe stamped precast calculations",
-    "precast bid takeoffs",
+    "tekla bim precast detailing",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "PRECAST ENGINEERS™",
-    title: "PRECAST ENGINEERS™ | Empowering Precasters",
+    siteName: "Precast Engineers",
+    title: "Precast Engineers | Empowering Precasters",
     description:
-      "Licensed structural engineering calculations, 3D Tekla BIM detailing, and connection design for precast concrete fabricators.",
+      "Engineering solutions, technical resources, and practical guidance for the precast concrete industry.",
   },
   robots: {
     index: true,
@@ -48,13 +38,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col bg-white text-text-body">
+      <body className="min-h-full flex flex-col bg-white text-[#334155]">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

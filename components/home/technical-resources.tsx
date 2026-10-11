@@ -1,99 +1,143 @@
-import Link from "next/link";
-import { Download, Compass, ArrowRight } from "lucide-react";
-import { SectionHeading } from "@/components/ui/section-heading";
+"use client";
 
-const RESOURCES = [
+import Link from "next/link";
+import {
+  BookText,
+  FileCode,
+  Paperclip,
+  Newspaper,
+  DraftingCompass,
+  CheckSquare,
+  ArrowRight,
+  Download,
+} from "lucide-react";
+
+interface ResourceCard {
+  title: string;
+  category: string;
+  description: string;
+  format: string;
+  icon: typeof BookText;
+}
+
+const RESOURCES: ResourceCard[] = [
   {
-    csi: "CSI 03 45 00",
-    title: "Structural Precast Specifier's Guide",
-    type: "PDF (4.2 MB)",
-    desc: "48-page technical design guide including load span tables, deflection criteria, bearing seat dimensions, and thermal ties.",
-    badge: "SPEC GUIDE",
+    title: "Precast Concrete Engineering Guides",
+    category: "Engineering Guides",
+    description: "Design criteria, gravity and lateral load path distribution, and camber estimation methods.",
+    format: "PDF Guide",
+    icon: BookText,
   },
   {
-    csi: "CAD / BIM DET-04",
-    title: "Standard Connection Details (DWG / RVT)",
-    type: "CAD / REVIT / PDF",
-    desc: "Pre-engineered bearing seat details, weld plate embedments, column pocket bases, and slotted expansion joints.",
-    badge: "CAD DETAILS",
+    title: "Structural Design References",
+    category: "Design References",
+    description: "Load combination summaries, diaphragm shear design tables, and prestress loss equations.",
+    format: "Reference Sheet",
+    icon: FileCode,
   },
   {
-    csi: "ASHRAE 90.1",
-    title: "Thermal Performance & R-Value Data",
-    type: "PDF (1.8 MB)",
-    desc: "Continuous insulation analysis, edge boundary conditions, and continuous envelope compliance calculations.",
-    badge: "THERMAL SPEC",
+    title: "Precast Connection Details Library",
+    category: "Connection Details",
+    description: "Standard details for column-to-foundation shoes, bearing angle brackets, and weld plate embeds.",
+    format: "DWG / PDF",
+    icon: Paperclip,
   },
   {
-    csi: "LEED v4.1 EPD",
-    title: "Mix Design & Environmental Product Declarations",
-    type: "EPD / PDF (2.1 MB)",
-    desc: "Third-party verified Type III Environmental Product Declarations (EPDs) for low-carbon slag and fly ash mix designs.",
-    badge: "LOW-CARBON",
+    title: "Technical Engineering Articles",
+    category: "Technical Articles",
+    description: "In-depth discussions on thermal bridging in insulated walls, stripping stresses, and ACI 318 updates.",
+    format: "Technical Paper",
+    icon: Newspaper,
+  },
+  {
+    title: "Standard Engineering Drawings",
+    category: "Engineering Drawings",
+    description: "Sample shop drawings, typical rebar placement layouts, and erection sequence sheets.",
+    format: "Sample Sheets",
+    icon: DraftingCompass,
+  },
+  {
+    title: "Checklists and Quality Templates",
+    category: "Checklists & Templates",
+    description: "Pre-pour formwork inspection checklists, lifting hardware verification logs, and shop ticket templates.",
+    format: "Interactive Form",
+    icon: CheckSquare,
   },
 ];
 
 export function TechnicalResources() {
   return (
-    <section id="technical-resources" className="w-full section-steel section-padding">
-      <div className="section-container-wide">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
-          <div>
-            <SectionHeading
-              eyebrow="Engineering Library"
-              specCode="DOCUMENTS & CAD"
-              title="Technical Specifications &amp; BIM Details"
-              description="Equip your architects, structural specifiers, and estimating teams with pre-certified connection details, load span calculations, and verified BIM components."
-            />
+    <section id="resources" className="bg-white border-b border-[#DCE5F0] py-16">
+      <div className="section-container">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="max-w-3xl">
+            <span className="badge-tag mb-3">Technical Documentation</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#01255F] tracking-tight">
+              Technical Resources
+            </h2>
+            <p className="text-sm sm:text-base text-[#475569] mt-2">
+              Engineering guides, design details, connection standards, and plant inspection templates for precast professionals.
+            </p>
           </div>
           <Link
-            href="/resources"
-            className="btn btn-usa-outline-blue mb-4 md:mb-8 inline-flex self-start md:self-auto"
+            href="/#resources"
+            className="btn-outline-navy text-xs inline-flex items-center gap-2 self-start md:self-end"
           >
-            Access Full Resource Center
-            <ArrowRight className="w-4 h-4 ml-1" />
+            <span>Browse Full Library</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {RESOURCES.map((res, idx) => (
-            <div
-              key={idx}
-              className="bg-white border-2 border-[#CBD5E1] hover:border-[#0A2540] rounded-xl transition-all shadow-sm hover:shadow-lg flex flex-col justify-between group overflow-hidden"
-            >
-              <div>
-                <div className="bg-[#EAEEF3] text-[#0A2540] px-4 py-2.5 flex items-center justify-between text-xs font-mono-spec border-b border-[#CBD5E1]">
-                  <span className="text-[#C8101E] font-bold">[{res.csi}]</span>
-                  <span className="text-[#64748B] text-[10px] font-bold">{res.badge}</span>
-                </div>
+        {/* 6 Resources Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {RESOURCES.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="card-clean p-6 flex flex-col justify-between hover:border-[#01255F] transition-all"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[11px] font-bold text-[#D7030F] uppercase tracking-wider bg-[#FFF2F2] px-2 py-0.5 rounded border border-[#FCD2D4]">
+                      {item.category}
+                    </span>
+                    <span className="text-[11px] text-[#64748B] font-mono">
+                      {item.format}
+                    </span>
+                  </div>
 
-                <div className="p-5 sm:p-6">
-                  <span className="text-[11px] font-mono-spec text-[#64748B] font-bold block mb-1.5">
-                    {res.type}
-                  </span>
-                  <h3 className="text-sm sm:text-base font-bold text-[#0A2540] tracking-tight mb-2 group-hover:text-[#C8101E] transition-colors">
-                    {res.title}
-                  </h3>
-                  <p className="text-xs text-[#475569] leading-relaxed font-normal mb-5">
-                    {res.desc}
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-8 h-8 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center shrink-0 mt-0.5">
+                      <Icon className="w-4 h-4 text-[#01255F]" />
+                    </div>
+                    <h3 className="text-sm sm:text-base font-bold text-[#01255F] leading-snug">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-xs text-[#475569] leading-relaxed mb-6">
+                    {item.description}
                   </p>
                 </div>
-              </div>
 
-              <div className="p-4 bg-[#F8FAFC] border-t border-[#CBD5E1]">
-                <a
-                  href="/resources#downloads"
-                  className="flex items-center justify-between text-xs font-bold text-[#0A2540] group-hover:text-[#C8101E] uppercase tracking-wider"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <Download className="w-4 h-4 text-[#C8101E]" />
-                    Download File
-                  </span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                <div className="pt-3 border-t border-[#F2F7FF] flex items-center justify-between">
+                  <span className="text-[11px] text-[#64748B]">Precast Engineering Library</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      alert(`Accessing: ${item.title}`);
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#01255F] hover:text-[#D7030F] transition-colors cursor-pointer"
+                  >
+                    <span>View Resource</span>
+                    <Download className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

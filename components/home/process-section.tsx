@@ -1,85 +1,92 @@
-import { SectionHeading } from "@/components/ui/section-heading";
-import { MessageSquareCode, DraftingCompass, Factory, Truck } from "lucide-react";
+import { ClipboardCheck, PencilRuler, UsersRound, FileCheck } from "lucide-react";
 
-const INDUSTRIAL_PROCESS_STEPS = [
+interface StepItem {
+  number: string;
+  title: string;
+  description: string;
+  icon: typeof ClipboardCheck;
+}
+
+const STEPS: StepItem[] = [
   {
-    step: "PHASE 01",
-    title: "Plan Review & Material Takeoff",
-    spec: "24-48 HR ESTIMATING",
-    description: "Our estimating engineers review architectural and structural general notes, identify connection optimization opportunities, and deliver an itemized precast proposal.",
-    icon: MessageSquareCode,
+    number: "01",
+    title: "Understand Project Requirements",
+    description: "Review architectural drawings, structural specifications, site criteria, loads, and client fabrication parameters.",
+    icon: ClipboardCheck,
   },
   {
-    step: "PHASE 02",
-    title: "BIM Detailing & PE Stamped Submittals",
-    spec: "LOD 400 TEKLA / REVIT",
-    description: "Full 3D modeling of every rebar cage, anchor bolt pocket, and embedment plate. Complete stamped engineering calculation packages submitted for engineer-of-record approval.",
-    icon: DraftingCompass,
+    number: "02",
+    title: "Design and Detail",
+    description: "Perform structural calculations, design connections, model 3D components, and prepare detailed shop drawings.",
+    icon: PencilRuler,
   },
   {
-    step: "PHASE 03",
-    title: "Precision Batching & Steam-Cured Casting",
-    spec: "PCI MNL-116 QA INSPECTED",
-    description: "Casting in laser-aligned steel beds with automated high-early mix batching. Slump, air, and 1-day/7-day/28-day cylinder compressive break tests logged for every pour.",
-    icon: Factory,
+    number: "03",
+    title: "Review and Coordinate",
+    description: "Collaborate with project teams, general contractors, and plant personnel to resolve clashes and verify details.",
+    icon: UsersRound,
   },
   {
-    step: "PHASE 04",
-    title: "Permitted Heavy Haul & Crane Hook Staging",
-    spec: "JUST-IN-TIME DELIVERY",
-    description: "Multi-axle heavy trailers dispatched with DOT permits and pilot escorts, timed to match your jobsite crane hook sequence to eliminate site congestion.",
-    icon: Truck,
+    number: "04",
+    title: "Deliver Engineering Documents",
+    description: "Provide PE-stamped calculation packages, approved erection plans, and final fabrication piece tickets for production.",
+    icon: FileCheck,
   },
 ];
 
 export function ProcessSection() {
   return (
-    <section id="process" className="w-full section-warm-concrete section-padding">
-      <div className="section-container-wide">
-        <SectionHeading
-          eyebrow="Milestone Execution"
-          specCode="PROJECT TIMELINE"
-          title="From Blueprint Takeoff to Crane Hook Erection"
-          description="A deterministic four-phase manufacturing and delivery workflow engineered to minimize lead times, eliminate field surprises, and hit your target dry-in date."
-          centered
-        />
+    <section id="process" className="bg-[#F2F7FF] border-b border-[#DCE5F0] py-16">
+      <div className="section-container">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12">
+          <span className="badge-tag mb-3">Engineering Workflow</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#01255F] tracking-tight">
+            Our Engineering Process
+          </h2>
+          <p className="text-sm sm:text-base text-[#475569] mt-2">
+            A structured four-step approach guiding precast engineering projects from initial drawings through final document delivery.
+          </p>
+        </div>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {INDUSTRIAL_PROCESS_STEPS.map((step) => {
+        {/* 4 Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {STEPS.map((step, index) => {
             const Icon = step.icon;
             return (
               <div
-                key={step.step}
-                className="bg-white border-2 border-[#CBD5E1] hover:border-[#0A2540] rounded-xl transition-all shadow-sm hover:shadow-lg flex flex-col justify-between group overflow-hidden"
+                key={index}
+                className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between relative hover:border-[#01255F] transition-all"
               >
                 <div>
-                  <div className="bg-[#EAEEF3] text-[#0A2540] px-4 py-2.5 flex items-center justify-between text-xs font-mono-spec border-b border-[#CBD5E1]">
-                    <span className="text-[#C8101E] font-bold">[{step.step}]</span>
-                    <span className="text-[#64748B] text-[10px] font-bold">{step.spec}</span>
-                  </div>
-
-                  <div className="p-5 sm:p-6">
-                    <div className="w-11 h-11 bg-[#F4F6F9] border border-[#CBD5E1] text-[#0A2540] rounded-lg flex items-center justify-center mb-3.5 group-hover:bg-[#0A2540] group-hover:text-white group-hover:border-[#0A2540] transition-colors">
-                      <Icon className="w-5 h-5" />
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-black text-[#D7030F]">
+                      {step.number}
+                    </span>
+                    <div className="w-8 h-8 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center text-[#01255F]">
+                      <Icon className="w-4 h-4 text-[#01255F]" />
                     </div>
-
-                    <h3 className="text-sm sm:text-base font-bold text-[#0A2540] tracking-tight mb-2">
-                      {step.title}
-                    </h3>
-
-                    <p className="text-xs text-[#475569] leading-relaxed font-normal">
-                      {step.description}
-                    </p>
                   </div>
+                  <h3 className="text-base font-bold text-[#01255F] mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-[#475569] leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
 
-                <div className="p-3 bg-[#F8FAFC] border-t border-[#CBD5E1] font-mono-spec text-[10px] text-[#64748B] text-center font-bold">
-                  CRITICAL PATH ALIGNED
+                <div className="mt-4 pt-3 border-t border-[#F2F7FF] text-[11px] text-[#64748B]">
+                  Step {index + 1} of 4
                 </div>
               </div>
             );
           })}
         </div>
+
+        {/* Practical Note */}
+        <p className="mt-8 text-xs text-[#64748B] text-center max-w-2xl mx-auto italic">
+          Note: This represents a standard engineering workflow. Project-specific sequences are tailored to match each precast manufacturer&apos;s contractual and plant schedules.
+        </p>
       </div>
     </section>
   );

@@ -3,175 +3,171 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, ArrowRight, MapPin, Clock, Mail, ShieldCheck } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Phone,
+  Mail,
+  Search,
+  ArrowRight,
+  ShieldCheck,
+} from "lucide-react";
 import { NAV_LINKS, COMPANY } from "@/lib/constants";
 
+const MARQUEE_ITEMS = [
+  "ISO 9001:2015 certified delivery process",
+  "PCI MNL-120 certified precast detailing",
+  "Average response time under 2 working hours",
+  "In-house Tekla LOD 400 BIM modeling",
+  "50-State PE stamped structural calculations",
+  "AASHTO bridge & DOT submittals approved",
+];
+
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 15);
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileMenuOpen(false);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMobileMenuOpen]);
-
   return (
-    <header
-      id="site-header"
-      className={`sticky top-0 z-50 w-full transition-all duration-200 bg-white ${
-        isScrolled ? "shadow-md border-b border-slate-200" : "border-b border-slate-200"
-      }`}
-    >
-      {/* ThemeForest Construction Top Utility Bar - Exact USA Navy & Red from Logo */}
-      <div className="w-full bg-[#06182E] text-slate-300 text-xs py-2.5 border-b border-slate-800">
-        <div className="section-container-wide flex items-center justify-between">
-          {/* Plant Location & Operating Hours */}
-          <div className="flex items-center gap-5">
-            <span className="hidden md:flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors">
-              <MapPin className="w-3.5 h-3.5 text-[#D71920]" />
-              <span>{COMPANY.address.street}, {COMPANY.address.city}, {COMPANY.address.state}</span>
-            </span>
-            <span className="hidden lg:inline text-slate-700">|</span>
-            <span className="hidden lg:flex items-center gap-1.5 text-slate-300">
-              <Clock className="w-3.5 h-3.5 text-[#D71920]" />
-              <span>{COMPANY.hours}</span>
-            </span>
-            <span className="hidden sm:inline text-slate-700">|</span>
+    <header className="sticky top-0 z-50 bg-white border-b border-[#DCE5F0] shadow-sm">
+      {/* ======================================================== */}
+      {/* Top Utility Strip (Full Width Edge-to-Edge)              */}
+      {/* ======================================================== */}
+      <div className="bg-[#030F21] text-white text-xs border-b border-white/10 hidden md:block">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between h-9">
+          {/* Left Direct Contacts */}
+          <div className="flex items-center gap-5 shrink-0">
+            <a
+              href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
+              className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors font-mono text-[11px]"
+            >
+              <Phone className="w-3 h-3 text-[#D7030F]" />
+              <span>{COMPANY.phone}</span>
+            </a>
+            <span className="h-3 w-px bg-white/15" />
             <a
               href={`mailto:${COMPANY.email}`}
-              className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors text-[11px]"
             >
-              <Mail className="w-3.5 h-3.5 text-[#D71920]" />
+              <Mail className="w-3 h-3 text-[#D7030F]" />
               <span>{COMPANY.email}</span>
             </a>
           </div>
 
-          {/* Plant Certification & Direct Estimating Desk */}
-          <div className="flex items-center gap-5">
-            <span className="hidden sm:flex items-center gap-1.5 text-xs text-slate-300 font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#D71920]" />
-              <span>PCI Professional Member • PE Licensed 48 States</span>
-            </span>
-            <span className="hidden sm:inline text-slate-700">|</span>
-            <a
-              href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
-              className="flex items-center gap-1.5 text-white hover:text-red-400 font-bold transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#D71920]" />
-              <span>Call Us: <strong className="text-white">{COMPANY.phone}</strong></span>
-            </a>
+          {/* Center Continuous Marquee Strip */}
+          <div className="relative min-w-0 flex-1 overflow-hidden mx-6">
+            <div className="flex w-max items-center gap-8 animate-marquee">
+              {MARQUEE_ITEMS.concat(MARQUEE_ITEMS).map((item, idx) => (
+                <span
+                  key={idx}
+                  className="flex shrink-0 items-center gap-2 font-mono text-[10px] tracking-wider text-slate-300 uppercase"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D7030F]" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Status / Flag */}
+          <div className="flex items-center gap-4 shrink-0 font-mono text-[10px] text-slate-300">
+            <div className="flex items-center gap-1.5 bg-white/10 px-2 py-0.5 rounded border border-white/15">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>50-STATE PE LICENSED</span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main navigation */}
-      <div className="section-container-wide">
-        <div className="flex items-center justify-between h-20 lg:h-22">
-          {/* Logo with Precast Engineers Brand Image */}
-          <Link
-            href="/"
-            className="flex-shrink-0 relative py-2 flex items-center gap-3"
-            aria-label="PRECAST ENGINEERS Home"
-          >
+      {/* ======================================================== */}
+      {/* Main Navigation Bar (Substantially Bigger, Bold, High-Impact) */}
+      {/* ======================================================== */}
+      {/* ======================================================== */}
+      {/* Main Navigation Bar (Clean, Sleek, Single-Line)          */}
+      {/* ======================================================== */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 bg-white">
+        <div className="flex items-center justify-between h-20 lg:h-22 gap-4">
+          {/* Logo */}
+          <Link href="/" className="flex items-center py-2 shrink-0" aria-label="Precast Engineers">
             <Image
               src="/images/logo.png"
-              alt="PRECAST ENGINEERS - Empowering Precasters...."
+              alt="Precast Engineers - Empowering Precasters"
               width={240}
-              height={65}
-              className="h-12 lg:h-14 w-auto object-contain"
+              height={60}
+              className="h-11 sm:h-12 lg:h-14 w-auto object-contain"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav
-            className="hidden lg:flex items-center gap-1 xl:gap-2"
-            role="navigation"
-            aria-label="Main navigation"
-          >
-            {NAV_LINKS.map((link) => (
+          {/* Desktop Nav Items (Clean Single-Line Font, Crisp Hover) */}
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8" aria-label="Primary navigation">
+            {NAV_LINKS.map((item) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className="px-3.5 py-2 text-sm font-bold uppercase tracking-wider text-[#0B2545] hover:text-[#D71920] hover:bg-slate-50 rounded transition-colors"
+                key={item.label}
+                href={item.href}
+                className="px-2 py-1 text-sm font-bold text-[#01255F] hover:text-[#D7030F] transition-colors relative group tracking-normal whitespace-nowrap"
               >
-                {link.label}
+                <span>{item.label}</span>
+                <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D7030F] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
               </Link>
             ))}
           </nav>
 
-          {/* CTA + Mobile Toggle */}
+          {/* Right Action Buttons */}
           <div className="flex items-center gap-3">
+            {/* Direct RFP CTA Button (Sleek & Proportional) */}
             <Link
-              href="/quote"
-              className="hidden md:inline-flex btn-construction px-6 py-3 rounded text-xs font-black tracking-wider uppercase transition-all shadow-md hover:shadow-lg items-center gap-2"
-              id="header-quote-cta"
+              href="/#contact"
+              className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-bold uppercase tracking-wider transition-all duration-300 bg-[#D7030F] text-white shadow-md shadow-red-600/30 hover:bg-[#B31217] hover:shadow-lg h-10 px-5 sm:px-6 text-xs gap-2 select-none whitespace-nowrap"
             >
-              <span>Request a Quote</span>
-              <ArrowRight className="w-4 h-4" />
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full" />
+              <span className="relative">REQUEST TAKEOFF</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
             </Link>
 
-            {/* Mobile menu button */}
+            {/* Mobile Menu Toggle */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2.5 text-[#0B2545] hover:bg-slate-100 border border-slate-200 rounded"
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-[#01255F] hover:bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg cursor-pointer"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu drawer */}
-      {isMobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden fixed inset-x-0 top-auto bg-white border-b-2 border-slate-200 shadow-2xl z-50 p-6 space-y-4"
-        >
-          <div className="text-xs text-slate-500 font-semibold pb-2 border-b border-slate-100 flex items-center justify-between">
-            <span>Plant Yard: Houston, TX</span>
-            <span className="text-[#D71920] font-bold">{COMPANY.phone}</span>
-          </div>
-          <nav className="flex flex-col space-y-2">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="px-3 py-2.5 text-sm font-bold uppercase tracking-wider text-[#0B2545] hover:text-[#D71920] hover:bg-slate-50 rounded border-b border-slate-100"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="pt-2">
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-[#DCE5F0] shadow-xl px-6 py-4 space-y-2 animate-in fade-in duration-200">
+          {NAV_LINKS.map((item) => (
             <Link
-              href="/quote"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="btn-construction w-full justify-center py-3.5 rounded text-sm font-black flex items-center gap-2"
+              key={item.label}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2.5 px-3 text-sm font-semibold text-[#01255F] hover:bg-[#F2F7FF] hover:text-[#D7030F] rounded-lg border-b border-slate-100"
             >
-              <span>Submit Drawings for Takeoff</span>
+              {item.label}
+            </Link>
+          ))}
+          <div className="pt-3">
+            <Link
+              href="/#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="btn-red w-full text-center text-xs py-3 rounded-full flex items-center justify-center gap-2"
+            >
+              <span>Request Precast Takeoff</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
