@@ -37,6 +37,7 @@ const COMPANY_LINKS = [
   { label: "About Precast Engineers", href: "/#company-intro" },
   { label: "Products & Basins", href: "/#products" },
   { label: "Engineering Services", href: "/#services" },
+  { label: "Regional Offices", href: "/#locations" },
   { label: "Technical Blog", href: "/#blog" },
   { label: "Contact & Takeoff", href: "/#contact" },
 ];

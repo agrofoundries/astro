@@ -3,6 +3,7 @@ import { CompanyIntro } from "@/components/home/company-intro";
 import { ProductsSection } from "@/components/home/products-section";
 import { ServicesSection } from "@/components/home/services-section";
 import { BlogSection } from "@/components/home/blog-section";
+import { LocationsSection } from "@/components/home/locations-section";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,9 @@ export default function HomePage() {
 
       {/* 5. Technical Insights & Blog (Light Blue Background) */}
       <BlogSection />
+
+      {/* 6. Eight Offices, One Delivery Standard (Locations Section in USA Navy & Red) */}
+      <LocationsSection />
     </>
   );
 }
