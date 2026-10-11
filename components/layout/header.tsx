@@ -100,7 +100,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center py-2 shrink-0" aria-label="Precast Engineers">
             <Image
-              src="/images/logo.png"
+              src="/logo.png"
               alt="Precast Engineers - Empowering Precasters"
               width={240}
               height={60}

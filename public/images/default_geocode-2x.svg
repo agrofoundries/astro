@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5588D9" />
+      <stop offset="100%" stop-color="#3F71C9" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" />
+  
+  <!-- Clouds -->
+  <path d="M 220 180 A 20 20 0 0 1 240 160 A 30 30 0 0 1 290 160 A 20 20 0 0 1 310 180 Z" fill="rgba(255,255,255,0.1)" />
+  <path d="M 680 260 A 25 25 0 0 1 710 240 A 35 35 0 0 1 760 240 A 25 25 0 0 1 790 260 Z" fill="rgba(255,255,255,0.08)" />
+  <path d="M 420 340 A 15 15 0 0 1 440 330 A 20 20 0 0 1 470 330 A 15 15 0 0 1 490 340 Z" fill="rgba(255,255,255,0.05)" />
+
+  <!-- Background Mountains -->
+  <polygon points="560,460 620,380 700,460" fill="#3B66B8" />
+  <polygon points="650,460 740,300 850,460" fill="#3059A8" />
+  <path d="M 460 460 Q 550 420 640 460 Z" fill="#2E529E" />
+
+  <!-- City Skyline -->
+  <!-- Building 1 (Left) -->
+  <rect x="50" y="250" width="80" height="210" fill="#4376CF" />
+  <!-- Windows -->
+  <rect x="60" y="260" width="8" height="12" fill="rgba(255,255,255,0.2)" />
+  <rect x="75" y="280" width="8" height="12" fill="rgba(255,255,255,0.2)" />
+  <rect x="95" y="295" width="8" height="12" fill="rgba(255,255,255,0.3)" />
+  <rect x="60" y="315" width="8" height="12" fill="rgba(255,255,255,0.2)" />
+
+  <!-- Building 2 (Main Tall) -->
+  <rect x="135" y="200" width="70" height="260" fill="#3666C2" />
+  <rect x="150" y="170" width="40" height="30" fill="#3666C2" />
+  <rect x="168" y="100" width="4" height="70" fill="#2E529E" />
+  
+  <!-- Grid Windows for Building 2 -->
+  <g fill="rgba(255,255,255,0.3)">
+    <rect x="145" y="215" width="4" height="4" />
+    <rect x="155" y="215" width="4" height="4" />
+    <rect x="165" y="215" width="4" height="4" />
+    <rect x="175" y="215" width="4" height="4" />
+    <rect x="185" y="215" width="4" height="4" />
+    
+    <rect x="145" y="230" width="4" height="4" />
+    <rect x="165" y="230" width="4" height="4" />
+    <rect x="175" y="230" width="4" height="4" />
+    
+    <rect x="145" y="245" width="4" height="4" />
+    <rect x="155" y="245" width="4" height="4" />
+    <rect x="185" y="245" width="4" height="4" />
+    
+    <rect x="155" y="260" width="4" height="4" />
+    <rect x="165" y="260" width="4" height="4" />
+    <rect x="175" y="260" width="4" height="4" />
+    
+    <rect x="145" y="275" width="4" height="4" fill="#6EA1F0" />
+    <rect x="185" y="275" width="4" height="4" />
+  </g>
+
+  <!-- Building 3 (Castle-like) -->
+  <rect x="215" y="320" width="70" height="140" fill="#4B81D9" />
+  <rect x="215" y="310" width="10" height="10" fill="#4B81D9" />
+  <rect x="245" y="310" width="10" height="10" fill="#4B81D9" />
+  <rect x="275" y="310" width="10" height="10" fill="#4B81D9" />
+
+  <!-- Building 4 (Striped) -->
+  <rect x="300" y="310" width="55" height="150" fill="#3C6FCB" />
+  <rect x="300" y="320" width="55" height="5" fill="#2E529E" />
+  <rect x="300" y="340" width="55" height="5" fill="#2E529E" />
+  <rect x="300" y="360" width="55" height="5" fill="#2E529E" />
+
+  <!-- Building Base / Lower Floor -->
+  <rect x="40" y="410" width="180" height="50" fill="#588BE1" />
+  <rect x="50" y="420" width="15" height="25" fill="#3B68C1" />
+  <rect x="75" y="420" width="15" height="25" fill="#3B68C1" />
+  <rect x="100" y="420" width="15" height="25" fill="#3B68C1" />
+  <rect x="125" y="420" width="15" height="25" fill="#3B68C1" />
+  <rect x="150" y="420" width="15" height="25" fill="#3B68C1" />
+  <rect x="175" y="420" width="15" height="25" fill="#3B68C1" />
+  
+  <rect x="240" y="420" width="80" height="40" fill="#3864BB" />
+
+  <!-- Trees -->
+  <path d="M 260 420 Q 255 385 260 385 Q 265 385 260 420 Z" fill="#284892" />
+  <path d="M 290 420 Q 285 385 290 385 Q 295 385 290 420 Z" fill="#284892" />
+
+  <!-- Location Pin -->
+  <g transform="translate(155, 340) scale(1.3)">
+    <path d="M 12 2 C 7.58 2 4 5.58 4 10 C 4 15.25 12 22 12 22 C 12 22 20 15.25 20 10 C 20 5.58 16.42 2 12 2 Z" fill="#2B4D95" opacity="0.6"/>
+    <circle cx="12" cy="10" r="3" fill="#3666C2" opacity="0.6"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="460" width="800" height="40" fill="#28498C" />
+  
+  <!-- Road Details (Dashed line) -->
+  <line x1="0" y1="475" x2="800" y2="475" stroke="#4875C9" stroke-width="2" stroke-dasharray="12, 12" />
+
+  <!-- Small Car -->
+  <rect x="400" y="455" width="20" height="10" fill="#4B81D9" />
+  <rect x="385" y="465" width="50" height="12" rx="3" fill="#4B81D9" />
+  <circle cx="395" cy="477" r="4" fill="#1C346B" />
+  <circle cx="425" cy="477" r="4" fill="#1C346B" />
+  <!-- Headlights -->
+  <polygon points="435,468 470,460 470,475" fill="rgba(255,255,255,0.1)" />
+</svg>
