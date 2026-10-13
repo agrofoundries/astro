@@ -21,12 +21,10 @@ export const COMPANY = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "/#hero" },
-  { label: "Products & Basins", href: "/#products" },
-  { label: "Engineering Services", href: "/#services" },
-  { label: "About & Plant", href: "/#company-intro" },
-  { label: "Locations", href: "/#locations" },
-  { label: "Technical Blog", href: "/#blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Company", href: "/about" },
+  { label: "Products", href: "/#products" },
+  { label: "Blogs", href: "/#blog" },
+  { label: "Contact Us", href: "/#contact" },
 ] as const;
 
 // Legacy export compatibility
