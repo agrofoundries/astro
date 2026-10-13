@@ -55,19 +55,19 @@ export function DivisionNavigator() {
               <div className="space-y-2.5 mb-6 pt-4 border-t border-slate-100">
                 <div className="flex items-start gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#D4030C] shrink-0 mt-0.5" />
-                  <span><strong>Plant Infrastructure:</strong> Covered casting facility equipped with heavy overhead cranes</span>
+                  <span><strong>Underground Systems:</strong> Watertight Septic Tanks, Utility Vaults, and Grease Interceptors</span>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#D4030C] shrink-0 mt-0.5" />
-                  <span><strong>Heavy Civil Line:</strong> ASTM C1577 Box Culverts, 3-Sided Bridges, and DOT Headwalls</span>
+                  <span><strong>Stormwater Drainage:</strong> State DOT Catch Basins, Curb Inlets, and ASTM Box Culverts</span>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#D4030C] shrink-0 mt-0.5" />
-                  <span><strong>Utility &amp; Drainage:</strong> Catch Basins, Manholes, Leaching Galleys, and Septic Tanks</span>
+                  <span><strong>Heavy Civil &amp; Site:</strong> Bridge Wing Walls, Pipe Headwalls, and Plant Gang Molds</span>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#D4030C] shrink-0 mt-0.5" />
-                  <span><strong>Quality Assurance:</strong> In-house ACI/PCI Certified testing lab for daily cylinder breaks</span>
+                  <span><strong>Tested Quality:</strong> 6,000+ PSI air-entrained mix designs and direct jobsite flatbed delivery</span>
                 </div>
               </div>
             </div>
@@ -145,7 +145,7 @@ export function DivisionNavigator() {
             <div className="pt-5 border-t border-slate-100 flex flex-wrap items-center gap-3">
               <Link
                 href="/#engineering"
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#032356] hover:bg-[#010710] text-white text-xs font-black uppercase tracking-wider shadow-sm transition-colors active:scale-95"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#032356] hover:bg-[#02173B] text-white text-xs font-black uppercase tracking-wider shadow-sm transition-colors active:scale-95"
               >
                 <span>8 Engineering Disciplines</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#D4030C]" />

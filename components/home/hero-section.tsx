@@ -18,23 +18,23 @@ import { COMPANY } from "@/lib/constants";
 const TRUST_METRICS = [
   {
     icon: Factory,
-    title: "Precision Plant Casting",
-    subtitle: "Direct Plant Concrete Casting",
+    title: "Underground Infrastructure",
+    subtitle: "Monolithic Septic & Utility Vaults",
   },
   {
     icon: Award,
-    title: "Heavy Civil & DOT",
-    subtitle: "Box Culverts, Basins & Bridges",
+    title: "Stormwater Systems",
+    subtitle: "DOT Catch Basins, Inlets & Culverts",
   },
   {
     icon: ShieldCheck,
-    title: "Licensed PE Engineering",
-    subtitle: "PE & SE Stamped Calculations",
+    title: "Heavy Civil & Bridges",
+    subtitle: "Bridge Panels & Retaining Walls",
   },
   {
     icon: CheckCircle2,
-    title: "Tekla LOD 400 BIM",
-    subtitle: "Clash-Free Production Detailing",
+    title: "Licensed PE & 3D BIM",
+    subtitle: "PE Stamped Calculations & Detailing",
   },
 ];
 
@@ -92,13 +92,13 @@ export function HeroSection() {
           <div className="flex items-center gap-2 mb-3 animate-fade-up [animation-delay:150ms]">
             <span className="w-7 h-1 bg-[#D4030C] rounded-full" />
             <span className="text-xs sm:text-[13px] font-extrabold tracking-wide text-[#032356] uppercase">
-              Precast Concrete Products · Bridges &amp; Drainage · Engineering &amp; 3D Drawings
+              Engineered Infrastructure · Built Smarter, Faster &amp; Stronger
             </span>
           </div>
 
           {/* Clear Supporting Description in Simple English */}
           <p className="text-xs sm:text-sm lg:text-base text-[#1E293B] leading-relaxed font-medium max-w-2xl mb-4 sm:mb-6 animate-fade-up [animation-delay:220ms]">
-            We make precast concrete products for roads, bridges, and underground utilities, and provide complete structural engineering calculations and 3D shop drawings.
+            We engineer and manufacture certified precast concrete solutions for roads, bridges, and underground utilities. From licensed PE calculations and 3D BIM models to high-capacity plant casting—we help you build infrastructure designed to endure for generations.
           </p>
 
           {/* Action CTAs in Simple Words */}

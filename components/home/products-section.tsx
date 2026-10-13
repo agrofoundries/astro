@@ -1182,7 +1182,7 @@ function ProductVariableSlider({
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   return (
-    <div className="rounded-3xl p-5 sm:p-8 bg-[#F8FAFD] border border-[#E2E8F0] shadow-xs">
+    <div className="rounded-3xl p-5 sm:p-8 bg-[#F8FAFD] border border-[#E2E8F0] shadow-xs overflow-hidden">
       {/* Product Family Header: Title, Variables Count, Prev/Next Arrows */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-5 mb-6 border-b border-[#CBD5E1] gap-4">
         <div>
@@ -1265,35 +1265,37 @@ function ProductVariableSlider({
         </div>
       ) : (
         // Swiper slider when client mounted
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => {
-            setCurrentSlideIndex(swiper.realIndex);
-          }}
-          spaceBetween={24}
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 24 },
-            1280: { slidesPerView: 3, spaceBetween: 28 },
-          }}
-          autoplay={{
-            delay: 5500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          loop={family.variables.length > 3}
-          className="w-full pb-4 !overflow-visible"
-        >
-          {family.variables.map((variable) => (
-            <SwiperSlide key={variable.id} className="h-auto">
-              <VariableCard variable={variable} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="overflow-hidden rounded-2xl w-full">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => {
+              setCurrentSlideIndex(swiper.activeIndex);
+            }}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 24 },
+              1280: { slidesPerView: 3, spaceBetween: 28 },
+            }}
+            autoplay={{
+              delay: 5500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={false}
+            className="w-full pb-4"
+          >
+            {family.variables.map((variable) => (
+              <SwiperSlide key={variable.id} className="h-auto">
+                <VariableCard variable={variable} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       )}
     </div>
   );

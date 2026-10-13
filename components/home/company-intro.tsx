@@ -4,10 +4,10 @@ import { ArrowRight, CheckCircle2, Mail, ShieldCheck, Cpu } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
 const CAPABILITY_POINTS = [
-  "Advanced climate-controlled precast plant casting beds for high-volume concrete production.",
-  "Monolithic pour techniques & 6,000+ PSI air-entrained mix designs for maximum structural durability.",
-  "Rigorous quality control inspection at every stage: formwork setup, steel cage placement, and post-cure.",
-  "Direct plant-to-jobsite flatbed freight coordination with timed crane arrival schedules.",
+  "Underground Infrastructure: Monolithic watertight septic tanks, utility vaults, and grease interceptors.",
+  "Stormwater Management: State DOT-approved catch basins, curb inlet boxes, and heavy box culverts.",
+  "Heavy Civil & Site Solutions: Highway bridge wing walls, pipe headwalls, and precision steel gang molds.",
+  "Engineered Quality: 6,000+ PSI mix designs, licensed PE stamps, and direct plant-to-jobsite flatbed delivery.",
 ];
 
 export function CompanyIntro() {

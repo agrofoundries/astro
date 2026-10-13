@@ -50,27 +50,29 @@ export function BlogSection() {
     <section id="blog" className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] pt-8 pb-10 sm:pt-10 sm:pb-12">
       <div className="section-container-wide">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D4030C] mb-2">
-              <span className="w-3 h-0.5 bg-[#D4030C]" />
-              <span>TECHNICAL ARTICLES &amp; GUIDES</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#032356] uppercase tracking-tight">
-              Engineering <span className="text-[#D4030C]">Blog &amp; Resources</span>
-            </h2>
-            <p className="text-sm sm:text-base text-[#334155] mt-2 leading-relaxed">
-              Helpful technical articles, DOT drainage guidelines, and 3D BIM best practices from our licensed engineering team.
-            </p>
+        <div className="mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black uppercase tracking-widest text-[#D4030C] mb-2 font-mono">
+            <span className="w-3 h-0.5 bg-[#D4030C]" />
+            <span>TECHNICAL ARTICLES &amp; GUIDES</span>
           </div>
 
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#032356] hover:text-[#D4030C] transition-colors uppercase tracking-wider group"
-          >
-            <span>Ask Our Engineers</span>
-            <ArrowRight className="w-4 h-4 text-[#D4030C] transition-transform group-hover:translate-x-1" />
-          </Link>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-[#032356] uppercase tracking-tight leading-[0.95] w-full">
+            Engineering <span className="text-[#D4030C]">Blog &amp; Resources</span>
+          </h2>
+
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-4 gap-4">
+            <p className="text-sm sm:text-base lg:text-lg text-[#334155] max-w-2xl leading-relaxed">
+              Helpful technical articles, DOT drainage guidelines, and 3D BIM best practices from our licensed engineering team.
+            </p>
+
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#032356] hover:text-[#D4030C] transition-colors uppercase tracking-wider group shrink-0"
+            >
+              <span>Ask Our Engineers</span>
+              <ArrowRight className="w-4 h-4 text-[#D4030C] transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
         {/* 3 Blog Cards */}
