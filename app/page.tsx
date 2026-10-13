@@ -82,13 +82,13 @@ export default function HomePage() {
       <SoftwareTechnology />
 
       {/* ======================================================== */}
-      {/* REGIONAL LOCATIONS & TECHNICAL INSIGHTS                  */}
+      {/* TECHNICAL INSIGHTS & REGIONAL LOCATIONS NETWORK         */}
       {/* ======================================================== */}
-      {/* 9. Regional Delivery Network & Engineering Offices */}
-      <LocationsSection />
-
-      {/* 10. Technical Insights & Blog */}
+      {/* 9. Technical Insights & Blog */}
       <BlogSection />
+
+      {/* 10. Seven Offices, One Delivery Standard (Directly Before Footer) */}
+      <LocationsSection />
     </>
   );
 }
