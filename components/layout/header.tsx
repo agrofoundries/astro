@@ -310,41 +310,41 @@ export function Header() {
                 />
               </button>
 
-              {/* Products Megamenu: Positioned DIRECTLY UNDER "Products" */}
+              {/* Products Megamenu: Positioned DIRECTLY UNDER "Products" (Bigger, Expansive & High-Contrast) */}
               {activeMenu === "products" && (
                 <div
-                  className="absolute top-full -left-56 xl:-left-72 pt-2 w-[760px] xl:w-[820px] z-50 animate-in fade-in slide-in-from-top-1 duration-150"
+                  className="absolute top-full -left-64 xl:-left-80 pt-2 w-[880px] xl:w-[980px] z-50 animate-in fade-in slide-in-from-top-1 duration-150"
                   onMouseEnter={() => {
                     if (timeoutRef.current) clearTimeout(timeoutRef.current);
                   }}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-white rounded-2xl border-2 border-[#DCE5F0] shadow-2xl p-5 overflow-hidden">
-                    <div className="grid grid-cols-12 gap-5 items-stretch">
-                      {/* Left 8 Cols: 3 Clean Product Columns with Simple English Titles */}
-                      <div className="col-span-8 grid grid-cols-3 gap-4">
+                  <div className="bg-white rounded-3xl border-2 border-[#DCE5F0] shadow-2xl p-7 xl:p-8 overflow-hidden">
+                    <div className="grid grid-cols-12 gap-7 items-stretch">
+                      {/* Left 8 Cols: 3 Clean Product Columns with Bigger 15-16px Font */}
+                      <div className="col-span-8 grid grid-cols-3 gap-6">
                         {PRODUCT_CATEGORIES.map((col, idx) => (
-                          <div key={idx} className="space-y-2">
-                            {/* Category Eyebrow */}
-                            <div className="pb-1.5 border-b-2 border-slate-100">
-                              <span className="text-[11px] font-black tracking-wider text-[#D7030F] uppercase font-mono block">
+                          <div key={idx} className="space-y-3">
+                            {/* Category Eyebrow (Bigger & Bolder) */}
+                            <div className="pb-2 border-b-2 border-slate-100">
+                              <span className="text-xs xl:text-[13px] font-black tracking-wider text-[#D7030F] uppercase font-mono block">
                                 {col.category}
                               </span>
                             </div>
 
-                            {/* Clean Titles Only - High Contrast, Simple English */}
-                            <ul className="space-y-0.5">
+                            {/* Clean Titles - Bigger 15-16px Font & High Eye Contrast */}
+                            <ul className="space-y-1">
                               {col.items.map((item, itemIdx) => (
                                 <li key={itemIdx}>
                                   <Link
                                     href={item.href}
                                     onClick={() => setActiveMenu(null)}
-                                    className="group/item flex items-center justify-between px-2.5 py-2 rounded-lg hover:bg-[#F2F7FF] transition-all"
+                                    className="group/item flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-[#F0F5FF] transition-all"
                                   >
-                                    <span className="text-[13px] font-bold text-[#01255F] group-hover/item:text-[#D7030F] transition-colors leading-tight">
+                                    <span className="text-[14px] xl:text-[15.5px] font-extrabold text-[#01255F] group-hover/item:text-[#D7030F] transition-colors leading-snug">
                                       {item.name}
                                     </span>
-                                    <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D7030F] shrink-0" />
+                                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D7030F] shrink-0" />
                                   </Link>
                                 </li>
                               ))}
@@ -353,36 +353,36 @@ export function Header() {
                         ))}
                       </div>
 
-                      {/* Right 4 Cols: Spotlight Card in Simple English & High Contrast */}
-                      <div className="col-span-4 flex flex-col justify-between bg-[#F8FAFC] border-2 border-[#DCE5F0] rounded-xl p-3.5">
+                      {/* Right 4 Cols: Bigger Spotlight Card */}
+                      <div className="col-span-4 flex flex-col justify-between bg-[#F8FAFC] border-2 border-[#DCE5F0] rounded-2xl p-5">
                         <div>
-                          <div className="relative rounded-lg overflow-hidden aspect-[16/10] mb-2.5 bg-slate-200 border border-slate-200">
+                          <div className="relative rounded-xl overflow-hidden aspect-[16/9] mb-3.5 bg-slate-200 border border-slate-200 shadow-xs">
                             <Image
                               src="/images/infrastructure.jpg"
                               alt="Precast heavy civil infrastructure"
                               fill
                               className="object-cover"
                             />
-                            <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded bg-[#D7030F] text-white text-[9px] font-mono font-bold uppercase tracking-wider">
+                            <div className="absolute top-2 left-2 px-2.5 py-1 rounded bg-[#D7030F] text-white text-[10px] font-mono font-black uppercase tracking-wider shadow-xs">
                               ★ DOT CERTIFIED
                             </div>
                           </div>
 
-                          <h4 className="text-xs font-black text-[#01255F] uppercase tracking-tight mb-1">
+                          <h4 className="text-sm xl:text-base font-black text-[#01255F] uppercase tracking-tight mb-1.5">
                             Precast Products Supply
                           </h4>
-                          <p className="text-[11px] text-[#475569] leading-snug mb-3 font-medium">
-                            Direct plant production built to state DOT highway specifications.
+                          <p className="text-xs text-[#334155] leading-relaxed mb-4 font-medium">
+                            Direct plant production built to state DOT highway and underground utility specifications.
                           </p>
                         </div>
 
                         <Link
                           href="/#products"
                           onClick={() => setActiveMenu(null)}
-                          className="inline-flex items-center justify-between w-full px-3 py-2 rounded-lg bg-[#D7030F] hover:bg-[#B31217] text-white text-xs font-black uppercase tracking-wider transition-colors shadow-xs"
+                          className="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#D7030F] hover:bg-[#B31217] text-white text-xs sm:text-[13px] font-black uppercase tracking-wider transition-all shadow-md shadow-red-600/25"
                         >
-                          <span>Browse All Products</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
+                          <span>Browse All Products &amp; Sizes</span>
+                          <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
                     </div>
