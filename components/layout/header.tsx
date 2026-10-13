@@ -16,12 +16,12 @@ import {
 import { NAV_LINKS, COMPANY } from "@/lib/constants";
 
 const MARQUEE_ITEMS = [
-  "ISO 9001:2015 certified delivery process",
-  "PCI MNL-120 certified precast detailing",
-  "Average response time under 2 working hours",
-  "In-house Tekla LOD 400 BIM modeling",
-  "50-State PE stamped structural calculations",
-  "AASHTO bridge & DOT submittals approved",
+  "Direct Precast Concrete Manufacturing Plant",
+  "50-State Licensed PE & SE Structural Calculations",
+  "125,000 Sq. Ft. Climate-Controlled Casting Beds",
+  "In-House Tekla LOD 400 3D BIM Detailing Hub",
+  "AASHTO Bridge & State DOT Submittals Approved",
+  "High-Volume Box Culverts, Basins & Utility Vaults",
 ];
 
 export function Header() {
@@ -83,7 +83,7 @@ export function Header() {
           <div className="flex items-center gap-4 shrink-0 font-mono text-[10px] text-slate-300">
             <div className="flex items-center gap-1.5 bg-white/10 px-2 py-0.5 rounded border border-white/15">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>50-STATE PE LICENSED</span>
+              <span>PLANT CASTING & 50-STATE PE</span>
             </div>
           </div>
         </div>

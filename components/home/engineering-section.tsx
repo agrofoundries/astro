@@ -28,13 +28,13 @@ const ENGINEERING_FEATURES = [
 
 export function EngineeringSection() {
   return (
-    <section id="engineering" className="w-full section-blueprint section-padding">
+    <section id="engineering-overview" className="w-full bg-white border-b border-[#DCE5F0] py-12 sm:py-16">
       <div className="section-container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Engineering Text & Technical Specs */}
           <div className="lg:col-span-7">
             <SectionHeading
-              eyebrow="Virtual Design & Construction"
+              eyebrow="Virtual Design & Detailing"
               specCode="BIM / LOD 400"
               title="In-House Precast Structural Engineering &amp; BIM Detailing"
               description="Our specialized structural engineers turn complex architectural blueprints into constructible, high-performance precast systems. We detail every connection and verify tolerances before a single yard of concrete is cast."
@@ -44,12 +44,12 @@ export function EngineeringSection() {
               {ENGINEERING_FEATURES.map((item) => (
                 <div
                   key={item.code}
-                  className="p-4 sm:p-5 bg-[#F8FAFC] border-2 border-[#CBD5E1] border-l-4 border-l-[#0A2540] hover:border-l-[#C8101E] rounded-xl transition-all shadow-sm hover:shadow-md"
+                  className="p-4 sm:p-5 bg-[#F8FAFC] border-2 border-[#DCE5F0] border-l-4 border-l-[#01255F] hover:border-l-[#D7030F] rounded-xl transition-all shadow-xs hover:shadow-md"
                 >
-                  <div className="font-mono-spec text-[10px] font-bold text-[#C8101E] mb-1">
+                  <div className="font-mono text-[10px] font-bold text-[#D7030F] mb-1">
                     [{item.code}]
                   </div>
-                  <h3 className="text-sm font-bold text-[#0A2540] uppercase tracking-tight mb-1.5">
+                  <h3 className="text-sm font-bold text-[#01255F] uppercase tracking-tight mb-1.5">
                     {item.title}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed font-normal">
@@ -60,13 +60,13 @@ export function EngineeringSection() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3 items-center">
-              <Link href="/capabilities#engineering" className="btn btn-usa-blue">
+              <Link href="/capabilities#engineering" className="btn-navy text-xs uppercase tracking-wider font-bold">
                 Explore BIM &amp; PE Capabilities
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
-              <div className="font-mono-spec text-xs font-bold text-[#0A2540] bg-[#EEF3F8] border border-[#CBD5E1] px-3.5 py-2 rounded-lg flex items-center gap-2 shadow-2xs">
+              <div className="font-mono text-xs font-bold text-[#01255F] bg-[#EEF3F8] border border-[#DCE5F0] px-3.5 py-2 rounded-lg flex items-center gap-2 shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                PE STAMPED IN 48 STATES
+                PE STAMPED IN 50 STATES
               </div>
             </div>
           </div>

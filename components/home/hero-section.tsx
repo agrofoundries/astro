@@ -10,29 +10,31 @@ import {
   CheckCircle2,
   Phone,
   FileText,
+  Factory,
+  Compass,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
 const TRUST_METRICS = [
+  {
+    icon: Factory,
+    title: "PCI Certified Plant",
+    subtitle: "125,000 Sq. Ft. Casting Bays",
+  },
+  {
+    icon: Award,
+    title: "Heavy Civil & DOT",
+    subtitle: "Box Culverts, Basins & Bridges",
+  },
   {
     icon: ShieldCheck,
     title: "50-State PE Licensed",
     subtitle: "PE & SE Stamped Calculations",
   },
   {
-    icon: Award,
-    title: "DOT Infrastructure",
-    subtitle: "Maine & NH DOT Standards",
-  },
-  {
     icon: CheckCircle2,
     title: "Tekla LOD 400 BIM",
     subtitle: "Clash-Free Production Detailing",
-  },
-  {
-    icon: Clock,
-    title: "Fast Takeoff Desk",
-    subtitle: "Direct Engineering Submittal",
   },
 ];
 
@@ -49,7 +51,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-bridge.jpg"
-          alt="Precast Engineers - Modern precast concrete highway bridge viaduct and civil infrastructure"
+          alt="Precast concrete highway bridge viaduct and civil infrastructure"
           fill
           priority
           className="object-cover object-center lg:object-right brightness-[1.02] contrast-[1.03]"
@@ -66,23 +68,23 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-5 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-[#D7030F] animate-pulse" />
             <span className="text-[11px] sm:text-xs font-bold tracking-wider text-[#01255F] uppercase font-mono">
-              Precast Engineers · Empowering Precasters
+              Dual Division Capability
             </span>
             <span className="hidden sm:inline-block text-slate-300">|</span>
             <span className="hidden sm:inline-block text-[11px] font-extrabold text-[#D7030F] bg-white px-2 py-0.5 rounded border border-red-200 uppercase">
-              Civil Infrastructure
+              Plant Manufacturing &amp; Structural Engineering
             </span>
           </div>
 
           {/* High-Impact Headline in Bold USA Navy & USA Red */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.08] uppercase mb-4 text-[#01255F]">
-            Heavy Precast{" "}
+            Precast{" "}
             <span className="text-[#D7030F]">
               Manufacturing
             </span>
             <br />
             <span className="text-[#01255F]">
-              &amp; Civil Supply
+              &amp; Structural Engineering
             </span>
           </h1>
 
@@ -90,48 +92,49 @@ export function HeroSection() {
           <div className="flex items-center gap-2 mb-5">
             <span className="w-8 h-1 bg-[#D7030F] rounded-full" />
             <span className="text-xs sm:text-sm font-extrabold tracking-widest text-[#01255F] uppercase">
-              Box Culverts · Storm Drains · Catch Basins · Concrete Tanks
+              Plant Casting Beds · DOT Products · 50-State PE Calcs · Tekla 3D BIM
             </span>
           </div>
 
           {/* Clear Supporting Description */}
           <p className="text-sm sm:text-base lg:text-lg text-[#1E293B] leading-relaxed font-medium max-w-2xl mb-8">
-            Direct precast concrete manufacturing for highway contractors and civil builders. High-capacity plant production, DOT-certified quality control, and timely jobsite delivery.
+            Two integrated divisions delivering precision concrete solutions: direct high-capacity plant manufacturing for heavy civil infrastructure, coupled with 50-state licensed structural engineering and Tekla LOD 400 BIM modeling.
           </p>
 
           {/* Action CTAs in USA Red & Navy */}
           <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8">
-            {/* Primary USA Red Button */}
+            {/* Primary Division 1 Button (Manufacturing) */}
             <Link
-              href="/#products"
-              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-[#D7030F] hover:bg-[#B31217] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-red-600/25 transition-all duration-200 transform hover:-translate-y-0.5 group cursor-pointer"
+              href="/#manufacturing"
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg bg-[#D7030F] hover:bg-[#B31217] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-red-600/25 transition-all duration-200 transform hover:-translate-y-0.5 group cursor-pointer"
             >
-              <FileText className="w-4 h-4" />
-              <span>Explore Products &amp; Basins</span>
+              <Factory className="w-4 h-4" />
+              <span>Division 01: Manufacturing Plant</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
-            {/* Secondary USA Navy Button */}
+            {/* Secondary Division 2 Button (Engineering) */}
             <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-[#01255F] hover:bg-[#06182E] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer"
+              href="/#engineering"
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg bg-[#01255F] hover:bg-[#06182E] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer"
             >
-              <span>Request Takeoff</span>
+              <Compass className="w-4 h-4 text-[#D7030F]" />
+              <span>Division 02: Engineering &amp; BIM</span>
               <ArrowRight className="w-4 h-4 text-[#D7030F]" />
             </Link>
 
-            {/* Direct Email Inquiry */}
-            <a
-              href={`mailto:${COMPANY.inquiriesEmail}`}
+            {/* Direct Email / Takeoff Inquiry */}
+            <Link
+              href="/#contact"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#01255F] hover:text-[#D7030F] px-3 py-2 rounded-md transition-colors"
             >
               <div className="w-7 h-7 rounded-full bg-[#FFF2F2] border border-red-200 flex items-center justify-center text-[#D7030F]">
                 <Clock className="w-3.5 h-3.5" />
               </div>
               <span>
-                RFQ Submittals: <strong className="text-[#01255F] font-mono">{COMPANY.inquiriesEmail}</strong>
+                Fast Takeoff Desk: <strong className="text-[#01255F] font-mono">Submit Drawings</strong>
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

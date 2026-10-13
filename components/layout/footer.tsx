@@ -231,10 +231,10 @@ export function Footer() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             {/* 3 Link Columns */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {/* Services */}
+              {/* Manufacturing Division */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-                  SERVICES
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#D71920] mb-4">
+                  MANUFACTURING
                 </h4>
                 <ul className="space-y-2.5 text-xs text-slate-300">
                   {SERVICES_LINKS.map((item) => (
@@ -250,10 +250,10 @@ export function Footer() {
                 </ul>
               </div>
 
-              {/* Solutions */}
+              {/* Engineering Division */}
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-                  SOLUTIONS
+                  ENGINEERING &amp; BIM
                 </h4>
                 <ul className="space-y-2.5 text-xs text-slate-300">
                   {SOLUTIONS_LINKS.map((item) => (
