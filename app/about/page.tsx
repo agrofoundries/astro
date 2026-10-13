@@ -28,22 +28,22 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
-              Over Two Decades of Precast Excellence
+              Decades of Precast Excellence
             </h2>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
               PRECASTPRO was founded with a singular conviction: that modern construction schedules cannot afford the weather risks, labor shortages, and inconsistent quality inherent in traditional cast-in-place concrete.
             </p>
             <p className="text-sm text-gray-600 leading-relaxed mb-6">
-              Over the last 25 years, we have grown from a modest utility casting yard into a state-of-the-art 125,000 sq. ft. automated precast and prestressed manufacturing hub. Today, we supply critical infrastructure components to high-profile transportation corridors, major commercial developments, and municipal water authorities.
+              We operate an advanced, automated precast and prestressed manufacturing facility with in-house structural engineering. Today, we supply critical infrastructure components to transportation corridors, commercial developments, and municipal water authorities.
             </p>
             <div className="grid grid-cols-2 gap-4 p-4 rounded-2xl bg-[#F8F9FA] border border-gray-200">
               <div>
-                <div className="text-2xl font-black text-brand-primary">1.2M+ SF</div>
-                <div className="text-xs text-gray-600 font-medium">Panels & Components Installed</div>
+                <div className="text-2xl font-black text-brand-primary">PCI &amp; ASTM</div>
+                <div className="text-xs text-gray-600 font-medium">Certified Quality Standards</div>
               </div>
               <div>
-                <div className="text-2xl font-black text-brand-primary">Zero</div>
-                <div className="text-xs text-gray-600 font-medium">Lost-Time Safety Incidents in 2024</div>
+                <div className="text-2xl font-black text-brand-primary">100% In-House</div>
+                <div className="text-xs text-gray-600 font-medium">Design &amp; Casting Production</div>
               </div>
             </div>
           </div>

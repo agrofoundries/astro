@@ -123,7 +123,7 @@ export function SwiperVideoSlider() {
   };
 
   return (
-    <section className="relative w-full bg-[#030F21] py-16 lg:py-24 text-white overflow-hidden border-b border-slate-800">
+    <section className="relative w-full bg-[#032356] py-16 lg:py-24 text-white overflow-hidden border-b border-slate-800">
       {/* Decorative Blueprint Background Grid */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
 
@@ -132,7 +132,7 @@ export function SwiperVideoSlider() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs font-semibold text-white mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#D7030F] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#D4030C] animate-pulse" />
               <span>Motion Video Slider</span>
               <span className="text-slate-400">• Inspired by swiperjs.com</span>
             </div>
@@ -155,7 +155,7 @@ export function SwiperVideoSlider() {
             >
               {isMuted ? (
                 <>
-                  <VolumeX className="w-4 h-4 text-[#D7030F]" />
+                  <VolumeX className="w-4 h-4 text-[#D4030C]" />
                   <span>Audio Muted</span>
                 </>
               ) : (
@@ -175,7 +175,7 @@ export function SwiperVideoSlider() {
             >
               {isPlaying ? (
                 <>
-                  <Pause className="w-4 h-4 text-[#D7030F]" />
+                  <Pause className="w-4 h-4 text-[#D4030C]" />
                   <span className="hidden sm:inline">Pause</span>
                 </>
               ) : (
@@ -191,7 +191,7 @@ export function SwiperVideoSlider() {
               <button
                 type="button"
                 id="video-swiper-prev"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#D7030F] border border-white/20 flex items-center justify-center transition-all cursor-pointer active:scale-95"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#D4030C] border border-white/20 flex items-center justify-center transition-all cursor-pointer active:scale-95"
                 aria-label="Previous video"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -199,7 +199,7 @@ export function SwiperVideoSlider() {
               <button
                 type="button"
                 id="video-swiper-next"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#D7030F] border border-white/20 flex items-center justify-center transition-all cursor-pointer active:scale-95"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#D4030C] border border-white/20 flex items-center justify-center transition-all cursor-pointer active:scale-95"
                 aria-label="Next video"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -250,7 +250,7 @@ export function SwiperVideoSlider() {
                 <div
                   className={`group relative rounded-2xl overflow-hidden border transition-all duration-300 bg-[#06182E] flex flex-col justify-between shadow-xl ${
                     item.isCustomPrecast
-                      ? "border-red-500/30 hover:border-[#D7030F]"
+                      ? "border-red-500/30 hover:border-[#D4030C]"
                       : "border-slate-800 hover:border-slate-600"
                   }`}
                 >
@@ -277,7 +277,7 @@ export function SwiperVideoSlider() {
                       <span
                         className={`text-[10px] font-bold px-2.5 py-1 rounded backdrop-blur-md border ${
                           item.isCustomPrecast
-                            ? "bg-[#D7030F]/90 text-white border-red-400/40"
+                            ? "bg-[#D4030C]/90 text-white border-red-400/40"
                             : "bg-white/90 text-slate-900 border-white"
                         }`}
                       >
@@ -289,7 +289,7 @@ export function SwiperVideoSlider() {
                     <button
                       type="button"
                       onClick={() => setActiveModalVideo(item)}
-                      className="absolute bottom-3.5 right-3.5 z-10 w-8 h-8 rounded-full bg-black/70 hover:bg-[#D7030F] backdrop-blur-md border border-white/30 text-white flex items-center justify-center transition-all opacity-80 group-hover:opacity-100 cursor-pointer"
+                      className="absolute bottom-3.5 right-3.5 z-10 w-8 h-8 rounded-full bg-black/70 hover:bg-[#D4030C] backdrop-blur-md border border-white/30 text-white flex items-center justify-center transition-all opacity-80 group-hover:opacity-100 cursor-pointer"
                       title="Inspect Video in Fullscreen"
                     >
                       <Maximize2 className="w-3.5 h-3.5" />
@@ -305,7 +305,7 @@ export function SwiperVideoSlider() {
                   <div className="p-5 flex flex-col justify-between flex-1 space-y-3">
                     <div className="space-y-1.5">
                       <div className="flex items-center gap-2 text-xs text-slate-400">
-                        <Video className="w-3.5 h-3.5 text-[#D7030F]" />
+                        <Video className="w-3.5 h-3.5 text-[#D4030C]" />
                         <span>{item.category}</span>
                       </div>
                       <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-red-400 transition-colors leading-snug">
@@ -324,7 +324,7 @@ export function SwiperVideoSlider() {
                       <button
                         type="button"
                         onClick={() => setActiveModalVideo(item)}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D7030F] hover:text-white transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D4030C] hover:text-white transition-colors"
                       >
                         <span>Watch Clip</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -360,7 +360,7 @@ export function SwiperVideoSlider() {
             <button
               type="button"
               onClick={() => setActiveModalVideo(null)}
-              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-[#D7030F] text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-[#D4030C] text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -378,9 +378,9 @@ export function SwiperVideoSlider() {
             </div>
 
             {/* Modal Video Info */}
-            <div className="p-6 bg-[#030F21] space-y-3">
+            <div className="p-6 bg-[#032356] space-y-3">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-bold bg-[#D7030F] text-white px-2.5 py-0.5 rounded">
+                <span className="text-xs font-bold bg-[#D4030C] text-white px-2.5 py-0.5 rounded">
                   {activeModalVideo.badge}
                 </span>
                 <span className="text-xs font-mono text-slate-400">

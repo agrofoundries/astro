@@ -22,8 +22,8 @@ import { COMPANY } from "@/lib/constants";
 
 const MARQUEE_ITEMS = [
   "Direct Precast Concrete Manufacturing Plant",
-  "50-State Licensed PE & SE Structural Calculations",
-  "125,000 Sq. Ft. Climate-Controlled Casting Beds",
+  "Licensed PE & SE Structural Calculations Available",
+  "Climate-Controlled Plant Casting Beds",
   "In-House Tekla LOD 400 3D BIM Detailing Hub",
   "AASHTO Bridge & State DOT Submittals Approved",
   "High-Volume Box Culverts, Basins & Utility Vaults",
@@ -89,12 +89,12 @@ const PRODUCT_CATEGORIES = [
     ],
   },
   {
-    category: "TANKS & UTILITIES",
+    category: "TANKS & GANG MOLDS",
     items: [
-      { name: "Pump Stations", href: "/#products" },
-      { name: "Septic Tanks", href: "/#products" },
-      { name: "Grease Traps", href: "/#products" },
+      { name: "Solid Round Slab Gang Mold", href: "/#products" },
       { name: "Utility Vaults", href: "/#products" },
+      { name: "Septic Tanks", href: "/#products" },
+      { name: "Pump Stations", href: "/#products" },
     ],
   },
 ];
@@ -102,8 +102,17 @@ const PRODUCT_CATEGORIES = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<"company" | "products" | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 15);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -140,12 +149,16 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 bg-white border-b border-[#DCE5F0] shadow-xs"
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-[#CBD5E1]"
+          : "bg-white border-b border-[#DCE5F0] shadow-xs"
+      }`}
     >
       {/* ======================================================== */}
       {/* Top Utility Strip (Full Width Edge-to-Edge)              */}
       {/* ======================================================== */}
-      <div className="bg-[#030F21] text-white text-xs border-b border-white/10 hidden md:block">
+      <div className="bg-[#032356] text-white text-xs border-b border-white/10 hidden md:block">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between h-9">
           {/* Left Direct Contacts */}
           <div className="flex items-center gap-5 shrink-0">
@@ -153,7 +166,7 @@ export function Header() {
               href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
               className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors font-mono text-[11px]"
             >
-              <Phone className="w-3 h-3 text-[#D7030F]" />
+              <Phone className="w-3 h-3 text-[#D4030C]" />
               <span>{COMPANY.phone}</span>
             </a>
             <span className="h-3 w-px bg-white/15" />
@@ -161,7 +174,7 @@ export function Header() {
               href={`mailto:${COMPANY.email}`}
               className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors text-[11px]"
             >
-              <Mail className="w-3 h-3 text-[#D7030F]" />
+              <Mail className="w-3 h-3 text-[#D4030C]" />
               <span>{COMPANY.email}</span>
             </a>
           </div>
@@ -174,7 +187,7 @@ export function Header() {
                   key={idx}
                   className="flex shrink-0 items-center gap-2 font-mono text-[10px] tracking-wider text-slate-300 uppercase"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D7030F]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4030C]" />
                   {item}
                 </span>
               ))}
@@ -185,7 +198,7 @@ export function Header() {
           <div className="flex items-center gap-4 shrink-0 font-mono text-[10px] text-slate-300">
             <div className="flex items-center gap-1.5 bg-white/10 px-2 py-0.5 rounded border border-white/15">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>PLANT CASTING &amp; 50-STATE PE</span>
+              <span>PLANT CASTING &amp; STRUCTURAL PE</span>
             </div>
           </div>
         </div>
@@ -194,8 +207,8 @@ export function Header() {
       {/* ======================================================== */}
       {/* Main Navigation Bar (Clean, High-Contrast 18px Font)     */}
       {/* ======================================================== */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 bg-white">
-        <div className="flex items-center justify-between h-20 lg:h-22 gap-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 bg-white/90">
+        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-18 lg:h-20" : "h-20 lg:h-22"} gap-4`}>
           {/* Logo */}
           <Link href="/" className="flex items-center py-2 shrink-0" aria-label="Precast Engineers">
             <Image
@@ -213,10 +226,10 @@ export function Header() {
             {/* 1. Home */}
             <Link
               href="/"
-              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#01255F] hover:text-[#D7030F] transition-colors relative group whitespace-nowrap tracking-tight"
+              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#032356] hover:text-[#D4030C] transition-colors relative group whitespace-nowrap tracking-tight"
             >
               <span>Home</span>
-              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D7030F] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D4030C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
             </Link>
 
             {/* 2. Company (Dropdown directly under this item) */}
@@ -229,13 +242,13 @@ export function Header() {
                 type="button"
                 onClick={() => setActiveMenu(activeMenu === "company" ? null : "company")}
                 className={`flex items-center gap-1 px-2 py-2 text-[16px] xl:text-[18px] font-black transition-colors whitespace-nowrap tracking-tight cursor-pointer ${
-                  activeMenu === "company" ? "text-[#D7030F]" : "text-[#01255F] hover:text-[#D7030F]"
+                  activeMenu === "company" ? "text-[#D4030C]" : "text-[#032356] hover:text-[#D4030C]"
                 }`}
               >
                 <span>Company</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    activeMenu === "company" ? "rotate-180 text-[#D7030F]" : "text-slate-400 group-hover:text-[#D7030F]"
+                    activeMenu === "company" ? "rotate-180 text-[#D4030C]" : "text-slate-400 group-hover:text-[#D4030C]"
                   }`}
                 />
               </button>
@@ -252,7 +265,7 @@ export function Header() {
                   <div className="bg-white rounded-2xl border-2 border-[#DCE5F0] shadow-2xl p-3.5 overflow-hidden">
                     {/* Header Banner */}
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 px-2">
-                      <span className="text-[11px] font-black uppercase tracking-wider text-[#D7030F] font-mono">
+                      <span className="text-[11px] font-black uppercase tracking-wider text-[#D4030C] font-mono">
                         COMPANY PAGES
                       </span>
                       <span className="text-[10px] text-[#64748B] font-bold uppercase">
@@ -272,14 +285,14 @@ export function Header() {
                             className="group/item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-[#F2F7FF] transition-colors"
                           >
                             <div className="flex items-center gap-2.5 min-w-0">
-                              <div className="w-7 h-7 rounded-lg bg-[#E8F3FF] border border-[#DCE5F0] text-[#01255F] group-hover/item:bg-[#01255F] group-hover/item:text-white transition-colors flex items-center justify-center shrink-0">
-                                <Icon className="w-3.5 h-3.5 text-[#D7030F] group-hover/item:text-white transition-colors" />
+                              <div className="w-7 h-7 rounded-lg bg-[#E8F3FF] border border-[#DCE5F0] text-[#032356] group-hover/item:bg-[#032356] group-hover/item:text-white transition-colors flex items-center justify-center shrink-0">
+                                <Icon className="w-3.5 h-3.5 text-[#D4030C] group-hover/item:text-white transition-colors" />
                               </div>
-                              <span className="text-sm font-bold text-[#01255F] group-hover/item:text-[#D7030F] transition-colors truncate">
+                              <span className="text-sm font-bold text-[#032356] group-hover/item:text-[#D4030C] transition-colors truncate">
                                 {page.title}
                               </span>
                             </div>
-                            <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D7030F] shrink-0" />
+                            <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D4030C] shrink-0" />
                           </Link>
                         );
                       })}
@@ -299,13 +312,13 @@ export function Header() {
                 type="button"
                 onClick={() => setActiveMenu(activeMenu === "products" ? null : "products")}
                 className={`flex items-center gap-1 px-2 py-2 text-[16px] xl:text-[18px] font-black transition-colors whitespace-nowrap tracking-tight cursor-pointer ${
-                  activeMenu === "products" ? "text-[#D7030F]" : "text-[#01255F] hover:text-[#D7030F]"
+                  activeMenu === "products" ? "text-[#D4030C]" : "text-[#032356] hover:text-[#D4030C]"
                 }`}
               >
                 <span>Products</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    activeMenu === "products" ? "rotate-180 text-[#D7030F]" : "text-slate-400 group-hover:text-[#D7030F]"
+                    activeMenu === "products" ? "rotate-180 text-[#D4030C]" : "text-slate-400 group-hover:text-[#D4030C]"
                   }`}
                 />
               </button>
@@ -327,7 +340,7 @@ export function Header() {
                           <div key={idx} className="space-y-3">
                             {/* Category Eyebrow (Bigger & Bolder) */}
                             <div className="pb-2 border-b-2 border-slate-100">
-                              <span className="text-xs xl:text-[13px] font-black tracking-wider text-[#D7030F] uppercase font-mono block">
+                              <span className="text-xs xl:text-[13px] font-black tracking-wider text-[#D4030C] uppercase font-mono block">
                                 {col.category}
                               </span>
                             </div>
@@ -341,10 +354,10 @@ export function Header() {
                                     onClick={() => setActiveMenu(null)}
                                     className="group/item flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-[#F0F5FF] transition-all"
                                   >
-                                    <span className="text-[14px] xl:text-[15.5px] font-extrabold text-[#01255F] group-hover/item:text-[#D7030F] transition-colors leading-snug">
+                                    <span className="text-[14px] xl:text-[15.5px] font-extrabold text-[#032356] group-hover/item:text-[#D4030C] transition-colors leading-snug">
                                       {item.name}
                                     </span>
-                                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D7030F] shrink-0" />
+                                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D4030C] shrink-0" />
                                   </Link>
                                 </li>
                               ))}
@@ -356,32 +369,34 @@ export function Header() {
                       {/* Right 4 Cols: Bigger Spotlight Card */}
                       <div className="col-span-4 flex flex-col justify-between bg-[#F8FAFC] border-2 border-[#DCE5F0] rounded-2xl p-5">
                         <div>
-                          <div className="relative rounded-xl overflow-hidden aspect-[16/9] mb-3.5 bg-slate-200 border border-slate-200 shadow-xs">
-                            <Image
-                              src="/images/infrastructure.jpg"
-                              alt="Precast heavy civil infrastructure"
-                              fill
-                              className="object-cover"
+                          <div className="relative rounded-xl overflow-hidden aspect-[16/9] mb-3.5 bg-slate-900 border border-slate-200 shadow-xs">
+                            <video
+                              src="/videos/solid-round-slab-gang-mold.mp4"
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="object-cover w-full h-full"
                             />
-                            <div className="absolute top-2 left-2 px-2.5 py-1 rounded bg-[#D7030F] text-white text-[10px] font-mono font-black uppercase tracking-wider shadow-xs">
-                              ★ DOT CERTIFIED
+                            <div className="absolute top-2 left-2 px-2.5 py-1 rounded bg-[#D4030C] text-white text-[10px] font-mono font-black uppercase tracking-wider shadow-xs">
+                              ★ FEATURED PRODUCT
                             </div>
                           </div>
 
-                          <h4 className="text-sm xl:text-base font-black text-[#01255F] uppercase tracking-tight mb-1.5">
-                            Precast Products Supply
+                          <h4 className="text-sm xl:text-base font-black text-[#032356] uppercase tracking-tight mb-1.5">
+                            Solid Round Slab Gang Mold
                           </h4>
                           <p className="text-xs text-[#334155] leading-relaxed mb-4 font-medium">
-                            Direct plant production built to state DOT highway and underground utility specifications.
+                            Precision multi-cavity steel gang mold for rapid, high-volume casting of precast round slabs and covers.
                           </p>
                         </div>
 
                         <Link
                           href="/#products"
                           onClick={() => setActiveMenu(null)}
-                          className="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#D7030F] hover:bg-[#B31217] text-white text-xs sm:text-[13px] font-black uppercase tracking-wider transition-all shadow-md shadow-red-600/25"
+                          className="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#D4030C] hover:bg-[#B50209] text-white text-xs sm:text-[13px] font-black uppercase tracking-wider transition-all shadow-md shadow-red-600/25 active:scale-95"
                         >
-                          <span>Browse All Products &amp; Sizes</span>
+                          <span>View Product &amp; Video</span>
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
@@ -394,19 +409,19 @@ export function Header() {
             {/* 4. Blogs */}
             <Link
               href="/#blog"
-              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#01255F] hover:text-[#D7030F] transition-colors relative group whitespace-nowrap tracking-tight"
+              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#032356] hover:text-[#D4030C] transition-colors relative group whitespace-nowrap tracking-tight"
             >
               <span>Blogs</span>
-              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D7030F] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D4030C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
             </Link>
 
             {/* 5. Contact Us */}
             <Link
               href="/#contact"
-              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#01255F] hover:text-[#D7030F] transition-colors relative group whitespace-nowrap tracking-tight"
+              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#032356] hover:text-[#D4030C] transition-colors relative group whitespace-nowrap tracking-tight"
             >
               <span>Contact Us</span>
-              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D7030F] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D4030C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
             </Link>
           </nav>
 
@@ -415,10 +430,10 @@ export function Header() {
             {/* Direct RFP CTA Button */}
             <Link
               href="/#contact"
-              className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-bold uppercase tracking-wider transition-all duration-300 bg-[#D7030F] text-white shadow-md shadow-red-600/30 hover:bg-[#B31217] hover:shadow-lg h-10 px-5 sm:px-6 text-xs gap-2 select-none whitespace-nowrap"
+              className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-bold uppercase tracking-wider transition-all duration-300 bg-[#D4030C] text-white shadow-md shadow-red-600/30 hover:bg-[#B50209] hover:shadow-lg h-10 px-5 sm:px-6 text-xs gap-2 select-none whitespace-nowrap active:scale-95"
             >
               <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full" />
-              <span className="relative">REQUEST TAKEOFF</span>
+              <span className="relative">GET A QUOTE</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
             </Link>
 
@@ -426,7 +441,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#01255F] hover:bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg cursor-pointer"
+              className="lg:hidden p-2 text-[#032356] hover:bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg cursor-pointer"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -444,14 +459,14 @@ export function Header() {
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-base font-bold text-[#01255F] hover:text-[#D7030F] border-b border-slate-100"
+            className="block py-2 text-base font-bold text-[#032356] hover:text-[#D4030C] border-b border-slate-100"
           >
             Home
           </Link>
 
           {/* Company Mobile Submenu */}
           <div className="border-b border-slate-100 pb-2">
-            <span className="text-[11px] font-black tracking-wider text-[#D7030F] uppercase font-mono block mb-1">
+            <span className="text-[11px] font-black tracking-wider text-[#D4030C] uppercase font-mono block mb-1">
               Company Pages
             </span>
             <div className="space-y-1 pl-2">
@@ -460,7 +475,7 @@ export function Header() {
                   key={idx}
                   href={page.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 text-xs font-semibold text-[#01255F] hover:text-[#D7030F]"
+                  className="block py-1.5 text-xs font-semibold text-[#032356] hover:text-[#D4030C]"
                 >
                   {page.title}
                 </Link>
@@ -470,14 +485,14 @@ export function Header() {
 
           {/* Products Mobile Submenu */}
           <div className="border-b border-slate-100 pb-2">
-            <span className="text-[11px] font-black tracking-wider text-[#D7030F] uppercase font-mono block mb-1">
+            <span className="text-[11px] font-black tracking-wider text-[#D4030C] uppercase font-mono block mb-1">
               Products
             </span>
             <div className="space-y-1 pl-2">
               <Link
                 href="/#products"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-1.5 text-xs font-bold text-[#D7030F]"
+                className="block py-1.5 text-xs font-bold text-[#D4030C]"
               >
                 ★ View All Products
               </Link>
@@ -486,7 +501,7 @@ export function Header() {
                   key={idx}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1 text-xs font-semibold text-[#01255F] hover:text-[#D7030F]"
+                  className="block py-1 text-xs font-semibold text-[#032356] hover:text-[#D4030C]"
                 >
                   {item.name}
                 </Link>
@@ -498,7 +513,7 @@ export function Header() {
           <Link
             href="/#blog"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-base font-bold text-[#01255F] hover:text-[#D7030F] border-b border-slate-100"
+            className="block py-2 text-base font-bold text-[#032356] hover:text-[#D4030C] border-b border-slate-100"
           >
             Blogs
           </Link>
@@ -507,7 +522,7 @@ export function Header() {
           <Link
             href="/#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-base font-bold text-[#01255F] hover:text-[#D7030F] border-b border-slate-100"
+            className="block py-2 text-base font-bold text-[#032356] hover:text-[#D4030C] border-b border-slate-100"
           >
             Contact Us
           </Link>
@@ -519,7 +534,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="btn-red w-full text-center text-xs py-3 rounded-full flex items-center justify-center gap-2"
             >
-              <span>Request Precast Takeoff</span>
+              <span>Get a Quote</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

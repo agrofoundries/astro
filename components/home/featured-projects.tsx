@@ -54,7 +54,7 @@ export function FeaturedProjects() {
             className="btn-dark px-6 py-3 rounded text-xs font-bold uppercase tracking-wider mb-4 md:mb-8 inline-flex items-center gap-2 self-start md:self-auto"
           >
             <span>View All Projects</span>
-            <ArrowRight className="w-4 h-4 text-[#D71920]" />
+            <ArrowRight className="w-4 h-4 text-[#D4030C]" />
           </Link>
         </div>
 
@@ -77,18 +77,18 @@ export function FeaturedProjects() {
                     {project.category}
                   </div>
                   <div className="absolute bottom-3 right-3 bg-white/95 text-[#0B2545] text-xs font-bold px-2.5 py-1 rounded shadow-md flex items-center gap-1.5">
-                    <Calendar className="w-3 h-3 text-[#D71920]" />
+                    <Calendar className="w-3 h-3 text-[#D4030C]" />
                     <span>{project.year}</span>
                   </div>
                 </div>
 
                 <div className="p-6">
                   <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-2 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-[#D71920]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#D4030C]" />
                     <span>{project.location}</span>
                   </div>
 
-                  <h3 className="text-lg font-black text-[#0B2545] tracking-tight mb-2 group-hover:text-[#D71920] transition-colors uppercase">
+                  <h3 className="text-lg font-black text-[#0B2545] tracking-tight mb-2 group-hover:text-[#D4030C] transition-colors uppercase">
                     {project.title}
                   </h3>
 
@@ -112,10 +112,10 @@ export function FeaturedProjects() {
 
                 <Link
                   href={`/projects#${project.id}`}
-                  className="flex items-center justify-between text-xs font-bold text-[#0B2545] group-hover:text-[#D71920] uppercase tracking-wider transition-colors"
+                  className="flex items-center justify-between text-xs font-bold text-[#0B2545] group-hover:text-[#D4030C] uppercase tracking-wider transition-colors"
                 >
                   <span>Project Case Study</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#D71920]" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#D4030C]" />
                 </Link>
               </div>
             </div>

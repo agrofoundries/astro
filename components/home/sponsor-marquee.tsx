@@ -16,40 +16,40 @@ export function SponsorMarquee() {
   const allSponsors = [...SPONSORS, ...SPONSORS, ...SPONSORS, ...SPONSORS];
 
   return (
-    <section className="w-full bg-[#FAFCFF] border-b border-[#DCE5F0] py-3 sm:py-3.5">
+    <section className="w-full bg-[#FAFCFF] border-b border-[#DCE5F0] py-5 sm:py-7">
       <div className="section-container-wide">
-        {/* Title: Our Associates & Industry Affiliations (Scaled 20% smaller & refined) */}
-        <div className="flex items-center justify-center gap-2.5 mb-2.5 sm:mb-3">
-          <span className="w-6 sm:w-9 h-0.5 bg-[#D7030F] rounded-full" />
-          <h3 className="text-xs sm:text-sm md:text-[15px] font-black uppercase tracking-wider text-[#01255F]">
+        {/* Title: Our Associates & Industry Affiliations (Bigger, Bolder, Prominent) */}
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+          <span className="w-8 sm:w-14 h-1 bg-[#D4030C] rounded-full" />
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-black uppercase tracking-wider text-[#032356] text-center">
             Our Associates &amp; Industry Affiliations
-          </h3>
-          <span className="w-6 sm:w-9 h-0.5 bg-[#D7030F] rounded-full" />
+          </h2>
+          <span className="w-8 sm:w-14 h-1 bg-[#D4030C] rounded-full" />
         </div>
 
-        {/* Marquee viewport (20% smaller height: h-16 sm:h-20 md:h-22) */}
-        <div className="relative w-full overflow-hidden flex items-center h-16 sm:h-20 md:h-22">
+        {/* Marquee viewport */}
+        <div className="relative w-full overflow-hidden flex items-center h-20 sm:h-24 md:h-26">
           {/* Subtle edge fade gradients */}
-          <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-[#FAFCFF] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-[#FAFCFF] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#FAFCFF] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#FAFCFF] to-transparent z-10 pointer-events-none" />
 
           {/* Marquee Track */}
-          <div className="flex items-center w-max gap-2.5 sm:gap-3.5 whitespace-nowrap animate-marquee">
+          <div className="flex items-center w-max gap-3 sm:gap-4 whitespace-nowrap animate-marquee">
             {allSponsors.map((sponsor, idx) => (
               <div
                 key={`${sponsor.id}-${idx}`}
                 className="shrink-0 flex items-center justify-center px-1"
               >
-                {/* Snug fit card scaled 20% smaller */}
+                {/* Generous clean card */}
                 <div
-                  className={`relative h-14 sm:h-17 md:h-19 ${sponsor.cardWidth} flex items-center justify-center bg-white rounded-lg border border-slate-200/80 shadow-2xs hover:border-[#01255F] hover:shadow-xs transition-all duration-200`}
+                  className={`relative h-16 sm:h-20 md:h-22 ${sponsor.cardWidth} flex items-center justify-center bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:border-[#032356] hover:shadow-md transition-all duration-300 hover-lift`}
                 >
                   <Image
                     src={sponsor.src}
                     alt={`${sponsor.name} Associate Logo`}
                     fill
-                    className="object-contain p-1.5 sm:p-2"
-                    sizes="(max-width: 640px) 140px, 200px"
+                    className="object-contain p-2 sm:p-2.5 img-zoom"
+                    sizes="(max-width: 640px) 160px, 220px"
                   />
                 </div>
               </div>

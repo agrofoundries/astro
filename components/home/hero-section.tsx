@@ -18,8 +18,8 @@ import { COMPANY } from "@/lib/constants";
 const TRUST_METRICS = [
   {
     icon: Factory,
-    title: "PCI Certified Plant",
-    subtitle: "125,000 Sq. Ft. Casting Bays",
+    title: "Precision Plant Casting",
+    subtitle: "Direct Plant Concrete Casting",
   },
   {
     icon: Award,
@@ -28,7 +28,7 @@ const TRUST_METRICS = [
   },
   {
     icon: ShieldCheck,
-    title: "50-State PE Licensed",
+    title: "Licensed PE Engineering",
     subtitle: "PE & SE Stamped Calculations",
   },
   {
@@ -43,7 +43,7 @@ export function HeroSection() {
     <section
       id="hero"
       aria-label="Precast Engineers Flagship Hero"
-      className="relative w-full bg-white overflow-hidden border-b border-[#DCE5F0]"
+      className="relative w-full bg-white overflow-hidden border-b border-[#DCE5F0] min-h-[calc(100vh-96px)] lg:h-[calc(100vh-96px)] lg:max-h-[calc(100vh-96px)] flex flex-col justify-between"
     >
       {/* 
         DAYLIGHT PRECAST BRIDGE & HEAVY CIVIL INFRASTRUCTURE BACKGROUND
@@ -61,78 +61,78 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden z-10 pointer-events-none" />
       </div>
 
-      {/* Main Hero Content */}
-      <div className="relative z-20 section-container-wide pt-8 sm:pt-12 lg:pt-14 pb-8 sm:pb-10 lg:pb-12">
+      {/* Main Hero Content - Vertically centered */}
+      <div className="relative z-20 section-container-wide flex-1 flex flex-col justify-center py-4 sm:py-6 lg:py-8">
         <div className="max-w-2xl xl:max-w-3xl">
           {/* Eyebrow Pill Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-5 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#D7030F] animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-bold tracking-wider text-[#01255F] uppercase font-mono">
-              Dual Division Capability
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-3 sm:mb-4 shadow-xs animate-fade-down">
+            <span className="w-2 h-2 rounded-full bg-[#D4030C] animate-pulse" />
+            <span className="text-[11px] font-bold tracking-wider text-[#032356] uppercase font-mono">
+              Precast Concrete
             </span>
             <span className="hidden sm:inline-block text-slate-300">|</span>
-            <span className="hidden sm:inline-block text-[11px] font-extrabold text-[#D7030F] bg-white px-2 py-0.5 rounded border border-red-200 uppercase">
+            <span className="hidden sm:inline-block text-[11px] font-extrabold text-[#D4030C] bg-white px-2 py-0.5 rounded border border-red-200 uppercase">
               Plant Manufacturing &amp; Structural Engineering
             </span>
           </div>
 
           {/* High-Impact Headline in Bold USA Navy & USA Red */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.08] uppercase mb-4 text-[#01255F]">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.08] uppercase mb-2.5 sm:mb-3 text-[#032356] animate-fade-up">
             Precast{" "}
-            <span className="text-[#D7030F]">
+            <span className="text-[#D4030C]">
               Manufacturing
             </span>
             <br />
-            <span className="text-[#01255F]">
+            <span className="text-[#032356]">
               &amp; Structural Engineering
             </span>
           </h1>
 
           {/* Accent Line */}
-          <div className="flex items-center gap-2 mb-5">
-            <span className="w-8 h-1 bg-[#D7030F] rounded-full" />
-            <span className="text-xs sm:text-sm font-extrabold tracking-widest text-[#01255F] uppercase">
-              Plant Casting Beds · DOT Products · 50-State PE Calcs · Tekla 3D BIM
+          <div className="flex items-center gap-2 mb-3 animate-fade-up [animation-delay:150ms]">
+            <span className="w-7 h-1 bg-[#D4030C] rounded-full" />
+            <span className="text-xs sm:text-[13px] font-extrabold tracking-wide text-[#032356] uppercase">
+              Precast Concrete Products · Bridges &amp; Drainage · Engineering &amp; 3D Drawings
             </span>
           </div>
 
-          {/* Clear Supporting Description */}
-          <p className="text-sm sm:text-base lg:text-lg text-[#1E293B] leading-relaxed font-medium max-w-2xl mb-8">
-            Two integrated divisions delivering precision concrete solutions: direct high-capacity plant manufacturing for heavy civil infrastructure, coupled with 50-state licensed structural engineering and Tekla LOD 400 BIM modeling.
+          {/* Clear Supporting Description in Simple English */}
+          <p className="text-xs sm:text-sm lg:text-base text-[#1E293B] leading-relaxed font-medium max-w-2xl mb-4 sm:mb-6 animate-fade-up [animation-delay:220ms]">
+            We make precast concrete products for roads, bridges, and underground utilities, and provide complete structural engineering calculations and 3D shop drawings.
           </p>
 
-          {/* Action CTAs in USA Red & Navy */}
-          <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8">
-            {/* Primary Division 1 Button (Manufacturing) */}
+          {/* Action CTAs in Simple Words */}
+          <div className="flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:300ms]">
+            {/* Primary Button */}
             <Link
-              href="/#manufacturing"
-              className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg bg-[#D7030F] hover:bg-[#B31217] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-red-600/25 transition-all duration-200 transform hover:-translate-y-0.5 group cursor-pointer"
+              href="/#products"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#D4030C] hover:bg-[#B50209] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-red-600/25 transition-all duration-200 transform hover:-translate-y-0.5 group cursor-pointer active:scale-95"
             >
               <Factory className="w-4 h-4" />
-              <span>Division 01: Manufacturing Plant</span>
+              <span>Browse Products</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
-            {/* Secondary Division 2 Button (Engineering) */}
+            {/* Secondary Button */}
             <Link
-              href="/#engineering"
-              className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg bg-[#01255F] hover:bg-[#06182E] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer"
+              href="/#services"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#032356] hover:bg-[#02173B] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer active:scale-95"
             >
-              <Compass className="w-4 h-4 text-[#D7030F]" />
-              <span>Division 02: Engineering &amp; BIM</span>
-              <ArrowRight className="w-4 h-4 text-[#D7030F]" />
+              <Compass className="w-4 h-4 text-[#D4030C]" />
+              <span>Engineering Services</span>
+              <ArrowRight className="w-4 h-4 text-[#D4030C]" />
             </Link>
 
-            {/* Direct Email / Takeoff Inquiry */}
+            {/* Direct Quote Link */}
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#01255F] hover:text-[#D7030F] px-3 py-2 rounded-md transition-colors"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#032356] hover:text-[#D4030C] px-2 py-1.5 rounded-md transition-colors"
             >
-              <div className="w-7 h-7 rounded-full bg-[#FFF2F2] border border-red-200 flex items-center justify-center text-[#D7030F]">
-                <Clock className="w-3.5 h-3.5" />
+              <div className="w-6 h-6 rounded-full bg-[#FFF2F2] border border-red-200 flex items-center justify-center text-[#D4030C]">
+                <Clock className="w-3 h-3" />
               </div>
               <span>
-                Fast Takeoff Desk: <strong className="text-[#01255F] font-mono">Submit Drawings</strong>
+                Need a quote? <strong className="text-[#032356] font-mono">Send Project Details</strong>
               </span>
             </Link>
           </div>
@@ -141,28 +141,28 @@ export function HeroSection() {
 
       {/* 
         Bottom Trust Strip:
-        Clean white surface with crisp borders and USA Navy/Red icons
+        Clean white surface neatly docked at the bottom inside the 100vh viewport
       */}
       <div className="relative z-20 bg-white/95 backdrop-blur-md border-t border-[#DCE5F0] shadow-xs">
-        <div className="section-container-wide py-4 sm:py-5">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+        <div className="section-container-wide py-3 sm:py-3.5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
             {TRUST_METRICS.map((metric, idx) => {
               const Icon = metric.icon;
               return (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3.5 ${
-                    idx > 0 ? "pt-3 sm:pt-0 sm:pl-6" : ""
+                  className={`flex items-center gap-3 ${
+                    idx > 0 ? "pt-2 sm:pt-0 sm:pl-4" : ""
                   }`}
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#E8F3FF] border border-[#DCE5F0] flex items-center justify-center shrink-0 text-[#01255F]">
-                    <Icon className="w-5 h-5 text-[#D7030F]" />
+                  <div className="w-8 h-8 rounded-lg bg-[#E8F3FF] border border-[#DCE5F0] flex items-center justify-center shrink-0 text-[#032356]">
+                    <Icon className="w-4 h-4 text-[#D4030C]" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-[#01255F] leading-tight">
+                    <h3 className="text-xs sm:text-sm font-bold text-[#032356] leading-tight">
                       {metric.title}
                     </h3>
-                    <p className="text-[11px] text-[#64748B] leading-tight mt-0.5 font-medium">
+                    <p className="text-[10.5px] text-[#64748B] leading-tight mt-0.5 font-medium">
                       {metric.subtitle}
                     </p>
                   </div>

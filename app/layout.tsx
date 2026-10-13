@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { AnimationProvider } from "@/components/providers/animation-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -49,9 +50,11 @@ export default function RootLayout({
       className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col bg-white text-[#334155]">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AnimationProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </AnimationProvider>
       </body>
     </html>
   );

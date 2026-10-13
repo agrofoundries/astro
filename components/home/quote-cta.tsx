@@ -10,31 +10,31 @@ export function QuoteCTA() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 text-xs text-[#D71920] uppercase font-bold mb-3.5 bg-red-50 border border-red-200 px-3 py-1.5 rounded-md">
-                <span className="w-2 h-2 rounded-full bg-[#D71920]" />
-                ESTIMATING &amp; BID TAKE-OFF DESK
+              <div className="inline-flex items-center gap-2 text-xs text-[#D4030C] uppercase font-bold mb-3.5 bg-red-50 border border-red-200 px-3 py-1.5 rounded-md">
+                <span className="w-2 h-2 rounded-full bg-[#D4030C]" />
+                ESTIMATING &amp; PROJECT PRICING
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0B2545] tracking-tight leading-tight uppercase mb-4">
-                Submit Your Drawings for Precast Engineering &amp; Bid Takeoff
+                Submit Your Drawings for Precast Engineering &amp; Quotes
               </h2>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-3xl mb-8">
-                Send us your architectural IFC models, structural contract sheets, or tender packages. Our licensed structural engineers and precast estimators perform piece-count takeoffs, preliminary connection feasibility, and PE stamped proposals within 24 to 48 business hours to empower your precast bids.
+                Send us your architectural models, structural sheets, or plans. Our licensed structural engineers and estimators review your project, check connection feasibility, and provide reliable pricing for your precast bids.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                 <div className="p-3.5 bg-[#F0F5FA] border border-blue-100 rounded-lg flex items-center gap-2.5">
-                  <Clock className="w-4 h-4 text-[#D71920] shrink-0" />
-                  <span className="text-[#0B2545] font-bold">24–48 Hr Turnaround</span>
+                  <Clock className="w-4 h-4 text-[#D4030C] shrink-0" />
+                  <span className="text-[#0B2545] font-bold">Fast Turnaround</span>
                 </div>
                 <div className="p-3.5 bg-[#F0F5FA] border border-blue-100 rounded-lg flex items-center gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-[#D71920] shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-[#D4030C] shrink-0" />
                   <span className="text-[#0B2545] font-bold">PCI MNL-116 Certified</span>
                 </div>
                 <div className="p-3.5 bg-[#F0F5FA] border border-blue-100 rounded-lg flex items-center gap-2.5">
-                  <HardHat className="w-4 h-4 text-[#D71920] shrink-0" />
-                  <span className="text-[#0B2545] font-bold">Value Engineering Review</span>
+                  <HardHat className="w-4 h-4 text-[#D4030C] shrink-0" />
+                  <span className="text-[#0B2545] font-bold">Engineering Review</span>
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@ export function QuoteCTA() {
                 id="cta-bid-portal"
               >
                 <FileText className="w-4 h-4" />
-                <span>Open Project Bid Portal</span>
+                <span>Send Drawings &amp; Get a Quote</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -63,7 +63,7 @@ export function QuoteCTA() {
                     {COMPANY.phone}
                   </a>
                 </div>
-                <span className="text-[10px] text-white bg-[#D71920] px-2.5 py-1 rounded font-bold uppercase tracking-wider">
+                <span className="text-[10px] text-white bg-[#D4030C] px-2.5 py-1 rounded font-bold uppercase tracking-wider">
                   Call Direct
                 </span>
               </div>

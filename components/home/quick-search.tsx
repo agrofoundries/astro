@@ -116,7 +116,7 @@ export function QuickSearch() {
       <div className="section-container">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-center space-y-2">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#01255F]">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#032356]">
               Quick Search
             </h2>
             <p className="text-xs sm:text-sm text-[#475569]">
@@ -126,20 +126,20 @@ export function QuickSearch() {
 
           {/* Search Box */}
           <div className="relative">
-            <div className="relative flex items-center bg-white border border-[#DCE5F0] rounded-lg shadow-sm focus-within:border-[#01255F] transition-all">
+            <div className="relative flex items-center bg-white border border-[#DCE5F0] rounded-lg shadow-sm focus-within:border-[#032356] transition-all">
               <Search className="w-5 h-5 text-[#64748B] ml-4 shrink-0" />
               <input
                 type="text"
                 placeholder="Search services, products, standards, calculators..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full px-4 py-3.5 text-sm text-[#01255F] placeholder-[#64748B] bg-transparent focus:outline-none"
+                className="w-full px-4 py-3.5 text-sm text-[#032356] placeholder-[#64748B] bg-transparent focus:outline-none"
               />
               {query && (
                 <button
                   type="button"
                   onClick={() => setQuery("")}
-                  className="mr-4 text-xs font-semibold text-[#64748B] hover:text-[#D7030F]"
+                  className="mr-4 text-xs font-semibold text-[#64748B] hover:text-[#D4030C]"
                 >
                   Clear
                 </button>
@@ -154,8 +154,8 @@ export function QuickSearch() {
               onClick={() => setSelectedCategory(null)}
               className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                 selectedCategory === null
-                  ? "bg-[#01255F] text-white border-[#01255F]"
-                  : "bg-white text-[#01255F] border-[#DCE5F0] hover:bg-[#E8F3FF]"
+                  ? "bg-[#032356] text-white border-[#032356]"
+                  : "bg-white text-[#032356] border-[#DCE5F0] hover:bg-[#E8F3FF]"
               }`}
             >
               All Categories
@@ -172,11 +172,11 @@ export function QuickSearch() {
                   }
                   className={`inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border transition-colors ${
                     isActive
-                      ? "bg-[#01255F] text-white border-[#01255F]"
-                      : "bg-white text-[#01255F] border-[#DCE5F0] hover:bg-[#E8F3FF]"
+                      ? "bg-[#032356] text-white border-[#032356]"
+                      : "bg-white text-[#032356] border-[#DCE5F0] hover:bg-[#E8F3FF]"
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-[#D7030F]"}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-[#D4030C]"}`} />
                   <span>{cat.name}</span>
                 </button>
               );
@@ -195,10 +195,10 @@ export function QuickSearch() {
                   >
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold text-[#D7030F] uppercase tracking-wider bg-[#FFF2F2] px-2 py-0.5 rounded border border-[#FCD2D4]">
+                        <span className="text-[10px] font-bold text-[#D4030C] uppercase tracking-wider bg-[#FFF2F2] px-2 py-0.5 rounded border border-[#FCD2D4]">
                           {item.category}
                         </span>
-                        <h4 className="text-xs sm:text-sm font-semibold text-[#01255F] group-hover:text-[#D7030F]">
+                        <h4 className="text-xs sm:text-sm font-semibold text-[#032356] group-hover:text-[#D4030C]">
                           {item.title}
                         </h4>
                       </div>
@@ -206,7 +206,7 @@ export function QuickSearch() {
                         {item.description}
                       </p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#64748B] group-hover:text-[#01255F] shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#64748B] group-hover:text-[#032356] shrink-0" />
                   </Link>
                 ))
               ) : (

@@ -19,7 +19,7 @@ export function FAQSection() {
             />
 
             <div className="p-5 sm:p-6 bg-[#EAEEF3] border-2 border-[#CBD5E1] rounded-xl shadow-sm">
-              <span className="font-mono-spec text-[10px] font-bold text-[#C8101E] uppercase block mb-1">
+              <span className="font-mono-spec text-[10px] font-bold text-[#D4030C] uppercase block mb-1">
                 PROJECT-SPECIFIC INQUIRY?
               </span>
               <h4 className="text-base font-bold text-[#0A2540] tracking-tight mb-2">

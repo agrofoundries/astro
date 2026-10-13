@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   AlertOctagon,
   FileText,
+  CheckCheck,
   Info,
 } from "lucide-react";
 
@@ -18,38 +19,43 @@ interface QCTopic {
 const QC_TOPICS: QCTopic[] = [
   {
     title: "Concrete Strength Testing",
-    description: "Compressive cylinder testing per ASTM C39, slump flow / spread testing for SCC, and air content verification.",
+    description: "Compressive cylinder testing per ASTM C39, slump flow spread testing, and air content verification.",
     icon: Microscope,
   },
   {
     title: "Material Inspection",
-    description: "Verification of cementitious mill certs, aggregate gradation reports, rebar ASTM heat numbers, and prestress strand certs.",
+    description: "Verification of cement mill certs, aggregate gradation reports, and rebar steel heat numbers.",
     icon: FileText,
   },
   {
     title: "Dimensional Tolerances",
-    description: "Checking length, width, camber, squareness, and blockout placement against PCI MNL-116 and project tolerances.",
+    description: "Checking piece length, width, thickness, squareness, and blockout placement against project drawings.",
     icon: Ruler,
   },
   {
     title: "Quality Control Procedures",
-    description: "Standard operating procedures for pre-pour inspection, batching verification, vibration monitoring, and post-pour demolding.",
+    description: "Clear operating steps for pre-pour mold setup, concrete vibration, and post-cure demolding.",
     icon: ShieldCheck,
   },
   {
     title: "Inspection Checklists",
-    description: "Daily pre-pour mold checklists, tendon tensioning logs, embed plate location checks, and final yard inspection sheets.",
+    description: "Daily pre-pour mold checklists, tendon tensioning logs, and embed plate location verification.",
     icon: CheckCircle2,
   },
   {
-    title: "Nonconformance Reports (NCR)",
-    description: "Structured NCR documentation, root-cause investigation, engineering disposition review, and corrective action protocols.",
+    title: "Nonconformance Reports",
+    description: "Structured NCR documentation, root-cause investigation, and corrective engineering reviews.",
     icon: AlertOctagon,
   },
   {
     title: "Quality Documentation",
-    description: "As-built quality dossiers, certified technician testing logs, batch plant delivery tickets, and client turnover packages.",
+    description: "As-built quality reports, technician break logs, batch delivery tickets, and client records.",
     icon: FileCheck,
+  },
+  {
+    title: "Final Yard Pre-Shipment Check",
+    description: "Visual surface review, lifting loop verification, clear piece labeling, and secure flatbed tie-down checks before dispatch.",
+    icon: CheckCheck,
   },
 ];
 
@@ -59,11 +65,11 @@ export function QCAssurance() {
       <div className="section-container-wide">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D7030F] mb-2">
-            <span className="w-3 h-0.5 bg-[#D7030F]" />
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D4030C] mb-2">
+            <span className="w-3 h-0.5 bg-[#D4030C]" />
             <span>PLANT &amp; FIELD QA PROTOCOLS</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#01255F] uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#032356] uppercase tracking-tight">
             Quality Control &amp; Testing Assurance
           </h2>
           <p className="text-sm sm:text-base text-[#334155] mt-2">
@@ -71,20 +77,20 @@ export function QCAssurance() {
           </p>
         </div>
 
-        {/* 7 Topics Grid */}
+        {/* 8 Topics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {QC_TOPICS.map((topic, index) => {
             const Icon = topic.icon;
             return (
               <div
                 key={index}
-                className="bg-white border-2 border-[#DCE5F0] rounded-xl p-6 flex flex-col justify-between hover:border-[#01255F] hover:shadow-lg transition-all"
+                className="bg-white border-2 border-[#DCE5F0] rounded-xl p-6 flex flex-col justify-between hover:border-[#032356] hover:shadow-lg hover-lift transition-all"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-lg bg-[#F4F8FD] border border-[#DCE5F0] flex items-center justify-center text-[#01255F] mb-4">
-                    <Icon className="w-5 h-5 text-[#D7030F]" />
+                  <div className="w-11 h-11 rounded-lg bg-[#F4F8FD] border border-[#DCE5F0] flex items-center justify-center text-[#032356] mb-4">
+                    <Icon className="w-5 h-5 text-[#D4030C]" />
                   </div>
-                  <h3 className="text-base font-extrabold text-[#01255F] mb-2 leading-snug">
+                  <h3 className="text-base font-extrabold text-[#032356] mb-2 leading-snug">
                     {topic.title}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed">
@@ -98,9 +104,9 @@ export function QCAssurance() {
 
         {/* Technical Callout */}
         <div className="mt-8 bg-[#F4F8FD] border border-[#DCE5F0] rounded-xl p-5 flex items-start gap-3 text-xs text-[#475569] shadow-xs">
-          <Info className="w-5 h-5 text-[#01255F] shrink-0 mt-0.5" />
+          <Info className="w-5 h-5 text-[#032356] shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <h4 className="font-bold text-[#01255F] uppercase tracking-wide">Plant Verification &amp; Project QA Compliance</h4>
+            <h4 className="font-bold text-[#032356] uppercase tracking-wide">Plant Verification &amp; Project QA Compliance</h4>
             <p className="leading-relaxed">
               Every precast calculation, mold drawing, and piece ticket generated by PRECAST ENGINEERS incorporates stringent pre-pour checklists, embed tolerance envelopes, and lifting anchor safety factors (4:1 minimum per OSHA 1926) to ensure seamless yard production and field erection.
             </p>

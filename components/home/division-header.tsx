@@ -22,32 +22,32 @@ interface DivisionHeaderProps {
 
 const DEFAULT_MFG_METRICS: MetricItem[] = [
   {
-    value: "125,000",
-    label: "SQ. FT. CASTING BAYS",
-    description: "100% weather-protected climate-controlled plant",
+    value: "ASTM / ACI",
+    label: "TESTED CONCRETE MIXES",
+    description: "Quality mix designs verified per ASTM & state DOT standards",
   },
   {
-    value: "60 TONS",
-    label: "TANDEM OVERHEAD CRANES",
-    description: "Synchronized dual-hook bridge crane capacity",
+    value: "RIGGED",
+    label: "OVERHEAD CRANE HANDLING",
+    description: "Equipped bridge cranes for controlled element demolding",
   },
   {
-    value: "450+ YD³",
-    label: "DAILY BATCH OUTPUT",
-    description: "Automated planetary batching with moisture probes",
+    value: "AUTOMATED",
+    label: "PLANETARY BATCHING",
+    description: "Computerized batch plant with moisture probe controls",
   },
   {
-    value: "±1/16″",
-    label: "DIMENSIONAL TOLERANCE",
-    description: "Laser-aligned precision steel formwork verification",
+    value: "PRECISION",
+    label: "STEEL CASTING FORMS",
+    description: "Laser-aligned steel beds for tight dimensional tolerances",
   },
 ];
 
 const DEFAULT_ENG_METRICS: MetricItem[] = [
   {
-    value: "50 STATES",
+    value: "LICENSED PE",
     label: "PE & SE STAMPED CALCS",
-    description: "Full municipal & state DOT submittal approval",
+    description: "Structural calculations for municipal & state DOT submittals",
   },
   {
     value: "LOD 400",
@@ -55,9 +55,9 @@ const DEFAULT_ENG_METRICS: MetricItem[] = [
     description: "Clash-free embeds, rebar cages & piece tickets",
   },
   {
-    value: "< 2 HOURS",
-    label: "TAKEOFF TURNAROUND",
-    description: "Direct engineering submittal desk response",
+    value: "TAKEOFFS",
+    label: "DIRECT ESTIMATING DESK",
+    description: "Detailed drawing review and preliminary bill of materials",
   },
   {
     value: "MNL-120",
@@ -98,7 +98,7 @@ export function DivisionHeader({
             <div className="flex flex-wrap items-center gap-2.5 mb-3.5">
               <span
                 className={`px-3 py-1 rounded text-[11px] font-black uppercase tracking-wider font-mono shadow-xs ${
-                  isMfg ? "bg-[#D7030F] text-white" : "bg-[#01255F] text-white"
+                  isMfg ? "bg-[#D4030C] text-white" : "bg-[#032356] text-white"
                 }`}
               >
                 DIVISION {divisionNumber}
@@ -109,14 +109,14 @@ export function DivisionHeader({
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#01255F] tracking-tight uppercase leading-[1.1] mb-2.5">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#032356] tracking-tight uppercase leading-[1.1] mb-2.5">
               {title}
             </h2>
 
             {/* Subtitle Accent Line */}
             <div className="flex items-center gap-2.5 mb-4">
-              <span className={`w-8 h-1 rounded-full ${isMfg ? "bg-[#D7030F]" : "bg-[#01255F]"}`} />
-              <span className="text-xs sm:text-sm font-extrabold text-[#D7030F] uppercase tracking-wide">
+              <span className={`w-8 h-1 rounded-full ${isMfg ? "bg-[#D4030C]" : "bg-[#032356]"}`} />
+              <span className="text-xs sm:text-sm font-extrabold text-[#D4030C] uppercase tracking-wide">
                 {subtitle}
               </span>
             </div>
@@ -130,10 +130,10 @@ export function DivisionHeader({
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href={primaryLink.href}
-                className={`inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 ${
+                className={`inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 ${
                   isMfg
-                    ? "bg-[#D7030F] hover:bg-[#B31217] text-white shadow-red-600/25"
-                    : "bg-[#01255F] hover:bg-[#06182E] text-white shadow-blue-900/25"
+                    ? "bg-[#D4030C] hover:bg-[#B50209] text-white shadow-red-600/25"
+                    : "bg-[#032356] hover:bg-[#02173B] text-white shadow-blue-900/25"
                 }`}
               >
                 {isMfg ? <Factory className="w-4 h-4" /> : <Compass className="w-4 h-4" />}
@@ -144,7 +144,7 @@ export function DivisionHeader({
               {secondaryLink && (
                 <Link
                   href={secondaryLink.href}
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg border-2 border-[#DCE5F0] bg-white hover:bg-slate-50 text-[#01255F] text-xs font-black uppercase tracking-wider transition-colors shadow-xs"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg border-2 border-[#DCE5F0] bg-white hover:bg-slate-50 text-[#032356] text-xs font-black uppercase tracking-wider transition-colors shadow-xs active:scale-95"
                 >
                   <span>{secondaryLink.label}</span>
                 </Link>
@@ -158,17 +158,17 @@ export function DivisionHeader({
               {activeMetrics.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border-2 border-[#DCE5F0] hover:border-[#01255F] rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between"
+                  className="bg-white border-2 border-[#DCE5F0] hover:border-[#032356] rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md hover-lift transition-all group flex flex-col justify-between"
                 >
                   <div>
                     <div
-                      className={`text-2xl sm:text-3xl font-black font-mono tracking-tight leading-none mb-1.5 ${
-                        isMfg ? "text-[#D7030F]" : "text-[#01255F]"
+                      className={`text-lg sm:text-xl font-black font-mono tracking-tight leading-tight mb-1.5 ${
+                        isMfg ? "text-[#D4030C]" : "text-[#032356]"
                       }`}
                     >
                       {item.value}
                     </div>
-                    <div className="text-[11px] font-black text-[#01255F] uppercase tracking-wide leading-snug">
+                    <div className="text-[11px] font-black text-[#032356] uppercase tracking-wide leading-snug">
                       {item.label}
                     </div>
                   </div>

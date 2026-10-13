@@ -1,735 +1,1489 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperClass } from "swiper";
 import {
   ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-  PhoneCall,
+  ChevronLeft,
+  ChevronRight,
   SlidersHorizontal,
-  Factory,
+  Heart,
+  ShieldCheck,
+  Truck,
+  Anchor,
+  Clock,
+  Droplet,
+  Box,
+  FileText,
 } from "lucide-react";
 
-// ─── 1. HEAVY CIVIL INFRASTRUCTURE FIRST (TOP SPOTLIGHT) ─────────────────────
+// ─── DATA INTERFACES ──────────────────────────────────────────────────────────
 
-const HEAVY_MANUFACTURING_HEROES = [
-  {
-    id: "box-culvert-heavy",
-    title: "Heavy Precast Box Culverts",
-    tagline: "Highway Stream Crossings · ASTM C1577",
-    category: "heavy",
-    image: "/images/infrastructure.jpg",
-    badge: "★ HEAVY CIVIL INFRASTRUCTURE",
-    specs: "Spans 6' to 16' · AASHTO HS-25 Highway Traffic",
-    useFor: "Under-road stream crossings, rail underpasses, and large stormwater tunnels.",
-    highlight1: "Poured with 6,000+ PSI high-strength reinforced concrete",
-    highlight2: "Fast 1–2 day installation drastically cuts road closures",
-  },
-  {
-    id: "bridge-system",
-    title: "3-Sided Concrete Bridge Culverts",
-    tagline: "Stream Bed Preservation · Short-Span Bridges",
-    category: "heavy",
-    image: "/images/hero-bridge.jpg",
-    badge: "DOT HIGHWAY BRIDGE",
-    specs: "Clear Spans 12' to 45' · Precast Footings Included",
-    useFor: "Environmentally sensitive creek bridges and highway road crossings.",
-    highlight1: "Open-bottom design leaves natural river beds completely undisturbed",
-    highlight2: "Precast modular segments set in place in a single crane shift",
-  },
-  {
-    id: "wingwall-retaining",
-    title: "Precast Bridge Wing Walls",
-    tagline: "Bridge Slopes & Retaining Panels · State DOT",
-    category: "heavy",
-    image: "/images/products/wingwall-dot.png",
-    badge: "DOT HIGHWAY STANDARD",
-    specs: "Heights 4' to 16' · Straight & 30°/45° Flared Wings",
-    useFor: "Holding back steep earth embankments at culvert and bridge entrances.",
-    highlight1: "Locks tight to box culverts to stop road shoulder erosion",
-    highlight2: "Cast-in lifting hardware enables rapid crane alignment",
-  },
-];
+export interface VariableSpec {
+  label: string;
+  value: string;
+  sub?: string;
+}
 
-// ─── 2. PRODUCT CARDS WITH IMAGE, DESCRIPTION, AND DEDICATED SIZES PILL ─────
-
-export interface ProductCardItem {
+export interface ProductVariable {
   id: string;
   name: string;
-  category: "heavy" | "drainage" | "tanks";
-  categoryBadge: string;
-  badgeType: "exchange" | "heavy" | "dot";
+  shortName: string;
+  badge: string;
   categoryLabel: string;
   description: string;
-  availableSizes: string;
-  standard: string;
+  features: [string, string, string, string];
+  specCapacity: VariableSpec;
+  specDimensions: VariableSpec;
+  specStandards: VariableSpec;
   image: string;
   href: string;
 }
 
-const ALL_PRODUCT_CARDS: ProductCardItem[] = [
-  // ─── HEAVY PRODUCTS FIRST (AS REQUESTED) ──────────────────────────
+export interface ProductFamily {
+  id: string;
+  name: string;
+  category: "drainage" | "heavy" | "tanks";
+  categoryBadge: string;
+  categoryLabel: string;
+  summary: string;
+  description: string;
+  variables: ProductVariable[];
+}
+
+// ─── PRODUCT FAMILIES DATA ───────────────────────────────────────────────────
+
+export const PRODUCT_FAMILIES: ProductFamily[] = [
+  // ── 1. MONOLITHIC SEPTIC TANKS ─────────────────────────────────────────────
   {
-    id: "box-culvert-card",
-    name: "Precast Concrete Box Culverts",
-    category: "heavy",
-    categoryBadge: "HEAVY INFRASTRUCTURE",
-    badgeType: "heavy",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    description: "Massive rectangular concrete tunnel blocks placed beneath highways to carry streams and storm runoff.",
-    availableSizes: "Spans: 6'×3' to 16'×12' · 24 DOT Standard Sizes",
-    standard: "ASTM C1577 / AASHTO HS-25",
-    image: "/images/infrastructure.jpg",
-    href: "/#contact",
-  },
-  {
-    id: "wingwall-dot-card",
-    name: "Precast Bridge Wing Walls",
-    category: "heavy",
-    categoryBadge: "DOT HIGHWAY STANDARD",
-    badgeType: "dot",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    description: "Heavy concrete retaining walls that hold back steep dirt banks and guide water smoothly into culverts.",
-    availableSizes: "Heights: 4 ft to 16 ft · 30° & 45° Flared Wings",
-    standard: "Maine DOT / AASHTO HS-20",
-    image: "/images/products/wingwall-dot.png",
-    href: "/#contact",
-  },
-  {
-    id: "headwall-nh-24-card",
-    name: "24\" Pipe Highway Headwalls",
-    category: "heavy",
-    categoryBadge: "DOT HIGHWAY STANDARD",
-    badgeType: "dot",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    description: "Solid precast end block for 24-inch drainage pipes that stops road shoulder washouts and anchors the pipe.",
-    availableSizes: "Fits 24\" Culvert Pipes · 10 Standard Models",
-    standard: "NH DOT Standard / HS-20",
-    image: "/images/products/headwall-nh-24.png",
-    href: "/#contact",
-  },
-  {
-    id: "headwall-nh-12-card",
-    name: "12\" Pipe Precast Concrete Headwalls",
-    category: "heavy",
-    categoryBadge: "DOT HIGHWAY STANDARD",
-    badgeType: "dot",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    description: "Monolithic precast culvert end wall for 12-inch drainage pipes on driveways, streets, and parking lots.",
-    availableSizes: "Fits 12\" Culvert Pipes · 12 Standard Models",
-    standard: "NH DOT Standard / HS-20",
-    image: "/images/products/headwall-nh-12.png",
-    href: "/#contact",
-  },
-  {
-    id: "headwall-custom-card",
-    name: "Custom Culvert Headwalls & Weirs",
-    category: "heavy",
-    categoryBadge: "ENGINEERED PRECAST",
-    badgeType: "heavy",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    description: "Custom-cast concrete headwalls with engineered pipe openings and water-measuring weir cutouts.",
-    availableSizes: "Custom Sized to Project Plans · 8 Base Models",
-    standard: "NH DOT / PE Stamped",
-    image: "/images/products/headwall-custom.png",
-    href: "/#contact",
-  },
-  {
-    id: "endwall-dot-triple-card",
-    name: "Triple-Opening Culvert End Walls",
-    category: "heavy",
-    categoryBadge: "DOT HIGHWAY STANDARD",
-    badgeType: "dot",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    description: "Wide precast concrete headwall built to receive three parallel drainage pipes cleanly at major ditch exits.",
-    availableSizes: "Multi-Culvert Outfall · 6 Standard Models",
-    standard: "Maine DOT / AASHTO HS-20",
-    image: "/images/products/endwall-dot-triple.png",
-    href: "/#contact",
-  },
-  {
-    id: "endwall-dot-corner-card",
-    name: "Corner L-End Retaining Walls",
-    category: "heavy",
-    categoryBadge: "DOT HIGHWAY STANDARD",
-    badgeType: "dot",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    description: "90-degree corner concrete walls that support roadside slopes while letting storm drainage pipes pass through.",
-    availableSizes: "L-Configuration Geometry · 8 Models Available",
-    standard: "Maine DOT Standard",
-    image: "/images/products/endwall-dot-corner.png",
-    href: "/#contact",
+    id: "septic-tanks",
+    name: "Monolithic Precast Septic Tanks",
+    category: "tanks",
+    categoryBadge: "WATERTIGHT PRECAST",
+    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+    summary: "3 Variables · 1000G, 1500G & 2000G Commercial Capacities",
+    description:
+      "Watertight single-pour precast septic tanks with integrated PVC baffles and reinforced traffic lids built for commercial and municipal wastewater projects.",
+    variables: [
+      {
+        id: "tank-septic-2000-var",
+        name: "2000G Commercial Precast Septic Tank",
+        shortName: "2,000G Commercial",
+        badge: "WATERTIGHT PRECAST",
+        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+        description:
+          "Large commercial-grade wastewater tank built with thick walls to withstand heavy vehicle wheel traffic above.",
+        features: [
+          "Watertight Construction",
+          "Vehicle Traffic Rated",
+          "High-Strength Concrete",
+          "Long Service Life",
+        ],
+        specCapacity: {
+          label: "CAPACITY",
+          value: "2,000 Gallons",
+          sub: "(7,571 Liters)",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "8 ft (Ø) x 8 ft (H)",
+          sub: "Standard Round",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C1227",
+          sub: "HS-20 Traffic",
+        },
+        image: "/images/products/septic-tank-2000g.png",
+        href: "/#contact",
+      },
+      {
+        id: "tank-septic-1500-var",
+        name: "1500G Dual-Chamber Septic Tank",
+        shortName: "1,500G Dual Chamber",
+        badge: "WATERTIGHT PRECAST",
+        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+        description:
+          "Engineered two-compartment settling tank providing primary digestion and secondary clarification for high-flow facilities.",
+        features: [
+          "Dual Settling Rooms",
+          "Vehicle Traffic Rated",
+          "High-Strength Concrete",
+          "Long Service Life",
+        ],
+        specCapacity: {
+          label: "CAPACITY",
+          value: "1,500 Gallons",
+          sub: "(5,678 Liters)",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "10' L x 5.5' W x 5.5' H",
+          sub: "Dual Chamber",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C1227",
+          sub: "Heavy-Duty Top",
+        },
+        image: "/images/products/septic-tank-1500g.png",
+        href: "/#contact",
+      },
+      {
+        id: "tank-septic-1000-var",
+        name: "1000G Monolithic Septic Tank",
+        shortName: "1,000G Standard",
+        badge: "WATERTIGHT PRECAST",
+        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+        description:
+          "Seamless monolithic single-pour septic tank with sanitary PVC tees, engineered for commercial and multi-family sewage storage.",
+        features: [
+          "Seamless Monolith",
+          "AASHTO H-20 Rated",
+          "High-Strength Concrete",
+          "Long Service Life",
+        ],
+        specCapacity: {
+          label: "CAPACITY",
+          value: "1,000 Gallons",
+          sub: "(3,785 Liters)",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "8.5' L x 5.0' W x 5.0' H",
+          sub: "Single Chamber",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C1227",
+          sub: "Watertight Tested",
+        },
+        image: "/images/products/septic-tank-1000g.png",
+        href: "/#contact",
+      },
+    ],
   },
 
-  // ─── DRAINAGE & STORMWATER (COPIED DIRECTLY FROM PRECAST EXCHANGE) ──
+  // ── 2. STORM DRAIN INLET BOXES ─────────────────────────────────────────────
   {
-    id: "storm-inlet-1-card",
-    name: "1.2m Storm Drain Inlet (600×900mm) — Case 1",
+    id: "storm-inlets",
+    name: "Storm Drain Inlet Boxes (600×900mm)",
     category: "drainage",
     categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
     categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Heavy precast concrete box installed beneath street curbs to catch rushing rainwater during storms.",
-    availableSizes: "600 × 900 mm · 1.2m Depth",
-    standard: "ASTM C478 / Traffic Rated",
-    image: "/images/products/storm-drain-inlet-1.webp",
-    href: "/#contact",
+    summary: "4 Variables · Curb Gutters, 1.2m Depths & Knockout Options",
+    description:
+      "Municipal precast stormwater inlet basins with cast knockouts and heavy-duty frame configurations engineered for roadway runoff capture.",
+    variables: [
+      {
+        id: "storm-inlet-1-var",
+        name: "1.2m Storm Drain Inlet (600×900mm) — Case 1",
+        shortName: "1.2m Depth (Case 1)",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Heavy precast concrete box installed beneath street curbs to catch rushing rainwater during storms.",
+        features: [
+          "Precast Monolith",
+          "AASHTO HS-20 Rated",
+          "High-Flow Grate Fit",
+          "Quick Pipe Tie-In",
+        ],
+        specCapacity: {
+          label: "OPENING",
+          value: "600 × 900 mm",
+          sub: "Curb Gutter Box",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "1.2m Depth (48\")",
+          sub: "Standard Wall",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "DOT Traffic Ready",
+        },
+        image: "/images/products/storm-drain-inlet-1.webp",
+        href: "/#contact",
+      },
+      {
+        id: "storm-inlet-2-var",
+        name: "1.2m Storm Drain Inlet (600×900mm) — Case 2",
+        shortName: "1.2m Depth (Case 2)",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Deep street drain inlet box with multi-direction pipe knockouts for road intersections and curb gutters.",
+        features: [
+          "Multi Knockout Walls",
+          "Heavy Traffic Top",
+          "High-Strength Concrete",
+          "Corrosion Resistant",
+        ],
+        specCapacity: {
+          label: "OPENING",
+          value: "600 × 900 mm",
+          sub: "Corner Intersections",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "1.2m Depth (48\")",
+          sub: "Multi-Port Design",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "AASHTO HS-20",
+        },
+        image: "/images/products/storm-drain-inlet-2.webp",
+        href: "/#contact",
+      },
+      {
+        id: "storm-inlet-case1-var",
+        name: "600×900mm Opening Storm Drain Inlet Case 1",
+        shortName: "600×900mm (Case 1)",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Precast storm inlet basin engineered for high-volume roadway water collection and easy pipe hookup.",
+        features: [
+          "Engineered Flow",
+          "Vehicle Traffic Rated",
+          "High-Strength Concrete",
+          "Cast-in Knockouts",
+        ],
+        specCapacity: {
+          label: "OPENING",
+          value: "600 × 900 mm",
+          sub: "Top Opening",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Custom Stackable Risers",
+          sub: "DOT Standard",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "DOT Ready",
+        },
+        image: "/images/products/storm-drain-inlet-case1-logo.webp",
+        href: "/#contact",
+      },
+      {
+        id: "storm-inlet-case2-var",
+        name: "600×900mm Opening Storm Drain Inlet Case 2",
+        shortName: "600×900mm (Case 2)",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Heavy-duty storm drain box with cast-in knockout walls for municipal roadway storm sewer tie-ins.",
+        features: [
+          "Heavy Wall Shell",
+          "Semi-Truck Wheel Rated",
+          "High-Strength Concrete",
+          "Smooth Gasket Seats",
+        ],
+        specCapacity: {
+          label: "OPENING",
+          value: "600 × 900 mm",
+          sub: "Reinforced Basin",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Heavy Traffic Profile",
+          sub: "Multi-Knockout",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "Traffic Rated",
+        },
+        image: "/images/products/storm-drain-inlet-case2-logo.webp",
+        href: "/#contact",
+      },
+    ],
   },
+
+  // ── 3. PRECAST ROAD CATCH BASINS ───────────────────────────────────────────
   {
-    id: "storm-inlet-2-card",
-    name: "1.2m Storm Drain Inlet (600×900mm) — Case 2",
+    id: "catch-basins",
+    name: "Precast Road Catch Basins",
     category: "drainage",
     categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
     categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Deep street drain inlet box with multi-direction pipe knockouts for road intersections and curb gutters.",
-    availableSizes: "600 × 900 mm · 1.2m Depth",
-    standard: "ASTM C478 / AASHTO HS-20",
-    image: "/images/products/storm-drain-inlet-2.webp",
-    href: "/#contact",
+    summary: "6 Variables · Curb Inlets, Sumps & Monolithic Basins",
+    description:
+      "Full spectrum of highway and municipal catch basins including deep sediment sumps, curb inlets, and standard DOT road models.",
+    variables: [
+      {
+        id: "catch-basin-b01b-var",
+        name: "B-01B Precast Road Catch Basin",
+        shortName: "B-01B Road Standard",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Monolithic roadside catchpit box that catches street runoff and traps gravel before water enters sewers.",
+        features: [
+          "Sediment Trap Sump",
+          "Vehicle Traffic Rated",
+          "High-Strength Concrete",
+          "Preformed Knockouts",
+        ],
+        specCapacity: {
+          label: "SIZES",
+          value: "24\"×24\" to 36\"×36\"",
+          sub: "DOT Standard",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "3' x 3' x 4' Depth",
+          sub: "Square Footprint",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "DOT Approved",
+        },
+        image: "/images/products/b-01b.webp",
+        href: "/#contact",
+      },
+      {
+        id: "catch-basin-b01d-var",
+        name: "B-01D Heavy Curb Catch Basin",
+        shortName: "B-01D Curb Inlet",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Reinforced catch basin built to sit directly beneath street curbs and support heavy semi-truck wheel loads.",
+        features: [
+          "Sub-Curb Placement",
+          "AASHTO HS-20 Traffic",
+          "Reinforced Walls",
+          "Long Service Life",
+        ],
+        specCapacity: {
+          label: "INLET PROFILE",
+          value: "Heavy Curb Throat",
+          sub: "Curbside Runoff",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "3' x 3' x 5' Depth",
+          sub: "12 DOT Models",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "AASHTO HS-20",
+          sub: "Traffic Rated",
+        },
+        image: "/images/products/b-01d.webp",
+        href: "/#contact",
+      },
+      {
+        id: "catch-basin-b01e-var",
+        name: "B-01E Deep Sump Catch Basin",
+        shortName: "B-01E Deep Sump",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Catch basin with an extra deep bottom reservoir that traps sand, leaves, and street grime cleanly.",
+        features: [
+          "Extra Deep Reservoir",
+          "Vehicle Traffic Rated",
+          "Debris Separation",
+          "Easy Vacuum Cleanout",
+        ],
+        specCapacity: {
+          label: "SUMP DEPTH",
+          value: "Extended 36\" Sump",
+          sub: "Sediment Trap",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "3' x 3' x 7' Overall",
+          sub: "Deep Chamber",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "Municipal Standard",
+        },
+        image: "/images/products/b-01e.webp",
+        href: "/#contact",
+      },
+      {
+        id: "catch-basin-side-inlet-var",
+        name: "Catch Basin with Side Inlet Frame & Cover",
+        shortName: "Side Inlet Monolith",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "All-in-one precast basin with heavy cast-iron side curb frame that swallows water rushing along street gutters.",
+        features: [
+          "Cast-Iron Frame Seat",
+          "AASHTO HS-20 Traffic",
+          "Monolithic Box",
+          "Immediate Street Tie-In",
+        ],
+        specCapacity: {
+          label: "FRAME FIT",
+          value: "Side Curb Inlet",
+          sub: "Cast-Iron Seat",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "4' x 4' Monolithic Box",
+          sub: "Ready Stock",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "DOT Curb Inlet",
+          sub: "Traffic Approved",
+        },
+        image: "/images/products/catch-basin-side-inlet.webp",
+        href: "/#contact",
+      },
+      {
+        id: "cb-6-var",
+        name: "CB-6 Series Roadway Catch Basin",
+        shortName: "CB-6 Series Basin",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Standard road construction catchpit basin for parking lots, business parks, and residential subdivisions.",
+        features: [
+          "Standard CB-6 Mold",
+          "Vehicle Traffic Rated",
+          "High-Strength Concrete",
+          "Pre-cored Openings",
+        ],
+        specCapacity: {
+          label: "DOT MODEL",
+          value: "CB-6 Standard",
+          sub: "Parking & Subdivisions",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "2.5' x 2.5' x 4' Depth",
+          sub: "12 Base Sizes",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "HS-20 Traffic",
+        },
+        image: "/images/products/cb-6-catch-basin.webp",
+        href: "/#contact",
+      },
+      {
+        id: "catch-basin-2ft-var",
+        name: "2 FT Monolithic Square Catch Basin",
+        shortName: "2 FT Monolithic Box",
+        badge: "PRIMARY SHOWCASE",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Square concrete basin with seamless leak-proof base and pre-cast pipe knockouts for rapid connection.",
+        features: [
+          "Single-Pour Floor",
+          "Vehicle Traffic Rated",
+          "Precision Knockouts",
+          "Up to 12 ft Depths",
+        ],
+        specCapacity: {
+          label: "SIZES",
+          value: "24\"×24\" to 48\"×48\"",
+          sub: "Square Footprint",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Depths Up to 12 ft",
+          sub: "Stackable Extensions",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "AASHTO HS-20",
+        },
+        image: "/images/products/catch-basin-2ft.png",
+        href: "/#contact",
+      },
+    ],
   },
+
+  // ── 4. HIGHWAY HEADWALLS & ENDWALLS ────────────────────────────────────────
   {
-    id: "storm-inlet-case1-card",
-    name: "600×900mm Opening Storm Drain Inlet Case 1",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Precast storm inlet basin engineered for high-volume roadway water collection and easy pipe hookup.",
-    availableSizes: "600 × 900 mm Top Opening · Ready Stock",
-    standard: "ASTM C478 / DOT Ready",
-    image: "/images/products/storm-drain-inlet-case1-logo.webp",
-    href: "/#contact",
+    id: "headwalls-endwalls",
+    name: "Highway Headwalls & Endwalls",
+    category: "heavy",
+    categoryBadge: "DOT HIGHWAY STANDARD",
+    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+    summary: "5 Variables · 12\" to 24\" Culverts, Weirs & Triple Outfalls",
+    description:
+      "Heavy DOT-approved pipe headwalls, custom engineered weir structures, and multi-culvert retention endwalls preventing soil erosion.",
+    variables: [
+      {
+        id: "headwall-nh-12-var",
+        name: "12\" Pipe Precast Concrete Headwalls",
+        shortName: "12\" Pipe Headwall",
+        badge: "DOT HIGHWAY STANDARD",
+        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+        description:
+          "Monolithic precast culvert end wall for 12-inch drainage pipes on driveways, streets, and parking lots.",
+        features: [
+          "Anchors Pipe Securely",
+          "Prevents Road Washouts",
+          "High-Strength Concrete",
+          "Fast Field Set",
+        ],
+        specCapacity: {
+          label: "PIPE FIT",
+          value: "12\" Culvert Pipes",
+          sub: "Concrete/HDPE/CMP",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "5' W x 3' H x 1.5' D",
+          sub: "12 Standard Models",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "NH DOT Standard",
+          sub: "HS-20 Traffic",
+        },
+        image: "/images/products/headwall-nh-12.png",
+        href: "/#contact",
+      },
+      {
+        id: "headwall-nh-24-var",
+        name: "24\" Pipe Highway Headwalls",
+        shortName: "24\" Pipe Headwall",
+        badge: "DOT HIGHWAY STANDARD",
+        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+        description:
+          "Solid precast end block for 24-inch drainage pipes that stops road shoulder washouts and anchors the pipe.",
+        features: [
+          "Heavy Road Shoulder Anchor",
+          "Flared Wing Guidance",
+          "High-Strength Concrete",
+          "Erosion Control",
+        ],
+        specCapacity: {
+          label: "PIPE FIT",
+          value: "24\" Culvert Pipes",
+          sub: "Round & Arch Profiles",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "7' W x 4.5' H x 2' D",
+          sub: "10 Standard Models",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "NH DOT Standard",
+          sub: "HS-20 Rated",
+        },
+        image: "/images/products/headwall-nh-24.png",
+        href: "/#contact",
+      },
+      {
+        id: "headwall-custom-var",
+        name: "Custom Culvert Headwalls & Weirs",
+        shortName: "Custom Weir Structure",
+        badge: "ENGINEERED PRECAST",
+        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+        description:
+          "Custom-cast concrete headwalls with engineered pipe openings and water-measuring weir cutouts.",
+        features: [
+          "Engineered Flow Notch",
+          "Civil Engineering PE Stamp",
+          "High-Strength Concrete",
+          "Tailored To Site Plans",
+        ],
+        specCapacity: {
+          label: "ENGINEERED NOTCH",
+          value: "V-Notch & Rectangular",
+          sub: "Retention Control",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Custom To Civil Plans",
+          sub: "8 Base Geometries",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "NH DOT Approved",
+          sub: "PE Stamped Drawings",
+        },
+        image: "/images/products/headwall-custom.png",
+        href: "/#contact",
+      },
+      {
+        id: "endwall-dot-triple-var",
+        name: "Triple-Opening Culvert End Walls",
+        shortName: "Triple Culvert Endwall",
+        badge: "DOT HIGHWAY STANDARD",
+        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+        description:
+          "Wide precast concrete headwall built to receive three parallel drainage pipes cleanly at major ditch exits.",
+        features: [
+          "Triple Culvert Intake",
+          "Massive Monolith",
+          "Heavy Flow Dissipation",
+          "Maine DOT Stamped",
+        ],
+        specCapacity: {
+          label: "RECEIVES",
+          value: "3 Parallel Culverts",
+          sub: "Ditch Outfall Hub",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "14' W x 5' H x 3' Base",
+          sub: "6 Standard Models",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "Maine DOT",
+          sub: "AASHTO HS-20",
+        },
+        image: "/images/products/endwall-dot-triple.png",
+        href: "/#contact",
+      },
+      {
+        id: "endwall-dot-corner-var",
+        name: "Corner L-End Retaining Walls",
+        shortName: "Corner L-Wall",
+        badge: "DOT HIGHWAY STANDARD",
+        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+        description:
+          "90-degree corner concrete walls that support roadside slopes while letting storm drainage pipes pass through.",
+        features: [
+          "90° Wingwall Return",
+          "Earth Retaining Strength",
+          "High-Strength Concrete",
+          "Culvert Sump Port",
+        ],
+        specCapacity: {
+          label: "GEOMETRY",
+          value: "90° L-Configuration",
+          sub: "Slope Retention",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "8' x 6' Corner Footprint",
+          sub: "8 Models Available",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "Maine DOT Standard",
+          sub: "Heavy Duty",
+        },
+        image: "/images/products/endwall-dot-corner.png",
+        href: "/#contact",
+      },
+    ],
   },
+
+  // ── 5. HEAVY BOX CULVERTS & PLANT TOOLING ──────────────────────────────────
   {
-    id: "storm-inlet-case2-card",
-    name: "600×900mm Opening Storm Drain Inlet Case 2",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Heavy-duty storm drain box with cast-in knockout walls for municipal roadway storm sewer tie-ins.",
-    availableSizes: "600 × 900 mm Top Opening · Heavy Traffic",
-    standard: "ASTM C478 / Traffic Rated",
-    image: "/images/products/storm-drain-inlet-case2-logo.webp",
-    href: "/#contact",
+    id: "box-culverts",
+    name: "Heavy Box Culverts, Bridges & Gang Molds",
+    category: "heavy",
+    categoryBadge: "HEAVY CIVIL INFRASTRUCTURE",
+    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+    summary: "3 Variables · Stream Crossings, Wing Walls & Multi-Cavity Steel Molds",
+    description:
+      "Large-scale rectangular bridge culverts, flared wing wall assemblies, and multi-cavity precision steel gang molds for precast manufacturing plants.",
+    variables: [
+      {
+        id: "box-culvert-var",
+        name: "Precast Concrete Box Culverts",
+        shortName: "Heavy Box Culverts",
+        badge: "HEAVY INFRASTRUCTURE",
+        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+        description:
+          "Massive rectangular concrete tunnel blocks placed beneath highways to carry streams and storm runoff.",
+        features: [
+          "ASTM C1577 Engineered",
+          "AASHTO HS-25 Rated",
+          "High-Strength 5,000+ PSI",
+          "Tongue & Groove Joint",
+        ],
+        specCapacity: {
+          label: "SPANS",
+          value: "6'×3' to 16'×12'",
+          sub: "24 DOT Standard Sizes",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Custom Length Sections",
+          sub: "Modular Assembly",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C1577",
+          sub: "AASHTO HS-25",
+        },
+        image: "/images/infrastructure.jpg",
+        href: "/#contact",
+      },
+      {
+        id: "wingwall-dot-var",
+        name: "Precast Bridge Wing Walls",
+        shortName: "Bridge Wing Walls",
+        badge: "DOT HIGHWAY STANDARD",
+        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
+        description:
+          "Heavy concrete retaining walls that hold back steep dirt banks and guide water smoothly into culverts.",
+        features: [
+          "30° & 45° Flare Angles",
+          "Heavy Highway Earth Load",
+          "High-Strength Concrete",
+          "Tie-Back Anchors",
+        ],
+        specCapacity: {
+          label: "HEIGHT RANGE",
+          value: "4 ft to 16 ft Heights",
+          sub: "Flared Wing Profile",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Matched To Culvert Span",
+          sub: "DOT Highway Standard",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "Maine DOT",
+          sub: "AASHTO HS-20",
+        },
+        image: "/images/products/wingwall-dot.png",
+        href: "/#contact",
+      },
+      {
+        id: "solid-round-slab-gang-mold-var",
+        name: "Solid Round Slab Gang Mold",
+        shortName: "Plant Gang Mold",
+        badge: "PLANT TOOLING",
+        categoryLabel: "PRECAST GANG MOLDS",
+        description:
+          "Heavy-duty multi-cavity steel gang mold designed to cast multiple solid round concrete slabs, manhole covers, and grade rings in a single production pour.",
+        features: [
+          "Multi-Cavity Steel Setup",
+          "High Output Single Pour",
+          "Precision Tolerance",
+          "Fast Strip Mechanism",
+        ],
+        specCapacity: {
+          label: "OUTPUT",
+          value: "Multiple Slabs / Pour",
+          sub: "Round Slabs & Rings",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Precision Steel Bed",
+          sub: "Plant Production",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "Heavy Steel Fab",
+          sub: "CNC Laser Cut",
+        },
+        image: "/images/manufacturing.jpg",
+        href: "/#contact",
+      },
+    ],
   },
+
+  // ── 6. COMMERCIAL GREASE TRAPS ─────────────────────────────────────────────
   {
-    id: "catch-basin-b01b-card",
-    name: "B-01B Precast Road Catch Basin",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Monolithic roadside catchpit box that catches street runoff and traps gravel before water enters sewers.",
-    availableSizes: "Sizes: 24\"×24\" to 36\"×36\" · DOT Standard",
-    standard: "ASTM C478 / DOT Approved",
-    image: "/images/products/b-01b.webp",
-    href: "/#contact",
+    id: "grease-traps",
+    name: "Commercial Grease Interceptors",
+    category: "tanks",
+    categoryBadge: "WATERTIGHT PRECAST",
+    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+    summary: "2 Variables · 1000G & 1500G Commercial FOG Interceptors",
+    description:
+      "Municipal-compliant fats, oil, and grease (FOG) separation tanks for restaurants, hotel kitchens, food manufacturing, and retail dining plazas.",
+    variables: [
+      {
+        id: "tank-grease-1000-var",
+        name: "1000 Gallon Precast Grease Trap",
+        shortName: "1,000G Grease Trap",
+        badge: "COMMERCIAL FOOD SERVICE",
+        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+        description:
+          "Precast interceptor box that traps kitchen fats, oils, and grease before restaurant wastewater flows into city sewers.",
+        features: [
+          "Dual Internal Baffles",
+          "Vehicle Traffic Rated",
+          "PDI-G101 Certified",
+          "Gas-Tight Lid Seals",
+        ],
+        specCapacity: {
+          label: "CAPACITY",
+          value: "1,000 Gallons",
+          sub: "(3,785 Liters)",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "8' L x 4.5' W x 5' H",
+          sub: "Dual Chamber FOG",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "PDI-G101",
+          sub: "IAPMO Listed",
+        },
+        image: "/images/products/grease-trap-1000g.png",
+        href: "/#contact",
+      },
+      {
+        id: "tank-grease-1500-var",
+        name: "1500 Gallon Commercial Grease Interceptor",
+        shortName: "1,500G High Capacity",
+        badge: "HIGH CAPACITY FOOD SERVICE",
+        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+        description:
+          "Large capacity grease separator with cast-in baffles for supermarkets, hospital cafeterias, and hotel food courts.",
+        features: [
+          "High Flow Separation",
+          "Cast-Iron Covers Included",
+          "High-Strength Concrete",
+          "Long Service Life",
+        ],
+        specCapacity: {
+          label: "CAPACITY",
+          value: "1,500 Gallons",
+          sub: "(5,678 Liters)",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "10' L x 5.5' W x 5.5' H",
+          sub: "Heavy Duty FOG",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "PDI-G101",
+          sub: "ASTM C1227",
+        },
+        image: "/images/products/grease-trap-1500g.png",
+        href: "/#contact",
+      },
+    ],
   },
+
+  // ── 7. LEACHING GALLEYS & INFILTRATION ──────────────────────────────────────
   {
-    id: "catch-basin-b01d-card",
-    name: "B-01D Heavy Curb Catch Basin",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Reinforced catch basin built to sit directly beneath street curbs and support heavy semi-truck wheel loads.",
-    availableSizes: "Heavy Curb Inlet Profile · 12 Models",
-    standard: "AASHTO HS-20 Traffic Rated",
-    image: "/images/products/b-01d.webp",
-    href: "/#contact",
-  },
-  {
-    id: "catch-basin-b01e-card",
-    name: "B-01E Deep Sump Catch Basin",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Catch basin with an extra deep bottom reservoir that traps sand, leaves, and street grime cleanly.",
-    availableSizes: "Deep Sump Sediment Pit · 10 Models",
-    standard: "ASTM C478 Municipal Standard",
-    image: "/images/products/b-01e.webp",
-    href: "/#contact",
-  },
-  {
-    id: "catch-basin-side-inlet-card",
-    name: "Catch Basin with Side Inlet Frame & Cover",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "All-in-one precast basin with heavy cast-iron side curb frame that swallows water rushing along street gutters.",
-    availableSizes: "Monolithic Box + Iron Frame · Ready Stock",
-    standard: "DOT Curb Inlet Standard",
-    image: "/images/products/catch-basin-side-inlet.webp",
-    href: "/#contact",
-  },
-  {
-    id: "cb-6-card",
-    name: "CB-6 Series Roadway Catch Basin",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Standard road construction catchpit basin for parking lots, business parks, and residential subdivisions.",
-    availableSizes: "Standard CB-6 DOT Geometry · 12 Models",
-    standard: "ASTM C478 / HS-20 Traffic",
-    image: "/images/products/cb-6-catch-basin.webp",
-    href: "/#contact",
-  },
-  {
-    id: "manhole-1050-card",
-    name: "Catch Basin Manhole 1050mm Diameter",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Deep circular concrete access shaft allowing utility workers to inspect and maintain underground pipes safely.",
-    availableSizes: "Diameter: 1050 mm (42\") · Stackable Risers",
-    standard: "ASTM C478 / AASHTO HS-20",
-    image: "/images/products/manhole-1050mm.webp",
-    href: "/#contact",
-  },
-  {
-    id: "manhole-reinforced-card",
-    name: "Precast Reinforced Catch Basin Manhole (1050mm)",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    badgeType: "exchange",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Heavy reinforced circular manhole chamber with pipe gaskets designed for deep utility installations.",
-    availableSizes: "1050 mm Reinforced Shell · 8 Models",
-    standard: "ASTM C478 Heavy Duty",
-    image: "/images/products/precast-reinforced-manhole.webp",
-    href: "/#contact",
-  },
-  {
-    id: "catch-basin-2ft-card",
-    name: "2 FT Monolithic Square Catch Basin",
-    category: "drainage",
-    categoryBadge: "PRIMARY SHOWCASE",
-    badgeType: "heavy",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Square concrete basin with seamless leak-proof base and pre-cast pipe knockouts for rapid connection.",
-    availableSizes: "Sizes: 24\"×24\" to 48\"×48\" · Depths up to 12 ft",
-    standard: "ASTM C478 / AASHTO HS-20",
-    image: "/images/products/catch-basin-2ft.png",
-    href: "/#contact",
-  },
-  {
-    id: "leaching-galleys-dot-card",
-    name: "(Maine DOT) 2 FT Leaching Galleys",
+    id: "leaching-galleys",
+    name: "Maine DOT Leaching Galleys",
     category: "drainage",
     categoryBadge: "DOT SPECIFICATION",
-    badgeType: "dot",
     categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Compact underground soakaway galleries that replace surface retention ponds and save usable site land.",
-    availableSizes: "2 FT Modular Infiltration · 6 Models",
-    standard: "Maine DOT / AASHTO H-20",
-    image: "/images/products/leaching-galley.png",
-    href: "/#contact",
-  },
-  {
-    id: "leaching-galleys-lc6-card",
-    name: "(Maine DOT) LC-6 Leaching Galleys",
-    category: "drainage",
-    categoryBadge: "DOT CERTIFIED",
-    badgeType: "dot",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    description: "Underground perforated concrete chambers that naturally soak rainwater runoff into the soil beneath parking lots.",
-    availableSizes: "High-Capacity LC-6 Geometry · 8 Models",
-    standard: "Maine DOT / High Capacity",
-    image: "/images/products/leaching-galley-lc6.png",
-    href: "/#contact",
+    summary: "2 Variables · 2 FT Modular & LC-6 High Capacity Chambers",
+    description:
+      "Engineered stormwater infiltration chambers allowing subsurface retention under parking lots, replacing open retention ponds.",
+    variables: [
+      {
+        id: "leaching-galleys-dot-var",
+        name: "(Maine DOT) 2 FT Leaching Galleys",
+        shortName: "2 FT Modular Galley",
+        badge: "DOT SPECIFICATION",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Compact underground soakaway galleries that replace surface retention ponds and save usable site land.",
+        features: [
+          "Perforated Soil Infiltration",
+          "AASHTO H-20 Parking Load",
+          "Interlocking Modules",
+          "High Storage Void",
+        ],
+        specCapacity: {
+          label: "INFILTRATION",
+          value: "Modular Retention",
+          sub: "Saves Surface Land",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "4' x 8' x 2' Height",
+          sub: "6 Standard Models",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "Maine DOT",
+          sub: "AASHTO H-20",
+        },
+        image: "/images/products/leaching-galley.png",
+        href: "/#contact",
+      },
+      {
+        id: "leaching-galleys-lc6-var",
+        name: "(Maine DOT) LC-6 Leaching Galleys",
+        shortName: "LC-6 High Capacity",
+        badge: "DOT CERTIFIED",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Underground perforated concrete chambers that naturally soak rainwater runoff into the soil beneath parking lots.",
+        features: [
+          "Deep Water Dissipation",
+          "High Highway Wheel Load",
+          "High-Strength Concrete",
+          "8 DOT Size Variants",
+        ],
+        specCapacity: {
+          label: "CAPACITY",
+          value: "LC-6 High Capacity",
+          sub: "Storm Infiltration",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "4' x 8' x 4' Height",
+          sub: "Extended Chamber",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "Maine DOT",
+          sub: "High Capacity",
+        },
+        image: "/images/products/leaching-galley-lc6.png",
+        href: "/#contact",
+      },
+    ],
   },
 
-  // ─── UNDERGROUND TANKS & SANITARY ─────────────────────────────────
+  // ── 8. PRECAST MANHOLES & PUMP STATIONS ────────────────────────────────────
   {
-    id: "catch-basin-system-card",
-    name: "Multi-Component Basin & Pump Station",
-    category: "tanks",
-    categoryBadge: "INDUSTRIAL SYSTEM",
-    badgeType: "heavy",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    description: "Dual-room concrete station: room 1 separates dirt and sediment; room 2 houses electric water pumps.",
-    availableSizes: "Dual Monolithic Chambers · 9 Models",
-    standard: "ASTM C478 / Heavy Duty",
-    image: "/images/products/catch-basin-system.png",
-    href: "/#contact",
-  },
-  {
-    id: "grease-trap-1000g-card",
-    name: "1000G Commercial Kitchen Grease Traps",
-    category: "tanks",
-    categoryBadge: "COMMERCIAL PLUMBING",
-    badgeType: "exchange",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    description: "Heavy concrete underground tank that traps restaurant grease and oil so they cannot clog city sewer lines.",
-    availableSizes: "Capacity: 1,000 Gallons · Dual Compartments",
-    standard: "IAPMO / UPC Compliant",
-    image: "/images/products/grease-trap-1000g.png",
-    href: "/#contact",
-  },
-  {
-    id: "grease-trap-1500g-card",
-    name: "1500G High-Capacity Commercial Grease Traps",
-    category: "tanks",
-    categoryBadge: "COMMERCIAL PLUMBING",
-    badgeType: "exchange",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    description: "High-volume grease interceptor with dual inspection risers for busy restaurants, hotels, and schools.",
-    availableSizes: "Capacity: 1,500 Gallons · Traffic Rated Covers",
-    standard: "IAPMO / UPC / ASTM C1227",
-    image: "/images/products/grease-trap-1500g.png",
-    href: "/#contact",
-  },
-  {
-    id: "septic-tank-1000g-card",
-    name: "1000G Monolithic Septic Tanks",
-    category: "tanks",
-    categoryBadge: "WATERTIGHT PRECAST",
-    badgeType: "dot",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    description: "One-piece poured concrete tank that safely treats household sewage underground without leaking.",
-    availableSizes: "Capacity: 1,000 Gallons · 10 Models",
-    standard: "ASTM C1227 / NPCA Certified",
-    image: "/images/products/septic-tank-1000g.png",
-    href: "/#contact",
-  },
-  {
-    id: "septic-tank-1500g-card",
-    name: "1500G Monolithic Septic Tanks",
-    category: "tanks",
-    categoryBadge: "WATERTIGHT PRECAST",
-    badgeType: "dot",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    description: "One-piece concrete septic tank with internal dividing wall, 100% leak-proof to protect groundwater.",
-    availableSizes: "Capacity: 1,500 Gallons · 12 Models",
-    standard: "ASTM C1227 / NPCA Certified",
-    image: "/images/products/septic-tank-1500g.png",
-    href: "/#contact",
-  },
-  {
-    id: "septic-tank-2000g-card",
-    name: "2000G Commercial Precast Septic Tanks",
-    category: "tanks",
-    categoryBadge: "WATERTIGHT PRECAST",
-    badgeType: "dot",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    description: "Large commercial-grade wastewater tank built with thick walls to withstand heavy vehicle wheel traffic above.",
-    availableSizes: "Capacity: 2,000 Gallons · AASHTO HS-20",
-    standard: "ASTM C1227 / HS-20 Traffic",
-    image: "/images/products/septic-tank-2000g.png",
-    href: "/#contact",
+    id: "manholes-stations",
+    name: "Precast Manholes & Utility Pump Stations",
+    category: "drainage",
+    categoryBadge: "MUNICIPAL UTILITY",
+    categoryLabel: "ROAD & STORM DRAINAGE",
+    summary: "3 Variables · 1050mm Manholes & Dual Chamber Stations",
+    description:
+      "Circular utility access shafts, reinforced deep chambers, and turnkey dual-compartment pump basins with precast divider walls.",
+    variables: [
+      {
+        id: "manhole-1050-var",
+        name: "Catch Basin Manhole 1050mm Diameter",
+        shortName: "1050mm Standard Shaft",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Deep circular concrete access shaft allowing utility workers to inspect and maintain underground pipes safely.",
+        features: [
+          "Precision O-Ring Joint",
+          "Vehicle Traffic Rated",
+          "Stackable Risers",
+          "Built-in Steps Available",
+        ],
+        specCapacity: {
+          label: "DIAMETER",
+          value: "1050 mm (42\")",
+          sub: "Circular Chamber",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Risers 1 ft to 6 ft",
+          sub: "Modular Height",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "AASHTO HS-20",
+        },
+        image: "/images/products/manhole-1050mm.webp",
+        href: "/#contact",
+      },
+      {
+        id: "manhole-reinforced-var",
+        name: "Precast Reinforced Catch Basin Manhole (1050mm)",
+        shortName: "1050mm Reinforced",
+        badge: "PRECAST EXCHANGE PRODUCT",
+        categoryLabel: "ROAD & STORM DRAINAGE",
+        description:
+          "Heavy reinforced circular manhole chamber with pipe gaskets designed for deep utility installations.",
+        features: [
+          "Extra Rebar Cage",
+          "Deep Soil Burial Load",
+          "High-Strength Concrete",
+          "Flexible Gasket Knockouts",
+        ],
+        specCapacity: {
+          label: "REINFORCING",
+          value: "Heavy Steel Cage",
+          sub: "Deep Utility Depths",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "1050 mm (42\") Shell",
+          sub: "8 Custom Heights",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "Heavy Duty",
+        },
+        image: "/images/products/precast-reinforced-manhole.webp",
+        href: "/#contact",
+      },
+      {
+        id: "catch-basin-system-var",
+        name: "Multi-Component Basin & Pump Station",
+        shortName: "Dual Chamber Station",
+        badge: "INDUSTRIAL SYSTEM",
+        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
+        description:
+          "Dual-room concrete station: room 1 separates dirt and sediment; room 2 houses electric water pumps.",
+        features: [
+          "Dual Monolithic Rooms",
+          "Submersible Pump Bay",
+          "Sediment Pre-Separation",
+          "Heavy Cast Iron Hatch",
+        ],
+        specCapacity: {
+          label: "CONFIGURATION",
+          value: "Dual Chamber Split",
+          sub: "Sediment + Pump Bay",
+        },
+        specDimensions: {
+          label: "DIMENSIONS (NOMINAL)",
+          value: "Custom Monolithic Unit",
+          sub: "9 Base Models",
+        },
+        specStandards: {
+          label: "STANDARDS",
+          value: "ASTM C478",
+          sub: "Heavy Duty",
+        },
+        image: "/images/products/catch-basin-system.png",
+        href: "/#contact",
+      },
+    ],
   },
 ];
 
-export function ProductsSection() {
-  const [activeFilter, setActiveFilter] = useState<"all" | "heavy" | "drainage" | "tanks">("all");
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
+// ─── MAIN PRODUCTS SECTION COMPONENT ─────────────────────────────────────────
 
-  const filteredCards =
-    activeFilter === "all"
-      ? ALL_PRODUCT_CARDS
-      : ALL_PRODUCT_CARDS.filter((p) => p.category === activeFilter);
+export function ProductsSection() {
+  const [activeFamilyId, setActiveFamilyId] = useState<string>("all");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const totalVariables = PRODUCT_FAMILIES.reduce(
+    (acc, family) => acc + family.variables.length,
+    0
+  );
+
+  const displayedFamilies =
+    activeFamilyId === "all"
+      ? PRODUCT_FAMILIES
+      : PRODUCT_FAMILIES.filter((f) => f.id === activeFamilyId);
 
   return (
-    <section id="products" className="w-full bg-[#F4F8FD] border-b border-[#DCE5F0] pt-8 pb-12 sm:pt-10 sm:pb-14">
-      {/* ── TOP HEADER ───────────────────────────────────────────── */}
-      <div className="section-container-wide mb-6 sm:mb-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 pb-6 border-b border-[#DCE5F0]">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#D7030F] animate-pulse" />
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#01255F] font-mono">
-                Direct Precast Manufacturing · Fast Jobsite Delivery
-              </span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#01255F] tracking-tight uppercase">
-              Precast Products <span className="text-[#D7030F]">&amp; Manufacturing</span>
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-[#334155] max-w-2xl leading-relaxed">
-              Real manufactured precast concrete for contractors, civil builders, and municipalities.
-              Heavy products like highway box culverts and bridges shown first, followed by street storm drains and underground utility tanks.
-            </p>
+    <section
+      id="products"
+      className="py-16 sm:py-24 bg-white border-b border-[#E2E8F0] relative overflow-hidden"
+    >
+      {/* Top Section Header */}
+      <div className="section-container mb-8 sm:mb-12">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF2F2] border border-[#FCD2D4] text-[#D4030C] text-xs font-black tracking-widest uppercase mb-4 shadow-2xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#D4030C] animate-pulse" />
+            <span>PRODUCT FAMILIES &amp; VARIABLE SLIDERS</span>
           </div>
 
-          <div className="shrink-0 flex flex-wrap gap-3">
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#D7030F] hover:bg-[#B31217] text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-sm transition-all cursor-pointer"
-            >
-              <span>Get Fast Pricing</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a
-              href="tel:6314581111"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border-2 border-[#01255F] text-[#01255F] hover:bg-[#01255F] hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer"
-            >
-              <PhoneCall className="w-4 h-4 text-[#D7030F]" />
-              <span>(631) 458-1111</span>
-            </a>
-          </div>
-        </div>
-      </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#032356] tracking-tight uppercase leading-tight">
+            ENGINEERED PRECAST <span className="text-[#D4030C]">PRODUCTS</span>
+          </h2>
 
-      {/* ── 1. HEAVY MANUFACTURING FIRST (TOP CIVIL SPOTLIGHT) ───── */}
-      <div className="section-container-wide mb-8 sm:mb-10">
-        <div className="bg-white border-2 border-[#01255F]/20 rounded-2xl p-6 sm:p-8 shadow-lg">
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-6 border-b border-[#DCE5F0] gap-3">
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D7030F] mb-1">
-                <Factory className="w-4 h-4" />
-                <span>HEAVY PRODUCTS FIRST · CIVIL MANUFACTURING SPOTLIGHT</span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-black text-[#01255F] uppercase tracking-tight">
-                Highway Box Culverts &amp; Bridge Infrastructure
-              </h3>
-            </div>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#FFF2F2] border border-[#FCD2D4] text-[11px] font-bold text-[#D7030F] uppercase self-start sm:self-auto">
-              <ShieldCheck className="w-4 h-4" />
-              <span>AASHTO HS-25 &amp; DOT Certified</span>
-            </span>
-          </div>
-
-          {/* 3 Heavy Photo Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {HEAVY_MANUFACTURING_HEROES.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-col rounded-xl overflow-hidden bg-white border border-[#DCE5F0] hover:border-[#01255F] shadow-sm hover:shadow-xl transition-all duration-300 group"
-              >
-                {/* Visual Stage */}
-                <div className="relative h-60 sm:h-64 w-full bg-[#06182E] overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-                  {/* Top Badge */}
-                  <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded bg-[#D7030F] text-white text-[10px] font-extrabold uppercase tracking-wider shadow-sm">
-                      {item.badge}
-                    </span>
-                  </div>
-
-                  {/* Size Pill */}
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <span className="inline-block px-2.5 py-1 rounded bg-black/70 backdrop-blur-xs text-white text-[11px] font-mono font-bold border border-white/20">
-                      📏 {item.specs}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content with high line-height, clean breathing room, minimal text */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between bg-white">
-                  <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7030F] block mb-2 font-mono">
-                      {item.tagline}
-                    </span>
-                    <h4 className="text-xl sm:text-2xl font-black text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug mb-3">
-                      {item.title}
-                    </h4>
-
-                    {/* Single Clean Sentence with high line-height */}
-                    <p className="text-sm text-[#475569] leading-relaxed mb-5 font-normal">
-                      {item.useFor}
-                    </p>
-
-                    {/* 2 Clean Highlights with spacious line height */}
-                    <div className="space-y-3 mb-6 pt-4 border-t border-slate-100">
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-[#D7030F] shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm leading-relaxed font-medium text-slate-800">
-                          {item.highlight1}
-                        </span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-[#D7030F] shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm leading-relaxed font-medium text-slate-800">
-                          {item.highlight2}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Clean CTA Button */}
-                  <Link
-                    href="/#contact"
-                    className="inline-flex items-center justify-between w-full px-5 py-3 rounded-lg bg-[#01255F] hover:bg-[#D7030F] text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer group/btn"
-                  >
-                    <span>Inquire Specifications</span>
-                    <ArrowRight className="w-4 h-4 text-[#D7030F] group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── 2. PRODUCT CARDS WITH PRODUCT SIZE PILL MATCHING USER SCREENSHOT ───── */}
-      <div className="section-container-wide">
-        {/* Category Filter Pills & Heading */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-          <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D7030F] mb-1 font-mono">
-              <SlidersHorizontal className="w-3.5 h-3.5" />
-              <span>MULTIPLE SIZES &amp; MODELS INVENTORY ({filteredCards.length} PRODUCTS)</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black text-[#01255F] uppercase tracking-tight">
-              Precast Products Line &amp; Models Catalog
-            </h3>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => setActiveFilter("all")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                activeFilter === "all"
-                  ? "bg-[#01255F] text-white shadow-sm"
-                  : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
-              }`}
-            >
-              All Products ({ALL_PRODUCT_CARDS.length})
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter("heavy")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                activeFilter === "heavy"
-                  ? "bg-[#D7030F] text-white shadow-sm"
-                  : "bg-white text-[#D7030F] border border-[#FCD2D4] hover:bg-[#FFF2F2]"
-              }`}
-            >
-              ★ Heavy Civil &amp; Box Culverts (7)
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter("drainage")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                activeFilter === "drainage"
-                  ? "bg-[#01255F] text-white shadow-sm"
-                  : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
-              }`}
-            >
-              Storm Drains &amp; Basins (14)
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter("tanks")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                activeFilter === "tanks"
-                  ? "bg-[#01255F] text-white shadow-sm"
-                  : "bg-white text-[#01255F] border border-[#DCE5F0] hover:border-[#01255F]"
-              }`}
-            >
-              Tanks &amp; Traps (6)
-            </button>
-          </div>
+          <p className="mt-4 text-base sm:text-lg text-[#475569] leading-relaxed">
+            Select any product below to browse its dedicated variable slider.
+            Each variable card includes high-definition visuals, 4 core engineering features,
+            capacity, dimensions, and DOT standards.
+          </p>
         </div>
 
-        {/* 4-COLUMN GRID MATCHING EXACT FORMAT IN USER'S SCREENSHOT */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredCards.map((card) => {
-            const isHovered = hoveredId === card.id;
+        {/* Product Selector Filter Pills */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          <button
+            type="button"
+            onClick={() => setActiveFamilyId("all")}
+            className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 shadow-2xs ${
+              activeFamilyId === "all"
+                ? "bg-[#032356] text-white shadow-md scale-102"
+                : "bg-[#F8FAFD] text-[#032356] border border-[#CBD5E1] hover:border-[#032356] hover:bg-white"
+            }`}
+          >
+            <SlidersHorizontal className="w-3.5 h-3.5 text-[#D4030C]" />
+            <span>All Products ({totalVariables} Variables)</span>
+          </button>
+
+          {PRODUCT_FAMILIES.map((family) => {
+            const isActive = activeFamilyId === family.id;
             return (
-              <div
-                key={card.id}
-                onMouseEnter={() => setHoveredId(card.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                className="group flex flex-col rounded-2xl overflow-hidden bg-white border border-[#DCE5F0] hover:border-[#01255F] shadow-xs hover:shadow-xl transition-all duration-200"
-                style={{
-                  transform: isHovered ? "translateY(-3px)" : "translateY(0)",
-                }}
+              <button
+                key={family.id}
+                type="button"
+                onClick={() => setActiveFamilyId(family.id)}
+                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs ${
+                  isActive
+                    ? "bg-[#D4030C] text-white shadow-md scale-102"
+                    : "bg-[#F8FAFD] text-[#032356] border border-[#CBD5E1] hover:border-[#D4030C] hover:bg-white"
+                }`}
               >
-                {/* 1. Top Image Stage with Floating Category Badge */}
-                <div className="relative h-56 w-full bg-[#F8FAFD] border-b border-[#EBF1F8] flex items-center justify-center p-4 overflow-hidden group-hover:bg-[#F2F7FF] transition-colors">
-                  <Image
-                    src={card.image}
-                    alt={card.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {/* Category Pill Badge (like PRECAST EXCHANGE PRODUCT in screenshot) */}
-                  <div className="absolute top-3 left-3 z-10">
-                    <span
-                      className={`text-[10px] font-extrabold uppercase px-3 py-1 rounded tracking-wider shadow-xs ${
-                        card.badgeType === "heavy"
-                          ? "bg-[#FFF2F2] text-[#D7030F] border border-[#FCD2D4]"
-                          : card.badgeType === "dot"
-                          ? "bg-[#F0FDF4] text-[#15803D] border border-[#BBF7D0]"
-                          : "bg-[#E8F3FF] text-[#01255F] border border-[#DCE5F0]"
-                      }`}
-                    >
-                      {card.categoryBadge}
-                    </span>
-                  </div>
-                </div>
-
-                {/* 2. Content Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    {/* Red Category Subtitle */}
-                    <span className="text-[11px] font-black uppercase tracking-wider text-[#D7030F] block mb-1.5 font-mono">
-                      {card.categoryLabel}
-                    </span>
-
-                    {/* Product Title */}
-                    <h4 className="text-base sm:text-lg font-black text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug min-h-[46px] mb-3">
-                      {card.name}
-                    </h4>
-
-                    {/* Plain Human Description */}
-                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4 min-h-[42px]">
-                      {card.description}
-                    </p>
-
-                    {/* 3. Product Available Size Box (Prominently displayed) */}
-                    <div className="p-3 rounded-lg bg-[#F0F6FF] border border-[#CBDDF7] mb-4 text-xs font-mono font-bold text-[#01255F] flex items-center gap-2 shadow-xs">
-                      <span className="text-sm">📏</span>
-                      <div className="min-w-0">
-                        <span className="text-[10px] uppercase font-bold text-[#D7030F] block tracking-wider font-sans">
-                          Available Sizes:
-                        </span>
-                        <span className="truncate block text-slate-900 font-extrabold text-[11px] sm:text-xs">
-                          {card.availableSizes}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 4. Bottom Footer: Standard on left + Inquire → on right */}
-                  <div className="pt-3 border-t border-[#F2F7FF] flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-[#64748B] font-semibold truncate max-w-[130px]">
-                      {card.standard}
-                    </span>
-                    <Link
-                      href={card.href}
-                      className="text-xs font-black text-[#D7030F] hover:text-[#01255F] transition-colors inline-flex items-center gap-1.5 shrink-0"
-                    >
-                      <span>Inquire</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+                <span>{family.name}</span>
+                <span
+                  className={`text-[10px] font-black px-1.5 py-0.5 rounded font-mono ${
+                    isActive
+                      ? "bg-white text-[#D4030C]"
+                      : "bg-[#EBF1F8] text-[#032356]"
+                  }`}
+                >
+                  {family.variables.length}
+                </span>
+              </button>
             );
           })}
         </div>
       </div>
+
+      {/* ── PRODUCT VARIABLE SLIDERS LIST ──────────────────────────────── */}
+      <div className="section-container-wide space-y-16 sm:space-y-20">
+        {displayedFamilies.map((family) => (
+          <ProductVariableSlider
+            key={family.id}
+            family={family}
+            mounted={mounted}
+          />
+        ))}
+      </div>
     </section>
+  );
+}
+
+// ─── DEDICATED SLIDER FOR ONE PRODUCT'S VARIABLES ───────────────────────────
+
+function ProductVariableSlider({
+  family,
+  mounted,
+}: {
+  family: ProductFamily;
+  mounted: boolean;
+}) {
+  const swiperRef = useRef<SwiperClass | null>(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  return (
+    <div className="rounded-3xl p-5 sm:p-8 bg-[#F8FAFD] border border-[#E2E8F0] shadow-xs">
+      {/* Product Family Header: Title, Variables Count, Prev/Next Arrows */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-5 mb-6 border-b border-[#CBD5E1] gap-4">
+        <div>
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D4030C] mb-1 font-mono">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#D4030C]" />
+            <span>
+              {family.categoryBadge} · ({family.variables.length} VARIABLES IN THIS PRODUCT)
+            </span>
+          </div>
+
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#032356] uppercase tracking-tight">
+            {family.name}
+          </h3>
+
+          <p className="mt-1.5 text-xs sm:text-sm text-[#475569] max-w-3xl leading-relaxed">
+            {family.description}
+          </p>
+        </div>
+
+        {/* Prev / Next controls */}
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="hidden sm:block text-[11px] font-mono font-bold text-[#64748B] mr-2">
+            Variable {currentSlideIndex + 1} of {family.variables.length}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="w-10 h-10 rounded-xl border-2 border-[#CBD5E1] hover:border-[#032356] bg-white text-[#032356] hover:bg-[#F0F6FF] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95"
+            aria-label={`Previous ${family.name} variable`}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => swiperRef.current?.slideNext()}
+            className="w-10 h-10 rounded-xl border-2 border-[#CBD5E1] hover:border-[#032356] bg-white text-[#032356] hover:bg-[#F0F6FF] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95"
+            aria-label={`Next ${family.name} variable`}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Quick Variable Switcher Chips */}
+      <div className="mb-6 flex flex-wrap items-center gap-2">
+        <span className="text-xs font-mono font-bold text-[#64748B] uppercase tracking-wider mr-1">
+          Quick Jump:
+        </span>
+        {family.variables.map((variable, idx) => {
+          const isActive = currentSlideIndex === idx;
+          return (
+            <button
+              key={variable.id}
+              type="button"
+              onClick={() => {
+                swiperRef.current?.slideTo(idx);
+                setCurrentSlideIndex(idx);
+              }}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer border ${
+                isActive
+                  ? "bg-[#032356] text-white border-[#032356] shadow-xs scale-102"
+                  : "bg-white text-[#032356] border-[#CBD5E1] hover:border-[#D4030C]"
+              }`}
+            >
+              {variable.shortName}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Variable Slider Stage */}
+      {!mounted ? (
+        // Clean SSR / Initial Layout before client mount (prevents Swiper SSR Date prerender errors)
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {family.variables.slice(0, 3).map((variable) => (
+            <VariableCard key={variable.id} variable={variable} />
+          ))}
+        </div>
+      ) : (
+        // Swiper slider when client mounted
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={(swiper) => {
+            setCurrentSlideIndex(swiper.realIndex);
+          }}
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 24 },
+            1280: { slidesPerView: 3, spaceBetween: 28 },
+          }}
+          autoplay={{
+            delay: 5500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={family.variables.length > 3}
+          className="w-full pb-4 !overflow-visible"
+        >
+          {family.variables.map((variable) => (
+            <SwiperSlide key={variable.id} className="h-auto">
+              <VariableCard variable={variable} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
+    </div>
+  );
+}
+
+// ─── EXACT PREMIUM CARD DESIGN FROM USER SCREENSHOT ─────────────────────────
+
+function VariableCard({ variable }: { variable: ProductVariable }) {
+  const [isSaved, setIsSaved] = useState(false);
+
+  return (
+    <div className="group flex flex-col h-full rounded-3xl overflow-hidden bg-white border border-[#CBD5E1] hover:border-[#032356] shadow-sm hover:shadow-2xl transition-all duration-300">
+      {/* 1. Top Image Stage */}
+      <div className="relative h-64 sm:h-72 w-full bg-[#F4F6F9] border-b border-[#EBF1F8] flex items-center justify-center p-6 overflow-hidden group-hover:bg-[#EDF2F8] transition-colors">
+        <Image
+          src={variable.image}
+          alt={variable.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+        />
+
+        {/* Top-Left Red Pill Badge */}
+        <div className="absolute top-4 left-4 z-10">
+          <span className="text-[11px] font-black uppercase px-3.5 py-1.5 rounded-full tracking-wider shadow-xs bg-[#D4030C] text-white">
+            {variable.badge}
+          </span>
+        </div>
+
+        {/* Top-Right Favorite / Save Button */}
+        <button
+          type="button"
+          onClick={() => setIsSaved(!isSaved)}
+          className={`absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center transition-all cursor-pointer active:scale-90 ${
+            isSaved
+              ? "text-[#D4030C] bg-[#FFF2F2]"
+              : "text-[#64748B] hover:text-[#D4030C]"
+          }`}
+          aria-label="Save product"
+        >
+          <Heart
+            className={`w-5 h-5 ${isSaved ? "fill-[#D4030C]" : ""}`}
+          />
+        </button>
+      </div>
+
+      {/* 2. Content Body */}
+      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+        <div>
+          {/* Category Subtitle */}
+          <span className="text-xs font-black uppercase tracking-wider text-[#D4030C] block mb-2 font-mono">
+            {variable.categoryLabel}
+          </span>
+
+          {/* Product Title */}
+          <h4 className="text-xl sm:text-2xl font-black text-[#032356] group-hover:text-[#D4030C] transition-colors leading-tight mb-2.5">
+            {variable.name}
+          </h4>
+
+          {/* Small Description */}
+          <p className="text-sm text-[#475569] leading-relaxed mb-6 font-normal min-h-[48px]">
+            {variable.description}
+          </p>
+
+          {/* 3. Four Feature Badges with Vertical Dividers */}
+          <div className="grid grid-cols-4 divide-x divide-[#E2E8F0] pt-4 pb-5 border-t border-b border-[#F1F5F9] text-center mb-6">
+            {/* Feature 1 */}
+            <div className="px-1.5">
+              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
+                <ShieldCheck className="w-4 h-4 text-[#032356]" />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
+                {variable.features[0]}
+              </span>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="px-1.5">
+              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
+                <Truck className="w-4 h-4 text-[#032356]" />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
+                {variable.features[1]}
+              </span>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="px-1.5">
+              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
+                <Anchor className="w-4 h-4 text-[#032356]" />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
+                {variable.features[2]}
+              </span>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="px-1.5">
+              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
+                <Clock className="w-4 h-4 text-[#032356]" />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
+                {variable.features[3]}
+              </span>
+            </div>
+          </div>
+
+          {/* 4. Three-Column Technical Spec Box */}
+          <div className="p-4 rounded-2xl bg-[#F4F7FB] border border-[#E2E8F0] grid grid-cols-3 gap-3 mb-6">
+            {/* Spec 1: Capacity / Flow / Opening */}
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="w-8 h-8 rounded-full bg-white text-[#032356] flex items-center justify-center shrink-0 shadow-2xs border border-[#E2E8F0]">
+                <Droplet className="w-4 h-4 text-[#032356]" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
+                  {variable.specCapacity.label}
+                </span>
+                <span className="text-xs sm:text-[13px] font-black text-[#032356] block truncate">
+                  {variable.specCapacity.value}
+                </span>
+                {variable.specCapacity.sub && (
+                  <span className="text-[10px] text-[#64748B] block truncate">
+                    {variable.specCapacity.sub}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Spec 2: Dimensions */}
+            <div className="flex items-center gap-2.5 min-w-0 border-l border-[#E2E8F0] pl-3">
+              <div className="w-8 h-8 rounded-full bg-white text-[#032356] flex items-center justify-center shrink-0 shadow-2xs border border-[#E2E8F0]">
+                <Box className="w-4 h-4 text-[#032356]" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
+                  {variable.specDimensions.label}
+                </span>
+                <span className="text-xs sm:text-[13px] font-black text-[#032356] block truncate">
+                  {variable.specDimensions.value}
+                </span>
+                {variable.specDimensions.sub && (
+                  <span className="text-[10px] text-[#64748B] block truncate">
+                    {variable.specDimensions.sub}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Spec 3: Standards */}
+            <div className="flex items-center gap-2.5 min-w-0 border-l border-[#E2E8F0] pl-3">
+              <div className="w-8 h-8 rounded-full bg-white text-[#032356] flex items-center justify-center shrink-0 shadow-2xs border border-[#E2E8F0]">
+                <FileText className="w-4 h-4 text-[#032356]" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
+                  {variable.specStandards.label}
+                </span>
+                <span className="text-xs sm:text-[13px] font-black text-[#032356] block truncate">
+                  {variable.specStandards.value}
+                </span>
+                {variable.specStandards.sub && (
+                  <span className="text-[10px] text-[#64748B] block truncate">
+                    {variable.specStandards.sub}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 5. Bottom Action Row: View Details Link & Solid Red Inquire Button */}
+        <div className="pt-4 border-t border-[#F1F5F9] flex items-center justify-between">
+          <Link
+            href={variable.href}
+            className="text-sm font-bold text-[#032356] hover:text-[#D4030C] transition-colors inline-flex items-center gap-1.5"
+          >
+            <span>View details</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+
+          <Link
+            href={variable.href}
+            className="bg-[#D4030C] hover:bg-[#B3020A] text-white font-bold py-2.5 px-6 rounded-xl text-sm shadow-sm hover:shadow-md transition-all active:scale-95 inline-flex items-center gap-2"
+          >
+            <span>Inquire</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

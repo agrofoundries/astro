@@ -11,7 +11,7 @@ export default function ContactPage() {
       <div className="bg-[#F2F7FF] border-b border-[#DCE5F0] py-12">
         <div className="section-container">
           <span className="badge-tag mb-2">Precast Engineering Consultation</span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#01255F] mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#032356] mt-2">
             Contact Precast Engineers
           </h1>
           <p className="text-sm text-[#475569] mt-2">

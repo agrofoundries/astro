@@ -67,7 +67,7 @@ export function SoftwareTechnology() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <span className="badge-tag mb-3">Digital Workflows</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#01255F] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
             Engineering Software and Technology
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -82,19 +82,19 @@ export function SoftwareTechnology() {
             return (
               <div
                 key={idx}
-                className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between hover:border-[#01255F] transition-all"
+                className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between hover:border-[#032356] transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-bold text-[#01255F] bg-[#E8F3FF] px-2.5 py-1 rounded border border-[#DCE5F0]">
+                    <span className="text-[11px] font-bold text-[#032356] bg-[#E8F3FF] px-2.5 py-1 rounded border border-[#DCE5F0]">
                       {tool.category}
                     </span>
-                    <div className="w-8 h-8 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center text-[#01255F]">
-                      <Icon className="w-4 h-4 text-[#D7030F]" />
+                    <div className="w-8 h-8 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center text-[#032356]">
+                      <Icon className="w-4 h-4 text-[#D4030C]" />
                     </div>
                   </div>
 
-                  <h3 className="text-base font-bold text-[#01255F] mb-2">
+                  <h3 className="text-base font-bold text-[#032356] mb-2">
                     {tool.title}
                   </h3>
 
@@ -105,7 +105,7 @@ export function SoftwareTechnology() {
 
                 <div className="pt-3 border-t border-[#F2F7FF] text-[11px]">
                   <p className="text-[#64748B]">
-                    <strong className="text-[#01255F]">Industry Tools:</strong> {tool.applications}
+                    <strong className="text-[#032356]">Industry Tools:</strong> {tool.applications}
                   </p>
                 </div>
               </div>

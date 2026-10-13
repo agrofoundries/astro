@@ -51,7 +51,7 @@ export function QualitySection() {
               </div>
               <div className="p-2 border-l border-[#CBD5E1]">
                 <span className="text-[#64748B] text-xs font-bold block uppercase">AUDIT STANDARD</span>
-                <span className="text-[#C8101E] font-black text-lg">PCI MNL-116</span>
+                <span className="text-[#D4030C] font-black text-lg">PCI MNL-116</span>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ export function QualitySection() {
                   key={pillar.code}
                   className="p-4 sm:p-5 bg-white border border-[#CBD5E1] border-l-4 border-l-[#0A2540] rounded-lg shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="font-mono-spec text-[10px] font-bold text-[#C8101E] mb-1">
+                  <div className="font-mono-spec text-[10px] font-bold text-[#D4030C] mb-1">
                     [{pillar.code}]
                   </div>
                   <h4 className="font-bold text-[#0A2540] text-sm uppercase tracking-tight mb-1">

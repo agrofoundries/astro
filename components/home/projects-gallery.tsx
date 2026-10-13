@@ -210,12 +210,12 @@ export function ProjectsGallery() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#E8F3FF] border border-[#DCE5F0] rounded-full text-xs font-semibold text-[#01255F] mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#D7030F]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#E8F3FF] border border-[#DCE5F0] rounded-full text-xs font-semibold text-[#032356] mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-[#D4030C]" />
               <span>Interactive Precast Showcase</span>
               <span className="text-[#64748B] text-[10px]">Powered by SwiperJS</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#01255F] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#032356] tracking-tight">
               Projects and Structural Case Studies
             </h2>
             <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -232,8 +232,8 @@ export function ProjectsGallery() {
                 onClick={() => setViewMode("slider")}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-all ${
                   viewMode === "slider"
-                    ? "bg-[#01255F] text-white shadow-xs"
-                    : "text-[#64748B] hover:text-[#01255F]"
+                    ? "bg-[#032356] text-white shadow-xs"
+                    : "text-[#64748B] hover:text-[#032356]"
                 }`}
                 title="Swiper Slider View"
               >
@@ -245,8 +245,8 @@ export function ProjectsGallery() {
                 onClick={() => setViewMode("grid")}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-all ${
                   viewMode === "grid"
-                    ? "bg-[#01255F] text-white shadow-xs"
-                    : "text-[#64748B] hover:text-[#01255F]"
+                    ? "bg-[#032356] text-white shadow-xs"
+                    : "text-[#64748B] hover:text-[#032356]"
                 }`}
                 title="Grid View"
               >
@@ -263,8 +263,8 @@ export function ProjectsGallery() {
                   onClick={() => setSliderEffect("carousel")}
                   className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${
                     sliderEffect === "carousel"
-                      ? "bg-[#F2F7FF] text-[#01255F] font-bold border border-[#DCE5F0]"
-                      : "text-[#64748B] hover:text-[#01255F]"
+                      ? "bg-[#F2F7FF] text-[#032356] font-bold border border-[#DCE5F0]"
+                      : "text-[#64748B] hover:text-[#032356]"
                   }`}
                 >
                   Carousel
@@ -274,11 +274,11 @@ export function ProjectsGallery() {
                   onClick={() => setSliderEffect("coverflow")}
                   className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1 ${
                     sliderEffect === "coverflow"
-                      ? "bg-[#F2F7FF] text-[#01255F] font-bold border border-[#DCE5F0]"
-                      : "text-[#64748B] hover:text-[#01255F]"
+                      ? "bg-[#F2F7FF] text-[#032356] font-bold border border-[#DCE5F0]"
+                      : "text-[#64748B] hover:text-[#032356]"
                   }`}
                 >
-                  <Layers3 className="w-3 h-3 text-[#D7030F]" />
+                  <Layers3 className="w-3 h-3 text-[#D4030C]" />
                   <span>3D Coverflow</span>
                 </button>
                 <button
@@ -286,8 +286,8 @@ export function ProjectsGallery() {
                   onClick={() => setSliderEffect("thumbs")}
                   className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${
                     sliderEffect === "thumbs"
-                      ? "bg-[#F2F7FF] text-[#01255F] font-bold border border-[#DCE5F0]"
-                      : "text-[#64748B] hover:text-[#01255F]"
+                      ? "bg-[#F2F7FF] text-[#032356] font-bold border border-[#DCE5F0]"
+                      : "text-[#64748B] hover:text-[#032356]"
                   }`}
                 >
                   Thumb Gallery
@@ -311,8 +311,8 @@ export function ProjectsGallery() {
                 }}
                 className={`text-xs px-3.5 py-1.5 rounded-full border transition-all ${
                   selectedCategory === cat
-                    ? "bg-[#01255F] text-white border-[#01255F] font-semibold shadow-xs"
-                    : "bg-white text-[#334155] border-[#DCE5F0] hover:bg-[#F2F7FF] hover:border-[#01255F]"
+                    ? "bg-[#032356] text-white border-[#032356] font-semibold shadow-xs"
+                    : "bg-white text-[#334155] border-[#DCE5F0] hover:bg-[#F2F7FF] hover:border-[#032356]"
                 }`}
               >
                 {cat}
@@ -327,17 +327,17 @@ export function ProjectsGallery() {
               <button
                 type="button"
                 onClick={toggleAutoplay}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#DCE5F0] bg-white text-xs font-semibold text-[#01255F] hover:bg-[#F2F7FF] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#DCE5F0] bg-white text-xs font-semibold text-[#032356] hover:bg-[#F2F7FF] transition-colors"
                 title={isPlaying ? "Pause automatic sliding" : "Start automatic sliding"}
               >
                 {isPlaying ? (
                   <>
-                    <Pause className="w-3.5 h-3.5 text-[#D7030F]" />
+                    <Pause className="w-3.5 h-3.5 text-[#D4030C]" />
                     <span className="hidden sm:inline">Pause</span>
                   </>
                 ) : (
                   <>
-                    <Play className="w-3.5 h-3.5 text-[#01255F]" />
+                    <Play className="w-3.5 h-3.5 text-[#032356]" />
                     <span className="hidden sm:inline">Play</span>
                   </>
                 )}
@@ -345,7 +345,7 @@ export function ProjectsGallery() {
 
               {/* Slide Counter */}
               <div className="text-xs font-mono font-bold text-[#64748B] px-2 py-1 bg-white rounded border border-[#DCE5F0]">
-                <span className="text-[#01255F]">
+                <span className="text-[#032356]">
                   {String(currentIndex + 1).padStart(2, "0")}
                 </span>
                 {" / "}
@@ -357,7 +357,7 @@ export function ProjectsGallery() {
                 <button
                   type="button"
                   id="swiper-prev-btn"
-                  className="w-8 h-8 rounded-full border border-[#DCE5F0] bg-white flex items-center justify-center text-[#01255F] hover:bg-[#01255F] hover:text-white transition-all shadow-xs cursor-pointer active:scale-95"
+                  className="w-8 h-8 rounded-full border border-[#DCE5F0] bg-white flex items-center justify-center text-[#032356] hover:bg-[#032356] hover:text-white transition-all shadow-xs cursor-pointer active:scale-95"
                   aria-label="Previous slide"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -365,7 +365,7 @@ export function ProjectsGallery() {
                 <button
                   type="button"
                   id="swiper-next-btn"
-                  className="w-8 h-8 rounded-full border border-[#DCE5F0] bg-white flex items-center justify-center text-[#01255F] hover:bg-[#01255F] hover:text-white transition-all shadow-xs cursor-pointer active:scale-95"
+                  className="w-8 h-8 rounded-full border border-[#DCE5F0] bg-white flex items-center justify-center text-[#032356] hover:bg-[#032356] hover:text-white transition-all shadow-xs cursor-pointer active:scale-95"
                   aria-label="Next slide"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -443,7 +443,7 @@ export function ProjectsGallery() {
               >
                 {filteredProjects.map((project) => (
                   <SwiperSlide key={project.id} className="h-auto">
-                    <div className="card-clean h-full overflow-hidden flex flex-col justify-between group hover:border-[#01255F] transition-all duration-300 shadow-sm hover:shadow-md bg-white">
+                    <div className="card-clean h-full overflow-hidden flex flex-col justify-between group hover:border-[#032356] transition-all duration-300 shadow-sm hover:shadow-md bg-white">
                       <div>
                         {/* Image Frame */}
                         <div className="relative h-56 w-full bg-[#E8F3FF] overflow-hidden">
@@ -458,14 +458,14 @@ export function ProjectsGallery() {
 
                           {/* Category Badge */}
                           <div className="absolute top-3 left-3 z-10">
-                            <span className="text-[10px] font-bold text-[#01255F] bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded shadow-xs border border-[#DCE5F0]">
+                            <span className="text-[10px] font-bold text-[#032356] bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded shadow-xs border border-[#DCE5F0]">
                               {project.category}
                             </span>
                           </div>
 
                           {/* Engineering Standard Badge */}
                           <div className="absolute top-3 right-3 z-10">
-                            <span className="text-[10px] font-bold text-[#D7030F] bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded shadow-xs border border-[#FCD2D4]">
+                            <span className="text-[10px] font-bold text-[#D4030C] bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded shadow-xs border border-[#FCD2D4]">
                               {project.badge}
                             </span>
                           </div>
@@ -479,16 +479,16 @@ export function ProjectsGallery() {
                         {/* Card Content */}
                         <div className="p-5 space-y-3">
                           <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
-                            <MapPin className="w-3.5 h-3.5 text-[#D7030F] shrink-0" />
+                            <MapPin className="w-3.5 h-3.5 text-[#D4030C] shrink-0" />
                             <span>{project.location}</span>
                           </div>
 
-                          <h3 className="text-base font-bold text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug">
+                          <h3 className="text-base font-bold text-[#032356] group-hover:text-[#D4030C] transition-colors leading-snug">
                             {project.name}
                           </h3>
 
                           <div className="space-y-1.5 text-xs">
-                            <p className="text-[#01255F] font-semibold flex items-center gap-1.5">
+                            <p className="text-[#032356] font-semibold flex items-center gap-1.5">
                               <Layers className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
                               <span className="line-clamp-1">{project.precastSystem}</span>
                             </p>
@@ -504,7 +504,7 @@ export function ProjectsGallery() {
                         <button
                           type="button"
                           onClick={() => setActiveProject(project)}
-                          className="w-full btn-outline-navy text-xs py-2 rounded flex items-center justify-center gap-1.5 group-hover:bg-[#01255F] group-hover:text-white transition-colors"
+                          className="w-full btn-outline-navy text-xs py-2 rounded flex items-center justify-center gap-1.5 group-hover:bg-[#032356] group-hover:text-white transition-colors"
                         >
                           <Eye className="w-3.5 h-3.5" />
                           <span>View Engineering Details</span>
@@ -567,10 +567,10 @@ export function ProjectsGallery() {
                             className="object-cover"
                           />
                           <div className="absolute top-4 left-4 flex gap-2">
-                            <span className="text-xs font-bold text-[#01255F] bg-white/95 px-3 py-1 rounded shadow-xs border border-[#DCE5F0]">
+                            <span className="text-xs font-bold text-[#032356] bg-white/95 px-3 py-1 rounded shadow-xs border border-[#DCE5F0]">
                               {project.category}
                             </span>
-                            <span className="text-xs font-bold text-[#D7030F] bg-white/95 px-3 py-1 rounded shadow-xs border border-[#FCD2D4]">
+                            <span className="text-xs font-bold text-[#D4030C] bg-white/95 px-3 py-1 rounded shadow-xs border border-[#FCD2D4]">
                               {project.badge}
                             </span>
                           </div>
@@ -581,27 +581,27 @@ export function ProjectsGallery() {
                           <div className="space-y-4">
                             <div>
                               <div className="flex items-center gap-1.5 text-xs text-[#64748B] mb-1">
-                                <MapPin className="w-3.5 h-3.5 text-[#D7030F]" />
+                                <MapPin className="w-3.5 h-3.5 text-[#D4030C]" />
                                 <span>{project.location}</span>
                               </div>
-                              <h3 className="text-xl sm:text-2xl font-bold text-[#01255F] leading-tight">
+                              <h3 className="text-xl sm:text-2xl font-bold text-[#032356] leading-tight">
                                 {project.name}
                               </h3>
                             </div>
 
                             <div className="p-3 bg-[#F2F7FF] rounded-lg border border-[#DCE5F0] text-xs">
-                              <p className="font-bold text-[#01255F] mb-0.5">Precast Structural System</p>
+                              <p className="font-bold text-[#032356] mb-0.5">Precast Structural System</p>
                               <p className="text-[#334155]">{project.precastSystem}</p>
                             </div>
 
                             <div className="space-y-1 text-xs">
-                              <p className="font-bold text-[#01255F]">Engineering Scope & Detailing:</p>
+                              <p className="font-bold text-[#032356]">Engineering Scope & Detailing:</p>
                               <p className="text-[#475569] leading-relaxed">
                                 {project.scopeOfWork}
                               </p>
                             </div>
 
-                            <div className="text-xs font-mono bg-[#FAFBFD] p-2.5 rounded border border-[#DCE5F0] text-[#01255F] flex items-center justify-between">
+                            <div className="text-xs font-mono bg-[#FAFBFD] p-2.5 rounded border border-[#DCE5F0] text-[#032356] flex items-center justify-between">
                               <span className="text-[#64748B]">Specification:</span>
                               <span className="font-bold">{project.specHighlight}</span>
                             </div>
@@ -643,7 +643,7 @@ export function ProjectsGallery() {
                       <div
                         className={`relative h-20 rounded-lg overflow-hidden border-2 transition-all ${
                           idx === currentIndex
-                            ? "border-[#D7030F] ring-2 ring-[#D7030F]/20 scale-102"
+                            ? "border-[#D4030C] ring-2 ring-[#D4030C]/20 scale-102"
                             : "border-[#DCE5F0] opacity-60 hover:opacity-100"
                         }`}
                       >
@@ -674,7 +674,7 @@ export function ProjectsGallery() {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="card-clean overflow-hidden flex flex-col justify-between hover:border-[#01255F] group bg-white shadow-xs"
+                className="card-clean overflow-hidden flex flex-col justify-between hover:border-[#032356] group bg-white shadow-xs"
               >
                 <div>
                   <div className="relative h-48 w-full bg-[#E8F3FF] overflow-hidden">
@@ -686,12 +686,12 @@ export function ProjectsGallery() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-3 left-3">
-                      <span className="text-[10px] font-bold text-[#01255F] bg-white/95 px-2.5 py-1 rounded shadow-xs border border-[#DCE5F0]">
+                      <span className="text-[10px] font-bold text-[#032356] bg-white/95 px-2.5 py-1 rounded shadow-xs border border-[#DCE5F0]">
                         {project.category}
                       </span>
                     </div>
                     <div className="absolute top-3 right-3">
-                      <span className="text-[10px] font-bold text-[#D7030F] bg-white/95 px-2 py-0.5 rounded shadow-xs border border-[#FCD2D4]">
+                      <span className="text-[10px] font-bold text-[#D4030C] bg-white/95 px-2 py-0.5 rounded shadow-xs border border-[#FCD2D4]">
                         {project.badge}
                       </span>
                     </div>
@@ -699,16 +699,16 @@ export function ProjectsGallery() {
 
                   <div className="p-5 space-y-3">
                     <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
-                      <MapPin className="w-3.5 h-3.5 text-[#D7030F] shrink-0" />
+                      <MapPin className="w-3.5 h-3.5 text-[#D4030C] shrink-0" />
                       <span>{project.location}</span>
                     </div>
 
-                    <h3 className="text-base font-bold text-[#01255F] group-hover:text-[#D7030F] transition-colors leading-snug">
+                    <h3 className="text-base font-bold text-[#032356] group-hover:text-[#D4030C] transition-colors leading-snug">
                       {project.name}
                     </h3>
 
                     <div className="space-y-1 text-xs">
-                      <p className="text-[#01255F] font-semibold flex items-center gap-1.5">
+                      <p className="text-[#032356] font-semibold flex items-center gap-1.5">
                         <Layers className="w-3.5 h-3.5 text-[#64748B]" />
                         <span>{project.precastSystem}</span>
                       </p>
@@ -741,7 +741,7 @@ export function ProjectsGallery() {
               <button
                 type="button"
                 onClick={() => setActiveProject(null)}
-                className="absolute top-4 right-4 p-1.5 text-[#64748B] hover:text-[#01255F] rounded border border-[#DCE5F0] bg-white hover:bg-[#F2F7FF] transition-colors"
+                className="absolute top-4 right-4 p-1.5 text-[#64748B] hover:text-[#032356] rounded border border-[#DCE5F0] bg-white hover:bg-[#F2F7FF] transition-colors"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
@@ -750,18 +750,18 @@ export function ProjectsGallery() {
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[11px] font-bold text-[#D7030F] uppercase tracking-wider bg-[#FFF2F2] px-2.5 py-0.5 rounded border border-[#FCD2D4]">
+                    <span className="text-[11px] font-bold text-[#D4030C] uppercase tracking-wider bg-[#FFF2F2] px-2.5 py-0.5 rounded border border-[#FCD2D4]">
                       {activeProject.category}
                     </span>
-                    <span className="text-[11px] font-bold text-[#01255F] bg-[#E8F3FF] px-2.5 py-0.5 rounded border border-[#DCE5F0]">
+                    <span className="text-[11px] font-bold text-[#032356] bg-[#E8F3FF] px-2.5 py-0.5 rounded border border-[#DCE5F0]">
                       {activeProject.badge}
                     </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#01255F]">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#032356]">
                     {activeProject.name}
                   </h3>
                   <p className="text-xs text-[#64748B] flex items-center gap-1.5 mt-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#D7030F]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#D4030C]" />
                     <span>{activeProject.location}</span>
                   </p>
                 </div>
@@ -780,15 +780,15 @@ export function ProjectsGallery() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
                   <div className="bg-[#F2F7FF] p-3.5 rounded-lg border border-[#DCE5F0]">
-                    <p className="font-bold text-[#01255F] mb-1 flex items-center gap-1.5">
-                      <Layers className="w-3.5 h-3.5 text-[#D7030F]" />
+                    <p className="font-bold text-[#032356] mb-1 flex items-center gap-1.5">
+                      <Layers className="w-3.5 h-3.5 text-[#D4030C]" />
                       Precast System Used
                     </p>
                     <p className="text-[#334155] leading-relaxed">{activeProject.precastSystem}</p>
                   </div>
                   <div className="bg-[#F2F7FF] p-3.5 rounded-lg border border-[#DCE5F0]">
-                    <p className="font-bold text-[#01255F] mb-1 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#01255F]" />
+                    <p className="font-bold text-[#032356] mb-1 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#032356]" />
                       Scope of Engineering Work
                     </p>
                     <p className="text-[#334155] leading-relaxed">{activeProject.scopeOfWork}</p>
@@ -796,7 +796,7 @@ export function ProjectsGallery() {
                 </div>
 
                 <div className="bg-[#FAFBFD] p-4 rounded-lg border border-[#DCE5F0] text-xs">
-                  <p className="font-bold text-[#01255F] mb-1.5">Relevant Structural Details & Compliance</p>
+                  <p className="font-bold text-[#032356] mb-1.5">Relevant Structural Details & Compliance</p>
                   <p className="text-[#475569] leading-relaxed">
                     {activeProject.engineeringDetails}
                   </p>

@@ -5,6 +5,8 @@ interface SectionHeadingProps {
   centered?: boolean;
   className?: string;
   specCode?: string;
+  fullWidth?: boolean;
+  descriptionClassName?: string;
 }
 
 export function SectionHeading({
@@ -14,10 +16,12 @@ export function SectionHeading({
   centered = false,
   className = "",
   specCode,
+  fullWidth = false,
+  descriptionClassName = "",
 }: SectionHeadingProps) {
   return (
     <div
-      className={`mb-8 lg:mb-10 ${centered ? "text-center" : ""} ${className}`}
+      className={`mb-8 lg:mb-10 reveal-init ${centered ? "text-center" : ""} ${className}`}
     >
       <div className={`flex items-center gap-2.5 mb-2.5 ${centered ? "justify-center" : ""}`}>
         {eyebrow && (
@@ -32,24 +36,28 @@ export function SectionHeading({
         )}
       </div>
 
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0A2540] tracking-tight leading-tight">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#032356] tracking-tight leading-tight">
         {title}
       </h2>
 
       {description && (
         <p
           className={`mt-3 text-base sm:text-lg text-[#475569] leading-relaxed font-normal ${
-            centered ? "mx-auto max-w-3xl" : "max-w-2xl"
-          }`}
+            fullWidth
+              ? "w-full max-w-none"
+              : centered
+              ? "mx-auto max-w-3xl"
+              : "max-w-2xl"
+          } ${descriptionClassName}`}
         >
           {description}
         </p>
       )}
 
-      {/* Structural USA accent underline */}
+      {/* Structural USA accent underline with animated expand */}
       <div className={`mt-4 flex items-center gap-1.5 ${centered ? "justify-center" : ""}`}>
-        <div className="w-12 h-1 bg-[#D71920] rounded-full" />
-        <div className="w-4 h-1 bg-[#0B2545] rounded-full" />
+        <div className="w-12 h-1 bg-[#D4030C] rounded-full line-expand" />
+        <div className="w-4 h-1 bg-[#032356] rounded-full" />
       </div>
     </div>
   );

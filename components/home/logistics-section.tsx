@@ -45,7 +45,7 @@ export function LogisticsSection() {
                   className="p-4 bg-[#F8FAFC] border-2 border-[#CBD5E1] border-l-4 border-l-[#0A2540] rounded-xl shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-mono-spec text-[10px] font-bold text-[#C8101E]">[{pt.code}]</span>
+                    <span className="font-mono-spec text-[10px] font-bold text-[#D4030C]">[{pt.code}]</span>
                     <h4 className="text-sm font-bold text-[#0A2540] uppercase tracking-tight">{pt.title}</h4>
                   </div>
                   <p className="text-xs text-[#475569] leading-relaxed font-normal pl-6">{pt.desc}</p>
@@ -56,7 +56,7 @@ export function LogisticsSection() {
 
           <div className="lg:col-span-6 bg-[#EAEEF3] p-6 sm:p-8 border-2 border-[#CBD5E1] rounded-xl shadow-md">
             <div className="flex items-center justify-between border-b border-[#CBD5E1] pb-3.5 mb-5">
-              <span className="font-mono-spec text-xs font-bold text-[#C8101E] uppercase">
+              <span className="font-mono-spec text-xs font-bold text-[#D4030C] uppercase">
                 REGIONAL CORRIDOR COVERAGE
               </span>
               <span className="font-mono-spec text-xs font-bold bg-white text-[#0A2540] px-2.5 py-1 rounded border border-[#CBD5E1] shadow-2xs">
@@ -78,7 +78,7 @@ export function LogisticsSection() {
                 <div className="text-[10px] text-[#64748B] uppercase font-bold">On-Time Crane Hook Arrival</div>
               </div>
               <div className="border-l border-[#CBD5E1] pl-3.5">
-                <div className="text-2xl font-black text-[#C8101E]">12,000+</div>
+                <div className="text-2xl font-black text-[#D4030C]">12,000+</div>
                 <div className="text-[10px] text-[#64748B] uppercase font-bold">Heavy Loads Dispatched</div>
               </div>
             </div>

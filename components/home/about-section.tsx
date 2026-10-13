@@ -33,14 +33,14 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-6">
             <SectionHeading
-              eyebrow="Company Heritage"
-              specCode="EST. 1999"
-              title="American Industrial Precast Manufacturing"
-              description="Founded on the principles of precision manufacturing, unbending structural safety, and true trade partnership with general contractors and civil developers."
+              eyebrow="Company Background"
+              specCode="PRECAST QUALITY"
+              title="Precast Concrete Manufacturing"
+              description="Founded on high quality standards, reliable concrete strength, and straightforward partnership with contractors and builders."
             />
 
             <p className="text-xs sm:text-sm text-[#475569] leading-relaxed font-normal mt-3">
-              Our 125,000 sq. ft. enclosed precast fabrication facility combines automated planetary batching technology with seasoned American craftsmen. From preliminary schematic modeling through final erection coordination, we take pride in being the structural backbone of critical infrastructure across the Southern and Central United States.
+              Our enclosed precast concrete plant combines computerized batching with experienced craftspeople. From initial drawings through site delivery, we take pride in manufacturing strong, reliable concrete products for essential infrastructure.
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -49,7 +49,7 @@ export function AboutSection() {
                 return (
                   <div key={idx} className="p-3.5 bg-[#F8FAFC] border-2 border-[#CBD5E1] border-l-4 border-l-[#0A2540] rounded-xl shadow-2xs">
                     <div className="flex items-center gap-2 mb-1 text-[#0A2540]">
-                      <Icon className="w-4 h-4 text-[#C8101E] shrink-0" />
+                      <Icon className="w-4 h-4 text-[#D4030C] shrink-0" />
                       <h4 className="text-xs font-bold uppercase tracking-tight">{val.title}</h4>
                     </div>
                     <p className="text-[11px] text-[#475569] leading-relaxed font-normal">{val.desc}</p>
@@ -60,7 +60,7 @@ export function AboutSection() {
 
             <div className="mt-6">
               <Link href="/about" className="btn btn-usa-blue">
-                Explore Our Heritage &amp; Plant Equipment
+                Learn More About Our Company
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
@@ -72,7 +72,7 @@ export function AboutSection() {
                 <div className="relative aspect-square overflow-hidden rounded-xl border border-[#CBD5E1]">
                   <Image
                     src="/images/manufacturing.jpg"
-                    alt="PRECASTPRO facility floor"
+                    alt="Precast facility floor"
                     fill
                     className="object-cover"
                     sizes="25vw"
@@ -83,16 +83,16 @@ export function AboutSection() {
                 </div>
 
                 <div className="p-5 sm:p-6 bg-[#0A2540] text-white flex flex-col justify-center rounded-xl shadow-sm">
-                  <div className="font-mono-spec text-3xl sm:text-4xl font-black text-white">25+</div>
+                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-white">PCI</div>
                   <div className="font-mono-spec text-[10px] font-bold uppercase tracking-wider text-slate-300 mt-1">
-                    YEARS DOMESTIC CASTING
+                    SPECIFICATION QUALITY
                   </div>
                 </div>
 
                 <div className="p-5 sm:p-6 bg-white border border-[#CBD5E1] text-[#0A2540] flex flex-col justify-center rounded-xl shadow-sm">
-                  <div className="font-mono-spec text-3xl sm:text-4xl font-black text-[#C8101E]">1.2M+</div>
+                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-[#D4030C]">DOT</div>
                   <div className="font-mono-spec text-[10px] font-bold uppercase tracking-wider text-[#64748B] mt-1">
-                    SQ. FT. PRECAST ERECTED
+                    TESTED CONCRETE MIXES
                   </div>
                 </div>
 

@@ -12,16 +12,16 @@ const CAPABILITIES_LIST = [
   {
     tag: "SYS-02",
     title: "Continuous Machined Steel Casting Beds",
-    description: "Laser-aligned long-line prestressing beds equipped with bulkheads engineered for 2,000 kips of prestressing strand tensioning force.",
+    description: "Laser-aligned long-line prestressing beds equipped with heavy-duty bulkheads engineered for high-tension prestressing strand force.",
   },
   {
     tag: "SYS-03",
     title: "Enclosed Hydration & Accelerated Steam Curing",
-    description: "Thermal insulated curing enclosures with automated steam hydration cycles deliver stripping strengths of 4,000+ PSI within 16 hours.",
+    description: "Thermal insulated curing enclosures with automated steam hydration cycles deliver rapid curing and verified design strengths.",
   },
   {
     tag: "SYS-04",
-    title: "Tandem 60-Ton Overhead Bridge Cranes",
+    title: "Synchronized Overhead Bridge Cranes",
     description: "Synchronized dual-hook crane rigging systems designed for smooth, damage-free demolding, turnover, and flatbed trailer loading.",
   },
 ];
@@ -32,9 +32,10 @@ export function ManufacturingSection() {
       <div className="section-container-wide">
         <SectionHeading
           eyebrow="Plant Casting Bays"
-          specCode="FACILITY SPEC 03 40"
+          specCode="IN-HOUSE FACILITY"
           title="Heavy-Duty Manufacturing &amp; Casting Capacity"
-          description="Operating 125,000 sq. ft. of climate-controlled casting bays designed to fabricate massive structural bridge components, high-load foundation vaults, and precision architectural wall panels."
+          description="Operating enclosed climate-controlled casting bays designed to fabricate heavy structural bridge components, high-load foundation vaults, and precision architectural wall panels."
+          fullWidth={true}
         />
 
         <div className="mt-4 sm:mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -53,12 +54,12 @@ export function ManufacturingSection() {
             {/* Light High-Contrast Metric Readout */}
             <div className="mt-3 p-3.5 bg-white border border-[#CBD5E1] rounded-xl shadow-sm grid grid-cols-2 gap-3 text-center">
               <div className="p-2">
-                <span className="text-[#64748B] text-xs font-bold block uppercase font-mono">LIFTING CAPACITY</span>
-                <span className="text-[#01255F] font-black text-lg">60-TON TANDEM</span>
+                <span className="text-[#64748B] text-xs font-bold block uppercase font-mono">STANDARDS</span>
+                <span className="text-[#032356] font-black text-lg">PCI &amp; ASTM</span>
               </div>
               <div className="p-2 border-l border-[#CBD5E1]">
-                <span className="text-[#64748B] text-xs font-bold block uppercase font-mono">TENSIONING FORCE</span>
-                <span className="text-[#D7030F] font-black text-lg">2,000 KIPS</span>
+                <span className="text-[#64748B] text-xs font-bold block uppercase font-mono">HANDLING</span>
+                <span className="text-[#D4030C] font-black text-lg">OVERHEAD CRANES</span>
               </div>
             </div>
           </div>
@@ -69,11 +70,11 @@ export function ManufacturingSection() {
               {CAPABILITIES_LIST.map((item) => (
                 <div
                   key={item.tag}
-                  className="p-4 bg-white border border-[#CBD5E1] border-l-4 border-l-[#01255F] rounded-xl shadow-xs hover:shadow-md transition-shadow"
+                  className="p-4 bg-white border border-[#CBD5E1] border-l-4 border-l-[#032356] rounded-xl shadow-xs hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-mono text-[10px] font-bold text-[#D7030F]">[{item.tag}]</span>
-                    <h3 className="text-sm font-bold text-[#01255F] uppercase tracking-tight">{item.title}</h3>
+                    <span className="font-mono text-[10px] font-bold text-[#D4030C]">[{item.tag}]</span>
+                    <h3 className="text-sm font-bold text-[#032356] uppercase tracking-tight">{item.title}</h3>
                   </div>
                   <p className="text-xs text-[#475569] leading-relaxed font-normal pl-6">{item.description}</p>
                 </div>
@@ -82,11 +83,11 @@ export function ManufacturingSection() {
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link href="/capabilities" className="btn-navy text-xs uppercase tracking-wider font-bold">
-                Review Plant Tooling &amp; Equipment
+                Review Plant Equipment
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
               <Link href="/#contact" className="btn-outline-navy text-xs uppercase tracking-wider font-bold">
-                Schedule Plant Walkthrough
+                Schedule Plant Visit
               </Link>
             </div>
           </div>

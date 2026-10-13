@@ -34,7 +34,7 @@ export default function HomePage() {
         title="Precast Concrete Manufacturing & Plant Facilities"
         subtitle="High-Capacity Casting Beds & DOT-Approved Civil Infrastructure"
         badge="PLANT CASTING & DOT CONCRETE PRODUCTS"
-        description="Direct high-volume plant production operating climate-controlled casting beds, computerized twin-shaft planetary batching, and tandem 60-ton overhead cranes. Fabricating heavy highway box culverts, bridge panels, utility vaults, and stormwater drainage structures."
+        description="Direct high-volume plant production operating climate-controlled casting beds, computerized twin-shaft planetary batching, and synchronized overhead cranes. Fabricating heavy highway box culverts, bridge panels, utility vaults, and stormwater drainage structures."
         primaryLink={{ label: "Browse Products Catalog", href: "/#products" }}
         secondaryLink={{ label: "Review Plant Specifications", href: "/#manufacturing-specs" }}
         theme="manufacturing"
@@ -64,9 +64,9 @@ export default function HomePage() {
         id="engineering"
         divisionNumber="02"
         title="Precast Structural Engineering & 3D BIM Services"
-        subtitle="50-State PE Stamped Calculations & Tekla LOD 400 Detailing"
-        badge="VIRTUAL DESIGN & 50-STATE PE CONSULTING"
-        description="Dedicated in-house structural engineering consultancy specializing exclusively in precast and prestressed concrete systems. Delivering 50-state PE/SE stamped calculations, custom connection designs, erection sequencing, and clash-free fabrication detailing."
+        subtitle="Licensed PE Stamped Calculations & Tekla LOD 400 Detailing"
+        badge="VIRTUAL DESIGN & LICENSED PE CONSULTING"
+        description="Dedicated in-house structural engineering consultancy specializing exclusively in precast and prestressed concrete systems. Delivering licensed PE/SE stamped calculations, custom connection designs, erection sequencing, and clash-free fabrication detailing."
         primaryLink={{ label: "View 8 Engineering Disciplines", href: "/#services" }}
         secondaryLink={{ label: "Digital BIM Workflows", href: "/#software" }}
         theme="engineering"

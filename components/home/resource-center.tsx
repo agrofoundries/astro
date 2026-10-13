@@ -59,7 +59,7 @@ export function ResourceCenter() {
             >
               <div>
                 <div className="bg-[#EAEEF3] text-[#0A2540] px-4 py-2.5 flex items-center justify-between text-xs font-mono-spec border-b border-[#CBD5E1]">
-                  <span className="text-[#C8101E] font-bold">[{article.code}]</span>
+                  <span className="text-[#D4030C] font-bold">[{article.code}]</span>
                   <span className="text-[#64748B] text-[10px] font-bold">{article.category}</span>
                 </div>
 
@@ -68,7 +68,7 @@ export function ResourceCenter() {
                     {article.date} • {article.readTime}
                   </div>
 
-                  <h3 className="text-base font-bold text-[#0A2540] tracking-tight mb-2 group-hover:text-[#C8101E] transition-colors leading-snug">
+                  <h3 className="text-base font-bold text-[#0A2540] tracking-tight mb-2 group-hover:text-[#D4030C] transition-colors leading-snug">
                     <Link href="/resources" className="flex items-start justify-between gap-2">
                       {article.title}
                       <ArrowUpRight className="w-4 h-4 text-[#64748B] shrink-0 mt-1" />
@@ -84,7 +84,7 @@ export function ResourceCenter() {
               <div className="p-4 bg-[#F8FAFC] border-t border-[#CBD5E1]">
                 <Link
                   href="/resources"
-                  className="flex items-center justify-between text-xs font-bold text-[#0A2540] group-hover:text-[#C8101E] uppercase tracking-wider"
+                  className="flex items-center justify-between text-xs font-bold text-[#0A2540] group-hover:text-[#D4030C] uppercase tracking-wider"
                 >
                   <span>Read Full Technical Brief</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

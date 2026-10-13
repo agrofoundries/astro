@@ -65,7 +65,7 @@ export function IndustriesSection() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <span className="badge-tag mb-3">Sectors &amp; Applications</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#01255F] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
             Industries We Serve
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -80,13 +80,13 @@ export function IndustriesSection() {
             return (
               <div
                 key={index}
-                className="card-clean p-6 flex flex-col justify-between hover:border-[#01255F] transition-all"
+                className="card-clean p-6 flex flex-col justify-between hover:border-[#032356] transition-all"
               >
                 <div>
-                  <div className="w-10 h-10 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center mb-4 text-[#01255F]">
-                    <Icon className="w-5 h-5 text-[#D7030F]" />
+                  <div className="w-10 h-10 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center mb-4 text-[#032356]">
+                    <Icon className="w-5 h-5 text-[#D4030C]" />
                   </div>
-                  <h3 className="text-base font-bold text-[#01255F] mb-2">
+                  <h3 className="text-base font-bold text-[#032356] mb-2">
                     {industry.title}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed">

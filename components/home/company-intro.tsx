@@ -30,21 +30,21 @@ export function CompanyIntro() {
             {/* Plant Capacity Accreditation Bar */}
             <div className="mt-4 grid grid-cols-2 gap-3">
               <div className="bg-[#F4F8FD] border border-[#DCE5F0] rounded-xl p-3.5 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#01255F] text-white flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-[#D7030F]" />
+                <div className="w-9 h-9 rounded-lg bg-[#032356] text-white flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-[#D4030C]" />
                 </div>
                 <div>
-                  <div className="text-xs font-black text-[#01255F] uppercase">PCI Certified Plant</div>
+                  <div className="text-xs font-black text-[#032356] uppercase">PCI Certified Plant</div>
                   <div className="text-[11px] text-[#64748B]">Quality-Assured Casting</div>
                 </div>
               </div>
 
               <div className="bg-[#F4F8FD] border border-[#DCE5F0] rounded-xl p-3.5 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#01255F] text-white flex items-center justify-center shrink-0">
-                  <Cpu className="w-5 h-5 text-[#D7030F]" />
+                <div className="w-9 h-9 rounded-lg bg-[#032356] text-white flex items-center justify-center shrink-0">
+                  <Cpu className="w-5 h-5 text-[#D4030C]" />
                 </div>
                 <div>
-                  <div className="text-xs font-black text-[#01255F] uppercase">High-Volume Beds</div>
+                  <div className="text-xs font-black text-[#032356] uppercase">High-Volume Beds</div>
                   <div className="text-[11px] text-[#64748B]">Rapid Production &amp; Delivery</div>
                 </div>
               </div>
@@ -53,12 +53,12 @@ export function CompanyIntro() {
 
           {/* Manufacturing Focus Intro Content */}
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D7030F] mb-3">
-              <span className="w-4 h-0.5 bg-[#D7030F]" />
+            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D4030C] mb-3">
+              <span className="w-4 h-0.5 bg-[#D4030C]" />
               <span>PRECAST CONCRETE MANUFACTURING &amp; SUPPLY</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#01255F] tracking-tight leading-tight uppercase mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#032356] tracking-tight leading-tight uppercase mb-4">
               Heavy Precast Manufacturing &amp; Concrete Plant Production
             </h2>
 
@@ -70,7 +70,7 @@ export function CompanyIntro() {
             <div className="space-y-3.5 mb-8">
               {CAPABILITY_POINTS.map((point, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#D7030F] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#D4030C] shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
                     {point}
                   </span>
@@ -82,12 +82,12 @@ export function CompanyIntro() {
             <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center gap-4 sm:gap-6">
               <Link href="/#services" className="btn-navy px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                 <span>View Engineering Services</span>
-                <ArrowRight className="w-4 h-4 text-[#D7030F]" />
+                <ArrowRight className="w-4 h-4 text-[#D4030C]" />
               </Link>
 
-              <Link href="/#contact" className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg border-2 border-[#D7030F] bg-white text-[#D7030F] hover:bg-[#D7030F] hover:text-white transition-colors text-xs font-black uppercase tracking-wider">
+              <Link href="/#contact" className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg border-2 border-[#D4030C] bg-white text-[#D4030C] hover:bg-[#D4030C] hover:text-white transition-colors text-xs font-black uppercase tracking-wider">
                 <Mail className="w-4 h-4" />
-                <span>Request Project Takeoff</span>
+                <span>Get a Project Quote</span>
               </Link>
             </div>
           </div>
