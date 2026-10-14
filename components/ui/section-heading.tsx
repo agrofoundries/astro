@@ -36,7 +36,7 @@ export function SectionHeading({
         )}
       </div>
 
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#032356] tracking-tight leading-tight">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#014088] tracking-tight leading-tight">
         {title}
       </h2>
 
@@ -56,8 +56,8 @@ export function SectionHeading({
 
       {/* Structural USA accent underline with animated expand */}
       <div className={`mt-4 flex items-center gap-1.5 ${centered ? "justify-center" : ""}`}>
-        <div className="w-12 h-1 bg-[#D4030C] rounded-full line-expand" />
-        <div className="w-4 h-1 bg-[#032356] rounded-full" />
+        <div className="w-12 h-1 bg-[#0E96E1] rounded-full line-expand" />
+        <div className="w-4 h-1 bg-[#014088] rounded-full" />
       </div>
     </div>
   );

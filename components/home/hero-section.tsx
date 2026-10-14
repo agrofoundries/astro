@@ -7,34 +7,32 @@ import {
   ShieldCheck,
   Award,
   Clock,
-  CheckCircle2,
   Phone,
-  FileText,
   Factory,
-  Compass,
+  MapPin,
+  BookOpen,
 } from "lucide-react";
-import { COMPANY } from "@/lib/constants";
 
 const TRUST_METRICS = [
   {
-    icon: Factory,
-    title: "Underground Infrastructure",
-    subtitle: "Monolithic Septic & Utility Vaults",
-  },
-  {
     icon: Award,
-    title: "Stormwater Systems",
-    subtitle: "DOT Catch Basins, Inlets & Culverts",
+    title: "4,000+ PSI Concrete",
+    subtitle: "Min 28-Day Compressive Strength",
   },
   {
     icon: ShieldCheck,
-    title: "Heavy Civil & Bridges",
-    subtitle: "Bridge Panels & Retaining Walls",
+    title: "AASHTO HS20-44 Rated",
+    subtitle: "Suffolk & Nassau County Spec",
   },
   {
-    icon: CheckCircle2,
-    title: "Licensed PE & 3D BIM",
-    subtitle: "PE Stamped Calculations & Detailing",
+    icon: Factory,
+    title: "WWF ASTM A1064 Steel",
+    subtitle: "Mesh Centered in 6\" Wall · 1.5\" Cover",
+  },
+  {
+    icon: MapPin,
+    title: "Deer Park, NY Plant",
+    subtitle: "631-667 3300 · www.astromasonry.com",
   },
 ];
 
@@ -42,127 +40,124 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      aria-label="Precast Engineers Flagship Hero"
-      className="relative w-full bg-white overflow-hidden border-b border-[#DCE5F0] min-h-[calc(100vh-96px)] lg:h-[calc(100vh-96px)] lg:max-h-[calc(100vh-96px)] flex flex-col justify-between"
+      aria-label="Astro Precast Engineering Flagship Hero"
+      className="relative w-full overflow-hidden bg-gradient-to-r from-[#FFFFFF] via-[#F4F9FF] to-[#E8F3FD] border-b border-[#D0E2F2] flex flex-col justify-between"
     >
+      {/* Background Technical Grid Pattern */}
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none opacity-40 bg-[linear-gradient(to_right,#0E96E112_1px,transparent_1px),linear-gradient(to_bottom,#0E96E112_1px,transparent_1px)] bg-[size:36px_36px]" 
+      />
+
+      {/* Ambient Top Glow */}
+      <div className="absolute -top-32 -left-20 w-96 h-96 bg-[#0E96E1]/10 rounded-full blur-3xl pointer-events-none" />
+
       {/* 
-        DAYLIGHT PRECAST BRIDGE & HEAVY CIVIL INFRASTRUCTURE BACKGROUND
+        Right-Side Precast Concrete Catch Basins with Technical CAD Blueprint Overlay
+        Extracted directly from the Astro 2026 Engineering reference specification
       */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-bridge.jpg"
-          alt="Precast concrete highway bridge viaduct and civil infrastructure"
-          fill
-          priority
-          className="object-cover object-center lg:object-right brightness-[1.02] contrast-[1.03]"
-        />
-        {/* Crisp White Daylight Wash Gradient: guarantees 100% crystal-clear text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-50% to-white/20 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[58%] xl:w-[55%] z-0 pointer-events-none overflow-hidden hidden sm:block">
+        <div className="relative w-full h-full">
+          <Image
+            src="/images/hero-precast-blueprint-side@2x.png"
+            alt="Astro Precast Concrete Catch Basins with CAD technical blueprint dimensions"
+            fill
+            priority
+            className="object-cover object-right-center lg:object-contain lg:object-right select-none"
+            sizes="(max-width: 1024px) 100vw, 58vw"
+          />
+        </div>
       </div>
 
-      {/* Main Hero Content - Vertically centered */}
-      <div className="relative z-20 section-container-wide flex-1 flex flex-col justify-center py-4 sm:py-6 lg:py-8">
-        <div className="max-w-2xl xl:max-w-3xl">
-          {/* Eyebrow Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F3FF] border border-[#DCE5F0] mb-3 sm:mb-4 shadow-xs animate-fade-down">
-            <span className="w-2 h-2 rounded-full bg-[#D4030C] animate-pulse" />
-            <span className="text-[11px] font-bold tracking-wider text-[#032356] uppercase font-mono">
-              Precast Concrete
+      {/* Main Content Area */}
+      <div className="relative z-10 section-container-wide flex-1 flex flex-col justify-center py-8 sm:py-10 lg:py-14 xl:py-16">
+        <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+          {/* Eyebrow Pill Badge (Matching Exact User Reference) */}
+          <div className="inline-flex items-center gap-2 p-1 pl-3.5 pr-1.5 rounded-full bg-[#E1F3FE]/95 border border-[#BAE6FD] mb-4 sm:mb-5 shadow-xs w-fit animate-fade-down">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#0E96E1] shadow-[0_0_8px_#0E96E1] shrink-0 animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-bold tracking-wider text-[#014088] uppercase font-mono">
+              ASTRO 2026 CATALOG SPECIFICATION
             </span>
-            <span className="hidden sm:inline-block text-slate-300">|</span>
-            <span className="hidden sm:inline-block text-[11px] font-extrabold text-[#D4030C] bg-white px-2 py-0.5 rounded border border-red-200 uppercase">
-              Plant Manufacturing &amp; Structural Engineering
+            <span className="text-[10.5px] sm:text-xs font-bold text-[#0E96E1] bg-[#EBF7FF] px-2.5 py-0.5 rounded-full border border-[#BAE6FD] uppercase font-mono tracking-wide">
+              DEER PARK, NY • 631-667 3300
             </span>
           </div>
 
-          {/* High-Impact Headline in Bold USA Navy & USA Red */}
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.08] uppercase mb-2.5 sm:mb-3 text-[#032356] animate-fade-up">
-            Precast{" "}
-            <span className="text-[#D4030C]">
-              Manufacturing
+          {/* High-Impact Headline from Astro 2026 Catalog */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[70px] font-black tracking-tight leading-[1.04] uppercase mb-4 text-[#014088] animate-fade-up">
+            ADVANCED PRECAST<br />
+            <span className="text-[#0E96E1]">
+              ENGINEERING
             </span>
             <br />
-            <span className="text-[#032356]">
-              &amp; Structural Engineering
+            <span className="text-[#014088]">
+              &amp; INFRASTRUCTURE
             </span>
           </h1>
 
-          {/* Accent Line */}
-          <div className="flex items-center gap-2 mb-3 animate-fade-up [animation-delay:150ms]">
-            <span className="w-7 h-1 bg-[#D4030C] rounded-full" />
-            <span className="text-xs sm:text-[13px] font-extrabold tracking-wide text-[#032356] uppercase">
-              Engineered Infrastructure · Built Smarter, Faster &amp; Stronger
+          {/* Accent Line with PDF Tagline */}
+          <div className="flex items-center gap-2.5 mb-4 animate-fade-up [animation-delay:150ms]">
+            <span className="w-8 h-[3.5px] bg-[#0E96E1] rounded-full shrink-0" />
+            <span className="text-xs sm:text-[13px] font-extrabold tracking-[0.14em] text-[#014088] uppercase font-mono">
+              INFRASTRUCTURE | UTILITY | CUSTOM SOLUTIONS
+            </span>
+            <span className="text-[#0E96E1] font-mono font-bold text-xs select-none">
+              ⁝⁝
             </span>
           </div>
 
-          {/* Clear Supporting Description in Simple English */}
-          <p className="text-xs sm:text-sm lg:text-base text-[#1E293B] leading-relaxed font-medium max-w-2xl mb-4 sm:mb-6 animate-fade-up [animation-delay:220ms]">
-            We engineer and manufacture certified precast concrete solutions for roads, bridges, and underground utilities. From licensed PE calculations and 3D BIM models to high-capacity plant casting—we help you build infrastructure designed to endure for generations.
+          {/* Clear Supporting Description matching Astro 2026 PDF */}
+          <p className="text-sm sm:text-base lg:text-[16px] text-slate-700 leading-relaxed font-normal max-w-xl mb-7 animate-fade-up [animation-delay:220ms]">
+            Astro Masonry &amp; Precast manufactures certified high-strength precast concrete structures engineered for municipal stormwater, underground utilities, and civil site work. Certified 4,000+ PSI compressive strength, AASHTO HS20-44 traffic-rated, and engineered to exact Suffolk &amp; Nassau County standards from our Long Island production plant.
           </p>
 
-          {/* Action CTAs in Simple Words */}
-          <div className="flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:300ms]">
-            {/* Primary Button */}
+          {/* Action CTAs (2 High-Impact Buttons) */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 xl:gap-5 animate-fade-up [animation-delay:300ms]">
+            {/* Primary Cyan Button */}
             <Link
               href="/#products"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#D4030C] hover:bg-[#B50209] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-red-600/25 transition-all duration-200 transform hover:-translate-y-0.5 group cursor-pointer active:scale-95"
+              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-[#0E96E1] hover:bg-[#0C82C4] text-white font-black text-xs sm:text-[13px] uppercase tracking-wider shadow-lg shadow-sky-500/25 transition-all duration-200 transform hover:-translate-y-0.5 group cursor-pointer active:scale-95 shrink-0"
             >
-              <Factory className="w-4 h-4" />
-              <span>Browse Products</span>
+              <BookOpen className="w-4 h-4" />
+              <span>BROWSE 2026 CATALOG</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
-            {/* Secondary Button */}
-            <Link
-              href="/#services"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#032356] hover:bg-[#02173B] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer active:scale-95"
+            {/* Direct Desk Call Button */}
+            <a
+              href="tel:6316673300"
+              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-[#014088] hover:bg-[#024B9E] text-white font-black text-xs sm:text-[13px] uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 cursor-pointer shrink-0"
             >
-              <Compass className="w-4 h-4 text-[#D4030C]" />
-              <span>Engineering Services</span>
-              <ArrowRight className="w-4 h-4 text-[#D4030C]" />
-            </Link>
-
-            {/* Direct Quote Link */}
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#032356] hover:text-[#D4030C] px-2 py-1.5 rounded-md transition-colors"
-            >
-              <div className="w-6 h-6 rounded-full bg-[#FFF2F2] border border-red-200 flex items-center justify-center text-[#D4030C]">
-                <Clock className="w-3 h-3" />
-              </div>
-              <span>
-                Need a quote? <strong className="text-[#032356] font-mono">Send Project Details</strong>
-              </span>
-            </Link>
+              <Phone className="w-4 h-4 text-white" />
+              <span>631-667 3300 DIRECT DESK</span>
+            </a>
           </div>
         </div>
       </div>
 
       {/* 
         Bottom Trust Strip:
-        Clean white surface neatly docked at the bottom inside the 100vh viewport
+        Refined engineering metrics docked at the base
       */}
-      <div className="relative z-20 bg-white/95 backdrop-blur-md border-t border-[#DCE5F0] shadow-xs">
-        <div className="section-container-wide py-3 sm:py-3.5">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+      <div className="relative z-10 bg-white/95 backdrop-blur-md border-t border-[#D0E2F2] shadow-xs">
+        <div className="section-container-wide py-3 sm:py-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
             {TRUST_METRICS.map((metric, idx) => {
               const Icon = metric.icon;
               return (
                 <div
                   key={idx}
                   className={`flex items-center gap-3 ${
-                    idx > 0 ? "pt-2 sm:pt-0 sm:pl-4" : ""
+                    idx > 0 ? "pt-2 sm:pt-0 sm:pl-5" : ""
                   }`}
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#E8F3FF] border border-[#DCE5F0] flex items-center justify-center shrink-0 text-[#032356]">
-                    <Icon className="w-4 h-4 text-[#D4030C]" />
+                  <div className="w-9 h-9 rounded-lg bg-[#E0F2FE] border border-[#BAE6FD] flex items-center justify-center shrink-0 text-[#014088]">
+                    <Icon className="w-4 h-4 text-[#0E96E1]" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-[#032356] leading-tight">
+                    <h3 className="text-xs sm:text-sm font-bold text-[#014088] leading-tight">
                       {metric.title}
                     </h3>
-                    <p className="text-[10.5px] text-[#64748B] leading-tight mt-0.5 font-medium">
+                    <p className="text-[10.5px] text-[#556B82] leading-tight mt-0.5 font-medium font-mono">
                       {metric.subtitle}
                     </p>
                   </div>

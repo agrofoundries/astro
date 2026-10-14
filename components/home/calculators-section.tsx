@@ -77,7 +77,7 @@ export function CalculatorsSection() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10">
           <span className="badge-tag mb-3">Interactive Engineering Tools</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
             Engineering Calculators and Tools
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -92,11 +92,11 @@ export function CalculatorsSection() {
             onClick={() => setActiveTab("volume")}
             className={`pb-3 px-4 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors cursor-pointer ${
               activeTab === "volume"
-                ? "border-[#D4030C] text-[#032356]"
-                : "border-transparent text-[#64748B] hover:text-[#032356]"
+                ? "border-[#0E96E1] text-[#014088]"
+                : "border-transparent text-[#64748B] hover:text-[#014088]"
             }`}
           >
-            <Calculator className="w-4 h-4 text-[#D4030C]" />
+            <Calculator className="w-4 h-4 text-[#0E96E1]" />
             <span>Concrete Volume &amp; Weight</span>
           </button>
           <button
@@ -104,11 +104,11 @@ export function CalculatorsSection() {
             onClick={() => setActiveTab("converter")}
             className={`pb-3 px-4 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors cursor-pointer ${
               activeTab === "converter"
-                ? "border-[#D4030C] text-[#032356]"
-                : "border-transparent text-[#64748B] hover:text-[#032356]"
+                ? "border-[#0E96E1] text-[#014088]"
+                : "border-transparent text-[#64748B] hover:text-[#014088]"
             }`}
           >
-            <ArrowRightLeft className="w-4 h-4 text-[#D4030C]" />
+            <ArrowRightLeft className="w-4 h-4 text-[#0E96E1]" />
             <span>Unit Conversion Tool</span>
           </button>
           <button
@@ -116,11 +116,11 @@ export function CalculatorsSection() {
             onClick={() => setActiveTab("rebar")}
             className={`pb-3 px-4 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 whitespace-nowrap transition-colors cursor-pointer ${
               activeTab === "rebar"
-                ? "border-[#D4030C] text-[#032356]"
-                : "border-transparent text-[#64748B] hover:text-[#032356]"
+                ? "border-[#0E96E1] text-[#014088]"
+                : "border-transparent text-[#64748B] hover:text-[#014088]"
             }`}
           >
-            <Scale className="w-4 h-4 text-[#D4030C]" />
+            <Scale className="w-4 h-4 text-[#0E96E1]" />
             <span>Reinforcement Quantity Estimator</span>
           </button>
         </div>
@@ -129,13 +129,13 @@ export function CalculatorsSection() {
         {activeTab === "volume" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-7 bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg p-6 space-y-4">
-              <h3 className="text-base font-bold text-[#032356]">
+              <h3 className="text-base font-bold text-[#014088]">
                 Rectangular Precast Member Parameters
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Length (feet)
                   </label>
                   <input
@@ -143,11 +143,11 @@ export function CalculatorsSection() {
                     min="1"
                     value={slabLength}
                     onChange={(e) => setSlabLength(Math.max(0, Number(e.target.value)))}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none focus:border-[#032356]"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none focus:border-[#014088]"
                   />
                 </div>
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Width (feet)
                   </label>
                   <input
@@ -155,11 +155,11 @@ export function CalculatorsSection() {
                     min="1"
                     value={slabWidth}
                     onChange={(e) => setSlabWidth(Math.max(0, Number(e.target.value)))}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none focus:border-[#032356]"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none focus:border-[#014088]"
                   />
                 </div>
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Thickness (inches)
                   </label>
                   <input
@@ -168,20 +168,20 @@ export function CalculatorsSection() {
                     step="0.5"
                     value={slabThickness}
                     onChange={(e) => setSlabThickness(Math.max(0, Number(e.target.value)))}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none focus:border-[#032356]"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none focus:border-[#014088]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2">
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Waste / Overpour Allowance
                   </label>
                   <select
                     value={wasteFactor}
                     onChange={(e) => setWasteFactor(Number(e.target.value))}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none"
                   >
                     <option value={0}>0% (Exact Precast Mold Net)</option>
                     <option value={3}>3% (Standard Plant Allowance)</option>
@@ -190,13 +190,13 @@ export function CalculatorsSection() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Concrete Density (lb/ft³)
                   </label>
                   <select
                     value={densityPcf}
                     onChange={(e) => setDensityPcf(Number(e.target.value))}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none"
                   >
                     <option value={145}>145 pcf (Normal Weight Plain)</option>
                     <option value={150}>150 pcf (Normal Weight Reinforced)</option>
@@ -211,36 +211,36 @@ export function CalculatorsSection() {
             </div>
 
             {/* Results Output */}
-            <div className="lg:col-span-5 bg-white border border-[#032356] rounded-lg p-6 space-y-4 shadow-sm">
-              <span className="text-[11px] font-bold text-[#D4030C] uppercase tracking-wider">
+            <div className="lg:col-span-5 bg-white border border-[#014088] rounded-lg p-6 space-y-4 shadow-sm">
+              <span className="text-[11px] font-bold text-[#0E96E1] uppercase tracking-wider">
                 Calculated Volume &amp; Mass
               </span>
 
               <div className="space-y-3">
                 <div className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between">
                   <span className="text-xs text-[#475569]">Cubic Yards (CY)</span>
-                  <span className="text-xl font-black text-[#032356]">
+                  <span className="text-xl font-black text-[#014088]">
                     {cubicYards.toFixed(2)} CY
                   </span>
                 </div>
 
                 <div className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between">
                   <span className="text-xs text-[#475569]">Cubic Meters (m³)</span>
-                  <span className="text-base font-bold text-[#032356]">
+                  <span className="text-base font-bold text-[#014088]">
                     {cubicMeters.toFixed(2)} m³
                   </span>
                 </div>
 
                 <div className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between">
                   <span className="text-xs text-[#475569]">Total Volume (ft³)</span>
-                  <span className="text-base font-bold text-[#032356]">
+                  <span className="text-base font-bold text-[#014088]">
                     {withWasteCuFt.toFixed(1)} ft³
                   </span>
                 </div>
 
                 <div className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between">
                   <span className="text-xs text-[#475569]">Estimated Precast Weight</span>
-                  <span className="text-base font-bold text-[#D4030C]">
+                  <span className="text-base font-bold text-[#0E96E1]">
                     {weightTons.toFixed(2)} Tons ({Math.round(weightTons * 2000).toLocaleString()} lbs)
                   </span>
                 </div>
@@ -253,13 +253,13 @@ export function CalculatorsSection() {
         {activeTab === "converter" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-6 bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg p-6 space-y-4">
-              <h3 className="text-base font-bold text-[#032356]">
+              <h3 className="text-base font-bold text-[#014088]">
                 Structural Unit Converter
               </h3>
 
               <div className="space-y-3 text-xs">
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Conversion Category
                   </label>
                   <div className="flex gap-2">
@@ -272,8 +272,8 @@ export function CalculatorsSection() {
                       }}
                       className={`px-3 py-1.5 rounded border text-xs font-semibold cursor-pointer ${
                         convType === "stress"
-                          ? "bg-[#032356] text-white border-[#032356]"
-                          : "bg-white text-[#032356] border-[#DCE5F0]"
+                          ? "bg-[#014088] text-white border-[#014088]"
+                          : "bg-white text-[#014088] border-[#DCE5F0]"
                       }`}
                     >
                       Stress / Pressure (psi, MPa)
@@ -287,8 +287,8 @@ export function CalculatorsSection() {
                       }}
                       className={`px-3 py-1.5 rounded border text-xs font-semibold cursor-pointer ${
                         convType === "force"
-                          ? "bg-[#032356] text-white border-[#032356]"
-                          : "bg-white text-[#032356] border-[#DCE5F0]"
+                          ? "bg-[#014088] text-white border-[#014088]"
+                          : "bg-white text-[#014088] border-[#DCE5F0]"
                       }`}
                     >
                       Force / Load (kips, kN)
@@ -298,24 +298,24 @@ export function CalculatorsSection() {
 
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   <div>
-                    <label className="block text-[#032356] font-semibold mb-1">
+                    <label className="block text-[#014088] font-semibold mb-1">
                       Input Value
                     </label>
                     <input
                       type="number"
                       value={convInput}
                       onChange={(e) => setConvInput(Number(e.target.value))}
-                      className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none"
+                      className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[#032356] font-semibold mb-1">
+                    <label className="block text-[#014088] font-semibold mb-1">
                       Source Unit
                     </label>
                     <select
                       value={convFrom}
                       onChange={(e) => setConvFrom(e.target.value)}
-                      className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none"
+                      className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none"
                     >
                       {convType === "stress" ? (
                         <>
@@ -336,8 +336,8 @@ export function CalculatorsSection() {
               </div>
             </div>
 
-            <div className="lg:col-span-6 bg-white border border-[#032356] rounded-lg p-6 space-y-4">
-              <span className="text-[11px] font-bold text-[#D4030C] uppercase tracking-wider">
+            <div className="lg:col-span-6 bg-white border border-[#014088] rounded-lg p-6 space-y-4">
+              <span className="text-[11px] font-bold text-[#0E96E1] uppercase tracking-wider">
                 Equivalent Structural Values
               </span>
 
@@ -349,7 +349,7 @@ export function CalculatorsSection() {
                       className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between text-xs"
                     >
                       <span className="text-[#475569] font-medium uppercase">{unit}</span>
-                      <span className="text-base font-bold text-[#032356]">
+                      <span className="text-base font-bold text-[#014088]">
                         {val} {unit}
                       </span>
                     </div>
@@ -365,7 +365,7 @@ export function CalculatorsSection() {
                       className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between text-xs"
                     >
                       <span className="text-[#475569] font-medium uppercase">{unit}</span>
-                      <span className="text-base font-bold text-[#032356]">
+                      <span className="text-base font-bold text-[#014088]">
                         {val} {unit}
                       </span>
                     </div>
@@ -380,19 +380,19 @@ export function CalculatorsSection() {
         {activeTab === "rebar" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-7 bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg p-6 space-y-4">
-              <h3 className="text-base font-bold text-[#032356]">
+              <h3 className="text-base font-bold text-[#014088]">
                 ASTM A615 Standard Reinforcing Bar Estimator
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     US Bar Designation
                   </label>
                   <select
                     value={rebarSize}
                     onChange={(e) => setRebarSize(e.target.value)}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none"
                   >
                     {Object.keys(REBAR_WEIGHTS).map((size) => (
                       <option key={size} value={size}>
@@ -402,7 +402,7 @@ export function CalculatorsSection() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Length per Bar (feet)
                   </label>
                   <input
@@ -410,11 +410,11 @@ export function CalculatorsSection() {
                     min="1"
                     value={barLengthFt}
                     onChange={(e) => setBarLengthFt(Math.max(0, Number(e.target.value)))}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[#032356] font-semibold mb-1">
+                  <label className="block text-[#014088] font-semibold mb-1">
                     Number of Pieces
                   </label>
                   <input
@@ -422,7 +422,7 @@ export function CalculatorsSection() {
                     min="1"
                     value={barQuantity}
                     onChange={(e) => setBarQuantity(Math.max(0, Number(e.target.value)))}
-                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#032356] focus:outline-none"
+                    className="w-full bg-white border border-[#DCE5F0] rounded p-2 text-sm text-[#014088] focus:outline-none"
                   />
                 </div>
               </div>
@@ -437,29 +437,29 @@ export function CalculatorsSection() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-white border border-[#032356] rounded-lg p-6 space-y-4">
-              <span className="text-[11px] font-bold text-[#D4030C] uppercase tracking-wider">
+            <div className="lg:col-span-5 bg-white border border-[#014088] rounded-lg p-6 space-y-4">
+              <span className="text-[11px] font-bold text-[#0E96E1] uppercase tracking-wider">
                 Total Rebar Takeoff
               </span>
 
               <div className="space-y-3">
                 <div className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between">
                   <span className="text-xs text-[#475569]">Total Linear Footage</span>
-                  <span className="text-lg font-bold text-[#032356]">
+                  <span className="text-lg font-bold text-[#014088]">
                     {totalLinearFt.toLocaleString()} LF
                   </span>
                 </div>
 
                 <div className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between">
                   <span className="text-xs text-[#475569]">Total Steel Weight</span>
-                  <span className="text-xl font-black text-[#D4030C]">
+                  <span className="text-xl font-black text-[#0E96E1]">
                     {Math.round(totalRebarLbs).toLocaleString()} lbs
                   </span>
                 </div>
 
                 <div className="p-3 bg-[#F2F7FF] rounded border border-[#DCE5F0] flex items-center justify-between">
                   <span className="text-xs text-[#475569]">Equivalent Short Tons</span>
-                  <span className="text-base font-bold text-[#032356]">
+                  <span className="text-base font-bold text-[#014088]">
                     {totalRebarTons.toFixed(3)} Tons
                   </span>
                 </div>
@@ -470,9 +470,9 @@ export function CalculatorsSection() {
 
         {/* Assumptions, Limitations, and Engineering Disclaimer */}
         <div className="mt-8 bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg p-5 flex items-start gap-3 text-xs text-[#475569]">
-          <Info className="w-5 h-5 text-[#032356] shrink-0 mt-0.5" />
+          <Info className="w-5 h-5 text-[#014088] shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <h4 className="font-bold text-[#032356]">
+            <h4 className="font-bold text-[#014088]">
               Calculator Assumptions, Limitations &amp; Technical Disclaimer
             </h4>
             <p className="leading-relaxed">

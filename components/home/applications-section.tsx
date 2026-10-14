@@ -81,7 +81,7 @@ export function ApplicationsSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3 text-[11px] font-mono-spec">
-                    <span className="text-[#D4030C] font-bold">[{sector.code}]</span>
+                    <span className="text-[#0E96E1] font-bold">[{sector.code}]</span>
                     <span className="text-[#0A2540] bg-[#EEF3F8] border border-[#CBD5E1] px-2 py-0.5 rounded text-[10px] font-bold">{sector.designCode}</span>
                   </div>
 
@@ -89,7 +89,7 @@ export function ApplicationsSection() {
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-sm font-bold text-[#0A2540] tracking-tight mb-1.5 group-hover:text-[#D4030C] transition-colors">
+                  <h3 className="text-sm font-bold text-[#0A2540] tracking-tight mb-1.5 group-hover:text-[#0E96E1] transition-colors">
                     {sector.title}
                   </h3>
 
@@ -100,7 +100,7 @@ export function ApplicationsSection() {
 
                 <div className="mt-4 pt-3 border-t border-[#CBD5E1] font-mono-spec text-[10px] text-[#64748B] flex items-center justify-between">
                   <span>PRECAST SCOPE:</span>
-                  <span className="text-[#0A2540] font-bold group-hover:text-[#D4030C]">VIEW DETAILS →</span>
+                  <span className="text-[#0A2540] font-bold group-hover:text-[#0E96E1]">VIEW DETAILS →</span>
                 </div>
               </div>
             );

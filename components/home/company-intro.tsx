@@ -4,10 +4,11 @@ import { ArrowRight, CheckCircle2, Mail, ShieldCheck, Cpu } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
 const CAPABILITY_POINTS = [
-  "Underground Infrastructure: Monolithic watertight septic tanks, utility vaults, and grease interceptors.",
-  "Stormwater Management: State DOT-approved catch basins, curb inlet boxes, and heavy box culverts.",
-  "Heavy Civil & Site Solutions: Highway bridge wing walls, pipe headwalls, and precision steel gang molds.",
-  "Engineered Quality: 6,000+ PSI mix designs, licensed PE stamps, and direct plant-to-jobsite flatbed delivery.",
+  "Highway Catch Basins: 12\"×12\" to 84\"×84\" monolithic boxes including Flagship Model AR 3048 CB (1,800 lbs).",
+  "Sanitary Wastewater: Certified monolithic single-pour septic tanks & grease interceptors from 1,000 to 2,500 gallons.",
+  "Subsurface Infiltration: High-void leaching galleys (1' to 4') and heavy civil storm drywell rings (8' to 12').",
+  "Heavy Traffic Slabs: AASHTO HS20-44 cover slabs (6' to 12') with 24\" offset and 24\"×48\" curb inlet seats.",
+  "Engineering Standards: 5,000+ PSI compressive strength, WWF ASTM A1064 mesh, Suffolk & Nassau County approved.",
 ];
 
 export function CompanyIntro() {
@@ -30,22 +31,22 @@ export function CompanyIntro() {
             {/* Plant Capacity Accreditation Bar */}
             <div className="mt-4 grid grid-cols-2 gap-3">
               <div className="bg-[#F4F8FD] border border-[#DCE5F0] rounded-xl p-3.5 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#032356] text-white flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-[#D4030C]" />
+                <div className="w-9 h-9 rounded-lg bg-[#014088] text-white flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-[#0E96E1]" />
                 </div>
                 <div>
-                  <div className="text-xs font-black text-[#032356] uppercase">PCI Certified Plant</div>
-                  <div className="text-[11px] text-[#64748B]">Quality-Assured Casting</div>
+                  <div className="text-xs font-black text-[#014088] uppercase">AASHTO HS-20 Rated</div>
+                  <div className="text-[11px] text-[#556B82]">Suffolk &amp; Nassau Approved</div>
                 </div>
               </div>
 
               <div className="bg-[#F4F8FD] border border-[#DCE5F0] rounded-xl p-3.5 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#032356] text-white flex items-center justify-center shrink-0">
-                  <Cpu className="w-5 h-5 text-[#D4030C]" />
+                <div className="w-9 h-9 rounded-lg bg-[#014088] text-white flex items-center justify-center shrink-0">
+                  <Cpu className="w-5 h-5 text-[#0E96E1]" />
                 </div>
                 <div>
-                  <div className="text-xs font-black text-[#032356] uppercase">High-Volume Beds</div>
-                  <div className="text-[11px] text-[#64748B]">Rapid Production &amp; Delivery</div>
+                  <div className="text-xs font-black text-[#014088] uppercase">5,000+ PSI Concrete</div>
+                  <div className="text-[11px] text-[#556B82]">Deer Park, NY Production</div>
                 </div>
               </div>
             </div>
@@ -53,24 +54,24 @@ export function CompanyIntro() {
 
           {/* Manufacturing Focus Intro Content */}
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D4030C] mb-3">
-              <span className="w-4 h-0.5 bg-[#D4030C]" />
-              <span>PRECAST CONCRETE MANUFACTURING &amp; SUPPLY</span>
+            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#0E96E1] mb-3">
+              <span className="w-4 h-0.5 bg-[#0E96E1]" />
+              <span>ASTRO PRECAST INFRASTRUCTURE &amp; SUPPLY</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#032356] tracking-tight leading-tight uppercase mb-4">
-              Heavy Precast Manufacturing &amp; Concrete Plant Production
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#014088] tracking-tight leading-tight uppercase mb-4">
+              Advanced Precast Concrete &amp; Masonry Solutions
             </h2>
 
             <p className="text-sm sm:text-base text-[#334155] leading-relaxed mb-6 font-normal">
-              We specialize in direct precast concrete manufacturing for highway contractors, underground utility installers, and civil infrastructure builders. Operating high-capacity casting beds with computer-controlled batching, our plant produces box culverts, bridge panels, road storm basins, and watertight utility tanks built to strict DOT standards.
+              Astro Masonry &amp; Precast specializes in direct precast concrete manufacturing for civil engineering contractors, underground utility installers, and municipal infrastructure projects. Operating high-capacity casting facilities in Deer Park, NY, our plant produces certified catch basins, leaching galleys, monolithic septic tanks, distribution boxes, and custom utility vaults.
             </p>
 
             {/* Checklist */}
             <div className="space-y-3.5 mb-8">
               {CAPABILITY_POINTS.map((point, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4030C] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#0E96E1] shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
                     {point}
                   </span>
@@ -82,10 +83,10 @@ export function CompanyIntro() {
             <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center gap-4 sm:gap-6">
               <Link href="/#services" className="btn-navy px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                 <span>View Engineering Services</span>
-                <ArrowRight className="w-4 h-4 text-[#D4030C]" />
+                <ArrowRight className="w-4 h-4 text-[#0E96E1]" />
               </Link>
 
-              <Link href="/#contact" className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg border-2 border-[#D4030C] bg-white text-[#D4030C] hover:bg-[#D4030C] hover:text-white transition-colors text-xs font-black uppercase tracking-wider">
+              <Link href="/#contact" className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg border-2 border-[#0E96E1] bg-white text-[#0E96E1] hover:bg-[#0E96E1] hover:text-white transition-colors text-xs font-black uppercase tracking-wider">
                 <Mail className="w-4 h-4" />
                 <span>Get a Project Quote</span>
               </Link>

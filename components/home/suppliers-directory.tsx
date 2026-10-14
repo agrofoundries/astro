@@ -129,7 +129,7 @@ export function SuppliersDirectory() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10">
           <span className="badge-tag mb-3">Industry Network</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
             Suppliers and Industry Directory
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -148,7 +148,7 @@ export function SuppliersDirectory() {
                 placeholder="Search company name, specialty, or city..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white border border-[#DCE5F0] rounded pl-9 pr-3 py-2 text-xs text-[#032356] placeholder-[#64748B] focus:outline-none focus:border-[#032356]"
+                className="w-full bg-white border border-[#DCE5F0] rounded pl-9 pr-3 py-2 text-xs text-[#014088] placeholder-[#64748B] focus:outline-none focus:border-[#014088]"
               />
             </div>
 
@@ -157,7 +157,7 @@ export function SuppliersDirectory() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full bg-white border border-[#DCE5F0] rounded px-3 py-2 text-xs text-[#032356] focus:outline-none"
+                className="w-full bg-white border border-[#DCE5F0] rounded px-3 py-2 text-xs text-[#014088] focus:outline-none"
               >
                 {CATEGORIES.map((cat) => (
                   <option key={cat} value={cat}>
@@ -172,7 +172,7 @@ export function SuppliersDirectory() {
               <select
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
-                className="w-full bg-white border border-[#DCE5F0] rounded px-3 py-2 text-xs text-[#032356] focus:outline-none"
+                className="w-full bg-white border border-[#DCE5F0] rounded px-3 py-2 text-xs text-[#014088] focus:outline-none"
               >
                 {STATES.map((st) => (
                   <option key={st} value={st}>
@@ -189,16 +189,16 @@ export function SuppliersDirectory() {
           {filteredSuppliers.map((supplier, idx) => (
             <div
               key={idx}
-              className="card-clean p-5 flex flex-col justify-between hover:border-[#032356] transition-all"
+              className="card-clean p-5 flex flex-col justify-between hover:border-[#014088] transition-all"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-[10px] font-bold text-[#032356] bg-[#E8F3FF] px-2 py-0.5 rounded border border-[#DCE5F0]">
+                  <span className="text-[10px] font-bold text-[#014088] bg-[#E8F3FF] px-2 py-0.5 rounded border border-[#DCE5F0]">
                     {supplier.category}
                   </span>
                   {supplier.isVerified ? (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#032356]">
-                      <CheckCircle className="w-3 h-3 text-[#D4030C]" />
+                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#014088]">
+                      <CheckCircle className="w-3 h-3 text-[#0E96E1]" />
                       <span>Verified</span>
                     </span>
                   ) : (
@@ -206,12 +206,12 @@ export function SuppliersDirectory() {
                   )}
                 </div>
 
-                <h3 className="text-sm font-bold text-[#032356] mb-1.5 leading-snug">
+                <h3 className="text-sm font-bold text-[#014088] mb-1.5 leading-snug">
                   {supplier.name}
                 </h3>
 
                 <p className="text-xs text-[#64748B] flex items-center gap-1 mb-3">
-                  <MapPin className="w-3.5 h-3.5 text-[#D4030C] shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 text-[#0E96E1] shrink-0" />
                   <span>
                     {supplier.city}, {supplier.state}
                   </span>
@@ -224,7 +224,7 @@ export function SuppliersDirectory() {
 
               <div className="pt-3 border-t border-[#F2F7FF] flex items-center justify-between text-xs">
                 <span className="text-[11px] text-[#64748B]">United States</span>
-                <span className="text-[11px] font-semibold text-[#032356] hover:text-[#D4030C] cursor-pointer inline-flex items-center gap-1">
+                <span className="text-[11px] font-semibold text-[#014088] hover:text-[#0E96E1] cursor-pointer inline-flex items-center gap-1">
                   <span>Directory Profile</span>
                   <ExternalLink className="w-3 h-3" />
                 </span>

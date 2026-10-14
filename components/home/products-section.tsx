@@ -11,7 +11,6 @@ import {
   ChevronLeft,
   ChevronRight,
   SlidersHorizontal,
-  Heart,
   ShieldCheck,
   Truck,
   Anchor,
@@ -19,6 +18,8 @@ import {
   Droplet,
   Box,
   FileText,
+  Layers,
+  Scale,
 } from "lucide-react";
 
 // ─── DATA INTERFACES ──────────────────────────────────────────────────────────
@@ -47,1024 +48,1829 @@ export interface ProductVariable {
 export interface ProductFamily {
   id: string;
   name: string;
-  category: "drainage" | "heavy" | "tanks";
+  category: string;
   categoryBadge: string;
   categoryLabel: string;
   summary: string;
   description: string;
+  image: string;
   variables: ProductVariable[];
 }
 
-// ─── PRODUCT FAMILIES DATA ───────────────────────────────────────────────────
+// ─── PRODUCT FAMILIES DATA (14 OFFICIAL CATALOG CATEGORIES) ─────────────────
 
 export const PRODUCT_FAMILIES: ProductFamily[] = [
-  // ── 1. MONOLITHIC SEPTIC TANKS ─────────────────────────────────────────────
   {
-    id: "septic-tanks",
-    name: "Monolithic Precast Septic Tanks",
-    category: "tanks",
-    categoryBadge: "WATERTIGHT PRECAST",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    summary: "3 Variables · 1000G, 1500G & 2000G Commercial Capacities",
-    description:
-      "Watertight single-pour precast septic tanks with integrated PVC baffles and reinforced traffic lids built for commercial and municipal wastewater projects.",
-    variables: [
+    "id": "catch-basins",
+    "name": "Precast Concrete Catch Basins",
+    "category": "drainage",
+    "categoryBadge": "PAGES 4\u201317 \u00b7 DOT DRAINAGE",
+    "categoryLabel": "STORM & HIGHWAY DRAINAGE",
+    "summary": "8 Models \u00b7 12\"\u00d712\" to 84\"\u00d784\" Monolithic Basins",
+    "description": "Manufactured to Suffolk & Nassau County DOT specifications with certified 4,000 PSI concrete, AASHTO HS20-44 highway traffic loading, and ASTM A1064 welded wire reinforcement centered in 6\" walls with 1.5\" minimum clear cover.",
+    "image": "/images/products_3d/card_catch-basin-3d.png",
+    "variables": [
       {
-        id: "tank-septic-2000-var",
-        name: "2000G Commercial Precast Septic Tank",
-        shortName: "2,000G Commercial",
-        badge: "WATERTIGHT PRECAST",
-        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-        description:
-          "Large commercial-grade wastewater tank built with thick walls to withstand heavy vehicle wheel traffic above.",
-        features: [
-          "Watertight Construction",
-          "Vehicle Traffic Rated",
-          "High-Strength Concrete",
-          "Long Service Life",
+        "id": "cb-3048",
+        "name": "30\" \u00d7 48\" Catch Basin (Model AR 3048 CB)",
+        "shortName": "30\"\u00d748\" AR-3048",
+        "badge": "AASHTO HS20-44 SPEC",
+        "categoryLabel": "HIGHWAY & MUNICIPAL DRAINAGE",
+        "description": "Catalog flagship model AR 3048 CB weighing 1,800 lbs with 4\" walls, 2'8\"\u00d73' solid cover, and WWF 6\"\u00d712\" ASTM A1064 reinforcement.",
+        "features": [
+          "1,800 Lbs Unit Weight",
+          "4,000 PSI Min 28-Day",
+          "ASTM A-615 Grade 60",
+          "Suffolk & Nassau Approved"
         ],
-        specCapacity: {
-          label: "CAPACITY",
-          value: "2,000 Gallons",
-          sub: "(7,571 Liters)",
+        "specCapacity": {
+          "label": "STRUCTURAL RATING",
+          "value": "AASHTO HS20-44",
+          "sub": "Heavy Highway"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "8 ft (Ø) x 8 ft (H)",
-          sub: "Standard Round",
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "30\" \u00d7 48\" Basin",
+          "sub": "4\" Wall \u00b7 1.5\" Cover"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C1227",
-          sub: "HS-20 Traffic",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A1064 / A185",
+          "sub": "All Island Tested"
         },
-        image: "/images/products/septic-tank-2000g.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_catch-basin-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "tank-septic-1500-var",
-        name: "1500G Dual-Chamber Septic Tank",
-        shortName: "1,500G Dual Chamber",
-        badge: "WATERTIGHT PRECAST",
-        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-        description:
-          "Engineered two-compartment settling tank providing primary digestion and secondary clarification for high-flow facilities.",
-        features: [
-          "Dual Settling Rooms",
-          "Vehicle Traffic Rated",
-          "High-Strength Concrete",
-          "Long Service Life",
+        "id": "cb-1212",
+        "name": "12\" \u00d7 12\" Precast Catch Basin",
+        "shortName": "12\"\u00d712\" Compact",
+        "badge": "CURB & WALKWAY INLET",
+        "categoryLabel": "COMMERCIAL DRAINAGE",
+        "description": "Compact monolithic drainage basin for light commercial runoff, sidewalk transitions, and residential landscape drainage.",
+        "features": [
+          "Monolithic Cast Box",
+          "Cast-Iron Grate Fit",
+          "Knockout Pipe Hubs",
+          "Easy Crane Lift"
         ],
-        specCapacity: {
-          label: "CAPACITY",
-          value: "1,500 Gallons",
-          sub: "(5,678 Liters)",
+        "specCapacity": {
+          "label": "DISCHARGE FIT",
+          "value": "Up to 6\" Pipe",
+          "sub": "Gravity Drainage"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "10' L x 5.5' W x 5.5' H",
-          sub: "Dual Chamber",
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "12\" \u00d7 12\" Chamber",
+          "sub": "Standard Depths"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C1227",
-          sub: "Heavy-Duty Top",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM C478 Spec",
+          "sub": "4,000 PSI Concrete"
         },
-        image: "/images/products/septic-tank-1500g.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_catch-basin-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "tank-septic-1000-var",
-        name: "1000G Monolithic Septic Tank",
-        shortName: "1,000G Standard",
-        badge: "WATERTIGHT PRECAST",
-        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-        description:
-          "Seamless monolithic single-pour septic tank with sanitary PVC tees, engineered for commercial and multi-family sewage storage.",
-        features: [
-          "Seamless Monolith",
-          "AASHTO H-20 Rated",
-          "High-Strength Concrete",
-          "Long Service Life",
+        "id": "cb-2424",
+        "name": "24\" \u00d7 24\" Precast Catch Basin",
+        "shortName": "24\"\u00d724\" Commercial",
+        "badge": "PARKING LOT & ROADWAY",
+        "categoryLabel": "COMMERCIAL & SITE DRAINAGE",
+        "description": "Standard 2-foot square catch basin engineered for commercial parking plazas, driveway gutters, and regional stormwater lines.",
+        "features": [
+          "HS-20 Traffic Rated",
+          "Dual Pipe Knockouts",
+          "Cast Iron Seat Rim",
+          "Reinforced Rebar Cage"
         ],
-        specCapacity: {
-          label: "CAPACITY",
-          value: "1,000 Gallons",
-          sub: "(3,785 Liters)",
+        "specCapacity": {
+          "label": "SUMP PROFILE",
+          "value": "Sediment Trap",
+          "sub": "18\" Sump Depth"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "8.5' L x 5.0' W x 5.0' H",
-          sub: "Single Chamber",
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "24\" \u00d7 24\" Square",
+          "sub": "3' to 5' Depths"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C1227",
-          sub: "Watertight Tested",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "DOT Highway Spec"
         },
-        image: "/images/products/septic-tank-1000g.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_catch-basin-3d.png",
+        "href": "/#contact"
       },
-    ],
+      {
+        "id": "cb-3636",
+        "name": "36\" \u00d7 36\" Precast Catch Basin",
+        "shortName": "36\"\u00d736\" Municipal",
+        "badge": "HEAVY CIVIL STANDARD",
+        "categoryLabel": "MUNICIPAL INFRASTRUCTURE",
+        "description": "Heavy municipal stormwater collection chamber designed for high flow arterial roadway gutters and interchange drainage.",
+        "features": [
+          "Heavy Truck Load",
+          "Curb Throat Adapter",
+          "Multiple Sump Sizes",
+          "Watertight Seal Joint"
+        ],
+        "specCapacity": {
+          "label": "FLOW CAPACITY",
+          "value": "High Volume Inflow",
+          "sub": "Street Runoff"
+        },
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "36\" \u00d7 36\" Chamber",
+          "sub": "4' to 6' Depths"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM C478 / A1064",
+          "sub": "Suffolk County DOT"
+        },
+        "image": "/images/products_3d/card_catch-basin-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "cb-6060",
+        "name": "60\" \u00d7 60\" Heavy Precast Catch Basin",
+        "shortName": "60\"\u00d760\" Junction",
+        "badge": "LARGE ARTERIAL JUNCTION",
+        "categoryLabel": "HEAVY CIVIL INFRASTRUCTURE",
+        "description": "Expansive 5-foot square stormwater junction vault receiving large diameter reinforced concrete pipes from highway trunk lines.",
+        "features": [
+          "Trunk Line Junction",
+          "Dual Access Risers",
+          "Engineered Rebar Mat",
+          "High-Shear Wall"
+        ],
+        "specCapacity": {
+          "label": "PIPE CAPACITY",
+          "value": "Up to 36\" RCP",
+          "sub": "Core Knockouts"
+        },
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "60\" \u00d7 60\" Box",
+          "sub": "Heavy Highway Wall"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "State Highway Spec"
+        },
+        "image": "/images/products_3d/card_catch-basin-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "cb-7272",
+        "name": "72\" \u00d7 72\" High-Capacity Catch Basin",
+        "shortName": "72\"\u00d772\" Regional",
+        "badge": "REGIONAL STORMWATER",
+        "categoryLabel": "HEAVY CIVIL INFRASTRUCTURE",
+        "description": "6-foot square heavy precast drainage vault designed for airport aprons, shipping container terminals, and highway interchanges.",
+        "features": [
+          "Massive Retention",
+          "Crane Pick Anchors",
+          "Custom Knockout Map",
+          "HS25 Heavy Surcharge"
+        ],
+        "specCapacity": {
+          "label": "CAPACITY",
+          "value": "High Inflow Storage",
+          "sub": "Storm Retention"
+        },
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "72\" \u00d7 72\" Box",
+          "sub": "6\" to 8\" Walls"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A-615 Grade 60",
+          "sub": "AASHTO HS20-44"
+        },
+        "image": "/images/products_3d/card_catch-basin-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "cb-8484",
+        "name": "84\" \u00d7 84\" Master Drainage Vault",
+        "shortName": "84\"\u00d784\" Master Box",
+        "badge": "MASTER COLLECTOR",
+        "categoryLabel": "HEAVY CIVIL INFRASTRUCTURE",
+        "description": "7-foot square master junction box providing critical consolidation point for primary municipal storm collector trunk lines.",
+        "features": [
+          "Master Collector",
+          "Multi-Pipe Receiver",
+          "Full Erection Rigging",
+          "Long Island Production"
+        ],
+        "specCapacity": {
+          "label": "MAX PIPE SIZE",
+          "value": "48\" Diameter RCP",
+          "sub": "Reinforced Knockouts"
+        },
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "84\" \u00d7 84\" Outer",
+          "sub": "Heavy-Duty Wall"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau Civil",
+          "sub": "5,000+ PSI Concrete"
+        },
+        "image": "/images/products_3d/card_catch-basin-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
-
-  // ── 2. STORM DRAIN INLET BOXES ─────────────────────────────────────────────
   {
-    id: "storm-inlets",
-    name: "Storm Drain Inlet Boxes (600×900mm)",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    summary: "4 Variables · Curb Gutters, 1.2m Depths & Knockout Options",
-    description:
-      "Municipal precast stormwater inlet basins with cast knockouts and heavy-duty frame configurations engineered for roadway runoff capture.",
-    variables: [
+    "id": "septic-tanks",
+    "name": "Precast Concrete Septic Tanks",
+    "category": "tanks",
+    "categoryBadge": "PAGES 18\u201328 \u00b7 SANITARY CODE",
+    "categoryLabel": "WATERTIGHT WASTEWATER TANKS",
+    "summary": "9 Variables \u00b7 1,000G to 2,500G Standard & Monolithic Single-Pour",
+    "description": "Monolithic single-pour and two-piece certified watertight septic tanks engineered for residential, commercial, and municipal sanitary wastewater systems per Suffolk & Nassau County Health Department codes.",
+    "image": "/images/products_3d/card_septic-tank-3d.png",
+    "variables": [
       {
-        id: "storm-inlet-1-var",
-        name: "1.2m Storm Drain Inlet (600×900mm) — Case 1",
-        shortName: "1.2m Depth (Case 1)",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Heavy precast concrete box installed beneath street curbs to catch rushing rainwater during storms.",
-        features: [
-          "Precast Monolith",
-          "AASHTO HS-20 Rated",
-          "High-Flow Grate Fit",
-          "Quick Pipe Tie-In",
+        "id": "st-1000",
+        "name": "1,000 Gallon Precast Septic Tank",
+        "shortName": "1,000 Gal Tank",
+        "badge": "RESIDENTIAL SANITARY",
+        "categoryLabel": "SANITARY WASTEWATER",
+        "description": "Standard 1,000 gallon two-compartment precast septic tank with pre-cast sanitary baffles and sealed cleanout access risers.",
+        "features": [
+          "Dual Compartment",
+          "PVC Sanitary Baffles",
+          "Watertight Joints",
+          "4,000 PSI Mix"
         ],
-        specCapacity: {
-          label: "OPENING",
-          value: "600 × 900 mm",
-          sub: "Curb Gutter Box",
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "1,000 Gallons",
+          "sub": "Sanitary Working Cap"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "1.2m Depth (48\")",
-          sub: "Standard Wall",
+        "specDimensions": {
+          "label": "CONFIGURATION",
+          "value": "Standard 2-Piece",
+          "sub": "Mastic Seal Joint"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "DOT Traffic Ready",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk County DOH",
+          "sub": "Sanitary Code Compliant"
         },
-        image: "/images/products/storm-drain-inlet-1.webp",
-        href: "/#contact",
+        "image": "/images/products_3d/card_septic-tank-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "storm-inlet-2-var",
-        name: "1.2m Storm Drain Inlet (600×900mm) — Case 2",
-        shortName: "1.2m Depth (Case 2)",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Deep street drain inlet box with multi-direction pipe knockouts for road intersections and curb gutters.",
-        features: [
-          "Multi Knockout Walls",
-          "Heavy Traffic Top",
-          "High-Strength Concrete",
-          "Corrosion Resistant",
+        "id": "st-1250-mono",
+        "name": "1,250 Gallon Monolithic Septic Tank",
+        "shortName": "1,250 Gal Monolith",
+        "badge": "MONOLITHIC SINGLE-POUR",
+        "categoryLabel": "WATERTIGHT MONOLITH",
+        "description": "Seamless single-pour monolithic tank floor and side walls, guaranteeing zero joint leaks below the liquid operating level.",
+        "features": [
+          "100% Monolithic Base",
+          "Zero Seam Infiltration",
+          "Factory Water-Tested",
+          "HS-20 Traffic Capable"
         ],
-        specCapacity: {
-          label: "OPENING",
-          value: "600 × 900 mm",
-          sub: "Corner Intersections",
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "1,250 Gallons",
+          "sub": "Monolithic Liquid Level"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "1.2m Depth (48\")",
-          sub: "Multi-Port Design",
+        "specDimensions": {
+          "label": "STRUCTURE",
+          "value": "Monolithic Cast",
+          "sub": "Integrated Floor & Walls"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "AASHTO HS-20",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Nassau & Suffolk DOH",
+          "sub": "ASTM C1227 Watertight"
         },
-        image: "/images/products/storm-drain-inlet-2.webp",
-        href: "/#contact",
+        "image": "/images/products_3d/card_septic-tank-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "storm-inlet-case1-var",
-        name: "600×900mm Opening Storm Drain Inlet Case 1",
-        shortName: "600×900mm (Case 1)",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Precast storm inlet basin engineered for high-volume roadway water collection and easy pipe hookup.",
-        features: [
-          "Engineered Flow",
-          "Vehicle Traffic Rated",
-          "High-Strength Concrete",
-          "Cast-in Knockouts",
+        "id": "st-1500-mono",
+        "name": "1,500 Gallon Monolithic Septic Tank",
+        "shortName": "1,500 Gal Monolith",
+        "badge": "COMMERCIAL SPECIFICATION",
+        "categoryLabel": "COMMERCIAL SANITARY",
+        "description": "High-capacity 1,500 gallon monolithic single-pour septic tank specified for large custom residences and multi-unit commercial buildings.",
+        "features": [
+          "Single-Pour Bottom",
+          "Twin Inspection Manholes",
+          "Baffle Flow Retainers",
+          "Direct Delivery Rigging"
         ],
-        specCapacity: {
-          label: "OPENING",
-          value: "600 × 900 mm",
-          sub: "Top Opening",
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "1,500 Gallons",
+          "sub": "Heavy Commercial"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Custom Stackable Risers",
-          sub: "DOT Standard",
+        "specDimensions": {
+          "label": "STRUCTURE",
+          "value": "Monolithic Base",
+          "sub": "Heavy Reinforced Lid"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "DOT Ready",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "4,000 PSI Compressive"
         },
-        image: "/images/products/storm-drain-inlet-case1-logo.webp",
-        href: "/#contact",
+        "image": "/images/products_3d/card_septic-tank-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "storm-inlet-case2-var",
-        name: "600×900mm Opening Storm Drain Inlet Case 2",
-        shortName: "600×900mm (Case 2)",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Heavy-duty storm drain box with cast-in knockout walls for municipal roadway storm sewer tie-ins.",
-        features: [
-          "Heavy Wall Shell",
-          "Semi-Truck Wheel Rated",
-          "High-Strength Concrete",
-          "Smooth Gasket Seats",
+        "id": "st-2000-mono",
+        "name": "2,000 Gallon Monolithic Septic Tank",
+        "shortName": "2,000 Gal Monolith",
+        "badge": "MUNICIPAL & COMMERCIAL",
+        "categoryLabel": "HEAVY COMMERCIAL SANITARY",
+        "description": "High volume 2,000 gallon monolithic precast vessel designed for restaurants, corporate offices, and institutional wastewater demands.",
+        "features": [
+          "Dual Chamber Divider",
+          "Heavy Gas-Tight Covers",
+          "Heavy Loading Walls",
+          "Engineered Pick Loops"
         ],
-        specCapacity: {
-          label: "OPENING",
-          value: "600 × 900 mm",
-          sub: "Reinforced Basin",
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "2,000 Gallons",
+          "sub": "Commercial Retention"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Heavy Traffic Profile",
-          sub: "Multi-Knockout",
+        "specDimensions": {
+          "label": "STRUCTURE",
+          "value": "Monolithic Chamber",
+          "sub": "Extra Heavy Slabs"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "Traffic Rated",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk Health Standard",
+          "sub": "Grade 60 Steel Mesh"
         },
-        image: "/images/products/storm-drain-inlet-case2-logo.webp",
-        href: "/#contact",
+        "image": "/images/products_3d/card_septic-tank-3d.png",
+        "href": "/#contact"
       },
-    ],
+      {
+        "id": "st-2500-mono",
+        "name": "2,500 Gallon Monolithic Septic Tank",
+        "shortName": "2,500 Gal Monolith",
+        "badge": "MAX CAPACITY MONOLITH",
+        "categoryLabel": "HEAVY COMMERCIAL SANITARY",
+        "description": "Flagship 2,500 gallon monolithic wastewater tank offering the highest single-unit capacity in the Astro 2026 product line.",
+        "features": [
+          "2,500 Gal Max Volume",
+          "Monolithic Integrity",
+          "Dual Settling Zones",
+          "Full Flatbed Delivery"
+        ],
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "2,500 Gallons",
+          "sub": "Max Capacity"
+        },
+        "specDimensions": {
+          "label": "STRUCTURE",
+          "value": "Monolithic Unit",
+          "sub": "High Structural Depth"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "Suffolk & Nassau Code"
+        },
+        "image": "/images/products_3d/card_septic-tank-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
-
-  // ── 3. PRECAST ROAD CATCH BASINS ───────────────────────────────────────────
   {
-    id: "catch-basins",
-    name: "Precast Road Catch Basins",
-    category: "drainage",
-    categoryBadge: "PRECAST EXCHANGE PRODUCT",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    summary: "6 Variables · Curb Inlets, Sumps & Monolithic Basins",
-    description:
-      "Full spectrum of highway and municipal catch basins including deep sediment sumps, curb inlets, and standard DOT road models.",
-    variables: [
+    "id": "grease-traps",
+    "name": "Precast Concrete Grease Traps",
+    "category": "tanks",
+    "categoryBadge": "PAGES 29\u201339 \u00b7 RESTAURANT SPEC",
+    "categoryLabel": "FAT, OIL & GREASE INTERCEPTORS",
+    "summary": "1,000G to 2,500G Commercial Kitchen Grease Interceptors",
+    "description": "Engineered commercial restaurant and food service grease interceptors featuring internal PVC flow-control tees, sampling ports, and acid-resistant 5,000+ PSI concrete.",
+    "image": "/images/products_3d/card_grease-trap-3d.png",
+    "variables": [
       {
-        id: "catch-basin-b01b-var",
-        name: "B-01B Precast Road Catch Basin",
-        shortName: "B-01B Road Standard",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Monolithic roadside catchpit box that catches street runoff and traps gravel before water enters sewers.",
-        features: [
-          "Sediment Trap Sump",
-          "Vehicle Traffic Rated",
-          "High-Strength Concrete",
-          "Preformed Knockouts",
+        "id": "gt-1000",
+        "name": "1,000 Gallon Commercial Grease Trap",
+        "shortName": "1,000 Gal Trap",
+        "badge": "RESTAURANT CODE SPEC",
+        "categoryLabel": "COMMERCIAL KITCHEN DRAINAGE",
+        "description": "Commercial kitchen interceptor engineered to capture fats, oils, and grease before kitchen wastewater enters the municipal sewer.",
+        "features": [
+          "Internal PVC Drop Tees",
+          "Gas-Tight Sealed Lid",
+          "Acid-Resistant Mix",
+          "Easy Pump-Out Access"
         ],
-        specCapacity: {
-          label: "SIZES",
-          value: "24\"×24\" to 36\"×36\"",
-          sub: "DOT Standard",
+        "specCapacity": {
+          "label": "RETENTION VOLUME",
+          "value": "1,000 Gallons",
+          "sub": "Kitchen FOG Flow"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "3' x 3' x 4' Depth",
-          sub: "Square Footprint",
+        "specDimensions": {
+          "label": "CHAMBERS",
+          "value": "Dual Chamber Split",
+          "sub": "Retention Baffles"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "DOT Approved",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "NYS Plumbing Code",
+          "sub": "Suffolk Health Specs"
         },
-        image: "/images/products/b-01b.webp",
-        href: "/#contact",
+        "image": "/images/products_3d/card_grease-trap-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "catch-basin-b01d-var",
-        name: "B-01D Heavy Curb Catch Basin",
-        shortName: "B-01D Curb Inlet",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Reinforced catch basin built to sit directly beneath street curbs and support heavy semi-truck wheel loads.",
-        features: [
-          "Sub-Curb Placement",
-          "AASHTO HS-20 Traffic",
+        "id": "gt-1500-mono",
+        "name": "1,500 Gallon Monolithic Grease Trap",
+        "shortName": "1,500 Gal Monolith",
+        "badge": "MONOLITHIC LEAKPROOF",
+        "categoryLabel": "COMMERCIAL FOOD SERVICE",
+        "description": "Seamless monolithic grease interceptor for high-temperature commercial dishwasher effluent and commercial kitchen sculleries.",
+        "features": [
+          "Single-Pour Bottom",
+          "Thermal Stress Ready",
+          "Cast-Iron Traffic Cover",
+          "Zero Ground Leaks"
+        ],
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "1,500 Gallons",
+          "sub": "High FOG Load"
+        },
+        "specDimensions": {
+          "label": "STRUCTURE",
+          "value": "Monolithic Cast",
+          "sub": "Watertight Integrity"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20 Loading",
+          "sub": "4,000 PSI Concrete"
+        },
+        "image": "/images/products_3d/card_grease-trap-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "gt-2000-mono",
+        "name": "2,000 Gallon Monolithic Grease Trap",
+        "shortName": "2,000 Gal Monolith",
+        "badge": "HIGH-VOLUME FOOD COURT",
+        "categoryLabel": "INSTITUTIONAL GREASE SYSTEM",
+        "description": "Heavy-duty 2,000 gallon grease interceptor for shopping centers, hotel kitchens, hospitals, and high-volume commercial food courts.",
+        "features": [
+          "Large Volume Hold",
+          "Dual Access Manholes",
+          "High Detention Time",
+          "Crane Rigged Delivery"
+        ],
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "2,000 Gallons",
+          "sub": "Large Kitchen Load"
+        },
+        "specDimensions": {
+          "label": "STRUCTURE",
+          "value": "Monolithic Vessel",
+          "sub": "Heavy Surcharge Lid"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A1064 Rebar",
+          "sub": "Municipal Food Code"
+        },
+        "image": "/images/products_3d/card_grease-trap-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "gt-2500-mono",
+        "name": "2,500 Gallon Monolithic Grease Trap",
+        "shortName": "2,500 Gal Monolith",
+        "badge": "MAX CAPACITY INTERCEPTOR",
+        "categoryLabel": "INDUSTRIAL FOOD PROCESSING",
+        "description": "Maximum capacity precast grease interceptor for food processing plants and commercial bakeries requiring extended cooling times.",
+        "features": [
+          "2,500 Gal Detention",
+          "Monolithic Basin",
+          "Sampling Well Built-In",
+          "Direct Plant Ship"
+        ],
+        "specCapacity": {
+          "label": "VOLUME",
+          "value": "2,500 Gallons",
+          "sub": "Max Food Volume"
+        },
+        "specDimensions": {
+          "label": "STRUCTURE",
+          "value": "Monolithic Cast",
+          "sub": "Heavy Traffic Ready"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau DOH",
+          "sub": "5,000+ PSI Mix"
+        },
+        "image": "/images/products_3d/card_grease-trap-3d.png",
+        "href": "/#contact"
+      }
+    ]
+  },
+  {
+    "id": "distribution-boxes",
+    "name": "Precast Concrete Distribution Boxes",
+    "category": "utility",
+    "categoryBadge": "PAGES 40\u201341 \u00b7 D-BOXES",
+    "categoryLabel": "SANITARY FLOW EQUALIZATION",
+    "summary": "Multi-Port Sanitary Distribution Boxes with Leveling Flow Hubs",
+    "description": "Engineered distribution boxes with preformed pipe knockouts designed to balance gravity flow effluent equally across subsurface leaching lines and drain fields.",
+    "image": "/images/products_3d/card_distribution-box-3d.png",
+    "variables": [
+      {
+        "id": "dbox-standard",
+        "name": "Standard 4-Hole Septic Distribution Box",
+        "shortName": "4-Hole D-Box",
+        "badge": "RESIDENTIAL & COMMERCIAL",
+        "categoryLabel": "SANITARY EFFLUENT DISTRIBUTION",
+        "description": "Compact precast box with 1 inlet knockout and 3-4 outlet knockouts fitted with leveling flow restrictors.",
+        "features": [
+          "Pre-Cast Knockouts",
+          "Gasketed Access Lid",
+          "Leveling Flow Collars",
+          "Dense 4,000 PSI Mix"
+        ],
+        "specCapacity": {
+          "label": "PIPE SIZE",
+          "value": "4\" & 6\" SDR-35/PVC",
+          "sub": "Sanitary Pipes"
+        },
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "Standard D-Box",
+          "sub": "Compact Footprint"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk County DOH",
+          "sub": "Gravity Flow Spec"
+        },
+        "image": "/images/products_3d/card_distribution-box-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "dbox-traffic",
+        "name": "Heavy Traffic Rated Distribution Box",
+        "shortName": "Traffic D-Box",
+        "badge": "AASHTO HS-20 RATED",
+        "categoryLabel": "PARKING LOT SANITARY",
+        "description": "Reinforced distribution box designed for shallow installations beneath parking lots, access roads, and vehicle driveways.",
+        "features": [
+          "AASHTO HS20 Cover",
+          "Cast-Iron Seat",
           "Reinforced Walls",
-          "Long Service Life",
+          "Chemical Resistance"
         ],
-        specCapacity: {
-          label: "INLET PROFILE",
-          value: "Heavy Curb Throat",
-          sub: "Curbside Runoff",
+        "specCapacity": {
+          "label": "LOADING",
+          "value": "Heavy Traffic Loading",
+          "sub": "HS20 Wheel Loads"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "3' x 3' x 5' Depth",
-          sub: "12 DOT Models",
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "Reinforced Box",
+          "sub": "Thick Traffic Lid"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "AASHTO HS-20",
-          sub: "Traffic Rated",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "Suffolk & Nassau Spec"
         },
-        image: "/images/products/b-01d.webp",
-        href: "/#contact",
-      },
-      {
-        id: "catch-basin-b01e-var",
-        name: "B-01E Deep Sump Catch Basin",
-        shortName: "B-01E Deep Sump",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Catch basin with an extra deep bottom reservoir that traps sand, leaves, and street grime cleanly.",
-        features: [
-          "Extra Deep Reservoir",
-          "Vehicle Traffic Rated",
-          "Debris Separation",
-          "Easy Vacuum Cleanout",
-        ],
-        specCapacity: {
-          label: "SUMP DEPTH",
-          value: "Extended 36\" Sump",
-          sub: "Sediment Trap",
-        },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "3' x 3' x 7' Overall",
-          sub: "Deep Chamber",
-        },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "Municipal Standard",
-        },
-        image: "/images/products/b-01e.webp",
-        href: "/#contact",
-      },
-      {
-        id: "catch-basin-side-inlet-var",
-        name: "Catch Basin with Side Inlet Frame & Cover",
-        shortName: "Side Inlet Monolith",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "All-in-one precast basin with heavy cast-iron side curb frame that swallows water rushing along street gutters.",
-        features: [
-          "Cast-Iron Frame Seat",
-          "AASHTO HS-20 Traffic",
-          "Monolithic Box",
-          "Immediate Street Tie-In",
-        ],
-        specCapacity: {
-          label: "FRAME FIT",
-          value: "Side Curb Inlet",
-          sub: "Cast-Iron Seat",
-        },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "4' x 4' Monolithic Box",
-          sub: "Ready Stock",
-        },
-        specStandards: {
-          label: "STANDARDS",
-          value: "DOT Curb Inlet",
-          sub: "Traffic Approved",
-        },
-        image: "/images/products/catch-basin-side-inlet.webp",
-        href: "/#contact",
-      },
-      {
-        id: "cb-6-var",
-        name: "CB-6 Series Roadway Catch Basin",
-        shortName: "CB-6 Series Basin",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Standard road construction catchpit basin for parking lots, business parks, and residential subdivisions.",
-        features: [
-          "Standard CB-6 Mold",
-          "Vehicle Traffic Rated",
-          "High-Strength Concrete",
-          "Pre-cored Openings",
-        ],
-        specCapacity: {
-          label: "DOT MODEL",
-          value: "CB-6 Standard",
-          sub: "Parking & Subdivisions",
-        },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "2.5' x 2.5' x 4' Depth",
-          sub: "12 Base Sizes",
-        },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "HS-20 Traffic",
-        },
-        image: "/images/products/cb-6-catch-basin.webp",
-        href: "/#contact",
-      },
-      {
-        id: "catch-basin-2ft-var",
-        name: "2 FT Monolithic Square Catch Basin",
-        shortName: "2 FT Monolithic Box",
-        badge: "PRIMARY SHOWCASE",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Square concrete basin with seamless leak-proof base and pre-cast pipe knockouts for rapid connection.",
-        features: [
-          "Single-Pour Floor",
-          "Vehicle Traffic Rated",
-          "Precision Knockouts",
-          "Up to 12 ft Depths",
-        ],
-        specCapacity: {
-          label: "SIZES",
-          value: "24\"×24\" to 48\"×48\"",
-          sub: "Square Footprint",
-        },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Depths Up to 12 ft",
-          sub: "Stackable Extensions",
-        },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "AASHTO HS-20",
-        },
-        image: "/images/products/catch-basin-2ft.png",
-        href: "/#contact",
-      },
-    ],
+        "image": "/images/products_3d/card_distribution-box-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
-
-  // ── 4. HIGHWAY HEADWALLS & ENDWALLS ────────────────────────────────────────
   {
-    id: "headwalls-endwalls",
-    name: "Highway Headwalls & Endwalls",
-    category: "heavy",
-    categoryBadge: "DOT HIGHWAY STANDARD",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    summary: "5 Variables · 12\" to 24\" Culverts, Weirs & Triple Outfalls",
-    description:
-      "Heavy DOT-approved pipe headwalls, custom engineered weir structures, and multi-culvert retention endwalls preventing soil erosion.",
-    variables: [
+    "id": "leaching-galleys",
+    "name": "Precast Concrete Leaching Galleys",
+    "category": "drainage",
+    "categoryBadge": "PAGES 42\u201347 \u00b7 RECHARGE",
+    "categoryLabel": "SUBSURFACE STORMWATER INFILTRATION",
+    "summary": "1', 2', 3', and 4' Depth Infiltration Chambers",
+    "description": "High-void open-bottom precast infiltration chambers with engineered side weep louvers designed to maximize stormwater groundwater recharge while saving valuable site excavation space.",
+    "image": "/images/products_3d/card_leaching-galley-3d.png",
+    "variables": [
       {
-        id: "headwall-nh-12-var",
-        name: "12\" Pipe Precast Concrete Headwalls",
-        shortName: "12\" Pipe Headwall",
-        badge: "DOT HIGHWAY STANDARD",
-        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-        description:
-          "Monolithic precast culvert end wall for 12-inch drainage pipes on driveways, streets, and parking lots.",
-        features: [
-          "Anchors Pipe Securely",
-          "Prevents Road Washouts",
-          "High-Strength Concrete",
-          "Fast Field Set",
+        "id": "lg-1ft",
+        "name": "1' Depth Precast Leaching Galley",
+        "shortName": "1' Galley",
+        "badge": "SHALLOW WATER TABLE",
+        "categoryLabel": "STORMWATER INFILTRATION",
+        "description": "Low-profile 1-foot high leaching chamber designed for sites with shallow groundwater tables and restrictive bedrock depths.",
+        "features": [
+          "Low-Profile Height",
+          "Open-Bottom Flow",
+          "Side Weep Slots",
+          "Interlocking Ends"
         ],
-        specCapacity: {
-          label: "PIPE FIT",
-          value: "12\" Culvert Pipes",
-          sub: "Concrete/HDPE/CMP",
+        "specCapacity": {
+          "label": "PROFILE",
+          "value": "1' Low Infiltration",
+          "sub": "Shallow Water Table"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "5' W x 3' H x 1.5' D",
-          sub: "12 Standard Models",
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "12\" Chamber Height",
+          "sub": "Modular Lengths"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "NH DOT Standard",
-          sub: "HS-20 Traffic",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "NYS DEC Stormwater",
+          "sub": "AASHTO HS20 Rated"
         },
-        image: "/images/products/headwall-nh-12.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_leaching-galley-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "headwall-nh-24-var",
-        name: "24\" Pipe Highway Headwalls",
-        shortName: "24\" Pipe Headwall",
-        badge: "DOT HIGHWAY STANDARD",
-        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-        description:
-          "Solid precast end block for 24-inch drainage pipes that stops road shoulder washouts and anchors the pipe.",
-        features: [
-          "Heavy Road Shoulder Anchor",
-          "Flared Wing Guidance",
-          "High-Strength Concrete",
-          "Erosion Control",
+        "id": "lg-2ft",
+        "name": "2' Depth Precast Leaching Galley",
+        "shortName": "2' Galley",
+        "badge": "COMMERCIAL PARKING RECHARGE",
+        "categoryLabel": "STORMWATER INFILTRATION",
+        "description": "2-foot precast leaching chamber installed under commercial parking lots for underground detention and gravel-bed percolation.",
+        "features": [
+          "High Storage Volume",
+          "Highway Load Support",
+          "Engineered Louvers",
+          "Modular Trench Fit"
         ],
-        specCapacity: {
-          label: "PIPE FIT",
-          value: "24\" Culvert Pipes",
-          sub: "Round & Arch Profiles",
+        "specCapacity": {
+          "label": "PERCOLATION",
+          "value": "High Void Volume",
+          "sub": "Subsurface Recharge"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "7' W x 4.5' H x 2' D",
-          sub: "10 Standard Models",
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "24\" Chamber Height",
+          "sub": "Standard Trench Line"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "NH DOT Standard",
-          sub: "HS-20 Rated",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "Suffolk Civil Spec"
         },
-        image: "/images/products/headwall-nh-24.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_leaching-galley-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "headwall-custom-var",
-        name: "Custom Culvert Headwalls & Weirs",
-        shortName: "Custom Weir Structure",
-        badge: "ENGINEERED PRECAST",
-        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-        description:
-          "Custom-cast concrete headwalls with engineered pipe openings and water-measuring weir cutouts.",
-        features: [
-          "Engineered Flow Notch",
-          "Civil Engineering PE Stamp",
-          "High-Strength Concrete",
-          "Tailored To Site Plans",
+        "id": "lg-3ft",
+        "name": "3' Depth Precast Leaching Galley",
+        "shortName": "3' Galley",
+        "badge": "HIGH-CAPACITY RUNOFF",
+        "categoryLabel": "STORMWATER INFILTRATION",
+        "description": "3-foot high leaching galley offering substantial chamber storage for large commercial roofs, retail plazas, and industrial yards.",
+        "features": [
+          "Deep Trench Profile",
+          "Massive Infiltration",
+          "Heavy Surcharge Lid",
+          "Rapid Dry Bed Return"
         ],
-        specCapacity: {
-          label: "ENGINEERED NOTCH",
-          value: "V-Notch & Rectangular",
-          sub: "Retention Control",
+        "specCapacity": {
+          "label": "RETENTION",
+          "value": "Deep Chamber Surge",
+          "sub": "Storm Detention"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Custom To Civil Plans",
-          sub: "8 Base Geometries",
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "36\" Chamber Height",
+          "sub": "Deep Infiltration"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "NH DOT Approved",
-          sub: "PE Stamped Drawings",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "4,000 PSI Concrete",
+          "sub": "All Island Tested"
         },
-        image: "/images/products/headwall-custom.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_leaching-galley-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "endwall-dot-triple-var",
-        name: "Triple-Opening Culvert End Walls",
-        shortName: "Triple Culvert Endwall",
-        badge: "DOT HIGHWAY STANDARD",
-        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-        description:
-          "Wide precast concrete headwall built to receive three parallel drainage pipes cleanly at major ditch exits.",
-        features: [
-          "Triple Culvert Intake",
-          "Massive Monolith",
-          "Heavy Flow Dissipation",
-          "Maine DOT Stamped",
+        "id": "lg-4ft",
+        "name": "4' Depth Precast Leaching Galley",
+        "shortName": "4' Galley",
+        "badge": "MAX CAPACITY RECHARGE",
+        "categoryLabel": "STORMWATER INFILTRATION",
+        "description": "Maximum 4-foot deep precast infiltration galley delivering the highest water volume recharge per linear foot of trenching.",
+        "features": [
+          "48\" Maximum Depth",
+          "Huge Void Ratio",
+          "Direct Gravel Contact",
+          "Long Island Standard"
         ],
-        specCapacity: {
-          label: "RECEIVES",
-          value: "3 Parallel Culverts",
-          sub: "Ditch Outfall Hub",
+        "specCapacity": {
+          "label": "STORAGE",
+          "value": "Max Volume Storage",
+          "sub": "Heavy Rainfall Events"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "14' W x 5' H x 3' Base",
-          sub: "6 Standard Models",
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "48\" Chamber Height",
+          "sub": "Deep Trench"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "Maine DOT",
-          sub: "AASHTO HS-20",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "Suffolk & Nassau DOH"
         },
-        image: "/images/products/endwall-dot-triple.png",
-        href: "/#contact",
-      },
-      {
-        id: "endwall-dot-corner-var",
-        name: "Corner L-End Retaining Walls",
-        shortName: "Corner L-Wall",
-        badge: "DOT HIGHWAY STANDARD",
-        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-        description:
-          "90-degree corner concrete walls that support roadside slopes while letting storm drainage pipes pass through.",
-        features: [
-          "90° Wingwall Return",
-          "Earth Retaining Strength",
-          "High-Strength Concrete",
-          "Culvert Sump Port",
-        ],
-        specCapacity: {
-          label: "GEOMETRY",
-          value: "90° L-Configuration",
-          sub: "Slope Retention",
-        },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "8' x 6' Corner Footprint",
-          sub: "8 Models Available",
-        },
-        specStandards: {
-          label: "STANDARDS",
-          value: "Maine DOT Standard",
-          sub: "Heavy Duty",
-        },
-        image: "/images/products/endwall-dot-corner.png",
-        href: "/#contact",
-      },
-    ],
+        "image": "/images/products_3d/card_leaching-galley-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
-
-  // ── 5. HEAVY BOX CULVERTS & PLANT TOOLING ──────────────────────────────────
   {
-    id: "box-culverts",
-    name: "Heavy Box Culverts, Bridges & Gang Molds",
-    category: "heavy",
-    categoryBadge: "HEAVY CIVIL INFRASTRUCTURE",
-    categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-    summary: "3 Variables · Stream Crossings, Wing Walls & Multi-Cavity Steel Molds",
-    description:
-      "Large-scale rectangular bridge culverts, flared wing wall assemblies, and multi-cavity precision steel gang molds for precast manufacturing plants.",
-    variables: [
+    "id": "low-domes",
+    "name": "Precast Concrete Low Domes",
+    "category": "infrastructure",
+    "categoryBadge": "PAGES 48\u201353 \u00b7 LOW DOMES",
+    "categoryLabel": "TAPERED MANHOLE & DRYWELL CAPS",
+    "summary": "6', 8', 10', and 12' Diameters Tapered to 24\" Access Opening",
+    "description": "Circular tapered low-profile domes designed to smoothly reduce diameter from large ring stacks (6' to 12') to standard 24\" or 30\" roadway access manhole covers.",
+    "image": "/images/products_3d/card_low-dome-3d.png",
+    "variables": [
       {
-        id: "box-culvert-var",
-        name: "Precast Concrete Box Culverts",
-        shortName: "Heavy Box Culverts",
-        badge: "HEAVY INFRASTRUCTURE",
-        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-        description:
-          "Massive rectangular concrete tunnel blocks placed beneath highways to carry streams and storm runoff.",
-        features: [
-          "ASTM C1577 Engineered",
-          "AASHTO HS-25 Rated",
-          "High-Strength 5,000+ PSI",
+        "id": "ld-6ft",
+        "name": "6' Diameter Low Dome",
+        "shortName": "6' Low Dome",
+        "badge": "6FT STACK REDUCER",
+        "categoryLabel": "TAPERED PRECAST CAP",
+        "description": "Conical transition cap reducing a 6-foot drywell or sanitary ring stack down to a standard 24\" access collar.",
+        "features": [
+          "Smooth Taper Profile",
+          "Centrally Cast 24\" Hole",
+          "Heavy Radial Rebar",
+          "Tongue & Groove Base"
+        ],
+        "specCapacity": {
+          "label": "FIT DIAMETER",
+          "value": "6' Ring Stacks",
+          "sub": "Sanitary & Storm"
+        },
+        "specDimensions": {
+          "label": "OPENING",
+          "value": "24\" Cleanout Opening",
+          "sub": "Standard Manhole"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "4,000 PSI Compressive"
+        },
+        "image": "/images/products_3d/card_low-dome-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "ld-8ft",
+        "name": "8' Diameter Low Dome",
+        "shortName": "8' Low Dome",
+        "badge": "8FT STANDARD REDUCER",
+        "categoryLabel": "TAPERED PRECAST CAP",
+        "description": "The standard Long Island drywell transition dome for 8-foot ring stacks, engineered for traffic and non-traffic depths.",
+        "features": [
+          "8-Foot Ring Mating",
+          "Low Rise Geometry",
+          "Crane Eye Embeds",
+          "Suffolk County Spec"
+        ],
+        "specCapacity": {
+          "label": "FIT DIAMETER",
+          "value": "8' Ring Stacks",
+          "sub": "Drywells & Manholes"
+        },
+        "specDimensions": {
+          "label": "OPENING",
+          "value": "24\" Access Hole",
+          "sub": "Conical Slope"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A1064 Rebar",
+          "sub": "Suffolk & Nassau Civil"
+        },
+        "image": "/images/products_3d/card_low-dome-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "ld-10ft",
+        "name": "10' Diameter Low Dome",
+        "shortName": "10' Low Dome",
+        "badge": "10FT HEAVY REDUCER",
+        "categoryLabel": "TAPERED PRECAST CAP",
+        "description": "Large-span 10-foot low dome designed for large municipal drywells and stormwater recharge shafts.",
+        "features": [
+          "10-Foot Ring Cap",
+          "Heavy Load Transition",
+          "Grade 60 Steel Mat",
+          "Dense Watertight Mix"
+        ],
+        "specCapacity": {
+          "label": "FIT DIAMETER",
+          "value": "10' Ring Stacks",
+          "sub": "Municipal Drywells"
+        },
+        "specDimensions": {
+          "label": "OPENING",
+          "value": "24\" or 30\" Access",
+          "sub": "Low Dome Height"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "All Island Tested"
+        },
+        "image": "/images/products_3d/card_low-dome-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "ld-12ft",
+        "name": "12' Diameter Low Dome",
+        "shortName": "12' Low Dome",
+        "badge": "12FT MAX SPAN DOME",
+        "categoryLabel": "TAPERED PRECAST CAP",
+        "description": "Massive 12-foot diameter low dome engineered to support deep earth backfill and highway surcharge over regional recharge pools.",
+        "features": [
+          "12-Foot Base Ring Span",
+          "Dual Crane Hook Points",
+          "Engineered Rebar Web",
+          "Factory Steam Cured"
+        ],
+        "specCapacity": {
+          "label": "FIT DIAMETER",
+          "value": "12' Ring Stacks",
+          "sub": "Regional Storm Drywells"
+        },
+        "specDimensions": {
+          "label": "OPENING",
+          "value": "24\" Access Opening",
+          "sub": "Reinforced Rim"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau DOT",
+          "sub": "5,000+ PSI Concrete"
+        },
+        "image": "/images/products_3d/card_low-dome-3d.png",
+        "href": "/#contact"
+      }
+    ]
+  },
+  {
+    "id": "high-domes",
+    "name": "Precast Concrete High Domes",
+    "category": "infrastructure",
+    "categoryBadge": "PAGES 54\u201358 \u00b7 HIGH DOMES",
+    "categoryLabel": "DEEP UTILITY CONICAL RISERS",
+    "summary": "6', 8', and 10' Diameters Deep Vertical-Rise Conical Caps",
+    "description": "Steep-slope conical precast domes designed for deep utility vaults, accelerating the height transition to grade while providing extreme compression load resistance.",
+    "image": "/images/products_3d/card_high-dome-3d.png",
+    "variables": [
+      {
+        "id": "hd-6ft",
+        "name": "6' Diameter High Dome",
+        "shortName": "6' High Dome",
+        "badge": "DEEP VAULT RISE",
+        "categoryLabel": "CONICAL DEEP RISER",
+        "description": "Steep vertical pitch dome for 6-foot ring stacks, maximizing internal headroom and vertical rise to roadway subgrade.",
+        "features": [
+          "Steep Vertical Pitch",
+          "Maximum Headroom",
+          "Internal Step Ready",
+          "Heavy Grade 60 Rebar"
+        ],
+        "specCapacity": {
+          "label": "DEPTH RATING",
+          "value": "Deep Burial Rated",
+          "sub": "Heavy Earth Pressure"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "6' Base Diameter",
+          "sub": "24\" Top Collar"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM C478 Spec",
+          "sub": "AASHTO HS20-44"
+        },
+        "image": "/images/products_3d/card_high-dome-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "hd-8ft",
+        "name": "8' Diameter High Dome",
+        "shortName": "8' High Dome",
+        "badge": "8FT DEEP CONICAL",
+        "categoryLabel": "CONICAL DEEP RISER",
+        "description": "High-rise 8-foot dome frequently specified on municipal deep sanitary sewer manholes across Long Island.",
+        "features": [
+          "8-Foot Base Ring Fit",
+          "Deep Burial Strength",
+          "Calibrated Opening",
+          "Suffolk Sanitary Standard"
+        ],
+        "specCapacity": {
+          "label": "DEPTH RATING",
+          "value": "High Surcharge",
+          "sub": "Traffic & Soil Pressure"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "8' Base Diameter",
+          "sub": "Steep Cone Profile"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk County DOH",
+          "sub": "4,000 PSI Mix"
+        },
+        "image": "/images/products_3d/card_high-dome-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "hd-10ft",
+        "name": "10' Diameter High Dome",
+        "shortName": "10' High Dome",
+        "badge": "10FT MASTER CONICAL",
+        "categoryLabel": "CONICAL DEEP RISER",
+        "description": "10-foot conical reducer designed for massive stormwater shafts and pump station wet wells requiring deep access.",
+        "features": [
+          "Heavy Concrete Wall",
+          "High Hoop Tension Rebar",
+          "Overhead Crane Rigging",
+          "Engineered Tolerances"
+        ],
+        "specCapacity": {
+          "label": "DEPTH RATING",
+          "value": "Deep Highway Burial",
+          "sub": "Heavy Surcharge"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "10' Base Diameter",
+          "sub": "Deep Riser"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "ASTM A-615 Steel"
+        },
+        "image": "/images/products_3d/card_high-dome-3d.png",
+        "href": "/#contact"
+      }
+    ]
+  },
+  {
+    "id": "curb-stops",
+    "name": "Precast Concrete Curb Stops",
+    "category": "utility",
+    "categoryBadge": "PAGES 59\u201362 \u00b7 PARKING",
+    "categoryLabel": "COMMERCIAL PARKING WHEEL STOPS",
+    "summary": "6' \u00d7 4\" & 6' \u00d7 5.5\" Commercial Parking Bumpers",
+    "description": "Reinforced 6-foot precast concrete parking bumpers with beveled edges and pre-molded steel pin holes, protecting storefronts, sidewalks, and landscaped islands.",
+    "image": "/images/products_3d/card_curb-stop-3d.png",
+    "variables": [
+      {
+        "id": "cs-6x4",
+        "name": "6' \u00d7 4\" Precast Curb Stop",
+        "shortName": "6'\u00d74\" Standard",
+        "badge": "COMMERCIAL PARKING",
+        "categoryLabel": "PARKING LOT ACCESSORIES",
+        "description": "Standard 6-foot parking bumper with pre-formed anchor pin holes for quick jobsite asphalt pinning.",
+        "features": [
+          "Pre-Formed Pin Holes",
+          "Smooth Beveled Corners",
+          "Continuous Rebar Rod",
+          "Weather-Resistant Mix"
+        ],
+        "specCapacity": {
+          "label": "VEHICLE FIT",
+          "value": "Passenger Cars & SUVs",
+          "sub": "Standard Parking"
+        },
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "6' Long \u00d7 4\" High",
+          "sub": "Beveled Profile"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Commercial Spec",
+          "sub": "4,000 PSI Concrete"
+        },
+        "image": "/images/products_3d/card_curb-stop-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "cs-6x55",
+        "name": "6' \u00d7 5.5\" Heavy Truck Curb Stop",
+        "shortName": "6'\u00d75.5\" Heavy",
+        "badge": "HEAVY TRUCK RATED",
+        "categoryLabel": "COMMERCIAL PARKING",
+        "description": "Taller 5.5\" height curb stop engineered for commercial delivery bays, truck parking areas, and heavy SUV stalls.",
+        "features": [
+          "Extra 5.5\" Height",
+          "Heavy Vehicle Stop",
+          "Heavy Steel Reinforcement",
+          "Freeze-Thaw Durable"
+        ],
+        "specCapacity": {
+          "label": "VEHICLE FIT",
+          "value": "Commercial Trucks/SUVs",
+          "sub": "Delivery Bays"
+        },
+        "specDimensions": {
+          "label": "DIMENSIONS",
+          "value": "6' Long \u00d7 5.5\" High",
+          "sub": "Heavy Profile"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Heavy Commercial Spec",
+          "sub": "Deer Park NY Plant"
+        },
+        "image": "/images/products_3d/card_curb-stop-3d.png",
+        "href": "/#contact"
+      }
+    ]
+  },
+  {
+    "id": "precast-slabs",
+    "name": "Precast Concrete Slabs",
+    "category": "infrastructure",
+    "categoryBadge": "PAGES 63\u201384 \u00b7 TRAFFIC SLABS",
+    "categoryLabel": "CIRCULAR SOLID & HS20 TRAFFIC SLABS",
+    "summary": "6' to 12' Diameters Solid & Offset 24\" / 24\"\u00d748\" Cleanout Slabs",
+    "description": "Heavy structural cover slabs manufactured in solid circular formats and with AASHTO HS20-44 vehicle traffic rated 24\" offset or 24\"\u00d748\" grate openings per Suffolk & Nassau County standards.",
+    "image": "/images/products_3d/card_precast-slab-3d.png",
+    "variables": [
+      {
+        "id": "slab-8ft-solid",
+        "name": "8' \u00d7 8\" Circular Solid Slab",
+        "shortName": "8'\u00d78\" Solid Slab",
+        "badge": "SOLID COVER SLAB",
+        "categoryLabel": "HEAVY STRUCTURAL SLABS",
+        "description": "Heavy 8-foot circular precast concrete cover slab (8\" thickness) engineered with two-way ASTM A-615 Grade 60 rebar mat.",
+        "features": [
+          "Two-Way Rebar Mat",
+          "Tongue & Groove Ring Fit",
+          "8\" Structural Depth",
+          "High Compressive Load"
+        ],
+        "specCapacity": {
+          "label": "LOADING",
+          "value": "Heavy Surcharge",
+          "sub": "Soil & Pavement"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "8' Circular Slab",
+          "sub": "8\" Solid Depth"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A-615 Grade 60",
+          "sub": "4,000 PSI Concrete"
+        },
+        "image": "/images/products_3d/card_precast-slab-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "slab-8ft-traffic-24",
+        "name": "8' \u00d7 8\" Traffic Slab with 24\" Offset Opening",
+        "shortName": "8' HS20 with 24\" Hole",
+        "badge": "AASHTO HS20-44 RATED",
+        "categoryLabel": "HIGHWAY TRAFFIC SLAB",
+        "description": "Direct vehicle traffic rated 8-foot slab with standard 24\" offset opening for cast-iron manhole frame and cover installation.",
+        "features": [
+          "AASHTO HS20-44 Rated",
+          "24\" Cast-Iron Seat",
+          "Offset Access Position",
+          "Suffolk DOT Highway"
+        ],
+        "specCapacity": {
+          "label": "TRAFFIC RATING",
+          "value": "AASHTO HS20-44",
+          "sub": "Semi-Truck Wheel Load"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "8' Diameter \u00d7 8\" Thick",
+          "sub": "24\" Offset Hole"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau Highway",
+          "sub": "All Island Tested"
+        },
+        "image": "/images/products_3d/card_precast-slab-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "slab-8ft-traffic-2448",
+        "name": "8' \u00d7 8\" Traffic Slab with 24\" \u00d7 48\" Opening",
+        "shortName": "8' HS20 24\"\u00d748\" Inset",
+        "badge": "RECTANGULAR GRATE FIT",
+        "categoryLabel": "STORM DRAINAGE SLAB",
+        "description": "Heavy traffic slab precast with 24\"\u00d748\" rectangular opening to seat state DOT curb inlets and large catch basin grates.",
+        "features": [
+          "24\"\u00d748\" Rectangular Seat",
+          "Highway Wheel Loading",
+          "Extra Rebar Perimeter",
+          "Direct Road Placement"
+        ],
+        "specCapacity": {
+          "label": "INLET PROFILE",
+          "value": "24\"\u00d748\" Grate Seat",
+          "sub": "High Storm Inflow"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "8' Diameter \u00d7 8\" Thick",
+          "sub": "24\"\u00d748\" Access"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "ASTM A1064 Rebar"
+        },
+        "image": "/images/products_3d/card_precast-slab-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "slab-10ft-traffic",
+        "name": "10' \u00d7 10\" Traffic Slab with 24\" Opening",
+        "shortName": "10'\u00d710\" HS20 Slab",
+        "badge": "10FT HEAVY TRAFFIC",
+        "categoryLabel": "HEAVY STRUCTURAL SLABS",
+        "description": "10-foot wide, 10\" thick heavy structural highway slab built to cover large drywell chambers under active parking or road surfaces.",
+        "features": [
+          "10\" Extra Thick Concrete",
+          "Double Steel Mat",
+          "24\" Manhole Opening",
+          "AASHTO HS20 Certified"
+        ],
+        "specCapacity": {
+          "label": "TRAFFIC RATING",
+          "value": "AASHTO HS20-44",
+          "sub": "Extreme Highway Load"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "10' Diameter \u00d7 10\" Thick",
+          "sub": "24\" Offset Access"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau Civil",
+          "sub": "5,000+ PSI Concrete"
+        },
+        "image": "/images/products_3d/card_precast-slab-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "slab-12ft-traffic",
+        "name": "12' \u00d7 10\" Traffic Slab with 24\" Opening",
+        "shortName": "12'\u00d710\" HS20 Slab",
+        "badge": "12FT MAX SPAN SLAB",
+        "categoryLabel": "HEAVY STRUCTURAL SLABS",
+        "description": "Massive 12-foot diameter heavy traffic slab engineered to bridge full municipal storm detention pools and deep vaults.",
+        "features": [
+          "12' Span Coverage",
+          "Heavy Rigged Crane Picks",
+          "Extreme Bending Strength",
+          "Factory Cast in Deer Park"
+        ],
+        "specCapacity": {
+          "label": "LOAD CAPACITY",
+          "value": "AASHTO HS20-44",
+          "sub": "Max Span Loading"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "12' Diameter \u00d7 10\" Thick",
+          "sub": "24\" Opening"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A-615 Grade 60",
+          "sub": "All Island Verified"
+        },
+        "image": "/images/products_3d/card_precast-slab-3d.png",
+        "href": "/#contact"
+      }
+    ]
+  },
+  {
+    "id": "solid-rings",
+    "name": "Precast Concrete Solid Rings",
+    "category": "infrastructure",
+    "categoryBadge": "PAGES 85\u2013102 \u00b7 SOLID RINGS",
+    "categoryLabel": "MODULAR SOLID WALL UTILITY RINGS",
+    "summary": "4' to 12' Diameters, 2' to 5' Modular Heights",
+    "description": "Solid non-perforated modular precast rings with interlocking tongue-and-groove joint profiles engineered for building watertight utility vaults, pump stations, and manholes.",
+    "image": "/images/products_3d/card_solid-ring-3d.png",
+    "variables": [
+      {
+        "id": "sr-4ft",
+        "name": "4' Diameter Solid Ring (2' & 4' Heights)",
+        "shortName": "4' Solid Ring",
+        "badge": "4FT MODULAR STACK",
+        "categoryLabel": "UTILITY & MANHOLE RINGS",
+        "description": "Standard 4-foot inside diameter solid concrete ring for municipal sanitary and storm manhole construction.",
+        "features": [
           "Tongue & Groove Joint",
+          "Watertight Mastic Seal",
+          "Circular Rebar Cage",
+          "4,000 PSI Mix"
         ],
-        specCapacity: {
-          label: "SPANS",
-          value: "6'×3' to 16'×12'",
-          sub: "24 DOT Standard Sizes",
+        "specCapacity": {
+          "label": "DIAMETER",
+          "value": "4' Inside Diameter",
+          "sub": "Solid Wall"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Custom Length Sections",
-          sub: "Modular Assembly",
+        "specDimensions": {
+          "label": "HEIGHTS",
+          "value": "2' and 4' Heights",
+          "sub": "Modular Stacking"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C1577",
-          sub: "AASHTO HS-25",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM C478 Spec",
+          "sub": "Suffolk County DOH"
         },
-        image: "/images/infrastructure.jpg",
-        href: "/#contact",
+        "image": "/images/products_3d/card_solid-ring-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "wingwall-dot-var",
-        name: "Precast Bridge Wing Walls",
-        shortName: "Bridge Wing Walls",
-        badge: "DOT HIGHWAY STANDARD",
-        categoryLabel: "HEAVY CIVIL INFRASTRUCTURE",
-        description:
-          "Heavy concrete retaining walls that hold back steep dirt banks and guide water smoothly into culverts.",
-        features: [
-          "30° & 45° Flare Angles",
-          "Heavy Highway Earth Load",
-          "High-Strength Concrete",
-          "Tie-Back Anchors",
+        "id": "sr-8ft",
+        "name": "8' Diameter Solid Ring (2', 3', 3.5', 4', 5' Heights)",
+        "shortName": "8' Solid Ring",
+        "badge": "8FT STANDARD STACK",
+        "categoryLabel": "UTILITY & MANHOLE RINGS",
+        "description": "The workhorse 8-foot solid precast ring available in 5 heights for precision elevation matching on commercial site utility vaults.",
+        "features": [
+          "5 Modular Heights",
+          "Heavy Wall Thickness",
+          "Double Lifting Anchors",
+          "Long Island Production"
         ],
-        specCapacity: {
-          label: "HEIGHT RANGE",
-          value: "4 ft to 16 ft Heights",
-          sub: "Flared Wing Profile",
+        "specCapacity": {
+          "label": "DIAMETER",
+          "value": "8' Inside Diameter",
+          "sub": "Solid Chamber"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Matched To Culvert Span",
-          sub: "DOT Highway Standard",
+        "specDimensions": {
+          "label": "HEIGHTS",
+          "value": "2', 3', 3.5', 4', 5' Heights",
+          "sub": "Flexible Heights"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "Maine DOT",
-          sub: "AASHTO HS-20",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "Grade 60 Rebar"
         },
-        image: "/images/products/wingwall-dot.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_solid-ring-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "solid-round-slab-gang-mold-var",
-        name: "Solid Round Slab Gang Mold",
-        shortName: "Plant Gang Mold",
-        badge: "PLANT TOOLING",
-        categoryLabel: "PRECAST GANG MOLDS",
-        description:
-          "Heavy-duty multi-cavity steel gang mold designed to cast multiple solid round concrete slabs, manhole covers, and grade rings in a single production pour.",
-        features: [
-          "Multi-Cavity Steel Setup",
-          "High Output Single Pour",
-          "Precision Tolerance",
-          "Fast Strip Mechanism",
+        "id": "sr-10ft",
+        "name": "10' Diameter Solid Ring (3', 4', 5' Heights)",
+        "shortName": "10' Solid Ring",
+        "badge": "10FT HEAVY VAULT",
+        "categoryLabel": "UTILITY & MANHOLE RINGS",
+        "description": "Large 10-foot diameter solid ring for high-volume storm retention, electrical transformer vaults, and sewer pump station wet wells.",
+        "features": [
+          "Large Internal Area",
+          "Heavy Soil Surcharge",
+          "Mastic Sealed Joints",
+          "Flatbed Jobsite Delivery"
         ],
-        specCapacity: {
-          label: "OUTPUT",
-          value: "Multiple Slabs / Pour",
-          sub: "Round Slabs & Rings",
+        "specCapacity": {
+          "label": "DIAMETER",
+          "value": "10' Inside Diameter",
+          "sub": "Large Utility Vault"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Precision Steel Bed",
-          sub: "Plant Production",
+        "specDimensions": {
+          "label": "HEIGHTS",
+          "value": "3', 4', 5' Heights",
+          "sub": "Deep Stacking"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "Heavy Steel Fab",
-          sub: "CNC Laser Cut",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM C478 Standard",
+          "sub": "5,000+ PSI Concrete"
         },
-        image: "/images/manufacturing.jpg",
-        href: "/#contact",
+        "image": "/images/products_3d/card_solid-ring-3d.png",
+        "href": "/#contact"
       },
-    ],
+      {
+        "id": "sr-12ft",
+        "name": "12' Diameter Solid Ring (2', 3', 4' Heights)",
+        "shortName": "12' Solid Ring",
+        "badge": "12FT MAX DIAMETER",
+        "categoryLabel": "UTILITY & MANHOLE RINGS",
+        "description": "Maximum 12-foot diameter solid ring delivering massive retention volume for regional municipal civil infrastructure projects.",
+        "features": [
+          "12' Huge Diameter",
+          "Overhead Crane Demolded",
+          "Engineered Rebar Mat",
+          "Deer Park Plant"
+        ],
+        "specCapacity": {
+          "label": "DIAMETER",
+          "value": "12' Inside Diameter",
+          "sub": "Max Capacity Vault"
+        },
+        "specDimensions": {
+          "label": "HEIGHTS",
+          "value": "2', 3', 4' Heights",
+          "sub": "Heavy Stacks"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau DOT",
+          "sub": "AASHTO HS20-44"
+        },
+        "image": "/images/products_3d/card_solid-ring-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
-
-  // ── 6. COMMERCIAL GREASE TRAPS ─────────────────────────────────────────────
   {
-    id: "grease-traps",
-    name: "Commercial Grease Interceptors",
-    category: "tanks",
-    categoryBadge: "WATERTIGHT PRECAST",
-    categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-    summary: "2 Variables · 1000G & 1500G Commercial FOG Interceptors",
-    description:
-      "Municipal-compliant fats, oil, and grease (FOG) separation tanks for restaurants, hotel kitchens, food manufacturing, and retail dining plazas.",
-    variables: [
+    "id": "sanitary-rings",
+    "name": "Precast Concrete Sanitary Rings",
+    "category": "infrastructure",
+    "categoryBadge": "PAGES 103\u2013115 \u00b7 SANITARY",
+    "categoryLabel": "PERFORATED SANITARY LEACHING RINGS",
+    "summary": "4' to 10' Diameters Perforated Leaching Rings",
+    "description": "Modular rings engineered with calibrated seepage apertures for sanitary leaching pools and wastewater drainage beds meeting Suffolk County Department of Health Services standards.",
+    "image": "/images/products_3d/card_sanitary-ring-3d.png",
+    "variables": [
       {
-        id: "tank-grease-1000-var",
-        name: "1000 Gallon Precast Grease Trap",
-        shortName: "1,000G Grease Trap",
-        badge: "COMMERCIAL FOOD SERVICE",
-        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-        description:
-          "Precast interceptor box that traps kitchen fats, oils, and grease before restaurant wastewater flows into city sewers.",
-        features: [
-          "Dual Internal Baffles",
-          "Vehicle Traffic Rated",
-          "PDI-G101 Certified",
-          "Gas-Tight Lid Seals",
+        "id": "san-8ft",
+        "name": "8' Diameter Sanitary Ring (2', 3', 3.5', 4' Heights)",
+        "shortName": "8' Sanitary Ring",
+        "badge": "SUFFOLK DOH STANDARD",
+        "categoryLabel": "SANITARY LEACHING POOLS",
+        "description": "The primary sanitary leaching ring specified throughout Suffolk County for residential and commercial septic absorption pools.",
+        "features": [
+          "Calibrated Seepage Holes",
+          "Soil Sand Percolation",
+          "Interlocking Tongue & Groove",
+          "4,000 PSI Compressive"
         ],
-        specCapacity: {
-          label: "CAPACITY",
-          value: "1,000 Gallons",
-          sub: "(3,785 Liters)",
+        "specCapacity": {
+          "label": "APPLICATION",
+          "value": "Sanitary Leaching Pool",
+          "sub": "Effluent Infiltration"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "8' L x 4.5' W x 5' H",
-          sub: "Dual Chamber FOG",
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "8' Inside Diameter",
+          "sub": "2', 3', 3.5', 4' Heights"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "PDI-G101",
-          sub: "IAPMO Listed",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk County DOH",
+          "sub": "Sanitary Leaching Code"
         },
-        image: "/images/products/grease-trap-1000g.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_sanitary-ring-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "tank-grease-1500-var",
-        name: "1500 Gallon Commercial Grease Interceptor",
-        shortName: "1,500G High Capacity",
-        badge: "HIGH CAPACITY FOOD SERVICE",
-        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-        description:
-          "Large capacity grease separator with cast-in baffles for supermarkets, hospital cafeterias, and hotel food courts.",
-        features: [
-          "High Flow Separation",
-          "Cast-Iron Covers Included",
-          "High-Strength Concrete",
-          "Long Service Life",
+        "id": "san-10ft",
+        "name": "10' Diameter Sanitary Ring (3', 4', 5' Heights)",
+        "shortName": "10' Sanitary Ring",
+        "badge": "COMMERCIAL LEACHING",
+        "categoryLabel": "SANITARY LEACHING POOLS",
+        "description": "High-volume 10-foot sanitary leaching ring for commercial office parks, multi-family developments, and restaurant septic systems.",
+        "features": [
+          "High Area Infiltration",
+          "Perforated Wall Design",
+          "ASTM A-615 Steel",
+          "Heavy Earth Loading"
         ],
-        specCapacity: {
-          label: "CAPACITY",
-          value: "1,500 Gallons",
-          sub: "(5,678 Liters)",
+        "specCapacity": {
+          "label": "PERCOLATION",
+          "value": "High Absorption Area",
+          "sub": "Commercial Septic"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "10' L x 5.5' W x 5.5' H",
-          sub: "Heavy Duty FOG",
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "10' Inside Diameter",
+          "sub": "3', 4', 5' Heights"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "PDI-G101",
-          sub: "ASTM C1227",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau DOH",
+          "sub": "4,000 PSI Concrete"
         },
-        image: "/images/products/grease-trap-1500g.png",
-        href: "/#contact",
-      },
-    ],
+        "image": "/images/products_3d/card_sanitary-ring-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
-
-  // ── 7. LEACHING GALLEYS & INFILTRATION ──────────────────────────────────────
   {
-    id: "leaching-galleys",
-    name: "Maine DOT Leaching Galleys",
-    category: "drainage",
-    categoryBadge: "DOT SPECIFICATION",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    summary: "2 Variables · 2 FT Modular & LC-6 High Capacity Chambers",
-    description:
-      "Engineered stormwater infiltration chambers allowing subsurface retention under parking lots, replacing open retention ponds.",
-    variables: [
+    "id": "storm-rings",
+    "name": "Precast Concrete Storm Rings",
+    "category": "drainage",
+    "categoryBadge": "PAGES 116\u2013127 \u00b7 STORM DRYWELL",
+    "categoryLabel": "STORMWATER DRYWELL & DETENTION RINGS",
+    "summary": "8' to 12' Diameters Storm Drainage Drywell Rings",
+    "description": "Heavy civil perforated drywell rings designed with open intake flow apertures to rapidly capture, store, and recharge massive stormwater volumes into Long Island's sandy aquifers.",
+    "image": "/images/products_3d/card_storm-ring-3d.png",
+    "variables": [
       {
-        id: "leaching-galleys-dot-var",
-        name: "(Maine DOT) 2 FT Leaching Galleys",
-        shortName: "2 FT Modular Galley",
-        badge: "DOT SPECIFICATION",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Compact underground soakaway galleries that replace surface retention ponds and save usable site land.",
-        features: [
-          "Perforated Soil Infiltration",
-          "AASHTO H-20 Parking Load",
-          "Interlocking Modules",
-          "High Storage Void",
+        "id": "stm-8ft",
+        "name": "8' Diameter Storm Drywell Ring",
+        "shortName": "8' Storm Ring",
+        "badge": "STORM DRYWELL SPEC",
+        "categoryLabel": "STORMWATER RECHARGE",
+        "description": "Standard 8-foot drywell ring for road drainage runoff, parking lot catch basin recharge, and residential stormwater control.",
+        "features": [
+          "Engineered Seepage Holes",
+          "Rapid Aquifer Recharge",
+          "ASTM A1064 Rebar Web",
+          "Highway Loading Capable"
         ],
-        specCapacity: {
-          label: "INFILTRATION",
-          value: "Modular Retention",
-          sub: "Saves Surface Land",
+        "specCapacity": {
+          "label": "PERCOLATION",
+          "value": "Rapid Storm Infiltration",
+          "sub": "Long Island Sandy Soils"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "4' x 8' x 2' Height",
-          sub: "6 Standard Models",
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "8' Inside Diameter",
+          "sub": "3', 3.5', 4' Heights"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "Maine DOT",
-          sub: "AASHTO H-20",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau Highway",
+          "sub": "4,000 PSI Concrete"
         },
-        image: "/images/products/leaching-galley.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_storm-ring-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "leaching-galleys-lc6-var",
-        name: "(Maine DOT) LC-6 Leaching Galleys",
-        shortName: "LC-6 High Capacity",
-        badge: "DOT CERTIFIED",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Underground perforated concrete chambers that naturally soak rainwater runoff into the soil beneath parking lots.",
-        features: [
-          "Deep Water Dissipation",
-          "High Highway Wheel Load",
-          "High-Strength Concrete",
-          "8 DOT Size Variants",
+        "id": "stm-10ft",
+        "name": "10' Diameter Storm Drywell Ring",
+        "shortName": "10' Storm Ring",
+        "badge": "MUNICIPAL STORM RUNOFF",
+        "categoryLabel": "STORMWATER RECHARGE",
+        "description": "10-foot diameter storm drywell ring handling large stormwater volumes from municipal street gutters and highway collectors.",
+        "features": [
+          "Large Volume Inflow",
+          "Deep Trench Stacking",
+          "Heavy Wall Strength",
+          "All Island Tested"
         ],
-        specCapacity: {
-          label: "CAPACITY",
-          value: "LC-6 High Capacity",
-          sub: "Storm Infiltration",
+        "specCapacity": {
+          "label": "RETENTION",
+          "value": "Municipal Drywell",
+          "sub": "Heavy Rainfall Detention"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "4' x 8' x 4' Height",
-          sub: "Extended Chamber",
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "10' Inside Diameter",
+          "sub": "3', 4', 5' Heights"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "Maine DOT",
-          sub: "High Capacity",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20-44",
+          "sub": "Town & County Spec"
         },
-        image: "/images/products/leaching-galley-lc6.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_storm-ring-3d.png",
+        "href": "/#contact"
       },
-    ],
+      {
+        "id": "stm-12ft",
+        "name": "12' Diameter Storm Drywell Ring",
+        "shortName": "12' Storm Ring",
+        "badge": "MAX CAPACITY DRYWELL",
+        "categoryLabel": "STORMWATER RECHARGE",
+        "description": "Maximum 12-foot diameter precast storm drywell ring delivering the highest volume underground stormwater recharge chamber.",
+        "features": [
+          "12-Foot Huge Basin",
+          "Massive Storage Area",
+          "Overhead Crane Demolded",
+          "AASHTO HS20 Surcharge"
+        ],
+        "specCapacity": {
+          "label": "STORAGE",
+          "value": "Maximum Infiltration",
+          "sub": "Regional Stormwater"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "12' Inside Diameter",
+          "sub": "2', 3', 4', 5' Heights"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau Civil",
+          "sub": "5,000+ PSI Concrete"
+        },
+        "image": "/images/products_3d/card_storm-ring-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
-
-  // ── 8. PRECAST MANHOLES & PUMP STATIONS ────────────────────────────────────
   {
-    id: "manholes-stations",
-    name: "Precast Manholes & Utility Pump Stations",
-    category: "drainage",
-    categoryBadge: "MUNICIPAL UTILITY",
-    categoryLabel: "ROAD & STORM DRAINAGE",
-    summary: "3 Variables · 1050mm Manholes & Dual Chamber Stations",
-    description:
-      "Circular utility access shafts, reinforced deep chambers, and turnkey dual-compartment pump basins with precast divider walls.",
-    variables: [
+    "id": "footings",
+    "name": "Precast Concrete Footing Rings",
+    "category": "infrastructure",
+    "categoryBadge": "PAGES 128\u2013134 \u00b7 FOOTINGS",
+    "categoryLabel": "PRECAST FOUNDATION BEARING RINGS",
+    "summary": "4' to 12' Diameters Base Footing Foundation Rings",
+    "description": "Precast base foundation rings that provide a wide, stable bearing surface beneath solid and leaching ring stacks, preventing differential settlement in sandy soils.",
+    "image": "/images/products_3d/card_footing-ring-3d.png",
+    "variables": [
       {
-        id: "manhole-1050-var",
-        name: "Catch Basin Manhole 1050mm Diameter",
-        shortName: "1050mm Standard Shaft",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Deep circular concrete access shaft allowing utility workers to inspect and maintain underground pipes safely.",
-        features: [
-          "Precision O-Ring Joint",
-          "Vehicle Traffic Rated",
-          "Stackable Risers",
-          "Built-in Steps Available",
+        "id": "ft-4ft",
+        "name": "4' Diameter Concrete Footing Ring",
+        "shortName": "4' Footing",
+        "badge": "4FT BASE FOOTING",
+        "categoryLabel": "FOUNDATION BEARING RINGS",
+        "description": "Foundation base ring providing stable bearing for 4-foot manholes and solid utility ring stacks.",
+        "features": [
+          "Wide Bearing Flange",
+          "Prevents Settlement",
+          "Circumferential Rebar",
+          "4,000 PSI Mix"
         ],
-        specCapacity: {
-          label: "DIAMETER",
-          value: "1050 mm (42\")",
-          sub: "Circular Chamber",
+        "specCapacity": {
+          "label": "BEARING CAPACITY",
+          "value": "High Soil Bearing",
+          "sub": "Settlement Prevention"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Risers 1 ft to 6 ft",
-          sub: "Modular Height",
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "4' Base Ring Fit",
+          "sub": "Flanged Profile"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "AASHTO HS-20",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A-615 Steel",
+          "sub": "Suffolk County Spec"
         },
-        image: "/images/products/manhole-1050mm.webp",
-        href: "/#contact",
+        "image": "/images/products_3d/card_footing-ring-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "manhole-reinforced-var",
-        name: "Precast Reinforced Catch Basin Manhole (1050mm)",
-        shortName: "1050mm Reinforced",
-        badge: "PRECAST EXCHANGE PRODUCT",
-        categoryLabel: "ROAD & STORM DRAINAGE",
-        description:
-          "Heavy reinforced circular manhole chamber with pipe gaskets designed for deep utility installations.",
-        features: [
-          "Extra Rebar Cage",
-          "Deep Soil Burial Load",
-          "High-Strength Concrete",
-          "Flexible Gasket Knockouts",
+        "id": "ft-8ft",
+        "name": "8' Diameter Concrete Footing Ring",
+        "shortName": "8' Footing",
+        "badge": "8FT BASE FOOTING",
+        "categoryLabel": "FOUNDATION BEARING RINGS",
+        "description": "Standard foundation ring for 8-foot drywell and sanitary leaching stacks across Long Island commercial and residential sites.",
+        "features": [
+          "Stable Ring Support",
+          "Heavy Radial Concrete",
+          "Crane Lifting Holes",
+          "Deer Park Plant"
         ],
-        specCapacity: {
-          label: "REINFORCING",
-          value: "Heavy Steel Cage",
-          sub: "Deep Utility Depths",
+        "specCapacity": {
+          "label": "BEARING",
+          "value": "Heavy Ring Stack Load",
+          "sub": "Soil Load Spread"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "1050 mm (42\") Shell",
-          sub: "8 Custom Heights",
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "8' Base Ring Fit",
+          "sub": "Flanged Footing"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "Heavy Duty",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau Civil",
+          "sub": "4,000 PSI Mix"
         },
-        image: "/images/products/precast-reinforced-manhole.webp",
-        href: "/#contact",
+        "image": "/images/products_3d/card_footing-ring-3d.png",
+        "href": "/#contact"
       },
       {
-        id: "catch-basin-system-var",
-        name: "Multi-Component Basin & Pump Station",
-        shortName: "Dual Chamber Station",
-        badge: "INDUSTRIAL SYSTEM",
-        categoryLabel: "UNDERGROUND TANKS & UTILITIES",
-        description:
-          "Dual-room concrete station: room 1 separates dirt and sediment; room 2 houses electric water pumps.",
-        features: [
-          "Dual Monolithic Rooms",
-          "Submersible Pump Bay",
-          "Sediment Pre-Separation",
-          "Heavy Cast Iron Hatch",
+        "id": "ft-10ft",
+        "name": "10' Diameter Concrete Footing Ring",
+        "shortName": "10' Footing",
+        "badge": "10FT BASE FOOTING",
+        "categoryLabel": "FOUNDATION BEARING RINGS",
+        "description": "Heavy footing ring for 10-foot municipal drywell stacks and deep pump station structures.",
+        "features": [
+          "Wide Load Distribution",
+          "Heavy Steel Rebar Web",
+          "Precision Formwork",
+          "Fast Flatbed Offload"
         ],
-        specCapacity: {
-          label: "CONFIGURATION",
-          value: "Dual Chamber Split",
-          sub: "Sediment + Pump Bay",
+        "specCapacity": {
+          "label": "BEARING",
+          "value": "Deep Stack Support",
+          "sub": "High Load Bearing"
         },
-        specDimensions: {
-          label: "DIMENSIONS (NOMINAL)",
-          value: "Custom Monolithic Unit",
-          sub: "9 Base Models",
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "10' Base Ring Fit",
+          "sub": "Heavy Flange"
         },
-        specStandards: {
-          label: "STANDARDS",
-          value: "ASTM C478",
-          sub: "Heavy Duty",
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "AASHTO HS20 Support",
+          "sub": "Grade 60 Steel"
         },
-        image: "/images/products/catch-basin-system.png",
-        href: "/#contact",
+        "image": "/images/products_3d/card_footing-ring-3d.png",
+        "href": "/#contact"
       },
-    ],
+      {
+        "id": "ft-12ft",
+        "name": "12' Diameter Concrete Footing Ring",
+        "shortName": "12' Footing",
+        "badge": "12FT BASE FOOTING",
+        "categoryLabel": "FOUNDATION BEARING RINGS",
+        "description": "Maximum 12-foot foundation footing ring providing extreme structural support for massive 12-foot ring assemblies.",
+        "features": [
+          "12' Max Base Span",
+          "Extreme Load Spread",
+          "Dual Hook Crane Picks",
+          "Factory Quality Assurance"
+        ],
+        "specCapacity": {
+          "label": "BEARING",
+          "value": "Maximum Base Load",
+          "sub": "Sandy Soil Stability"
+        },
+        "specDimensions": {
+          "label": "DIAMETER",
+          "value": "12' Base Ring Fit",
+          "sub": "Heavy Footing Base"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau DOT",
+          "sub": "5,000+ PSI Concrete"
+        },
+        "image": "/images/products_3d/card_footing-ring-3d.png",
+        "href": "/#contact"
+      }
+    ]
   },
+  {
+    "id": "high-collars",
+    "name": "Precast Concrete High Collars",
+    "category": "utility",
+    "categoryBadge": "PAGES 135\u2013140 \u00b7 GRADE RISERS",
+    "categoryLabel": "GRADE ADJUSTMENT RISERS & COLLARS",
+    "summary": "6\", 12\", 18\", and 24\" Grade Adjustment Collars",
+    "description": "Modular precast grade adjustment collars used to precisely elevate catch basin grates, manhole covers, and inspection cleanouts to finished road or parking asphalt grades.",
+    "image": "/images/products_3d/card_high-collar-3d.png",
+    "variables": [
+      {
+        "id": "hc-6in",
+        "name": "6\" High Collar Riser",
+        "shortName": "6\" Collar",
+        "badge": "6\" GRADE RISER",
+        "categoryLabel": "ROAD GRADE ADJUSTMENT",
+        "description": "6-inch height adjustment collar to bring catch basin or manhole rims up to finished paving surface.",
+        "features": [
+          "Exact 6\" Rise",
+          "HS20 Wheel Impact",
+          "Mastic Seat Ring",
+          "Reinforced Concrete"
+        ],
+        "specCapacity": {
+          "label": "IMPACT RATING",
+          "value": "AASHTO HS20-44",
+          "sub": "Pavement Wheel Impact"
+        },
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "6\" Rise",
+          "sub": "Standard Manhole Fit"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk Highway Dept",
+          "sub": "4,000 PSI Mix"
+        },
+        "image": "/images/products_3d/card_high-collar-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "hc-12in",
+        "name": "12\" High Collar Riser",
+        "shortName": "12\" Collar",
+        "badge": "12\" GRADE RISER",
+        "categoryLabel": "ROAD GRADE ADJUSTMENT",
+        "description": "12-inch modular collar for 1-foot vertical adjustments to match road elevation changes.",
+        "features": [
+          "12\" Vertical Height",
+          "Cast Iron Seat Ready",
+          "Double Steel Wire",
+          "Direct Plant Stock"
+        ],
+        "specCapacity": {
+          "label": "IMPACT RATING",
+          "value": "Heavy Traffic Load",
+          "sub": "HS20-44 Highway"
+        },
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "12\" Rise",
+          "sub": "Standard Collar"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "ASTM A1064 Rebar",
+          "sub": "Suffolk & Nassau DOT"
+        },
+        "image": "/images/products_3d/card_high-collar-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "hc-18in",
+        "name": "18\" High Collar Riser",
+        "shortName": "18\" Collar",
+        "badge": "18\" GRADE RISER",
+        "categoryLabel": "ROAD GRADE ADJUSTMENT",
+        "description": "18-inch riser collar used when deep fill or thick sub-base gravel is placed above manhole domes.",
+        "features": [
+          "18\" Extended Height",
+          "Interlocking Joints",
+          "Heavy Surcharge Wall",
+          "Easy Crane Lift"
+        ],
+        "specCapacity": {
+          "label": "IMPACT RATING",
+          "value": "AASHTO HS20-44",
+          "sub": "Commercial Traffic"
+        },
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "18\" Rise",
+          "sub": "Deep Riser"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Nassau County Highway",
+          "sub": "4,000 PSI Concrete"
+        },
+        "image": "/images/products_3d/card_high-collar-3d.png",
+        "href": "/#contact"
+      },
+      {
+        "id": "hc-24in",
+        "name": "24\" High Collar Riser",
+        "shortName": "24\" Collar",
+        "badge": "24\" GRADE RISER",
+        "categoryLabel": "ROAD GRADE ADJUSTMENT",
+        "description": "Full 24-inch (2-foot) high collar providing substantial grade elevation lift for deep utility installations.",
+        "features": [
+          "Full 24\" Height",
+          "Eliminates Brick Risers",
+          "Factory Interlock",
+          "Deer Park Production"
+        ],
+        "specCapacity": {
+          "label": "IMPACT RATING",
+          "value": "Full Highway Traffic",
+          "sub": "HS20 Surcharge"
+        },
+        "specDimensions": {
+          "label": "HEIGHT",
+          "value": "24\" Rise",
+          "sub": "Maximum Single Collar"
+        },
+        "specStandards": {
+          "label": "STANDARDS",
+          "value": "Suffolk & Nassau DOT",
+          "sub": "All Island Tested"
+        },
+        "image": "/images/products_3d/card_high-collar-3d.png",
+        "href": "/#contact"
+      }
+    ]
+  }
 ];
 
 // ─── MAIN PRODUCTS SECTION COMPONENT ─────────────────────────────────────────
@@ -1090,40 +1896,39 @@ export function ProductsSection() {
   return (
     <section
       id="products"
-      className="py-16 sm:py-24 bg-white border-b border-[#E2E8F0] relative overflow-hidden"
+      className="py-16 sm:py-24 bg-white border-b border-[#D0E2F2] relative overflow-hidden"
     >
       {/* Top Section Header */}
       <div className="section-container mb-8 sm:mb-12">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF2F2] border border-[#FCD2D4] text-[#D4030C] text-xs font-black tracking-widest uppercase mb-4 shadow-2xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#D4030C] animate-pulse" />
-            <span>PRODUCT FAMILIES &amp; VARIABLE SLIDERS</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E0F2FE] border border-[#BAE6FD] text-[#0E96E1] text-xs font-black tracking-widest uppercase mb-4 shadow-2xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#0E96E1] animate-pulse" />
+            <span>ASTRO 2026 PRODUCT CATALOG · 14 DIVISIONS</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#032356] tracking-tight uppercase leading-tight">
-            ENGINEERED PRECAST <span className="text-[#D4030C]">PRODUCTS</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#014088] tracking-tight uppercase leading-tight">
+            ENGINEERED PRECAST <span className="text-[#0E96E1]">PRODUCTS</span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-[#475569] leading-relaxed">
-            Select any product below to browse its dedicated variable slider.
-            Each variable card includes high-definition visuals, 4 core engineering features,
-            capacity, dimensions, and DOT standards.
+          <p className="mt-4 text-base sm:text-lg text-[#334155] leading-relaxed">
+            Select any product line below to view models, dimensions, capacities, and DOT standards.
+            Certified 5,000+ PSI compressive strength, AASHTO HS20-44 highway traffic rated,
+            and engineered to exact Suffolk &amp; Nassau County standards from our Long Island plant.
           </p>
         </div>
 
-        {/* Product Selector Filter Pills */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+        {/* 14 Category Filter Pills */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
           <button
             type="button"
             onClick={() => setActiveFamilyId("all")}
-            className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 shadow-2xs ${
-              activeFamilyId === "all"
-                ? "bg-[#032356] text-white shadow-md scale-102"
-                : "bg-[#F8FAFD] text-[#032356] border border-[#CBD5E1] hover:border-[#032356] hover:bg-white"
-            }`}
+            className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs ${activeFamilyId === "all"
+                ? "bg-[#014088] text-white shadow-md scale-102"
+                : "bg-[#F0F6FC] text-[#014088] border border-[#D0E2F2] hover:border-[#014088] hover:bg-white"
+              }`}
           >
-            <SlidersHorizontal className="w-3.5 h-3.5 text-[#D4030C]" />
-            <span>All Products ({totalVariables} Variables)</span>
+            <SlidersHorizontal className="w-3.5 h-3.5 text-[#0E96E1]" />
+            <span>All Categories ({totalVariables} Models)</span>
           </button>
 
           {PRODUCT_FAMILIES.map((family) => {
@@ -1133,19 +1938,17 @@ export function ProductsSection() {
                 key={family.id}
                 type="button"
                 onClick={() => setActiveFamilyId(family.id)}
-                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs ${
-                  isActive
-                    ? "bg-[#D4030C] text-white shadow-md scale-102"
-                    : "bg-[#F8FAFD] text-[#032356] border border-[#CBD5E1] hover:border-[#D4030C] hover:bg-white"
-                }`}
-              >
-                <span>{family.name}</span>
-                <span
-                  className={`text-[10px] font-black px-1.5 py-0.5 rounded font-mono ${
-                    isActive
-                      ? "bg-white text-[#D4030C]"
-                      : "bg-[#EBF1F8] text-[#032356]"
+                className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs ${isActive
+                    ? "bg-[#0E96E1] text-white shadow-md scale-102"
+                    : "bg-[#F0F6FC] text-[#014088] border border-[#D0E2F2] hover:border-[#0E96E1] hover:bg-white"
                   }`}
+              >
+                <span>{family.name.replace("Precast Concrete ", "")}</span>
+                <span
+                  className={`text-[10px] font-black px-1.5 py-0.5 rounded font-mono ${isActive
+                      ? "bg-white text-[#0E96E1]"
+                      : "bg-[#E0F2FE] text-[#014088]"
+                    }`}
                 >
                   {family.variables.length}
                 </span>
@@ -1169,31 +1972,32 @@ export function ProductsSection() {
   );
 }
 
-// ─── DEDICATED SLIDER FOR ONE PRODUCT'S VARIABLES ───────────────────────────
+// ─── PER-FAMILY SLIDER COMPONENT ─────────────────────────────────────────────
 
-function ProductVariableSlider({
-  family,
-  mounted,
-}: {
+interface ProductVariableSliderProps {
   family: ProductFamily;
   mounted: boolean;
-}) {
-  const swiperRef = useRef<SwiperClass | null>(null);
+}
+
+function ProductVariableSlider({ family, mounted }: ProductVariableSliderProps) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const swiperRef = useRef<SwiperClass | null>(null);
 
   return (
-    <div className="rounded-3xl p-5 sm:p-8 bg-[#F8FAFD] border border-[#E2E8F0] shadow-xs overflow-hidden">
-      {/* Product Family Header: Title, Variables Count, Prev/Next Arrows */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-5 mb-6 border-b border-[#CBD5E1] gap-4">
+    <div className="bg-[#F8FAFC] border-2 border-[#D0E2F2] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xs">
+      {/* Family Section Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 pb-6 border-b border-[#D0E2F2]">
         <div>
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D4030C] mb-1 font-mono">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#D4030C]" />
-            <span>
-              {family.categoryBadge} · ({family.variables.length} VARIABLES IN THIS PRODUCT)
+          <div className="flex items-center gap-2 mb-2 font-mono">
+            <span className="px-2.5 py-0.5 rounded text-[11px] font-black uppercase tracking-wider bg-[#014088] text-white">
+              {family.categoryBadge}
+            </span>
+            <span className="text-xs font-black uppercase tracking-widest text-[#0E96E1]">
+              {family.categoryLabel}
             </span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#032356] uppercase tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-black text-[#014088] uppercase tracking-tight">
             {family.name}
           </h3>
 
@@ -1205,14 +2009,14 @@ function ProductVariableSlider({
         {/* Prev / Next controls */}
         <div className="flex items-center gap-2 shrink-0">
           <div className="hidden sm:block text-[11px] font-mono font-bold text-[#64748B] mr-2">
-            Variable {currentSlideIndex + 1} of {family.variables.length}
+            Model {currentSlideIndex + 1} of {family.variables.length}
           </div>
 
           <button
             type="button"
             onClick={() => swiperRef.current?.slidePrev()}
-            className="w-10 h-10 rounded-xl border-2 border-[#CBD5E1] hover:border-[#032356] bg-white text-[#032356] hover:bg-[#F0F6FF] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95"
-            aria-label={`Previous ${family.name} variable`}
+            className="w-10 h-10 rounded-xl border-2 border-[#D0E2F2] hover:border-[#014088] bg-white text-[#014088] hover:bg-[#F0F6FC] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95"
+            aria-label={`Previous ${family.name} model`}
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -1220,18 +2024,18 @@ function ProductVariableSlider({
           <button
             type="button"
             onClick={() => swiperRef.current?.slideNext()}
-            className="w-10 h-10 rounded-xl border-2 border-[#CBD5E1] hover:border-[#032356] bg-white text-[#032356] hover:bg-[#F0F6FF] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95"
-            aria-label={`Next ${family.name} variable`}
+            className="w-10 h-10 rounded-xl border-2 border-[#D0E2F2] hover:border-[#014088] bg-white text-[#014088] hover:bg-[#F0F6FC] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95"
+            aria-label={`Next ${family.name} model`}
           >
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
       </div>
 
-      {/* Quick Variable Switcher Chips */}
+      {/* Quick Model Switcher Chips */}
       <div className="mb-6 flex flex-wrap items-center gap-2">
         <span className="text-xs font-mono font-bold text-[#64748B] uppercase tracking-wider mr-1">
-          Quick Jump:
+          Catalog Models:
         </span>
         {family.variables.map((variable, idx) => {
           const isActive = currentSlideIndex === idx;
@@ -1243,11 +2047,10 @@ function ProductVariableSlider({
                 swiperRef.current?.slideTo(idx);
                 setCurrentSlideIndex(idx);
               }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer border ${
-                isActive
-                  ? "bg-[#032356] text-white border-[#032356] shadow-xs scale-102"
-                  : "bg-white text-[#032356] border-[#CBD5E1] hover:border-[#D4030C]"
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer border ${isActive
+                  ? "bg-[#014088] text-white border-[#014088] shadow-xs scale-102"
+                  : "bg-white text-[#014088] border-[#D0E2F2] hover:border-[#0E96E1]"
+                }`}
             >
               {variable.shortName}
             </button>
@@ -1257,14 +2060,12 @@ function ProductVariableSlider({
 
       {/* Variable Slider Stage */}
       {!mounted ? (
-        // Clean SSR / Initial Layout before client mount (prevents Swiper SSR Date prerender errors)
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {family.variables.slice(0, 3).map((variable) => (
             <VariableCard key={variable.id} variable={variable} />
           ))}
         </div>
       ) : (
-        // Swiper slider when client mounted
         <div className="overflow-hidden rounded-2xl w-full">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
@@ -1301,188 +2102,126 @@ function ProductVariableSlider({
   );
 }
 
-// ─── EXACT PREMIUM CARD DESIGN FROM USER SCREENSHOT ─────────────────────────
+// ─── SINGLE VARIABLE / PRODUCT CARD COMPONENT ────────────────────────────────
 
-function VariableCard({ variable }: { variable: ProductVariable }) {
-  const [isSaved, setIsSaved] = useState(false);
+interface VariableCardProps {
+  variable: ProductVariable;
+}
 
+function VariableCard({ variable }: VariableCardProps) {
   return (
-    <div className="group flex flex-col h-full rounded-3xl overflow-hidden bg-white border border-[#CBD5E1] hover:border-[#032356] shadow-sm hover:shadow-2xl transition-all duration-300">
-      {/* 1. Top Image Stage */}
-      <div className="relative h-64 sm:h-72 w-full bg-[#F4F6F9] border-b border-[#EBF1F8] flex items-center justify-center p-6 overflow-hidden group-hover:bg-[#EDF2F8] transition-colors">
+    <div className="bg-white rounded-2xl border-2 border-[#D0E2F2] hover:border-[#0E96E1] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+      {/* 1. HD 3D Render Image Container */}
+      <div className="relative aspect-[4/3] w-full bg-[#F0F6FC] border-b border-[#D0E2F2] overflow-hidden flex items-center justify-center p-4">
         <Image
           src={variable.image}
           alt={variable.name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
         />
 
-        {/* Top-Left Red Pill Badge */}
-        <div className="absolute top-4 left-4 z-10">
-          <span className="text-[11px] font-black uppercase px-3.5 py-1.5 rounded-full tracking-wider shadow-xs bg-[#D4030C] text-white">
+        {/* Top Badges */}
+        <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+          <span className="px-2.5 py-1 rounded bg-[#014088] text-white text-[10px] font-mono font-black uppercase tracking-wider shadow-xs">
             {variable.badge}
           </span>
+          <span className="px-2 py-0.5 rounded bg-white text-[#0E96E1] border border-sky-200 text-[10px] font-mono font-extrabold shadow-2xs">
+            DEER PARK, NY
+          </span>
         </div>
-
-        {/* Top-Right Favorite / Save Button */}
-        <button
-          type="button"
-          onClick={() => setIsSaved(!isSaved)}
-          className={`absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center transition-all cursor-pointer active:scale-90 ${
-            isSaved
-              ? "text-[#D4030C] bg-[#FFF2F2]"
-              : "text-[#64748B] hover:text-[#D4030C]"
-          }`}
-          aria-label="Save product"
-        >
-          <Heart
-            className={`w-5 h-5 ${isSaved ? "fill-[#D4030C]" : ""}`}
-          />
-        </button>
       </div>
 
-      {/* 2. Content Body */}
-      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+      {/* 2. Card Content Body */}
+      <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between">
         <div>
-          {/* Category Subtitle */}
-          <span className="text-xs font-black uppercase tracking-wider text-[#D4030C] block mb-2 font-mono">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#0E96E1] mb-1.5 block font-mono">
             {variable.categoryLabel}
           </span>
 
-          {/* Product Title */}
-          <h4 className="text-xl sm:text-2xl font-black text-[#032356] group-hover:text-[#D4030C] transition-colors leading-tight mb-2.5">
+          <h4 className="text-lg sm:text-xl font-black text-[#014088] group-hover:text-[#0E96E1] transition-colors leading-snug mb-2">
             {variable.name}
           </h4>
 
-          {/* Small Description */}
-          <p className="text-sm text-[#475569] leading-relaxed mb-6 font-normal min-h-[48px]">
+          <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-5 font-normal min-h-[40px]">
             {variable.description}
           </p>
 
-          {/* 3. Four Feature Badges with Vertical Dividers */}
-          <div className="grid grid-cols-4 divide-x divide-[#E2E8F0] pt-4 pb-5 border-t border-b border-[#F1F5F9] text-center mb-6">
-            {/* Feature 1 */}
-            <div className="px-1.5">
-              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
-                <ShieldCheck className="w-4 h-4 text-[#032356]" />
+          {/* 3. Four Feature Badges */}
+          <div className="grid grid-cols-2 gap-2 pt-3 pb-4 border-t border-[#F0F6FC] mb-5">
+            {variable.features.map((feature, idx) => (
+              <div key={idx} className="flex items-center gap-1.5 text-[11px] font-bold text-[#334155]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#0E96E1] shrink-0" />
+                <span className="truncate">{feature}</span>
               </div>
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
-                {variable.features[0]}
-              </span>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="px-1.5">
-              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
-                <Truck className="w-4 h-4 text-[#032356]" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
-                {variable.features[1]}
-              </span>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="px-1.5">
-              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
-                <Anchor className="w-4 h-4 text-[#032356]" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
-                {variable.features[2]}
-              </span>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="px-1.5">
-              <div className="w-9 h-9 rounded-full bg-[#F0F4FA] text-[#032356] flex items-center justify-center mx-auto mb-1.5 shadow-2xs">
-                <Clock className="w-4 h-4 text-[#032356]" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#334155] leading-tight block">
-                {variable.features[3]}
-              </span>
-            </div>
+            ))}
           </div>
 
           {/* 4. Three-Column Technical Spec Box */}
-          <div className="p-4 rounded-2xl bg-[#F4F7FB] border border-[#E2E8F0] grid grid-cols-3 gap-3 mb-6">
-            {/* Spec 1: Capacity / Flow / Opening */}
-            <div className="flex items-center gap-2.5 min-w-0">
-              <div className="w-8 h-8 rounded-full bg-white text-[#032356] flex items-center justify-center shrink-0 shadow-2xs border border-[#E2E8F0]">
-                <Droplet className="w-4 h-4 text-[#032356]" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
-                  {variable.specCapacity.label}
+          <div className="p-3.5 rounded-xl bg-[#F0F6FC] border border-[#D0E2F2] grid grid-cols-3 gap-2 mb-5">
+            {/* Spec 1: Capacity */}
+            <div className="min-w-0">
+              <span className="text-[9px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
+                {variable.specCapacity.label}
+              </span>
+              <span className="text-xs font-black text-[#014088] block truncate">
+                {variable.specCapacity.value}
+              </span>
+              {variable.specCapacity.sub && (
+                <span className="text-[10px] text-[#64748B] block truncate">
+                  {variable.specCapacity.sub}
                 </span>
-                <span className="text-xs sm:text-[13px] font-black text-[#032356] block truncate">
-                  {variable.specCapacity.value}
-                </span>
-                {variable.specCapacity.sub && (
-                  <span className="text-[10px] text-[#64748B] block truncate">
-                    {variable.specCapacity.sub}
-                  </span>
-                )}
-              </div>
+              )}
             </div>
 
             {/* Spec 2: Dimensions */}
-            <div className="flex items-center gap-2.5 min-w-0 border-l border-[#E2E8F0] pl-3">
-              <div className="w-8 h-8 rounded-full bg-white text-[#032356] flex items-center justify-center shrink-0 shadow-2xs border border-[#E2E8F0]">
-                <Box className="w-4 h-4 text-[#032356]" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
-                  {variable.specDimensions.label}
+            <div className="min-w-0 border-l border-[#D0E2F2] pl-2">
+              <span className="text-[9px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
+                {variable.specDimensions.label}
+              </span>
+              <span className="text-xs font-black text-[#014088] block truncate">
+                {variable.specDimensions.value}
+              </span>
+              {variable.specDimensions.sub && (
+                <span className="text-[10px] text-[#64748B] block truncate">
+                  {variable.specDimensions.sub}
                 </span>
-                <span className="text-xs sm:text-[13px] font-black text-[#032356] block truncate">
-                  {variable.specDimensions.value}
-                </span>
-                {variable.specDimensions.sub && (
-                  <span className="text-[10px] text-[#64748B] block truncate">
-                    {variable.specDimensions.sub}
-                  </span>
-                )}
-              </div>
+              )}
             </div>
 
             {/* Spec 3: Standards */}
-            <div className="flex items-center gap-2.5 min-w-0 border-l border-[#E2E8F0] pl-3">
-              <div className="w-8 h-8 rounded-full bg-white text-[#032356] flex items-center justify-center shrink-0 shadow-2xs border border-[#E2E8F0]">
-                <FileText className="w-4 h-4 text-[#032356]" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
-                  {variable.specStandards.label}
+            <div className="min-w-0 border-l border-[#D0E2F2] pl-2">
+              <span className="text-[9px] font-black uppercase tracking-wider text-[#64748B] block truncate font-mono">
+                {variable.specStandards.label}
+              </span>
+              <span className="text-xs font-black text-[#014088] block truncate">
+                {variable.specStandards.value}
+              </span>
+              {variable.specStandards.sub && (
+                <span className="text-[10px] text-[#64748B] block truncate">
+                  {variable.specStandards.sub}
                 </span>
-                <span className="text-xs sm:text-[13px] font-black text-[#032356] block truncate">
-                  {variable.specStandards.value}
-                </span>
-                {variable.specStandards.sub && (
-                  <span className="text-[10px] text-[#64748B] block truncate">
-                    {variable.specStandards.sub}
-                  </span>
-                )}
-              </div>
+              )}
             </div>
           </div>
         </div>
 
-        {/* 5. Bottom Action Row: View Details Link & Solid Red Inquire Button */}
-        <div className="pt-4 border-t border-[#F1F5F9] flex items-center justify-between">
+        {/* 5. Bottom Action Row */}
+        <div className="pt-4 border-t border-[#F0F6FC] flex items-center justify-between">
           <Link
-            href={variable.href}
-            className="text-sm font-bold text-[#032356] hover:text-[#D4030C] transition-colors inline-flex items-center gap-1.5"
+            href="/#contact"
+            className="text-xs font-bold text-[#014088] hover:text-[#0E96E1] transition-colors inline-flex items-center gap-1.5"
           >
-            <span>View details</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <span>Submittal Sheet</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
 
           <Link
-            href={variable.href}
-            className="bg-[#D4030C] hover:bg-[#B3020A] text-white font-bold py-2.5 px-6 rounded-xl text-sm shadow-sm hover:shadow-md transition-all active:scale-95 inline-flex items-center gap-2"
+            href="/#contact"
+            className="bg-[#0E96E1] hover:bg-[#0C82C4] text-white font-black py-2.5 px-5 rounded-lg text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all active:scale-95 inline-flex items-center gap-1.5"
           >
-            <span>Inquire</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>RFQ Quote</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>

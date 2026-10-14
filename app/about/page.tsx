@@ -64,7 +64,7 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-2xl bg-[#F8F9FA] border border-gray-200">
-              <div className="w-12 h-12 rounded-xl bg-red-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
+              <div className="w-12 h-12 rounded-xl bg-sky-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
                 01
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Uncompromising Precision</h3>
@@ -74,7 +74,7 @@ export default function AboutPage() {
             </div>
 
             <div className="p-8 rounded-2xl bg-[#F8F9FA] border border-gray-200">
-              <div className="w-12 h-12 rounded-xl bg-red-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
+              <div className="w-12 h-12 rounded-xl bg-sky-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
                 02
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Transparent Partnership</h3>
@@ -84,7 +84,7 @@ export default function AboutPage() {
             </div>
 
             <div className="p-8 rounded-2xl bg-[#F8F9FA] border border-gray-200">
-              <div className="w-12 h-12 rounded-xl bg-red-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
+              <div className="w-12 h-12 rounded-xl bg-sky-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
                 03
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Long-Term Environmental Stewardship</h3>

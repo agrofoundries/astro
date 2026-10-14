@@ -20,18 +20,15 @@ export function SponsorMarquee() {
       <div className="section-container-wide">
         {/* Title: Our Associates & Industry Affiliations (Bigger, Bolder, Prominent) */}
         <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5">
-          <span className="w-8 sm:w-14 h-1 bg-[#D4030C] rounded-full" />
-          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-black uppercase tracking-wider text-[#032356] text-center">
+          <span className="w-8 sm:w-14 h-1 bg-[#0E96E1] rounded-full" />
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-black uppercase tracking-wider text-[#014088] text-center">
             Our Associates &amp; Industry Affiliations
           </h2>
-          <span className="w-8 sm:w-14 h-1 bg-[#D4030C] rounded-full" />
+          <span className="w-8 sm:w-14 h-1 bg-[#0E96E1] rounded-full" />
         </div>
 
         {/* Marquee viewport */}
         <div className="relative w-full overflow-hidden flex items-center h-20 sm:h-24 md:h-26">
-          {/* Subtle edge fade gradients */}
-          <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#FAFCFF] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#FAFCFF] to-transparent z-10 pointer-events-none" />
 
           {/* Marquee Track */}
           <div className="flex items-center w-max gap-3 sm:gap-4 whitespace-nowrap animate-marquee">
@@ -42,7 +39,7 @@ export function SponsorMarquee() {
               >
                 {/* Generous clean card */}
                 <div
-                  className={`relative h-16 sm:h-20 md:h-22 ${sponsor.cardWidth} flex items-center justify-center bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:border-[#032356] hover:shadow-md transition-all duration-300 hover-lift`}
+                  className={`relative h-16 sm:h-20 md:h-22 ${sponsor.cardWidth} flex items-center justify-center bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:border-[#014088] hover:shadow-md transition-all duration-300 hover-lift`}
                 >
                   <Image
                     src={sponsor.src}

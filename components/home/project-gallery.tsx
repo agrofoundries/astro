@@ -105,7 +105,7 @@ export function ProjectGallery() {
             >
               {/* Clean Light Header */}
               <div className="px-4 py-2 bg-[#EAEEF3] text-[#0A2540] font-mono-spec text-[11px] uppercase font-bold flex justify-between border-b border-[#CBD5E1]">
-                <span className="text-[#D4030C]">[{item.code}]</span>
+                <span className="text-[#0E96E1]">[{item.code}]</span>
                 <span className="text-[#64748B]">{item.category}</span>
               </div>
 
@@ -119,12 +119,12 @@ export function ProjectGallery() {
                 />
 
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white p-1.5 rounded shadow-xs text-[#0A2540]">
-                  <Eye className="w-4 h-4 text-[#D4030C]" />
+                  <Eye className="w-4 h-4 text-[#0E96E1]" />
                 </div>
               </div>
 
               <div className="p-4 bg-white">
-                <h4 className="text-sm font-bold tracking-tight text-[#0A2540] mb-1 group-hover:text-[#D4030C] transition-colors">
+                <h4 className="text-sm font-bold tracking-tight text-[#0A2540] mb-1 group-hover:text-[#0E96E1] transition-colors">
                   {item.title}
                 </h4>
                 <p className="font-mono-spec text-[11px] text-[#64748B]">
@@ -150,7 +150,7 @@ export function ProjectGallery() {
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-3 right-3 px-3 py-1.5 bg-[#D4030C] text-white font-mono-spec text-xs font-bold uppercase rounded hover:bg-[#A50E1B] cursor-pointer"
+                className="absolute top-3 right-3 px-3 py-1.5 bg-[#0E96E1] text-white font-mono-spec text-xs font-bold uppercase rounded hover:bg-[#A50E1B] cursor-pointer"
               >
                 Close ✕
               </button>

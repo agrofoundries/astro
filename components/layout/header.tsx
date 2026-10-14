@@ -17,42 +17,43 @@ import {
   MapPin,
   Layers,
   Briefcase,
+  Download,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
 const MARQUEE_ITEMS = [
-  "Direct Precast Concrete Manufacturing Plant",
-  "Licensed PE & SE Structural Calculations Available",
-  "Climate-Controlled Plant Casting Beds",
-  "In-House Tekla LOD 400 3D BIM Detailing Hub",
-  "AASHTO Bridge & State DOT Submittals Approved",
-  "High-Volume Box Culverts, Basins & Utility Vaults",
+  "Astro Precast Engineering & Masonry · Deer Park, NY",
+  "A.A.S.H.T.O. HS20-44 Traffic-Rated Certified Precast",
+  "Suffolk & Nassau County Specifications Compliant",
+  "5,000+ PSI Minimum 28-Day Compressive Strength",
+  "Full Precast Catch Basins, Septic Tanks & Rings Catalog",
+  "In-House Detailing & Direct Plant Manufacturing: 631-667 3300",
 ];
 
 // All Pages Related to Company (Clean Simple Titles - No Clutter)
 const COMPANY_PAGES = [
   {
-    title: "About Precast Engineers",
+    title: "About Astro Precast",
     href: "/about",
     icon: Building2,
   },
   {
-    title: "Plant & Casting Facilities",
+    title: "Plant & Production Facilities",
     href: "/capabilities",
     icon: Factory,
   },
   {
-    title: "Structural Engineering & 3D BIM",
+    title: "Structural Detailing & Engineering",
     href: "/#services",
     icon: Compass,
   },
   {
-    title: "Quality Control & Testing Lab",
+    title: "Quality Control & ASTM Testing",
     href: "/#quality",
     icon: ShieldCheck,
   },
   {
-    title: "Seven Regional Offices",
+    title: "Suffolk & Nassau Service Area",
     href: "/#locations",
     icon: MapPin,
   },
@@ -68,33 +69,33 @@ const COMPANY_PAGES = [
   },
 ];
 
-// Products Mega Menu Data (Clean, Simple English Titles - No Small Text Clutter)
+// Products Mega Menu Data (Astro 2026 Catalog Product Categories)
 const PRODUCT_CATEGORIES = [
   {
-    category: "BRIDGES & CULVERTS",
+    category: "STORMWATER & DRAINAGE",
     items: [
-      { name: "Box Culverts", href: "/#products" },
-      { name: "Concrete Bridges", href: "/#products" },
-      { name: "Wing Walls & Headwalls", href: "/#products" },
-      { name: "Retaining Wall Panels", href: "/#products" },
-    ],
-  },
-  {
-    category: "DRAINAGE & STORMWATER",
-    items: [
-      { name: "Catch Basins", href: "/#products" },
-      { name: "Curb Inlets", href: "/#products" },
+      { name: "Catch Basins (12x12 to 84x84)", href: "/#products" },
       { name: "Leaching Galleys", href: "/#products" },
-      { name: "Trench Drains", href: "/#products" },
+      { name: "Low Domes & High Domes", href: "/#products" },
+      { name: "Precast Curb Stops", href: "/#products" },
     ],
   },
   {
-    category: "TANKS & GANG MOLDS",
+    category: "TANKS & TREATMENT",
     items: [
-      { name: "Solid Round Slab Gang Mold", href: "/#products" },
-      { name: "Utility Vaults", href: "/#products" },
-      { name: "Septic Tanks", href: "/#products" },
-      { name: "Pump Stations", href: "/#products" },
+      { name: "Precast Septic Tanks", href: "/#products" },
+      { name: "Commercial Grease Traps", href: "/#products" },
+      { name: "Distribution Boxes", href: "/#products" },
+      { name: "Pump Stations & Basins", href: "/#products" },
+    ],
+  },
+  {
+    category: "RINGS, SLABS & HARDWARE",
+    items: [
+      { name: "Precast Solid Slabs & Traffic Slabs", href: "/#products" },
+      { name: "Solid Precast Rings", href: "/#products" },
+      { name: "Sanitary & Storm Rings", href: "/#products" },
+      { name: "Footing Rings & High Collars", href: "/#products" },
     ],
   },
 ];
@@ -149,16 +150,15 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-white/95 backdrop-blur-md shadow-md border-b border-[#CBD5E1]"
           : "bg-white border-b border-[#DCE5F0] shadow-xs"
-      }`}
+        }`}
     >
       {/* ======================================================== */}
       {/* Top Utility Strip (Full Width Edge-to-Edge)              */}
       {/* ======================================================== */}
-      <div className="bg-[#032356] text-white text-xs border-b border-white/10 hidden md:block">
+      <div className="bg-[#014088] text-white text-xs border-b border-white/10 hidden md:block">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between h-9">
           {/* Left Direct Contacts */}
           <div className="flex items-center gap-5 shrink-0">
@@ -166,7 +166,7 @@ export function Header() {
               href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
               className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors font-mono text-[11px]"
             >
-              <Phone className="w-3 h-3 text-[#D4030C]" />
+              <Phone className="w-3 h-3 text-[#0E96E1]" />
               <span>{COMPANY.phone}</span>
             </a>
             <span className="h-3 w-px bg-white/15" />
@@ -174,7 +174,7 @@ export function Header() {
               href={`mailto:${COMPANY.email}`}
               className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors text-[11px]"
             >
-              <Mail className="w-3 h-3 text-[#D4030C]" />
+              <Mail className="w-3 h-3 text-[#0E96E1]" />
               <span>{COMPANY.email}</span>
             </a>
           </div>
@@ -187,7 +187,7 @@ export function Header() {
                   key={idx}
                   className="flex shrink-0 items-center gap-2 font-mono text-[10px] tracking-wider text-slate-300 uppercase"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4030C]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0E96E1]" />
                   {item}
                 </span>
               ))}
@@ -198,7 +198,7 @@ export function Header() {
           <div className="flex items-center gap-4 shrink-0 font-mono text-[10px] text-slate-300">
             <div className="flex items-center gap-1.5 bg-white/10 px-2 py-0.5 rounded border border-white/15">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>PLANT CASTING &amp; STRUCTURAL PE</span>
+              <span>DEER PARK, NY PLANT · 631-667 3300</span>
             </div>
           </div>
         </div>
@@ -209,16 +209,18 @@ export function Header() {
       {/* ======================================================== */}
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 bg-white/90">
         <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-18 lg:h-20" : "h-20 lg:h-22"} gap-4`}>
-          {/* Logo */}
-          <Link href="/" className="flex items-center py-2 shrink-0" aria-label="Precast Engineers">
-            <Image
-              src="/logo.png"
-              alt="Precast Engineers - Empowering Precasters"
-              width={240}
-              height={60}
-              className="h-11 sm:h-12 w-auto object-contain"
-              priority
-            />
+          {/* Logo (Bigger, Clean Standalone) */}
+          <Link href="/" className="flex items-center py-1 shrink-0 group" aria-label="Astro Masonry & Precast">
+            <div className="relative h-14 sm:h-16 lg:h-18 w-24 sm:w-28 lg:w-32 shrink-0 transition-transform duration-200 group-hover:scale-102">
+              <Image
+                src="/Astro Geometric Mark Logo.png"
+                alt="Astro Geometric Mark Logo"
+                fill
+                priority
+                className="object-contain object-left"
+                sizes="(max-width: 640px) 100px, 140px"
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav Items (Bigger 17-18px Font Size & Direct Anchored Dropdowns) */}
@@ -226,10 +228,10 @@ export function Header() {
             {/* 1. Home */}
             <Link
               href="/"
-              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#032356] hover:text-[#D4030C] transition-colors relative group whitespace-nowrap tracking-tight"
+              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#014088] hover:text-[#0E96E1] transition-colors relative group whitespace-nowrap tracking-tight"
             >
               <span>Home</span>
-              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D4030C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#0E96E1] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
             </Link>
 
             {/* 2. Company (Dropdown directly under this item) */}
@@ -241,15 +243,13 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setActiveMenu(activeMenu === "company" ? null : "company")}
-                className={`flex items-center gap-1 px-2 py-2 text-[16px] xl:text-[18px] font-black transition-colors whitespace-nowrap tracking-tight cursor-pointer ${
-                  activeMenu === "company" ? "text-[#D4030C]" : "text-[#032356] hover:text-[#D4030C]"
-                }`}
+                className={`flex items-center gap-1 px-2 py-2 text-[16px] xl:text-[18px] font-black transition-colors whitespace-nowrap tracking-tight cursor-pointer ${activeMenu === "company" ? "text-[#0E96E1]" : "text-[#014088] hover:text-[#0E96E1]"
+                  }`}
               >
                 <span>Company</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    activeMenu === "company" ? "rotate-180 text-[#D4030C]" : "text-slate-400 group-hover:text-[#D4030C]"
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-200 ${activeMenu === "company" ? "rotate-180 text-[#0E96E1]" : "text-slate-400 group-hover:text-[#0E96E1]"
+                    }`}
                 />
               </button>
 
@@ -265,7 +265,7 @@ export function Header() {
                   <div className="bg-white rounded-2xl border-2 border-[#DCE5F0] shadow-2xl p-3.5 overflow-hidden">
                     {/* Header Banner */}
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 px-2">
-                      <span className="text-[11px] font-black uppercase tracking-wider text-[#D4030C] font-mono">
+                      <span className="text-[11px] font-black uppercase tracking-wider text-[#0E96E1] font-mono">
                         COMPANY PAGES
                       </span>
                       <span className="text-[10px] text-[#64748B] font-bold uppercase">
@@ -285,14 +285,14 @@ export function Header() {
                             className="group/item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-[#F2F7FF] transition-colors"
                           >
                             <div className="flex items-center gap-2.5 min-w-0">
-                              <div className="w-7 h-7 rounded-lg bg-[#E8F3FF] border border-[#DCE5F0] text-[#032356] group-hover/item:bg-[#032356] group-hover/item:text-white transition-colors flex items-center justify-center shrink-0">
-                                <Icon className="w-3.5 h-3.5 text-[#D4030C] group-hover/item:text-white transition-colors" />
+                              <div className="w-7 h-7 rounded-lg bg-[#E8F3FF] border border-[#DCE5F0] text-[#014088] group-hover/item:bg-[#014088] group-hover/item:text-white transition-colors flex items-center justify-center shrink-0">
+                                <Icon className="w-3.5 h-3.5 text-[#0E96E1] group-hover/item:text-white transition-colors" />
                               </div>
-                              <span className="text-sm font-bold text-[#032356] group-hover/item:text-[#D4030C] transition-colors truncate">
+                              <span className="text-sm font-bold text-[#014088] group-hover/item:text-[#0E96E1] transition-colors truncate">
                                 {page.title}
                               </span>
                             </div>
-                            <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D4030C] shrink-0" />
+                            <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#0E96E1] shrink-0" />
                           </Link>
                         );
                       })}
@@ -311,15 +311,13 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setActiveMenu(activeMenu === "products" ? null : "products")}
-                className={`flex items-center gap-1 px-2 py-2 text-[16px] xl:text-[18px] font-black transition-colors whitespace-nowrap tracking-tight cursor-pointer ${
-                  activeMenu === "products" ? "text-[#D4030C]" : "text-[#032356] hover:text-[#D4030C]"
-                }`}
+                className={`flex items-center gap-1 px-2 py-2 text-[16px] xl:text-[18px] font-black transition-colors whitespace-nowrap tracking-tight cursor-pointer ${activeMenu === "products" ? "text-[#0E96E1]" : "text-[#014088] hover:text-[#0E96E1]"
+                  }`}
               >
                 <span>Products</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    activeMenu === "products" ? "rotate-180 text-[#D4030C]" : "text-slate-400 group-hover:text-[#D4030C]"
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-200 ${activeMenu === "products" ? "rotate-180 text-[#0E96E1]" : "text-slate-400 group-hover:text-[#0E96E1]"
+                    }`}
                 />
               </button>
 
@@ -340,7 +338,7 @@ export function Header() {
                           <div key={idx} className="space-y-3">
                             {/* Category Eyebrow (Bigger & Bolder) */}
                             <div className="pb-2 border-b-2 border-slate-100">
-                              <span className="text-xs xl:text-[13px] font-black tracking-wider text-[#D4030C] uppercase font-mono block">
+                              <span className="text-xs xl:text-[13px] font-black tracking-wider text-[#0E96E1] uppercase font-mono block">
                                 {col.category}
                               </span>
                             </div>
@@ -354,10 +352,10 @@ export function Header() {
                                     onClick={() => setActiveMenu(null)}
                                     className="group/item flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-[#F0F5FF] transition-all"
                                   >
-                                    <span className="text-[14px] xl:text-[15.5px] font-extrabold text-[#032356] group-hover/item:text-[#D4030C] transition-colors leading-snug">
+                                    <span className="text-[14px] xl:text-[15.5px] font-extrabold text-[#014088] group-hover/item:text-[#0E96E1] transition-colors leading-snug">
                                       {item.name}
                                     </span>
-                                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#D4030C] shrink-0" />
+                                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#0E96E1] shrink-0" />
                                   </Link>
                                 </li>
                               ))}
@@ -378,12 +376,12 @@ export function Header() {
                               playsInline
                               className="object-cover w-full h-full"
                             />
-                            <div className="absolute top-2 left-2 px-2.5 py-1 rounded bg-[#D4030C] text-white text-[10px] font-mono font-black uppercase tracking-wider shadow-xs">
+                            <div className="absolute top-2 left-2 px-2.5 py-1 rounded bg-[#0E96E1] text-white text-[10px] font-mono font-black uppercase tracking-wider shadow-xs">
                               ★ FEATURED PRODUCT
                             </div>
                           </div>
 
-                          <h4 className="text-sm xl:text-base font-black text-[#032356] uppercase tracking-tight mb-1.5">
+                          <h4 className="text-sm xl:text-base font-black text-[#014088] uppercase tracking-tight mb-1.5">
                             Solid Round Slab Gang Mold
                           </h4>
                           <p className="text-xs text-[#334155] leading-relaxed mb-4 font-medium">
@@ -394,7 +392,7 @@ export function Header() {
                         <Link
                           href="/#products"
                           onClick={() => setActiveMenu(null)}
-                          className="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#D4030C] hover:bg-[#B50209] text-white text-xs sm:text-[13px] font-black uppercase tracking-wider transition-all shadow-md shadow-red-600/25 active:scale-95"
+                          className="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#0E96E1] hover:bg-[#0C82C4] text-white text-xs sm:text-[13px] font-black uppercase tracking-wider transition-all shadow-md shadow-sky-500/25 active:scale-95"
                         >
                           <span>View Product &amp; Video</span>
                           <ArrowRight className="w-4 h-4" />
@@ -409,30 +407,41 @@ export function Header() {
             {/* 4. Blogs */}
             <Link
               href="/#blog"
-              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#032356] hover:text-[#D4030C] transition-colors relative group whitespace-nowrap tracking-tight"
+              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#014088] hover:text-[#0E96E1] transition-colors relative group whitespace-nowrap tracking-tight"
             >
               <span>Blogs</span>
-              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D4030C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#0E96E1] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
             </Link>
 
             {/* 5. Contact Us */}
             <Link
               href="/#contact"
-              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#032356] hover:text-[#D4030C] transition-colors relative group whitespace-nowrap tracking-tight"
+              className="px-2 py-2 text-[16px] xl:text-[18px] font-black text-[#014088] hover:text-[#0E96E1] transition-colors relative group whitespace-nowrap tracking-tight"
             >
               <span>Contact Us</span>
-              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#D4030C] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+              <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#0E96E1] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
             </Link>
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            {/* Direct CAD Drawings Download Button */}
+            <a
+              href="/downloads/Astro-2026-Precast-Engineering-Catalog-Drawings.pdf"
+              download="Astro-2026-Precast-Engineering-Catalog-Drawings.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center justify-center rounded-full font-bold uppercase tracking-wider transition-all duration-200 border-2 border-[#014088] text-[#014088] hover:bg-[#014088] hover:text-white h-10 px-4 text-xs gap-1.5 whitespace-nowrap active:scale-95 cursor-pointer shadow-xs"
+            >
+              <Download className="w-3.5 h-3.5 text-[#0E96E1]" />
+              <span>DRAWINGS PDF</span>
+            </a>
+
             {/* Direct RFP CTA Button */}
             <Link
               href="/#contact"
-              className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-bold uppercase tracking-wider transition-all duration-300 bg-[#D4030C] text-white shadow-md shadow-red-600/30 hover:bg-[#B50209] hover:shadow-lg h-10 px-5 sm:px-6 text-xs gap-2 select-none whitespace-nowrap active:scale-95"
+              className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-bold uppercase tracking-wider transition-all duration-300 bg-[#0E96E1] text-white shadow-md shadow-sky-500/30 hover:bg-[#0C82C4] hover:shadow-lg h-10 px-5 sm:px-6 text-xs gap-2 select-none whitespace-nowrap active:scale-95"
             >
-              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full" />
               <span className="relative">GET A QUOTE</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
             </Link>
@@ -441,7 +450,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#032356] hover:bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg cursor-pointer"
+              className="lg:hidden p-2 text-[#014088] hover:bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg cursor-pointer"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -459,14 +468,14 @@ export function Header() {
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-base font-bold text-[#032356] hover:text-[#D4030C] border-b border-slate-100"
+            className="block py-2 text-base font-bold text-[#014088] hover:text-[#0E96E1] border-b border-slate-100"
           >
             Home
           </Link>
 
           {/* Company Mobile Submenu */}
           <div className="border-b border-slate-100 pb-2">
-            <span className="text-[11px] font-black tracking-wider text-[#D4030C] uppercase font-mono block mb-1">
+            <span className="text-[11px] font-black tracking-wider text-[#0E96E1] uppercase font-mono block mb-1">
               Company Pages
             </span>
             <div className="space-y-1 pl-2">
@@ -475,7 +484,7 @@ export function Header() {
                   key={idx}
                   href={page.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1.5 text-xs font-semibold text-[#032356] hover:text-[#D4030C]"
+                  className="block py-1.5 text-xs font-semibold text-[#014088] hover:text-[#0E96E1]"
                 >
                   {page.title}
                 </Link>
@@ -485,14 +494,14 @@ export function Header() {
 
           {/* Products Mobile Submenu */}
           <div className="border-b border-slate-100 pb-2">
-            <span className="text-[11px] font-black tracking-wider text-[#D4030C] uppercase font-mono block mb-1">
+            <span className="text-[11px] font-black tracking-wider text-[#0E96E1] uppercase font-mono block mb-1">
               Products
             </span>
             <div className="space-y-1 pl-2">
               <Link
                 href="/#products"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-1.5 text-xs font-bold text-[#D4030C]"
+                className="block py-1.5 text-xs font-bold text-[#0E96E1]"
               >
                 ★ View All Products
               </Link>
@@ -501,7 +510,7 @@ export function Header() {
                   key={idx}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-1 text-xs font-semibold text-[#032356] hover:text-[#D4030C]"
+                  className="block py-1 text-xs font-semibold text-[#014088] hover:text-[#0E96E1]"
                 >
                   {item.name}
                 </Link>
@@ -513,7 +522,7 @@ export function Header() {
           <Link
             href="/#blog"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-base font-bold text-[#032356] hover:text-[#D4030C] border-b border-slate-100"
+            className="block py-2 text-base font-bold text-[#014088] hover:text-[#0E96E1] border-b border-slate-100"
           >
             Blogs
           </Link>
@@ -522,7 +531,7 @@ export function Header() {
           <Link
             href="/#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-base font-bold text-[#032356] hover:text-[#D4030C] border-b border-slate-100"
+            className="block py-2 text-base font-bold text-[#014088] hover:text-[#0E96E1] border-b border-slate-100"
           >
             Contact Us
           </Link>

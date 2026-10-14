@@ -8,21 +8,25 @@
 @import "swiper/css/thumbs";
 
 :root {
-  /* Brand Theme Colors - Exact User Specification */
-  --primary-navy: #072858;
-  --primary-navy-dark: #04357e;
-  --primary-navy-light: #0A377D;
-  --primary-red: #D4030C;
-  --primary-red-hover: #B50209;
+  /* Astro 2026 Brand Specification */
+  --primary-navy: #014088;         /* Astro First / Primary Blue */
+  --primary-navy-dark: #01336D;    /* Astro Deep Navy */
+  --primary-navy-light: #0E96E1;   /* Astro Secondary Blue */
+  --primary-accent: #0E96E1;       /* Astro Secondary Blue */
+  --primary-accent-hover: #0C82C4; /* Astro Secondary Hover */
+  --primary-cyan: #0E96E1;         /* Astro Secondary Blue */
+  --primary-red: #0E96E1;          /* Mapped to Secondary Blue */
+  --primary-red-hover: #0C82C4;
   --color-white: #FFFFFF;
-  --bg-light-blue: #F2F7FF;
-  --highlight-pale-blue: #E8F3FF;
-  --border-light: #DCE5F0;
+  --bg-light-blue: #F0F6FC;        /* Astro Clean Frost Light Blue */
+  --highlight-pale-blue: #E0F2FE;  /* Astro Soft Sky Highlight */
+  --border-light: #D0E2F2;         /* Astro Engineered Light Border */
 
   /* Typography Colors */
-  --text-navy: #032356;
+  --text-navy: #014088;
   --text-body: #1E293B;
-  --text-muted: #64748B;
+  --text-muted: #556B82;
+  --text-accent: #0E96E1;
 
   /* Layout Containers - Expansive Full Width */
   --max-width: 1800px;
@@ -32,13 +36,16 @@
 }
 
 @theme inline {
-  --color-navy: #032356;
-  --color-navy-dark: #011438;
-  --color-navy-light: #0A377D;
-  --color-red: #D4030C;
-  --color-light-blue: #F2F7FF;
-  --color-pale-blue: #E8F3FF;
-  --color-border-light: #DCE5F0;
+  --color-navy: #014088;
+  --color-navy-dark: #01336D;
+  --color-navy-light: #0E96E1;
+  --color-accent: #0E96E1;
+  --color-cyan: #0E96E1;
+  --color-sky: #0E96E1;
+  --color-red: #0E96E1;
+  --color-light-blue: #F0F6FC;
+  --color-pale-blue: #E0F2FE;
+  --color-border-light: #D0E2F2;
   --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
   --font-heading: 'Manrope', system-ui, sans-serif;
 }
@@ -109,7 +116,7 @@ h6 {
 }
 
 .card-clean:hover {
-  border-color: #032356;
+  border-color: #014088;
   background-color: #FAFCFF;
   box-shadow: 0 4px 14px rgba(3, 35, 86, 0.09);
   transform: translateY(-2px);
@@ -124,7 +131,7 @@ h6 {
 
 .card-highlight:hover {
   background-color: #E8F3FF;
-  border-color: #032356;
+  border-color: #014088;
 }
 
 /* Buttons */
@@ -133,43 +140,48 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #032356;
+  background-color: #014088;
   color: #FFFFFF;
   font-weight: 600;
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
-  border: 1px solid #032356;
+  border: 1px solid #014088;
   transition: background-color 0.2s ease, transform 0.1s ease;
   cursor: pointer;
   text-decoration: none;
 }
 
 .btn-navy:hover {
-  background-color: #011438;
-  border-color: #011438;
+  background-color: #014088;
+  border-color: #014088;
 }
 
-.btn-red {
+.btn-red,
+.btn-cyan,
+.btn-astro-accent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #D4030C;
+  background-color: #0E96E1;
   color: #FFFFFF;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
-  border: 1px solid #D4030C;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  border: 1px solid #0E96E1;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   text-decoration: none;
 }
 
-.btn-red:hover {
-  background-color: #B50209;
-  border-color: #B50209;
+.btn-red:hover,
+.btn-cyan:hover,
+.btn-astro-accent:hover {
+  background-color: #0C82C4;
+  border-color: #0C82C4;
+  transform: translateY(-1px);
 }
 
 .btn-outline-navy {
@@ -178,19 +190,20 @@ h6 {
   justify-content: center;
   gap: 0.5rem;
   background-color: #FFFFFF;
-  color: #032356;
-  font-weight: 600;
+  color: #014088;
+  font-weight: 700;
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
-  border: 1px solid #032356;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 2px solid #014088;
+  transition: all 0.2s ease;
   cursor: pointer;
   text-decoration: none;
 }
 
 .btn-outline-navy:hover {
-  background-color: #E8F3FF;
+  background-color: #014088;
+  color: #FFFFFF;
 }
 
 /* Graphical Badges & Pills */
@@ -204,12 +217,13 @@ h6 {
   letter-spacing: 0.05em;
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
-  background-color: #E8F3FF;
-  color: #032356;
-  border: 1px solid #DCE5F0;
+  background-color: #F0F6FC;
+  color: #014088;
+  border: 1px solid #D0E2F2;
 }
 
-.badge-tag-red {
+.badge-tag-red,
+.badge-tag-cyan {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -219,9 +233,52 @@ h6 {
   letter-spacing: 0.05em;
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
-  background-color: #FFF2F2;
-  color: #D4030C;
-  border: 1px solid #FCD2D4;
+  background-color: #E0F2FE;
+  color: #0C82C4;
+  border: 1px solid #BAE6FD;
+}
+
+/* Solid Astro Themes (No Gradients) */
+.section-solid-blue {
+  background-color: #014088;
+  color: #FFFFFF;
+}
+
+.section-solid-navy {
+  background-color: #014088;
+  color: #FFFFFF;
+}
+
+.section-solid-white {
+  background-color: #FFFFFF;
+  color: #014088;
+}
+
+.section-solid-frost {
+  background-color: #F0F6FC;
+  color: #014088;
+  border-top: 1px solid #D0E2F2;
+  border-bottom: 1px solid #D0E2F2;
+}
+
+/* Clean Professional Developer Cards (No Gimmicks) */
+.card-dev-clean {
+  background-color: #FFFFFF;
+  border: 1px solid #D0E2F2;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-dev-clean:hover {
+  border-color: #0E96E1;
+  box-shadow: 0 4px 12px rgba(14, 76, 143, 0.08);
+}
+
+.card-dev-blue {
+  background-color: #014088;
+  border: 1px solid #1662B0;
+  border-radius: 8px;
+  color: #FFFFFF;
 }
 
 html {
@@ -230,7 +287,7 @@ html {
 
 ::selection {
   background-color: #E8F3FF;
-  color: #032356;
+  color: #014088;
 }
 
 /* Swiper custom overrides */
@@ -249,7 +306,7 @@ html {
 .swiper-pagination-bullet-active {
   width: 28px;
   border-radius: 9999px;
-  background-color: #032356 !important;
+  background-color: #014088 !important;
   opacity: 1;
 }
 
@@ -353,11 +410,11 @@ html {
 
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(215, 3, 15, 0.4);
+    box-shadow: 0 0 0 0 rgba(0, 163, 224, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 0 8px rgba(215, 3, 15, 0);
+    box-shadow: 0 0 0 8px rgba(0, 163, 224, 0);
   }
 }
 

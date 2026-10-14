@@ -55,7 +55,7 @@ export function TrustSection() {
               key={idx}
               className="flex items-center gap-2 px-3 py-1.5 bg-white border border-[#CBD5E1] font-mono-spec text-[11px] font-bold text-[#0A2540] rounded-lg shadow-2xs"
             >
-              <ShieldCheck className="w-3.5 h-3.5 text-[#D4030C] shrink-0" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#0E96E1] shrink-0" />
               <span>{badge}</span>
             </div>
           ))}
@@ -70,7 +70,7 @@ export function TrustSection() {
             >
               <div>
                 <div className="bg-[#EAEEF3] text-[#0A2540] px-4 py-2.5 flex items-center justify-between text-xs font-mono-spec border-b border-[#CBD5E1]">
-                  <span className="text-[#D4030C] font-bold">[{item.projectRef}]</span>
+                  <span className="text-[#0E96E1] font-bold">[{item.projectRef}]</span>
                   <div className="flex text-amber-500 text-xs">
                     ★★★★★
                   </div>
@@ -86,7 +86,7 @@ export function TrustSection() {
 
               <div className="p-4 bg-[#F8FAFC] border-t border-[#CBD5E1]">
                 <div className="font-bold text-[#0A2540] text-xs uppercase tracking-tight">{item.author}</div>
-                <div className="text-[11px] font-mono-spec text-[#D4030C] font-bold">{item.role}</div>
+                <div className="text-[11px] font-mono-spec text-[#0E96E1] font-bold">{item.role}</div>
                 <div className="text-[11px] text-[#64748B] font-normal">{item.company}</div>
               </div>
             </div>

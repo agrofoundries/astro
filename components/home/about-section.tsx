@@ -34,78 +34,78 @@ export function AboutSection() {
           <div className="lg:col-span-6">
             <SectionHeading
               eyebrow="Company Background"
-              specCode="PRECAST QUALITY"
-              title="Precast Concrete Manufacturing"
-              description="Founded on high quality standards, reliable concrete strength, and straightforward partnership with contractors and builders."
+              specCode="ASTRO PRECAST"
+              title="Astro Precast & Masonry Manufacturing"
+              description="Founded on high quality standards, reliable concrete strength, and straightforward partnership with Long Island and NY metro contractors."
             />
 
             <p className="text-xs sm:text-sm text-[#475569] leading-relaxed font-normal mt-3">
-              Our enclosed precast concrete plant combines computerized batching with experienced craftspeople. From initial drawings through site delivery, we take pride in manufacturing strong, reliable concrete products for essential infrastructure.
+              Astro Masonry &amp; Precast operates enclosed precast concrete plant casting beds in Deer Park, NY. From stamped engineering calculations through site delivery, we manufacture certified 5,000+ PSI precast drainage structures, septic tanks, and utility vaults for essential infrastructure.
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {VALUES.map((val, idx) => {
                 const Icon = val.icon;
                 return (
-                  <div key={idx} className="p-3.5 bg-[#F8FAFC] border-2 border-[#CBD5E1] border-l-4 border-l-[#0A2540] rounded-xl shadow-2xs">
-                    <div className="flex items-center gap-2 mb-1 text-[#0A2540]">
-                      <Icon className="w-4 h-4 text-[#D4030C] shrink-0" />
+                  <div key={idx} className="p-3.5 bg-white border border-[#D0E2F2] border-l-4 border-l-[#014088] rounded-xl shadow-xs">
+                    <div className="flex items-center gap-2 mb-1 text-[#014088]">
+                      <Icon className="w-4 h-4 text-[#0E96E1] shrink-0" />
                       <h4 className="text-xs font-bold uppercase tracking-tight">{val.title}</h4>
                     </div>
-                    <p className="text-[11px] text-[#475569] leading-relaxed font-normal">{val.desc}</p>
+                    <p className="text-[11px] text-[#556B82] leading-relaxed font-normal">{val.desc}</p>
                   </div>
                 );
               })}
             </div>
 
             <div className="mt-6">
-              <Link href="/about" className="btn btn-usa-blue">
-                Learn More About Our Company
+              <Link href="/about" className="btn btn-navy">
+                Learn More About Astro Precast
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
           </div>
 
           <div className="lg:col-span-6 relative">
-            <div className="p-3 bg-[#EAEEF3] border-2 border-[#CBD5E1] rounded-2xl shadow-xl">
+            <div className="p-4 bg-[#F0F6FC] border-2 border-[#D0E2F2] rounded-2xl shadow-md">
               <div className="grid grid-cols-2 gap-3">
-                <div className="relative aspect-square overflow-hidden rounded-xl border border-[#CBD5E1]">
+                <div className="relative aspect-square overflow-hidden rounded-xl border border-[#D0E2F2]">
                   <Image
                     src="/images/manufacturing.jpg"
-                    alt="Precast facility floor"
+                    alt="Astro precast facility floor"
                     fill
                     className="object-cover"
                     sizes="25vw"
                   />
-                  <div className="absolute bottom-2 left-2 bg-white/95 text-[#0A2540] font-mono-spec text-[9px] font-bold px-2 py-0.5 rounded border border-[#CBD5E1]">
-                    PLANT CASTING BAY
+                  <div className="absolute bottom-2 left-2 bg-white text-[#014088] font-mono-spec text-[9px] font-bold px-2 py-0.5 rounded border border-[#D0E2F2]">
+                    DEER PARK CASTING YARD
                   </div>
                 </div>
 
-                <div className="p-5 sm:p-6 bg-[#0A2540] text-white flex flex-col justify-center rounded-xl shadow-sm">
-                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-white">PCI</div>
-                  <div className="font-mono-spec text-[10px] font-bold uppercase tracking-wider text-slate-300 mt-1">
-                    SPECIFICATION QUALITY
+                <div className="p-5 sm:p-6 bg-[#014088] text-white flex flex-col justify-center rounded-xl shadow-sm">
+                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-white">4,000</div>
+                  <div className="font-mono-spec text-[10px] font-bold uppercase tracking-wider text-sky-200 mt-1">
+                    PSI COMPRESSIVE STRENGTH
                   </div>
                 </div>
 
-                <div className="p-5 sm:p-6 bg-white border border-[#CBD5E1] text-[#0A2540] flex flex-col justify-center rounded-xl shadow-sm">
-                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-[#D4030C]">DOT</div>
-                  <div className="font-mono-spec text-[10px] font-bold uppercase tracking-wider text-[#64748B] mt-1">
-                    TESTED CONCRETE MIXES
+                <div className="p-5 sm:p-6 bg-white border border-[#D0E2F2] text-[#014088] flex flex-col justify-center rounded-xl shadow-sm">
+                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-[#0E96E1]">HS-20</div>
+                  <div className="font-mono-spec text-[10px] font-bold uppercase tracking-wider text-[#556B82] mt-1">
+                    AASHTO TRAFFIC RATED
                   </div>
                 </div>
 
-                <div className="relative aspect-square overflow-hidden rounded-xl border border-[#CBD5E1]">
+                <div className="relative aspect-square overflow-hidden rounded-xl border border-[#D0E2F2]">
                   <Image
                     src="/images/commercial-building.jpg"
-                    alt="Erected precast commercial building"
+                    alt="Installed precast concrete infrastructure"
                     fill
                     className="object-cover"
                     sizes="25vw"
                   />
-                  <div className="absolute bottom-2 left-2 bg-white/95 text-[#0A2540] font-mono-spec text-[9px] font-bold px-2 py-0.5 rounded border border-[#CBD5E1]">
-                    COMPLETED ERECTION
+                  <div className="absolute bottom-2 left-2 bg-white text-[#014088] font-mono-spec text-[9px] font-bold px-2 py-0.5 rounded border border-[#D0E2F2]">
+                    LONG ISLAND INFRASTRUCTURE
                   </div>
                 </div>
               </div>

@@ -55,11 +55,11 @@ export function ManufacturingSection() {
             <div className="mt-3 p-3.5 bg-white border border-[#CBD5E1] rounded-xl shadow-sm grid grid-cols-2 gap-3 text-center">
               <div className="p-2">
                 <span className="text-[#64748B] text-xs font-bold block uppercase font-mono">STANDARDS</span>
-                <span className="text-[#032356] font-black text-lg">PCI &amp; ASTM</span>
+                <span className="text-[#014088] font-black text-lg">PCI &amp; ASTM</span>
               </div>
               <div className="p-2 border-l border-[#CBD5E1]">
                 <span className="text-[#64748B] text-xs font-bold block uppercase font-mono">HANDLING</span>
-                <span className="text-[#D4030C] font-black text-lg">OVERHEAD CRANES</span>
+                <span className="text-[#0E96E1] font-black text-lg">OVERHEAD CRANES</span>
               </div>
             </div>
           </div>
@@ -70,11 +70,11 @@ export function ManufacturingSection() {
               {CAPABILITIES_LIST.map((item) => (
                 <div
                   key={item.tag}
-                  className="p-4 bg-white border border-[#CBD5E1] border-l-4 border-l-[#032356] rounded-xl shadow-xs hover:shadow-md transition-shadow"
+                  className="p-4 bg-white border border-[#CBD5E1] border-l-4 border-l-[#014088] rounded-xl shadow-xs hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-mono text-[10px] font-bold text-[#D4030C]">[{item.tag}]</span>
-                    <h3 className="text-sm font-bold text-[#032356] uppercase tracking-tight">{item.title}</h3>
+                    <span className="font-mono text-[10px] font-bold text-[#0E96E1]">[{item.tag}]</span>
+                    <h3 className="text-sm font-bold text-[#014088] uppercase tracking-tight">{item.title}</h3>
                   </div>
                   <p className="text-xs text-[#475569] leading-relaxed font-normal pl-6">{item.description}</p>
                 </div>

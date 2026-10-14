@@ -80,7 +80,7 @@ export function KnowledgeCenter() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10">
           <span className="badge-tag mb-3">Educational Library</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
             Knowledge Center
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -97,8 +97,8 @@ export function KnowledgeCenter() {
               onClick={() => setSelectedCat(cat)}
               className={`text-xs px-3.5 py-1.5 rounded-full border transition-all cursor-pointer ${
                 selectedCat === cat
-                  ? "bg-[#032356] text-white border-[#032356] font-semibold"
-                  : "bg-white text-[#032356] border-[#DCE5F0] hover:bg-[#E8F3FF]"
+                  ? "bg-[#014088] text-white border-[#014088] font-semibold"
+                  : "bg-white text-[#014088] border-[#DCE5F0] hover:bg-[#E8F3FF]"
               }`}
             >
               {cat}
@@ -111,11 +111,11 @@ export function KnowledgeCenter() {
           {filteredArticles.map((article) => (
             <div
               key={article.id}
-              className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between hover:border-[#032356] transition-all"
+              className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between hover:border-[#014088] transition-all"
             >
               <div>
                 <div className="flex items-center justify-between mb-3 text-[11px]">
-                  <span className="font-bold text-[#D4030C] uppercase tracking-wider bg-[#FFF2F2] px-2 py-0.5 rounded border border-[#FCD2D4]">
+                  <span className="font-bold text-[#0E96E1] uppercase tracking-wider bg-[#E0F2FE] px-2 py-0.5 rounded border border-[#BAE6FD]">
                     {article.category}
                   </span>
                   <span className="text-[#64748B] flex items-center gap-1">
@@ -124,7 +124,7 @@ export function KnowledgeCenter() {
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-[#032356] mb-3 leading-snug">
+                <h3 className="text-base font-bold text-[#014088] mb-3 leading-snug">
                   {article.title}
                 </h3>
 
@@ -139,7 +139,7 @@ export function KnowledgeCenter() {
                   onClick={() => {
                     alert(`Opening educational article: "${article.title}"`);
                   }}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#032356] hover:text-[#D4030C] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#014088] hover:text-[#0E96E1] transition-colors cursor-pointer"
                 >
                   <span>Read Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />

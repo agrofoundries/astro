@@ -11,7 +11,7 @@ export function AboutPrecastEngineers() {
           <div className="lg:col-span-7 space-y-6">
             <div>
               <span className="badge-tag mb-3">Company Overview</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
                 About Precast Engineers
               </h2>
             </div>
@@ -27,8 +27,8 @@ export function AboutPrecastEngineers() {
             {/* Core Values / Commitments */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
               <div className="p-4 bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg space-y-1">
-                <div className="flex items-center gap-2 text-[#032356] font-bold">
-                  <CheckCircle2 className="w-4 h-4 text-[#D4030C]" />
+                <div className="flex items-center gap-2 text-[#014088] font-bold">
+                  <CheckCircle2 className="w-4 h-4 text-[#0E96E1]" />
                   <span>Technical Relevance</span>
                 </div>
                 <p className="text-[#64748B] text-[11px]">
@@ -37,8 +37,8 @@ export function AboutPrecastEngineers() {
               </div>
 
               <div className="p-4 bg-[#F2F7FF] border border-[#DCE5F0] rounded-lg space-y-1">
-                <div className="flex items-center gap-2 text-[#032356] font-bold">
-                  <CheckCircle2 className="w-4 h-4 text-[#D4030C]" />
+                <div className="flex items-center gap-2 text-[#014088] font-bold">
+                  <CheckCircle2 className="w-4 h-4 text-[#0E96E1]" />
                   <span>Empowering Precasters</span>
                 </div>
                 <p className="text-[#64748B] text-[11px]">
@@ -69,7 +69,7 @@ export function AboutPrecastEngineers() {
                 className="w-full h-[340px] sm:h-[400px] object-cover"
               />
               <div className="p-3 bg-white border-t border-[#DCE5F0] text-xs text-[#64748B]">
-                <p className="font-semibold text-[#032356]">
+                <p className="font-semibold text-[#014088]">
                   Precast Engineering &amp; Detailing Practice
                 </p>
                 <p className="text-[11px]">

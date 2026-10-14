@@ -163,21 +163,21 @@ export function LocationsSection() {
   return (
     <section
       id="locations"
-      className="relative w-full min-h-screen lg:h-screen lg:max-h-screen bg-[#032356] text-white py-5 sm:py-6 lg:py-6 flex flex-col justify-center border-b border-[#032356] overflow-hidden"
+      className="relative w-full min-h-screen lg:h-screen lg:max-h-screen bg-[#014088] text-white py-5 sm:py-6 lg:py-6 flex flex-col justify-center border-b border-[#014088] overflow-hidden"
     >
       <div className="section-container-wide w-full flex flex-col justify-center max-w-7xl">
         {/* Header with Red Accent and Clean Text */}
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-1.5 sm:gap-2 text-center mb-4 lg:mb-5">
           <div className="flex items-center gap-3">
-            <span className="h-0.5 w-7 bg-[#D4030C]" aria-hidden="true" />
-            <p className="text-[11px] font-black uppercase tracking-widest text-[#D4030C]">
+            <span className="h-0.5 w-7 bg-[#0E96E1]" aria-hidden="true" />
+            <p className="text-[11px] font-black uppercase tracking-widest text-[#0E96E1]">
               STRATEGIC FOOTPRINT
             </p>
-            <span className="h-0.5 w-7 bg-[#D4030C]" aria-hidden="true" />
+            <span className="h-0.5 w-7 bg-[#0E96E1]" aria-hidden="true" />
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white uppercase">
-            Seven offices, <span className="text-[#D4030C]">one delivery standard</span>
+            Seven offices, <span className="text-[#0E96E1]">one delivery standard</span>
           </h2>
 
           <p className="max-w-2xl text-xs sm:text-sm leading-relaxed text-slate-300 font-medium">
@@ -185,8 +185,8 @@ export function LocationsSection() {
           </p>
         </div>
 
-        {/* Main Card Container in Rich #032356 Navy Blue */}
-        <div className="bg-[#02173B] rounded-3xl border border-[#0B3A82]/50 shadow-2xl p-4 sm:p-5 lg:p-6">
+        {/* Main Card Container in Rich #014088 Navy Blue */}
+        <div className="bg-[#012B5C] rounded-3xl border border-[#0B3A82]/50 shadow-2xl p-4 sm:p-5 lg:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
             {/* Left Column: 7 Office Buttons (Compact, fits all 7 within 100vh) */}
             <div className="lg:col-span-5 flex flex-col gap-2 justify-between">
@@ -200,14 +200,14 @@ export function LocationsSection() {
                     onClick={() => setActiveId(loc.id)}
                     className={`group relative flex w-full items-center justify-between gap-3 rounded-xl border px-3.5 py-2.5 text-left transition-all duration-200 cursor-pointer ${
                       isSelected
-                        ? "border-[#D4030C] bg-[#052C69] shadow-md shadow-red-950/30"
-                        : "border-[#0B3A82]/40 bg-[#032356] hover:border-[#0A4BB3] hover:bg-[#073070]"
+                        ? "border-[#0E96E1] bg-[#052C69] shadow-md shadow-red-950/30"
+                        : "border-[#0B3A82]/40 bg-[#014088] hover:border-[#0A4BB3] hover:bg-[#073070]"
                     }`}
                   >
                     {/* Active Left Indicator Pill */}
                     {isSelected && (
                       <span
-                        className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-[#D4030C]"
+                        className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-[#0E96E1]"
                         aria-hidden="true"
                       />
                     )}
@@ -217,7 +217,7 @@ export function LocationsSection() {
                       <div
                         className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                           isSelected
-                            ? "bg-[#D4030C] text-white shadow-xs"
+                            ? "bg-[#0E96E1] text-white shadow-xs"
                             : "bg-[#0B3A82] text-slate-200"
                         }`}
                       >
@@ -237,7 +237,7 @@ export function LocationsSection() {
                           <span
                             className={`px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider shrink-0 ${
                               isSelected
-                                ? "bg-[#D4030C] text-white"
+                                ? "bg-[#0E96E1] text-white"
                                 : "bg-[#0B3A82] text-slate-200"
                             }`}
                           >
@@ -255,7 +255,7 @@ export function LocationsSection() {
                     <ArrowUpRight
                       className={`w-4 h-4 shrink-0 transition-transform ${
                         isSelected
-                          ? "text-[#D4030C] translate-x-0.5 -translate-y-0.5"
+                          ? "text-[#0E96E1] translate-x-0.5 -translate-y-0.5"
                           : "text-slate-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       }`}
                     />
@@ -270,7 +270,7 @@ export function LocationsSection() {
                 {/* Details Column */}
                 <div className="md:col-span-6 flex flex-col justify-between space-y-4">
                   <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#D4030C]">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#0E96E1]">
                       {activeLoc.role}
                     </span>
 
@@ -286,7 +286,7 @@ export function LocationsSection() {
                   {/* Contact Info Rows with Red Accent Icons */}
                   <div className="space-y-2.5 text-xs">
                     <div className="flex items-start gap-2.5 text-slate-200">
-                      <div className="w-5 h-5 rounded bg-[#D4030C] text-white flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded bg-[#0E96E1] text-white flex items-center justify-center shrink-0 mt-0.5">
                         <Building2 className="w-3 h-3" />
                       </div>
                       <span className="leading-snug font-medium">
@@ -295,19 +295,19 @@ export function LocationsSection() {
                     </div>
 
                     <div className="flex items-center gap-2.5 text-slate-200">
-                      <div className="w-5 h-5 rounded bg-[#D4030C] text-white flex items-center justify-center shrink-0">
+                      <div className="w-5 h-5 rounded bg-[#0E96E1] text-white flex items-center justify-center shrink-0">
                         <Phone className="w-3 h-3" />
                       </div>
                       <a
                         href={`tel:${activeLoc.phoneRaw}`}
-                        className="font-bold text-white hover:text-[#D4030C] transition-colors"
+                        className="font-bold text-white hover:text-[#0E96E1] transition-colors"
                       >
                         {activeLoc.phone}
                       </a>
                     </div>
 
                     <div className="flex items-center gap-2.5 text-slate-200">
-                      <div className="w-5 h-5 rounded bg-[#D4030C] text-white flex items-center justify-center shrink-0">
+                      <div className="w-5 h-5 rounded bg-[#0E96E1] text-white flex items-center justify-center shrink-0">
                         <Clock className="w-3 h-3" />
                       </div>
                       <span className="font-mono text-[11px] text-slate-300">
@@ -325,7 +325,7 @@ export function LocationsSection() {
                       {activeLoc.capabilities.map((cap, idx) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#032356] border border-[#0B3A82]/60 text-slate-200 hover:border-[#D4030C] transition-colors"
+                          className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#014088] border border-[#0B3A82]/60 text-slate-200 hover:border-[#0E96E1] transition-colors"
                         >
                           {cap}
                         </span>
@@ -337,7 +337,7 @@ export function LocationsSection() {
                 {/* Media Cards Column (Image + Map) */}
                 <div className="md:col-span-6 flex flex-col gap-3">
                   {/* Office Graphic / Photo Card */}
-                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-[#0B3A82]/60 bg-[#032356] shadow-xs">
+                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-[#0B3A82]/60 bg-[#014088] shadow-xs">
                     <Image
                       src={activeLoc.image}
                       alt={`${activeLoc.region} office at ${activeLoc.address}`}
@@ -345,16 +345,16 @@ export function LocationsSection() {
                       sizes="(max-width: 1024px) 100vw, 300px"
                       className="object-cover"
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#02173B]/95 to-transparent p-2">
+                    <div className="absolute inset-x-0 bottom-0 bg-[#012B5C]/90 p-2 border-t border-[#0B3A82]/60">
                       <div className="flex items-center gap-1.5 text-white text-[10px] font-bold">
-                        <Building2 className="w-3 h-3 text-[#D4030C]" />
+                        <Building2 className="w-3 h-3 text-[#0E96E1]" />
                         <span>{activeLoc.region} office</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Embedded Google Map Preview */}
-                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-[#0B3A82]/60 bg-[#032356] shadow-xs">
+                  <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden border border-[#0B3A82]/60 bg-[#014088] shadow-xs">
                     <iframe
                       src={`https://www.google.com/maps?q=${encodeURIComponent(
                         activeLoc.mapQuery
@@ -364,9 +364,9 @@ export function LocationsSection() {
                       referrerPolicy="no-referrer-when-downgrade"
                       className="absolute inset-0 h-full w-full border-0"
                     />
-                    <div className="absolute top-2 left-2 bg-[#032356]/90 backdrop-blur-xs px-2 py-0.5 rounded text-[10px] font-bold text-white border border-[#0B3A82] shadow-xs flex items-center gap-1">
+                    <div className="absolute top-2 left-2 bg-[#014088]/90 backdrop-blur-xs px-2 py-0.5 rounded text-[10px] font-bold text-white border border-[#0B3A82] shadow-xs flex items-center gap-1">
                       <span>Maps</span>
-                      <ExternalLink className="w-2.5 h-2.5 text-[#D4030C]" />
+                      <ExternalLink className="w-2.5 h-2.5 text-[#0E96E1]" />
                     </div>
                   </div>
 
@@ -377,10 +377,10 @@ export function LocationsSection() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wider text-white hover:text-[#D4030C] transition-colors self-start"
+                    className="inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wider text-white hover:text-[#0E96E1] transition-colors self-start"
                   >
                     <span>OPEN GOOGLE MAP</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#D4030C]" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#0E96E1]" />
                   </a>
                 </div>
               </div>
@@ -396,7 +396,7 @@ export function LocationsSection() {
                   </div>
                 </div>
                 <div className="border-x border-slate-800">
-                  <div className="text-base sm:text-lg font-black text-[#D4030C] leading-tight">
+                  <div className="text-base sm:text-lg font-black text-[#0E96E1] leading-tight">
                     Licensed PE
                   </div>
                   <div className="text-[9px] uppercase font-bold text-slate-400">

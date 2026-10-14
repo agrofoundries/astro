@@ -83,7 +83,7 @@ export default function ResourcesPage() {
               >
                 <div>
                   <div className="flex items-center justify-between text-xs mb-3">
-                    <span className="px-2.5 py-1 rounded bg-red-100 text-brand-primary font-bold">
+                    <span className="px-2.5 py-1 rounded bg-sky-100 text-brand-primary font-bold">
                       {doc.section}
                     </span>
                     <span className="text-gray-400 font-medium">{doc.format}</span>

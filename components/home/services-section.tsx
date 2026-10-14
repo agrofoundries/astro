@@ -79,16 +79,16 @@ const SERVICES: ServiceItem[] = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="w-full bg-[#032356] bg-gradient-to-br from-[#032356] via-[#081F3B] to-[#032356] text-white py-12 sm:py-16 border-b border-[#032356]">
+    <section id="services" className="w-full bg-[#014088] text-white py-12 sm:py-16 border-b border-[#014088]">
       <div className="section-container-wide">
         {/* Header */}
         <div className="max-w-3xl mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D4030C] mb-2">
-            <span className="w-3 h-0.5 bg-[#D4030C]" />
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#0E96E1] mb-2">
+            <span className="w-3 h-0.5 bg-[#0E96E1]" />
             <span>PRECAST STRUCTURAL DISCIPLINES</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase">
-            Engineering &amp; <span className="text-[#D4030C]">3D BIM Services</span>
+            Engineering &amp; <span className="text-[#0E96E1]">3D BIM Services</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-300 mt-2 leading-relaxed">
             Specialized engineering services focused specifically on precast and prestressed concrete infrastructure across the United States.
@@ -102,13 +102,13 @@ export function ServicesSection() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 group border-t-4 border-[#D4030C]"
+                className="bg-white rounded-xl p-6 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 group border-t-4 border-[#0E96E1]"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#F4F8FD] border border-[#DCE5F0] flex items-center justify-center text-[#032356] group-hover:bg-[#032356] group-hover:text-white transition-colors mb-5">
-                    <Icon className="w-6 h-6 text-[#D4030C] group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-[#F4F8FD] border border-[#DCE5F0] flex items-center justify-center text-[#014088] group-hover:bg-[#014088] group-hover:text-white transition-colors mb-5">
+                    <Icon className="w-6 h-6 text-[#0E96E1] group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-black text-[#032356] group-hover:text-[#D4030C] transition-colors mb-2 leading-snug">
+                  <h3 className="text-base sm:text-lg font-black text-[#014088] group-hover:text-[#0E96E1] transition-colors mb-2 leading-snug">
                     {service.title}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed mb-6 font-normal">
@@ -118,10 +118,10 @@ export function ServicesSection() {
 
                 <Link
                   href={service.href}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#032356] group-hover:text-[#D4030C] transition-colors mt-auto pt-4 border-t border-slate-100"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#014088] group-hover:text-[#0E96E1] transition-colors mt-auto pt-4 border-t border-slate-100"
                 >
                   <span>Inquire About This Service</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#D4030C]" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#0E96E1]" />
                 </Link>
               </div>
             );

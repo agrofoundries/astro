@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large archives and uncompressed raw assets (>100MB)
+*.zip
+public/*.zip
+public/ASTRO 2026 FINAL mike copy (1).pdf
+public/images/debug_*
+

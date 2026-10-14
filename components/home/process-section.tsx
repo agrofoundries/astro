@@ -41,7 +41,7 @@ export function ProcessSection() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <span className="badge-tag mb-3">Engineering Workflow</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
             Our Engineering Process
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -56,18 +56,18 @@ export function ProcessSection() {
             return (
               <div
                 key={index}
-                className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between relative hover:border-[#032356] transition-all"
+                className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between relative hover:border-[#014088] transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-black text-[#D4030C]">
+                    <span className="text-2xl font-black text-[#0E96E1]">
                       {step.number}
                     </span>
-                    <div className="w-8 h-8 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center text-[#032356]">
-                      <Icon className="w-4 h-4 text-[#032356]" />
+                    <div className="w-8 h-8 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center text-[#014088]">
+                      <Icon className="w-4 h-4 text-[#014088]" />
                     </div>
                   </div>
-                  <h3 className="text-base font-bold text-[#032356] mb-2">
+                  <h3 className="text-base font-bold text-[#014088] mb-2">
                     {step.title}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed">

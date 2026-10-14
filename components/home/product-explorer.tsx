@@ -363,13 +363,13 @@ function ProductCard({
     <article
       className={`group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_8px_36px_rgba(1,37,95,0.13)] hover:-translate-y-0.5 ${
         isComparing
-          ? "border-2 border-[#032356] ring-2 ring-[#032356]/15"
-          : "border border-[#DCE5F0] hover:border-[#032356]/40"
+          ? "border-2 border-[#014088] ring-2 ring-[#014088]/15"
+          : "border border-[#DCE5F0] hover:border-[#014088]/40"
       } ${view === "grid" ? "flex flex-col" : "flex flex-row items-stretch"}`}
     >
       {/* Badge */}
       {product.badge && (
-        <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-[#D4030C] text-white text-[10px] font-bold tracking-wider uppercase shadow-sm">
+        <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-[#0E96E1] text-white text-[10px] font-bold tracking-wider uppercase shadow-sm">
           {product.badge}
         </span>
       )}
@@ -381,10 +381,10 @@ function ProductCard({
         aria-label={isComparing ? "Remove from compare" : "Add to compare"}
         className={`absolute top-3 right-3 z-10 flex items-center gap-1 px-2 py-1 rounded-full border text-[10px] font-bold transition-all duration-200 ${
           isComparing
-            ? "bg-[#032356] border-[#032356] text-white"
+            ? "bg-[#014088] border-[#014088] text-white"
             : compareDisabled
             ? "bg-white border-[#DCE5F0] text-[#CBD5E1] cursor-not-allowed"
-            : "bg-white border-[#DCE5F0] text-[#64748B] hover:border-[#032356] hover:text-[#032356]"
+            : "bg-white border-[#DCE5F0] text-[#64748B] hover:border-[#014088] hover:text-[#014088]"
         }`}
       >
         <Scale className="w-3 h-3" />
@@ -393,22 +393,22 @@ function ProductCard({
 
       {/* Visual area */}
       <div
-        className={`relative bg-gradient-to-br from-[#F2F7FF] to-[#EAF0FA] flex items-center justify-center overflow-hidden ${
+        className={`relative bg-[#F0F6FC] flex items-center justify-center overflow-hidden ${
           view === "grid" ? "h-44" : "w-48 shrink-0"
         }`}
       >
-        <Icon className="w-16 h-16 text-[#032356]/12 group-hover:text-[#032356]/22 transition-all duration-500 group-hover:scale-110" />
+        <Icon className="w-16 h-16 text-[#014088]/12 group-hover:text-[#014088]/22 transition-all duration-500 group-hover:scale-110" />
 
         {/* CSI tag */}
-        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-white/90 backdrop-blur-sm text-[10px] font-mono font-bold text-[#032356] border border-[#DCE5F0] shadow-sm">
+        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-white/90 backdrop-blur-sm text-[10px] font-mono font-bold text-[#014088] border border-[#DCE5F0] shadow-sm">
           CSI {product.csiSection}
         </span>
 
         {/* Quick view overlay */}
-        <div className="absolute inset-0 bg-[#032356]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-[#014088]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <button
             onClick={() => onQuickView(product)}
-            className="flex items-center gap-2 bg-white text-[#032356] text-xs font-bold px-4 py-2 rounded-full shadow-lg translate-y-3 group-hover:translate-y-0 transition-transform duration-300"
+            className="flex items-center gap-2 bg-white text-[#014088] text-xs font-bold px-4 py-2 rounded-full shadow-lg translate-y-3 group-hover:translate-y-0 transition-transform duration-300"
           >
             <Eye className="w-3.5 h-3.5" />
             Full Specs
@@ -420,7 +420,7 @@ function ProductCard({
       <div className="flex flex-col flex-1 p-5">
         {/* Category + tags */}
         <div className="flex items-center gap-1.5 flex-wrap mb-2">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#032356] bg-[#F2F7FF] border border-[#DCE5F0] px-2 py-0.5 rounded-md">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#014088] bg-[#F2F7FF] border border-[#DCE5F0] px-2 py-0.5 rounded-md">
             {product.category}
           </span>
           {product.tags.slice(0, 2).map((tag) => (
@@ -433,7 +433,7 @@ function ProductCard({
           ))}
         </div>
 
-        <h3 className="text-sm font-extrabold text-[#032356] leading-snug mb-0.5">
+        <h3 className="text-sm font-extrabold text-[#014088] leading-snug mb-0.5">
           {product.name}
         </h3>
         <p className="text-[11px] text-[#64748B] mb-3 leading-relaxed">
@@ -450,7 +450,7 @@ function ProductCard({
               <div className="text-[9px] text-[#94A3B8] font-bold uppercase tracking-wider leading-none mb-0.5">
                 {spec.label}
               </div>
-              <div className="text-[11px] font-bold text-[#032356] leading-tight">
+              <div className="text-[11px] font-bold text-[#014088] leading-tight">
                 {spec.value}
               </div>
             </div>
@@ -468,14 +468,14 @@ function ProductCard({
         <div className="mt-auto pt-3 border-t border-[#F0F4F8] flex items-center gap-2">
           <Link
             href={`/quote?product=${product.id}`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#D4030C] hover:bg-[#B31217] text-white text-[11px] font-bold px-3 py-2 rounded-lg transition-colors"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0E96E1] hover:bg-[#B31217] text-white text-[11px] font-bold px-3 py-2 rounded-lg transition-colors"
           >
             <ArrowRight className="w-3 h-3" />
             Get Quote
           </Link>
           <button
             onClick={() => onQuickView(product)}
-            className="inline-flex items-center gap-1 border border-[#DCE5F0] hover:border-[#032356] text-[#64748B] hover:text-[#032356] text-[11px] font-semibold px-3 py-2 rounded-lg transition-colors"
+            className="inline-flex items-center gap-1 border border-[#DCE5F0] hover:border-[#014088] text-[#64748B] hover:text-[#014088] text-[11px] font-semibold px-3 py-2 rounded-lg transition-colors"
           >
             <Eye className="w-3 h-3" />
             Specs
@@ -521,21 +521,21 @@ function QuickViewModal({
 
       <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[92vh] flex flex-col">
         {/* Modal Header */}
-        <div className="flex items-start justify-between px-6 py-5 border-b border-[#DCE5F0] bg-gradient-to-r from-[#F2F7FF] to-white shrink-0">
+        <div className="flex items-start justify-between px-6 py-5 border-b border-[#D0E2F2] bg-white shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-xl bg-[#E8F0FA] border border-[#DCE5F0] flex items-center justify-center shrink-0">
-              <Icon className="w-5 h-5 text-[#032356]" />
+              <Icon className="w-5 h-5 text-[#014088]" />
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1 flex-wrap">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4030C] bg-red-50 border border-red-100 px-2 py-0.5 rounded-md">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0E96E1] bg-sky-50 border border-sky-100 px-2 py-0.5 rounded-md">
                   CSI {product.csiSection}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#032356] bg-[#F2F7FF] border border-[#DCE5F0] px-2 py-0.5 rounded-md">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#014088] bg-[#F2F7FF] border border-[#DCE5F0] px-2 py-0.5 rounded-md">
                   {product.category}
                 </span>
               </div>
-              <h2 className="text-base font-black text-[#032356] leading-snug">
+              <h2 className="text-base font-black text-[#014088] leading-snug">
                 {product.name}
               </h2>
               <p className="text-[11px] text-[#64748B]">{product.subtitle}</p>
@@ -570,7 +570,7 @@ function QuickViewModal({
                   <div className="text-[9px] text-[#94A3B8] font-bold uppercase tracking-wider mb-1">
                     {spec.label}
                   </div>
-                  <div className="text-sm font-bold text-[#032356]">
+                  <div className="text-sm font-bold text-[#014088]">
                     {spec.value}
                   </div>
                 </div>
@@ -589,7 +589,7 @@ function QuickViewModal({
                   key={h}
                   className="flex items-start gap-2.5 text-xs text-[#475569]"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#D4030C] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#0E96E1] shrink-0 mt-0.5" />
                   {h}
                 </li>
               ))}
@@ -606,7 +606,7 @@ function QuickViewModal({
                 {product.applications.map((app) => (
                   <span
                     key={app}
-                    className="px-2.5 py-1 rounded-full bg-[#F2F7FF] border border-[#DCE5F0] text-[11px] font-semibold text-[#032356]"
+                    className="px-2.5 py-1 rounded-full bg-[#F2F7FF] border border-[#DCE5F0] text-[11px] font-semibold text-[#014088]"
                   >
                     {app}
                   </span>
@@ -635,19 +635,19 @@ function QuickViewModal({
         <div className="px-6 py-4 border-t border-[#DCE5F0] bg-[#FAFBFD] shrink-0 flex flex-wrap items-center justify-between gap-3">
           <div className="text-xs text-[#64748B]">
             Standard:{" "}
-            <span className="font-bold text-[#032356]">{product.standards}</span>
+            <span className="font-bold text-[#014088]">{product.standards}</span>
           </div>
           <div className="flex items-center gap-2">
             <a
               href="/resources"
-              className="inline-flex items-center gap-1.5 border border-[#DCE5F0] hover:border-[#032356] text-[#032356] text-xs font-semibold px-4 py-2 rounded-full transition-colors"
+              className="inline-flex items-center gap-1.5 border border-[#DCE5F0] hover:border-[#014088] text-[#014088] text-xs font-semibold px-4 py-2 rounded-full transition-colors"
             >
               <Download className="w-3.5 h-3.5" />
               Download Spec
             </a>
             <Link
               href={`/quote?product=${product.id}`}
-              className="inline-flex items-center gap-1.5 bg-[#D4030C] hover:bg-[#B31217] text-white text-xs font-bold px-5 py-2 rounded-full transition-colors"
+              className="inline-flex items-center gap-1.5 bg-[#0E96E1] hover:bg-[#B31217] text-white text-xs font-bold px-5 py-2 rounded-full transition-colors"
             >
               Request Quote
               <ArrowRight className="w-3.5 h-3.5" />
@@ -682,17 +682,17 @@ function CompareDrawer({
   ];
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-50 bg-[#06182E] border-t-2 border-[#D4030C] shadow-2xl">
+    <div className="fixed bottom-0 inset-x-0 z-50 bg-[#06182E] border-t-2 border-[#0E96E1] shadow-2xl">
       {/* Compact bar */}
       <div
         className="section-container-wide flex items-center justify-between py-3 cursor-pointer select-none"
         onClick={() => setExpanded((v) => !v)}
       >
         <div className="flex items-center gap-3">
-          <Scale className="w-4 h-4 text-[#D4030C] shrink-0" />
+          <Scale className="w-4 h-4 text-[#0E96E1] shrink-0" />
           <span className="text-sm font-bold text-white">
             Comparing{" "}
-            <span className="text-[#D4030C]">{products.length}</span>
+            <span className="text-[#0E96E1]">{products.length}</span>
             /3 selected
           </span>
           <div className="hidden sm:flex items-center gap-2">
@@ -707,7 +707,7 @@ function CompareDrawer({
                     e.stopPropagation();
                     onRemove(p.id);
                   }}
-                  className="ml-0.5 text-slate-400 hover:text-red-400 transition-colors"
+                  className="ml-0.5 text-slate-400 hover:text-sky-400 transition-colors"
                   aria-label={`Remove ${p.name}`}
                 >
                   <X className="w-3 h-3" />
@@ -759,7 +759,7 @@ function CompareDrawer({
                 <div key={p.id} className="w-60 shrink-0 py-5 px-4">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#D4030C] mb-0.5">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#0E96E1] mb-0.5">
                         {p.category}
                       </div>
                       <div className="text-xs font-bold text-white leading-snug line-clamp-2">
@@ -768,7 +768,7 @@ function CompareDrawer({
                     </div>
                     <button
                       onClick={() => onRemove(p.id)}
-                      className="text-slate-600 hover:text-red-400 transition-colors ml-2 mt-0.5 shrink-0"
+                      className="text-slate-600 hover:text-sky-400 transition-colors ml-2 mt-0.5 shrink-0"
                       aria-label={`Remove ${p.name}`}
                     >
                       <X className="w-3.5 h-3.5" />
@@ -787,7 +787,7 @@ function CompareDrawer({
                   <div className="pt-4">
                     <Link
                       href={`/quote?product=${p.id}`}
-                      className="inline-flex items-center gap-1.5 bg-[#D4030C] hover:bg-[#B31217] text-white text-[11px] font-bold px-3 py-1.5 rounded-full transition-colors"
+                      className="inline-flex items-center gap-1.5 bg-[#0E96E1] hover:bg-[#B31217] text-white text-[11px] font-bold px-3 py-1.5 rounded-full transition-colors"
                     >
                       Quote
                       <ArrowRight className="w-3 h-3" />
@@ -887,14 +887,14 @@ export function ProductExplorer() {
         <div className="section-container-wide py-10 md:py-14">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#D4030C] mb-3">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#0E96E1] mb-3">
                 <Filter className="w-3 h-3" />
                 Product Explorer
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#032356] tracking-tight leading-[1.05]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#014088] tracking-tight leading-[1.05]">
                 Browse Our Full
                 <br />
-                <span className="text-[#D4030C]">Precast Catalog</span>
+                <span className="text-[#0E96E1]">Precast Catalog</span>
               </h1>
               <p className="mt-3 text-sm text-[#475569] max-w-xl leading-relaxed">
                 Filter by category, application, and finish type. Compare up to
@@ -913,7 +913,7 @@ export function ProductExplorer() {
                   key={stat.label}
                   className="text-center px-4 py-3 rounded-xl bg-[#F2F7FF] border border-[#DCE5F0]"
                 >
-                  <div className="text-lg font-black text-[#032356]">
+                  <div className="text-lg font-black text-[#014088]">
                     {stat.value}
                   </div>
                   <div className="text-[9px] font-bold text-[#64748B] uppercase tracking-wider">
@@ -941,7 +941,7 @@ export function ProductExplorer() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 aria-label="Search products"
-                className="w-full pl-9 pr-14 py-2.5 text-sm bg-[#F8F9FB] border border-[#DCE5F0] rounded-xl text-[#032356] placeholder-[#94A3B8] focus:outline-none focus:border-[#032356] focus:ring-2 focus:ring-[#032356]/10 transition-all"
+                className="w-full pl-9 pr-14 py-2.5 text-sm bg-[#F8F9FB] border border-[#DCE5F0] rounded-xl text-[#014088] placeholder-[#94A3B8] focus:outline-none focus:border-[#014088] focus:ring-2 focus:ring-[#014088]/10 transition-all"
               />
               {search ? (
                 <button
@@ -966,15 +966,15 @@ export function ProductExplorer() {
               onClick={() => setMobileSidebarOpen((v) => !v)}
               className={`lg:hidden inline-flex items-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-semibold transition-all ${
                 activeFilterCount > 0
-                  ? "bg-[#032356] border-[#032356] text-white"
-                  : "bg-white border-[#DCE5F0] text-[#64748B] hover:border-[#032356] hover:text-[#032356]"
+                  ? "bg-[#014088] border-[#014088] text-white"
+                  : "bg-white border-[#DCE5F0] text-[#64748B] hover:border-[#014088] hover:text-[#014088]"
               }`}
               aria-expanded={mobileSidebarOpen}
             >
               <SlidersHorizontal className="w-4 h-4" />
               Filters
               {activeFilterCount > 0 && (
-                <span className="w-5 h-5 rounded-full bg-[#D4030C] text-white text-[10px] font-bold flex items-center justify-center">
+                <span className="w-5 h-5 rounded-full bg-[#0E96E1] text-white text-[10px] font-bold flex items-center justify-center">
                   {activeFilterCount}
                 </span>
               )}
@@ -986,7 +986,7 @@ export function ProductExplorer() {
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
               aria-label="Sort products"
-              className="px-3 py-2.5 rounded-xl border border-[#DCE5F0] bg-white text-sm text-[#334155] font-medium focus:outline-none focus:border-[#032356] cursor-pointer"
+              className="px-3 py-2.5 rounded-xl border border-[#DCE5F0] bg-white text-sm text-[#334155] font-medium focus:outline-none focus:border-[#014088] cursor-pointer"
             >
               <option value="default">Sort: Featured</option>
               <option value="name">Sort: Name A–Z</option>
@@ -1002,8 +1002,8 @@ export function ProductExplorer() {
                 aria-pressed={view === "grid"}
                 className={`p-2.5 transition-colors ${
                   view === "grid"
-                    ? "bg-[#032356] text-white"
-                    : "bg-white text-[#94A3B8] hover:text-[#032356]"
+                    ? "bg-[#014088] text-white"
+                    : "bg-white text-[#94A3B8] hover:text-[#014088]"
                 }`}
               >
                 <LayoutGrid className="w-4 h-4" />
@@ -1015,8 +1015,8 @@ export function ProductExplorer() {
                 aria-pressed={view === "list"}
                 className={`p-2.5 transition-colors ${
                   view === "list"
-                    ? "bg-[#032356] text-white"
-                    : "bg-white text-[#94A3B8] hover:text-[#032356]"
+                    ? "bg-[#014088] text-white"
+                    : "bg-white text-[#94A3B8] hover:text-[#014088]"
                 }`}
               >
                 <List className="w-4 h-4" />
@@ -1058,8 +1058,8 @@ export function ProductExplorer() {
                     aria-pressed={isActive}
                     className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                       isActive
-                        ? "bg-[#032356] text-white shadow-sm"
-                        : "text-[#334155] hover:bg-[#F2F7FF] hover:text-[#032356]"
+                        ? "bg-[#014088] text-white shadow-sm"
+                        : "text-[#334155] hover:bg-[#F2F7FF] hover:text-[#014088]"
                     }`}
                   >
                     <span>{cat}</span>
@@ -1091,14 +1091,14 @@ export function ProductExplorer() {
                     aria-pressed={isSelected}
                     className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                       isSelected
-                        ? "bg-[#FFF2F2] border border-[#D4030C]/20 text-[#D4030C]"
-                        : "text-[#475569] hover:bg-[#F8F9FB] hover:text-[#032356]"
+                        ? "bg-[#E0F2FE] border border-[#0E96E1]/20 text-[#0E96E1]"
+                        : "text-[#475569] hover:bg-[#F8F9FB] hover:text-[#014088]"
                     }`}
                   >
                     <span
                       className={`w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 transition-all ${
                         isSelected
-                          ? "bg-[#D4030C] border-[#D4030C]"
+                          ? "bg-[#0E96E1] border-[#0E96E1]"
                           : "border-[#DCE5F0]"
                       }`}
                       aria-hidden="true"
@@ -1130,7 +1130,7 @@ export function ProductExplorer() {
           {activeFilterCount > 0 && (
             <button
               onClick={clearAll}
-              className="w-full flex items-center justify-center gap-1.5 text-xs font-bold text-[#D4030C] py-2 border border-[#D4030C]/20 rounded-xl hover:bg-red-50 transition-colors"
+              className="w-full flex items-center justify-center gap-1.5 text-xs font-bold text-[#0E96E1] py-2 border border-[#0E96E1]/20 rounded-xl hover:bg-sky-50 transition-colors"
             >
               <X className="w-3 h-3" />
               Clear Filters ({activeFilterCount})
@@ -1139,7 +1139,7 @@ export function ProductExplorer() {
 
           {/* Sidebar CTA */}
           <div className="pt-2 border-t border-[#F0F4F8]">
-            <div className="rounded-xl bg-gradient-to-br from-[#032356] to-[#0B4FA0] p-4 text-white">
+            <div className="rounded-xl bg-[#014088] p-4 text-white">
               <div className="text-xs font-black mb-1">Need help choosing?</div>
               <p className="text-[11px] text-blue-100 leading-relaxed mb-3">
                 Our engineers will specify the right product for your project in
@@ -1147,7 +1147,7 @@ export function ProductExplorer() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1 bg-white text-[#032356] text-[11px] font-bold px-3 py-1.5 rounded-full hover:bg-[#F2F7FF] transition-colors"
+                className="inline-flex items-center gap-1 bg-white text-[#014088] text-[11px] font-bold px-3 py-1.5 rounded-full hover:bg-[#F2F7FF] transition-colors"
               >
                 Ask an Engineer
                 <ChevronRight className="w-3 h-3" />
@@ -1165,7 +1165,7 @@ export function ProductExplorer() {
                 Active:
               </span>
               {search.trim() && (
-                <span className="inline-flex items-center gap-1.5 bg-[#F2F7FF] border border-[#DCE5F0] text-[#032356] text-xs font-semibold px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-[#F2F7FF] border border-[#DCE5F0] text-[#014088] text-xs font-semibold px-2.5 py-1 rounded-full">
                   &ldquo;{search}&rdquo;
                   <button onClick={() => setSearch("")} aria-label="Remove search filter">
                     <X className="w-3 h-3" />
@@ -1173,7 +1173,7 @@ export function ProductExplorer() {
                 </span>
               )}
               {activeCategory !== "All Products" && (
-                <span className="inline-flex items-center gap-1.5 bg-[#032356] text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-[#014088] text-white text-xs font-semibold px-2.5 py-1 rounded-full">
                   {activeCategory}
                   <button
                     onClick={() => setActiveCategory("All Products")}
@@ -1186,7 +1186,7 @@ export function ProductExplorer() {
               {selectedApplications.map((app) => (
                 <span
                   key={app}
-                  className="inline-flex items-center gap-1.5 bg-[#FFF2F2] border border-red-200 text-[#D4030C] text-xs font-semibold px-2.5 py-1 rounded-full"
+                  className="inline-flex items-center gap-1.5 bg-[#E0F2FE] border border-sky-200 text-[#0E96E1] text-xs font-semibold px-2.5 py-1 rounded-full"
                 >
                   {app}
                   <button
@@ -1206,7 +1206,7 @@ export function ProductExplorer() {
               <div className="w-16 h-16 rounded-2xl bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center mb-5">
                 <Search className="w-8 h-8 text-[#DCE5F0]" />
               </div>
-              <h2 className="text-lg font-black text-[#032356] mb-2">
+              <h2 className="text-lg font-black text-[#014088] mb-2">
                 No products matched
               </h2>
               <p className="text-sm text-[#64748B] mb-6 max-w-sm">
@@ -1216,14 +1216,14 @@ export function ProductExplorer() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={clearAll}
-                  className="inline-flex items-center gap-2 bg-[#032356] text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-[#06182E] transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#014088] text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-[#06182E] transition-colors"
                 >
                   <X className="w-4 h-4" />
                   Clear Filters
                 </button>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 border border-[#DCE5F0] text-[#032356] text-sm font-semibold px-5 py-2.5 rounded-full hover:border-[#032356] transition-colors"
+                  className="inline-flex items-center gap-2 border border-[#DCE5F0] text-[#014088] text-sm font-semibold px-5 py-2.5 rounded-full hover:border-[#014088] transition-colors"
                 >
                   Contact Engineering
                   <ArrowRight className="w-4 h-4" />
@@ -1256,7 +1256,7 @@ export function ProductExplorer() {
               </div>
 
               {/* Bottom banner */}
-              <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#032356] to-[#0B2545] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="mt-12 rounded-2xl bg-[#014088] border border-[#1662B0] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div>
                   <div className="text-[10px] font-bold uppercase tracking-wider text-[#7BA7E8] mb-1">
                     Custom Engineering
@@ -1273,7 +1273,7 @@ export function ProductExplorer() {
                 <div className="flex flex-col gap-3 shrink-0">
                   <Link
                     href="/quote"
-                    className="inline-flex items-center justify-center gap-2 bg-[#D4030C] hover:bg-[#B31217] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 bg-[#0E96E1] hover:bg-[#B31217] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap"
                   >
                     Request Custom Quote
                     <ArrowRight className="w-4 h-4" />

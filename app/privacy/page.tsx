@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         {/* Visual Header */}
         <div className="border-b border-[#DCE5F0] pb-6 mb-10">
           <span className="badge-tag mb-2">Legal &amp; Data Security</span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#032356] mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#014088] mt-2">
             Privacy Policy &amp; Data Protection
           </h1>
           <p className="text-xs text-[#64748B] mt-2">
@@ -53,20 +53,20 @@ export default function PrivacyPage() {
             return (
               <div
                 key={idx}
-                className="bg-[#F2F7FF] border border-[#DCE5F0] rounded-xl p-6 space-y-4 hover:border-[#032356] transition-all"
+                className="bg-[#F2F7FF] border border-[#DCE5F0] rounded-xl p-6 space-y-4 hover:border-[#014088] transition-all"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-white border border-[#DCE5F0] flex items-center justify-center text-[#D4030C]">
+                  <div className="w-9 h-9 rounded-lg bg-white border border-[#DCE5F0] flex items-center justify-center text-[#0E96E1]">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h2 className="text-base font-bold text-[#032356]">
+                  <h2 className="text-base font-bold text-[#014088]">
                     {sec.title}
                   </h2>
                 </div>
 
                 {/* Plain English Highlight Card */}
-                <div className="bg-white border border-[#DCE5F0] rounded-lg p-3.5 flex items-start gap-2.5 text-xs text-[#032356] font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#D4030C] shrink-0 mt-0.5" />
+                <div className="bg-white border border-[#DCE5F0] rounded-lg p-3.5 flex items-start gap-2.5 text-xs text-[#014088] font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-[#0E96E1] shrink-0 mt-0.5" />
                   <p>{sec.summary}</p>
                 </div>
 
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
         {/* Contact Strip */}
         <div className="mt-10 p-6 bg-white border border-[#DCE5F0] rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h3 className="text-sm font-bold text-[#032356]">
+            <h3 className="text-sm font-bold text-[#014088]">
               Questions regarding privacy or NDAs?
             </h3>
             <p className="text-xs text-[#475569]">

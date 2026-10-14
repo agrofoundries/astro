@@ -87,21 +87,21 @@ export function ProductCategories() {
             return (
               <div
                 key={product.catalogId}
-                className="bg-white border-2 border-[#CBD5E1] hover:border-[#0A2540] rounded-xl transition-all shadow-sm hover:shadow-lg flex flex-col justify-between group overflow-hidden"
+                className="bg-white border-2 border-[#D0E2F2] hover:border-[#0E96E1] rounded-xl transition-all shadow-sm hover:shadow-xl flex flex-col justify-between group overflow-hidden astro-3d-card"
               >
                 <div>
                   {/* Clean High-Contrast Header */}
-                  <div className="bg-[#EAEEF3] text-[#0A2540] px-5 py-2.5 flex items-center justify-between text-xs font-mono-spec border-b border-[#CBD5E1]">
-                    <span className="text-[#D4030C] font-bold">{product.csi}</span>
-                    <span className="text-[#64748B] font-bold tracking-wider">{product.catalogId}</span>
+                  <div className="bg-[#E0F2FE] text-[#014088] px-5 py-2.5 flex items-center justify-between text-xs font-mono-spec border-b border-[#D0E2F2]">
+                    <span className="text-[#0C82C4] font-bold">{product.csi}</span>
+                    <span className="text-[#556B82] font-bold tracking-wider">{product.catalogId}</span>
                   </div>
 
                   <div className="p-5 sm:p-6">
-                    <div className="w-11 h-11 bg-[#F4F6F9] border border-[#CBD5E1] text-[#0A2540] rounded-lg flex items-center justify-center mb-3.5 group-hover:bg-[#0A2540] group-hover:text-white group-hover:border-[#0A2540] transition-colors">
+                    <div className="w-11 h-11 bg-[#F0F6FC] border border-[#D0E2F2] text-[#014088] rounded-lg flex items-center justify-center mb-3.5 group-hover:bg-[#014088] group-hover:text-white group-hover:border-[#014088] transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-[#0A2540] tracking-tight mb-2 group-hover:text-[#D4030C] transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-[#014088] tracking-tight mb-2 group-hover:text-[#0E96E1] transition-colors">
                       {product.title}
                     </h3>
 
@@ -116,7 +116,7 @@ export function ProductCategories() {
                       </div>
                       {product.specs.map((spec, i) => (
                         <div key={i} className="flex items-center gap-2 text-xs font-mono-spec text-[#0A2540] font-semibold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#D4030C]" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0E96E1]" />
                           <span>{spec}</span>
                         </div>
                       ))}
@@ -127,7 +127,7 @@ export function ProductCategories() {
                 <div className="p-4 bg-[#F8FAFC] border-t border-[#CBD5E1]">
                   <Link
                     href={product.href}
-                    className="flex items-center justify-between text-xs font-bold text-[#0A2540] group-hover:text-[#D4030C] uppercase tracking-wider"
+                    className="flex items-center justify-between text-xs font-bold text-[#0A2540] group-hover:text-[#0E96E1] uppercase tracking-wider"
                   >
                     <span>View Technical Details</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

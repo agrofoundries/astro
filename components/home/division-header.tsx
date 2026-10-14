@@ -84,10 +84,10 @@ export function DivisionHeader({
   return (
     <div
       id={id}
-      className={`w-full py-10 sm:py-14 border-y border-[#DCE5F0] relative overflow-hidden ${
+      className={`w-full py-12 sm:py-16 relative overflow-hidden ${
         isMfg
-          ? "bg-gradient-to-r from-[#FFF5F5] via-[#FFF9F9] to-white"
-          : "bg-gradient-to-r from-[#F0F6FF] via-[#F6F9FF] to-white"
+          ? "bg-[#014088] text-white border-y border-[#014088]"
+          : "bg-white text-[#014088] border-y border-[#D0E2F2]"
       }`}
     >
       <div className="section-container-wide">
@@ -98,31 +98,51 @@ export function DivisionHeader({
             <div className="flex flex-wrap items-center gap-2.5 mb-3.5">
               <span
                 className={`px-3 py-1 rounded text-[11px] font-black uppercase tracking-wider font-mono shadow-xs ${
-                  isMfg ? "bg-[#D4030C] text-white" : "bg-[#032356] text-white"
+                  isMfg ? "bg-[#0E96E1] text-white" : "bg-[#014088] text-white"
                 }`}
               >
                 DIVISION {divisionNumber}
               </span>
-              <span className="text-xs font-black uppercase tracking-widest text-[#64748B] font-mono">
+              <span
+                className={`text-xs font-black uppercase tracking-widest font-mono ${
+                  isMfg ? "text-sky-200" : "text-[#556B82]"
+                }`}
+              >
                 {badge}
               </span>
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#032356] tracking-tight uppercase leading-[1.1] mb-2.5">
+            <h2
+              className={`text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-[1.1] mb-2.5 ${
+                isMfg ? "text-white" : "text-[#014088]"
+              }`}
+            >
               {title}
             </h2>
 
             {/* Subtitle Accent Line */}
             <div className="flex items-center gap-2.5 mb-4">
-              <span className={`w-8 h-1 rounded-full ${isMfg ? "bg-[#D4030C]" : "bg-[#032356]"}`} />
-              <span className="text-xs sm:text-sm font-extrabold text-[#D4030C] uppercase tracking-wide">
+              <span
+                className={`w-8 h-1 rounded-full ${
+                  isMfg ? "bg-[#0E96E1]" : "bg-[#014088]"
+                }`}
+              />
+              <span
+                className={`text-xs sm:text-sm font-extrabold uppercase tracking-wide ${
+                  isMfg ? "text-[#38BDF8]" : "text-[#0E96E1]"
+                }`}
+              >
                 {subtitle}
               </span>
             </div>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-[#334155] leading-relaxed font-normal mb-6 max-w-2xl">
+            <p
+              className={`text-sm sm:text-base leading-relaxed font-normal mb-6 max-w-2xl ${
+                isMfg ? "text-slate-100" : "text-[#334155]"
+              }`}
+            >
               {description}
             </p>
 
@@ -130,10 +150,10 @@ export function DivisionHeader({
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href={primaryLink.href}
-                className={`inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 ${
+                className={`inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 ${
                   isMfg
-                    ? "bg-[#D4030C] hover:bg-[#B50209] text-white shadow-red-600/25"
-                    : "bg-[#032356] hover:bg-[#02173B] text-white shadow-blue-900/25"
+                    ? "bg-[#0E96E1] hover:bg-[#0C82C4] text-white shadow-md shadow-sky-500/20"
+                    : "bg-[#014088] hover:bg-[#01336D] text-white shadow-md shadow-blue-900/20"
                 }`}
               >
                 {isMfg ? <Factory className="w-4 h-4" /> : <Compass className="w-4 h-4" />}
@@ -144,7 +164,11 @@ export function DivisionHeader({
               {secondaryLink && (
                 <Link
                   href={secondaryLink.href}
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg border-2 border-[#DCE5F0] bg-white hover:bg-slate-50 text-[#032356] text-xs font-black uppercase tracking-wider transition-colors shadow-xs active:scale-95"
+                  className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider transition-colors active:scale-95 ${
+                    isMfg
+                      ? "bg-white text-[#014088] hover:bg-[#F0F6FC] border-2 border-white"
+                      : "bg-white text-[#014088] hover:bg-[#F0F6FC] border-2 border-[#D0E2F2]"
+                  }`}
                 >
                   <span>{secondaryLink.label}</span>
                 </Link>
@@ -152,27 +176,31 @@ export function DivisionHeader({
             </div>
           </div>
 
-          {/* Right Column (5 cols): 4 High-Impact Metric Cards that completely fill the width */}
+          {/* Right Column (5 cols): 4 High-Impact Metric Cards */}
           <div className="lg:col-span-5">
             <div className="grid grid-cols-2 gap-3.5">
               {activeMetrics.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border-2 border-[#DCE5F0] hover:border-[#032356] rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md hover-lift transition-all group flex flex-col justify-between"
+                  className={`rounded-xl p-4 sm:p-5 transition-all flex flex-col justify-between ${
+                    isMfg
+                      ? "bg-white text-[#014088] border-2 border-white shadow-lg"
+                      : "bg-[#F0F6FC] text-[#014088] border-2 border-[#D0E2F2] hover:border-[#0E96E1] shadow-sm"
+                  }`}
                 >
                   <div>
                     <div
                       className={`text-lg sm:text-xl font-black font-mono tracking-tight leading-tight mb-1.5 ${
-                        isMfg ? "text-[#D4030C]" : "text-[#032356]"
+                        isMfg ? "text-[#014088]" : "text-[#0E96E1]"
                       }`}
                     >
                       {item.value}
                     </div>
-                    <div className="text-[11px] font-black text-[#032356] uppercase tracking-wide leading-snug">
+                    <div className="text-[11px] font-black text-[#014088] uppercase tracking-wide leading-snug">
                       {item.label}
                     </div>
                   </div>
-                  <p className="text-[11px] text-[#64748B] leading-tight font-medium mt-2 pt-2 border-t border-slate-100">
+                  <p className="text-[11px] text-[#556B82] leading-tight font-medium mt-2 pt-2 border-t border-slate-200">
                     {item.description}
                   </p>
                 </div>

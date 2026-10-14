@@ -3,12 +3,12 @@ import { SponsorMarquee } from "@/components/home/sponsor-marquee";
 import { DivisionNavigator } from "@/components/home/division-navigator";
 import { DivisionHeader } from "@/components/home/division-header";
 import { CompanyIntro } from "@/components/home/company-intro";
-import { ManufacturingSection } from "@/components/home/manufacturing-section";
+import { IconicProjectsSection } from "@/components/home/iconic-projects";
 import { ProductsSection } from "@/components/home/products-section";
 import { QCAssurance } from "@/components/home/qc-assurance";
 import { DivisionBridge } from "@/components/home/division-bridge";
 import { EngineeringSection } from "@/components/home/engineering-section";
-import { ServicesSection } from "@/components/home/services-section";
+import { EverythingElseWeDo } from "@/components/home/everything-else-we-do";
 import { SoftwareTechnology } from "@/components/home/software-technology";
 import { LocationsSection } from "@/components/home/locations-section";
 import { BlogSection } from "@/components/home/blog-section";
@@ -43,8 +43,8 @@ export default function HomePage() {
       {/* 2. Precision Precast Company Overview & Technical Credentials */}
       <CompanyIntro />
 
-      {/* 3. Plant Metrics & Heavy-Duty Casting Beds */}
-      <ManufacturingSection />
+      {/* 3. Iconic & Ongoing Certified Projects (Replacing duplicate plant section) */}
+      <IconicProjectsSection />
 
       {/* 4. Products Catalog (Heavy Civil Infrastructure First + Complete Line) */}
       <ProductsSection />
@@ -75,8 +75,8 @@ export default function HomePage() {
       {/* 6. In-House Precast Structural Engineering & BIM Detailing */}
       <EngineeringSection />
 
-      {/* 7. 8 Core Precast Engineering Disciplines */}
-      <ServicesSection />
+      {/* 7. Everything Else We Do (Interactive Services Showcase) */}
+      <EverythingElseWeDo />
 
       {/* 8. Digital Engineering Software & CAD/CAM Automation */}
       <SoftwareTechnology />

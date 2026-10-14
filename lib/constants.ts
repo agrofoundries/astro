@@ -1,23 +1,399 @@
-// Brand: Precast Engineers
-// Tagline: "Empowering Precasters"
-// Target: United States of America
+// Brand: Astro Precast Engineering & Masonry (from ASTRO 2026 Catalog)
+// Tagline: "Infrastructure | Utility | Custom Solutions"
+// Location: 928 Long Island Avenue, Deer Park, NY 11729
+// Phone: 631-667 3300 | Email: sales@astromasonry.com | Web: www.astromasonry.com
 
 export const COMPANY = {
-  name: "Precast Engineers",
-  tagline: "Empowering Precasters",
-  phone: "(800) PRECAST",
-  phoneDisplay: "Direct RFQ Desk",
-  email: "contact@precastengineers.com",
-  inquiriesEmail: "rfq@precastengineers.com",
-  hours: "Monday – Friday: 7:00 AM – 5:00 PM CST",
-  location: "United States of America",
+  name: "Astro Precast Engineering",
+  brandName: "Astro Masonry & Precast",
+  tagline: "Infrastructure | Utility | Custom Solutions",
+  catalogTitle: "Advanced Precast Engineering · Product Catalog 2026",
+  phone: "631-667-3300",
+  phoneDisplay: "631-667 3300",
+  email: "sales@astromasonry.com",
+  inquiriesEmail: "sales@astromasonry.com",
+  website: "www.astromasonry.com",
+  hours: "Monday – Friday: 7:00 AM – 5:00 PM EST",
+  location: "Deer Park, Long Island, NY",
   address: {
-    street: "Precast Engineering Technical Center",
-    city: "Chicago",
-    state: "IL",
-    zip: "60606",
+    street: "928 Long Island Avenue",
+    city: "Deer Park",
+    state: "NY",
+    zip: "11729",
   },
 } as const;
+
+export const ASTRO_CATALOG_SPECS = {
+  concreteStrength: "4,000 PSI Minimum 28-Day Compressive Strength",
+  trafficRating: "A.A.S.H.T.O. HS20-44 Heavy Highway Traffic Loading",
+  reinforcementSteel: "ASTM A-615 Grade 60 & ASTM A-185-02 Reinforcing Steel",
+  meshSpec: "WWF 6\" × 12\" - 6&8, W2.0 × W2.0 (ASTM A1064) Centered in 6\" Wall with 1.5\" Min Cover",
+  jurisdictionCompliance: "Suffolk & Nassau County Specifications & Health Department Sanitary Approval",
+  testingAgency: "All Island Testing Verified",
+  plantLocation: "Deer Park, Long Island, New York Plant",
+} as const;
+
+export interface CatalogProductCategory {
+  id: string;
+  number: string;
+  name: string;
+  shortName: string;
+  pages: string;
+  headline: string;
+  description: string;
+  models: string[];
+  specs: {
+    strength: string;
+    rating: string;
+    compliance: string;
+    reinforcement: string;
+  };
+  image3d: string;
+  href: string;
+}
+
+export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
+  {
+    id: "catch-basins",
+    number: "01",
+    name: "Precast Concrete Catch Basins",
+    shortName: "Catch Basins",
+    pages: "Pages 4–17",
+    headline: "Highway & Municipal Stormwater Catch Basins (AR 3048 CB)",
+    description: "Engineered highway drainage boxes fabricated with 4,000 PSI concrete and AASHTO HS20-44 traffic rating. Available with solid covers, curb frames, and side-throat inlets built for Suffolk & Nassau County DOT infrastructure.",
+    models: [
+      "12\" × 12\" Catch Basin",
+      "18\" × 18\" Catch Basin",
+      "24\" × 24\" Catch Basin",
+      "30\" × 48\" Catch Basin (Model AR 3048 CB - 1,800 lbs)",
+      "36\" × 36\" Catch Basin",
+      "60\" × 60\" Catch Basin",
+      "72\" × 72\" Catch Basin",
+      "84\" × 84\" Catch Basin",
+    ],
+    specs: {
+      strength: "4,000 PSI @ 28 Days",
+      rating: "AASHTO HS20-44",
+      compliance: "Suffolk & Nassau County DOT",
+      reinforcement: "WWF 6\"×12\" (ASTM A1064) in 6\" Wall",
+    },
+    image3d: "/images/products_3d/card_catch-basin-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "septic-tanks",
+    number: "02",
+    name: "Precast Concrete Septic Tanks",
+    shortName: "Septic Tanks",
+    pages: "Pages 18–28",
+    headline: "Monolithic & 2-Piece Watertight Sanitary Septic Tanks (1,000 - 2,500 Gal)",
+    description: "Certified monolithic single-pour and two-piece watertight precast septic tanks equipped with sanitary PVC tees, inspection risers, and heavy traffic lids meeting Long Island sanitary wastewater codes.",
+    models: [
+      "1,000 Gallon Standard Septic Tank",
+      "1,250 Gallon Monolithic Septic Tank",
+      "1,250 Gallon 2-Piece Septic Tank",
+      "1,500 Gallon Monolithic Septic Tank",
+      "1,500 Gallon 2-Piece Septic Tank",
+      "2,000 Gallon Monolithic Septic Tank",
+      "2,000 Gallon 2-Piece Septic Tank",
+      "2,500 Gallon Monolithic Septic Tank",
+      "2,500 Gallon 2-Piece Septic Tank",
+    ],
+    specs: {
+      strength: "4,000 PSI Watertight Mix",
+      rating: "AASHTO HS20 Traffic or Non-Traffic",
+      compliance: "Suffolk County Dept of Health",
+      reinforcement: "ASTM A-615 Grade 60 Rebar",
+    },
+    image3d: "/images/products_3d/card_septic-tank-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "grease-traps",
+    number: "03",
+    name: "Precast Concrete Grease Traps",
+    shortName: "Grease Traps",
+    pages: "Pages 29–39",
+    headline: "Commercial & Restaurant Grease Interceptors (1,000 - 2,500 Gal)",
+    description: "Heavy-duty commercial kitchen grease interceptors designed for rapid fat/oil separation, featuring internal flow baffles, sampling ports, and gas-tight sealed access covers.",
+    models: [
+      "1,000 Gallon Grease Trap",
+      "1,250 Gallon Monolithic Grease Trap",
+      "1,250 Gallon 2-Piece Grease Trap",
+      "1,500 Gallon Monolithic Grease Trap",
+      "1,500 Gallon 2-Piece Grease Trap",
+      "2,000 Gallon Monolithic Grease Trap",
+      "2,000 Gallon 2-Piece Grease Trap",
+      "2,500 Gallon Monolithic Grease Trap",
+      "2,500 Gallon 2-Piece Grease Trap",
+    ],
+    specs: {
+      strength: "5,000+ PSI Acid-Resistant",
+      rating: "AASHTO HS20 Commercial Loading",
+      compliance: "NYS Plumbing & Health Code",
+      reinforcement: "ASTM A1064 Welded Wire Fabric",
+    },
+    image3d: "/images/products_3d/card_grease-trap-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "distribution-boxes",
+    number: "04",
+    name: "Precast Concrete Distribution Boxes",
+    shortName: "Distribution Boxes",
+    pages: "Pages 40–41",
+    headline: "Multi-Port Septic Effluent Distribution Boxes",
+    description: "Precision-cast distribution boxes with pre-molded pipe knockouts for 4\", 6\", and 8\" sanitary lines, providing balanced gravity flow distribution across subsurface leaching lines.",
+    models: [
+      "Standard 4-Hole D-Box with Lid",
+      "Multi-Port Flow Equalizer D-Box",
+      "Heavy Traffic D-Box with Cast-Iron Frame",
+    ],
+    specs: {
+      strength: "4,000 PSI Concrete",
+      rating: "Pedestrian & Traffic Surcharges",
+      compliance: "Suffolk & Nassau Sanitary Codes",
+      reinforcement: "Reinforced Wire Mesh",
+    },
+    image3d: "/images/products_3d/card_distribution-box-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "leaching-galleys",
+    number: "05",
+    name: "Precast Concrete Leaching Galleys",
+    shortName: "Leaching Galleys",
+    pages: "Pages 42–47",
+    headline: "Subsurface Stormwater Infiltration & Recharge Chambers (1' - 4' Depth)",
+    description: "High-capacity open-bottom precast leaching galleys with engineered side louvers and weep apertures that maximize groundwater recharge rates while saving footprint on commercial sites.",
+    models: [
+      "1' Depth Leaching Galley",
+      "2' Depth Leaching Galley",
+      "3' Depth Leaching Galley",
+      "4' Depth Leaching Galley",
+    ],
+    specs: {
+      strength: "4,000 PSI Compressive Mix",
+      rating: "AASHTO HS20 Subsurface Loading",
+      compliance: "NYS DEC Stormwater Manual",
+      reinforcement: "ASTM A-615 Grade 60 Rebar",
+    },
+    image3d: "/images/products_3d/card_leaching-galley-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "low-domes",
+    number: "06",
+    name: "Precast Concrete Low Domes",
+    shortName: "Low Domes",
+    pages: "Pages 48–53",
+    headline: "Tapered Transition Domes (6', 8', 10', 12' Diameters)",
+    description: "Circular tapered low-profile domes designed to transition drywell and sanitary leaching ring stacks to standard 24\" access openings.",
+    models: [
+      "6' Low Dome (Tapered Cap)",
+      "8' Low Dome (Tapered Cap)",
+      "10' Low Dome (Tapered Cap)",
+      "12' Low Dome (Tapered Cap)",
+    ],
+    specs: {
+      strength: "4,000 PSI Structural Concrete",
+      rating: "Heavy Soil Surcharge Rated",
+      compliance: "Suffolk & Nassau Civil Specs",
+      reinforcement: "Grade 60 Radial Reinforcement",
+    },
+    image3d: "/images/products_3d/card_low-dome-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "high-domes",
+    number: "07",
+    name: "Precast Concrete High Domes",
+    shortName: "High Domes",
+    pages: "Pages 54–58",
+    headline: "Deep Vertical-Rise Conical Transition Domes (6', 8', 10' Diameters)",
+    description: "Steep-slope conical precast domes designed for deep utility vaults, reducing ring stack diameter to grade level with maximum compressive strength.",
+    models: [
+      "6' High Dome",
+      "8' High Dome",
+      "10' High Dome",
+    ],
+    specs: {
+      strength: "4,000 PSI Structural Concrete",
+      rating: "Deep Burial Soil Load Rated",
+      compliance: "Municipal Deep Utility Standard",
+      reinforcement: "High-Tensile Steel Cage",
+    },
+    image3d: "/images/products_3d/card_high-dome-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "curb-stops",
+    number: "08",
+    name: "Precast Concrete Curb Stops",
+    shortName: "Curb Stops",
+    pages: "Pages 59–62",
+    headline: "Commercial Parking Bumpers & Wheel Stops (6' Length)",
+    description: "Reinforced 6-foot parking lot wheel stops with preformed anchor holes for rebar or steel pins, protecting storefronts and sidewalks.",
+    models: [
+      "6' × 4\" Precast Concrete Curb Stop",
+      "6' × 5.5\" Precast Concrete Curb Stop",
+    ],
+    specs: {
+      strength: "4,000 PSI Concrete with Beveled Edges",
+      rating: "Vehicle Impact Resistant",
+      compliance: "Commercial Site Standard",
+      reinforcement: "Continuous Steel Reinforcing Rods",
+    },
+    image3d: "/images/products_3d/card_curb-stop-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "precast-slabs",
+    number: "09",
+    name: "Precast Concrete Slabs",
+    shortName: "Precast Slabs",
+    pages: "Pages 63–84",
+    headline: "Circular Solid & AASHTO HS20 Traffic Slabs (6' - 12' Diameters)",
+    description: "Heavy structural precast cover slabs manufactured in solid configurations and with 24\" offset or 24\"×48\" cleanout access openings for highway traffic loading.",
+    models: [
+      "6' Circular Solid Slab",
+      "8' Circular Solid Slab & 8' × 8\" Solid Slab",
+      "8' Traffic Slab with 24\" Offset Opening (HS-20)",
+      "8' Traffic Slab with 24\" × 48\" Opening",
+      "8' Traffic Slab with Two 24\" Openings",
+      "10' Circular Solid Slab (8\" & 10\" Thickness)",
+      "10' Traffic Slab with 24\" Offset Opening",
+      "10' Traffic Slab with 24\" × 48\" Opening",
+      "12' Circular Solid Slab (10\" Thickness)",
+      "12' Traffic Slab with 24\" Offset Opening",
+      "12' Traffic Slab with 24\" × 48\" Opening",
+    ],
+    specs: {
+      strength: "5,000+ PSI Minimum 28-Day",
+      rating: "AASHTO HS20-44 Full Highway Traffic",
+      compliance: "Suffolk & Nassau County Highway Standard",
+      reinforcement: "Heavy Two-Way ASTM A-615 Rebar Mat",
+    },
+    image3d: "/images/products_3d/card_precast-slab-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "solid-rings",
+    number: "10",
+    name: "Precast Concrete Solid Rings",
+    shortName: "Solid Rings",
+    pages: "Pages 85–102",
+    headline: "Solid Wall Utility & Drywell Rings (4' - 12' Diameters, 2' - 5' Heights)",
+    description: "Precision-cast solid wall modular rings with tongue-and-groove joint profile for constructing watertight manholes, utility chambers, and deep drainage shafts.",
+    models: [
+      "4' Diameter Solid Rings (2' & 4' Heights)",
+      "6' Diameter Solid Rings (3' & 4' Heights)",
+      "8' Diameter Solid Rings (2', 3', 3.5', 4', 5' Heights)",
+      "10' Diameter Solid Rings (3', 4', 5' Heights)",
+      "12' Diameter Solid Rings (2', 3', 4' Heights)",
+    ],
+    specs: {
+      strength: "4,000 PSI Compressive Strength",
+      rating: "AASHTO HS20 Surcharge Rated",
+      compliance: "ASTM C478 Precast Manhole Standard",
+      reinforcement: "Circular Welded Wire Mesh (ASTM A1064)",
+    },
+    image3d: "/images/products_3d/card_solid-ring-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "sanitary-rings",
+    number: "11",
+    name: "Precast Concrete Sanitary Rings",
+    shortName: "Sanitary Rings",
+    pages: "Pages 103–115",
+    headline: "Perforated Sanitary Leaching & Seepage Rings (4' - 10' Diameters)",
+    description: "Perforated modular rings engineered with calibrated seepage apertures for sanitary leaching pools and wastewater drainage beds meeting Suffolk County sanitary guidelines.",
+    models: [
+      "4' Sanitary Rings (3' & 4' Heights)",
+      "6' Sanitary Rings (3' & 4' Heights)",
+      "8' Sanitary Rings (2', 3', 3.5', 4' Heights)",
+      "10' Sanitary Rings (3', 4', 5' Heights)",
+    ],
+    specs: {
+      strength: "4,000 PSI Concrete",
+      rating: "Subsurface Lateral Soil Pressure",
+      compliance: "Suffolk County Dept of Health Services",
+      reinforcement: "ASTM A-615 Grade 60 & Wire Mesh",
+    },
+    image3d: "/images/products_3d/card_sanitary-ring-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "storm-rings",
+    number: "12",
+    name: "Precast Concrete Storm Rings",
+    shortName: "Storm Rings",
+    pages: "Pages 116–127",
+    headline: "Heavy Civil Stormwater Drywell & Detention Rings (8' - 12' Diameters)",
+    description: "High-capacity perforated storm drywell rings with engineered intake and seepage holes designed to detain and infiltrate massive runoff volumes during heavy storm events.",
+    models: [
+      "8' Storm Rings (3', 3.5', 4' Heights)",
+      "10' Storm Rings (3', 4', 5' Heights)",
+      "12' Storm Rings (2', 3', 4', 5' Heights)",
+    ],
+    specs: {
+      strength: "4,000 PSI Mix Design",
+      rating: "AASHTO HS20 Roadway Infiltration",
+      compliance: "Long Island Regional Stormwater Standard",
+      reinforcement: "Heavy-Gauge Welded Steel Reinforcing",
+    },
+    image3d: "/images/products_3d/card_storm-ring-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "footings",
+    number: "13",
+    name: "Precast Concrete Footing Rings",
+    shortName: "Footing Rings",
+    pages: "Pages 128–134",
+    headline: "Precast Base Footing Rings (4', 6', 8', 10', 12' Diameters)",
+    description: "Engineered foundation footing rings that provide a wide, stable bearing surface beneath solid and leaching ring stacks, preventing differential settlement in sandy Long Island soils.",
+    models: [
+      "4' Concrete Footing Ring",
+      "6' Concrete Footing Ring",
+      "8' Concrete Footing Ring",
+      "10' Concrete Footing Ring",
+      "12' Concrete Footing Ring",
+    ],
+    specs: {
+      strength: "4,000 PSI Compressive Strength",
+      rating: "High Soil Bearing Capacity Support",
+      compliance: "Structural Foundation Standard",
+      reinforcement: "Circumferential Rebar Reinforcement",
+    },
+    image3d: "/images/products_3d/card_footing-ring-3d.png",
+    href: "/#products",
+  },
+  {
+    id: "high-collars",
+    number: "14",
+    name: "Precast Concrete High Collars",
+    shortName: "High Collars",
+    pages: "Pages 135–140",
+    headline: "Grade Adjustment Risers & High Collars (6\", 12\", 18\", 24\" Heights)",
+    description: "Modular precast grade adjustment collars used to elevate catch basin grates, manhole covers, and inspection cleanouts to finished road or parking asphalt grades.",
+    models: [
+      "6\" High Collar Riser",
+      "12\" High Collar Riser",
+      "18\" High Collar Riser",
+      "24\" High Collar Riser",
+    ],
+    specs: {
+      strength: "4,000 PSI Mix Design",
+      rating: "AASHTO HS20 Wheel Impact Rated",
+      compliance: "Suffolk & Nassau Highway Adjustments",
+      reinforcement: "Integral Steel Reinforcement",
+    },
+    image3d: "/images/products_3d/card_high-collar-3d.png",
+    href: "/#products",
+  },
+];
 
 export const NAV_LINKS = [
   { label: "Home", href: "/#hero" },
@@ -27,5 +403,4 @@ export const NAV_LINKS = [
   { label: "Contact Us", href: "/#contact" },
 ] as const;
 
-// Legacy export compatibility
 export const FAQ_ITEMS: { question: string; answer: string }[] = [];

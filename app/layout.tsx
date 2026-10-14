@@ -6,8 +6,8 @@ import { AnimationProvider } from "@/components/providers/animation-provider";
 
 export const metadata: Metadata = {
   title: {
-    default: "Precast Engineers | Empowering Precasters",
-    template: "%s | Precast Engineers",
+    default: "Astro Masonry & Precast | Advanced Precast Engineering · 2026 Catalog",
+    template: "%s | Astro Masonry & Precast",
   },
   icons: {
     icon: "/icon.png",
@@ -15,23 +15,28 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   description:
-    "Precast Engineers provides structural engineering, Tekla LOD 400 BIM detailing, technical resources, and practical solutions for the precast concrete industry across the United States.",
+    "Astro Masonry & Precast is a premier manufacturer of precast concrete catch basins, monolithic septic tanks, grease traps, leaching galleys, slabs, sanitary rings, and storm drywells. AASHTO HS20-44 traffic rated, 5,000+ PSI compressive strength, meeting Suffolk & Nassau County specifications. Plant located in Deer Park, Long Island, NY. Call 631-667 3300.",
   keywords: [
-    "precast engineers",
-    "precast concrete engineering",
-    "structural precast engineering",
-    "prestressed concrete design",
-    "precast connection design",
-    "precast shop drawings",
-    "tekla bim precast detailing",
+    "Astro Masonry",
+    "Astro Precast",
+    "precast concrete catch basins",
+    "monolithic septic tanks",
+    "commercial grease traps",
+    "precast leaching galleys",
+    "Suffolk County precast specs",
+    "Nassau County precast specs",
+    "AASHTO HS20 traffic slabs",
+    "precast sanitary rings",
+    "precast storm rings",
+    "precast concrete Deer Park NY",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Precast Engineers",
-    title: "Precast Engineers | Empowering Precasters",
+    siteName: "Astro Masonry & Precast",
+    title: "Astro Masonry & Precast | Advanced Precast Engineering · 2026 Catalog",
     description:
-      "Engineering solutions, technical resources, and practical guidance for the precast concrete industry.",
+      "Direct manufacturer of precast catch basins, septic tanks, grease traps, leaching galleys, and traffic slabs built to Suffolk & Nassau County standards. Deer Park, NY.",
   },
   robots: {
     index: true,

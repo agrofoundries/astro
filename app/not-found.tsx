@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <div className="w-full bg-[#F4F4F6] min-h-[70vh] flex items-center justify-center py-20 px-4">
       <div className="max-w-lg w-full bg-white p-8 md:p-12 rounded-3xl border border-gray-200 shadow-sm text-center">
-        <span className="inline-block px-3 py-1 rounded-full bg-red-100 text-brand-primary text-xs font-black tracking-wider uppercase mb-4">
+        <span className="inline-block px-3 py-1 rounded-full bg-sky-100 text-brand-primary text-xs font-black tracking-wider uppercase mb-4">
           Error 404
         </span>
         <h1 className="text-3xl font-black text-gray-900 mb-3">

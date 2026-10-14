@@ -365,14 +365,14 @@ export function GSAPInfiniteSlider() {
       {/* Background Ambience & Engineering Matrix Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#1e3a8a_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none" />
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#0E96E1]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="section-container relative z-10">
         {/* Section Heading & Interactive GSAP Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs font-semibold text-white mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#D4030C]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#0E96E1]" />
               <span>GSAP Demo Hub Showcase</span>
               <span className="text-slate-400">• demos.gsap.com/explore</span>
             </div>
@@ -380,7 +380,7 @@ export function GSAPInfiniteSlider() {
               Infinite 3D Card Slider &amp; Perspective Tilt
             </h2>
             <p className="text-sm sm:text-base text-slate-300 mt-2">
-              Powered by GSAP’s seamless <code className="text-red-400 font-mono text-xs px-1.5 py-0.5 bg-white/5 rounded">horizontalLoop()</code> algorithm with 60fps cursor-driven 3D rotational dynamics.
+              Powered by GSAP’s seamless <code className="text-sky-400 font-mono text-xs px-1.5 py-0.5 bg-white/5 rounded">horizontalLoop()</code> algorithm with 60fps cursor-driven 3D rotational dynamics.
             </p>
           </div>
 
@@ -389,7 +389,7 @@ export function GSAPInfiniteSlider() {
             {/* Speed Selector */}
             <div className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-lg p-1 text-xs">
               <span className="px-2 text-slate-400 font-mono text-[11px] flex items-center gap-1">
-                <Gauge className="w-3 h-3 text-[#D4030C]" />
+                <Gauge className="w-3 h-3 text-[#0E96E1]" />
                 Speed:
               </span>
               {[0.5, 1, 1.8].map((s) => (
@@ -399,7 +399,7 @@ export function GSAPInfiniteSlider() {
                   onClick={() => handleSpeedChange(s)}
                   className={`px-2.5 py-1 rounded font-mono font-bold transition-all ${
                     speed === s
-                      ? "bg-[#D4030C] text-white shadow-xs"
+                      ? "bg-[#0E96E1] text-white shadow-xs"
                       : "text-slate-300 hover:text-white"
                   }`}
                 >
@@ -417,7 +417,7 @@ export function GSAPInfiniteSlider() {
             >
               {isPlaying ? (
                 <>
-                  <Pause className="w-3.5 h-3.5 text-[#D4030C]" />
+                  <Pause className="w-3.5 h-3.5 text-[#0E96E1]" />
                   <span className="hidden sm:inline">Pause</span>
                 </>
               ) : (
@@ -433,7 +433,7 @@ export function GSAPInfiniteSlider() {
               <button
                 type="button"
                 onClick={handlePrev}
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#D4030C] border border-white/20 flex items-center justify-center text-white transition-all cursor-pointer active:scale-95 shadow-xs"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#0E96E1] border border-white/20 flex items-center justify-center text-white transition-all cursor-pointer active:scale-95 shadow-xs"
                 aria-label="Previous card step"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -441,7 +441,7 @@ export function GSAPInfiniteSlider() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#D4030C] border border-white/20 flex items-center justify-center text-white transition-all cursor-pointer active:scale-95 shadow-xs"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#0E96E1] border border-white/20 flex items-center justify-center text-white transition-all cursor-pointer active:scale-95 shadow-xs"
                 aria-label="Next card step"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -474,7 +474,7 @@ export function GSAPInfiniteSlider() {
                 onMouseMove={handleCardMouseMove}
                 onMouseLeave={handleCardMouseLeave}
                 onClick={() => setSelectedCard(item)}
-                className="w-[320px] sm:w-[380px] shrink-0 rounded-2xl overflow-hidden bg-[#07172E] border border-white/15 shadow-xl transition-shadow hover:shadow-2xl hover:border-red-500/40 relative group cursor-pointer flex flex-col justify-between"
+                className="w-[320px] sm:w-[380px] shrink-0 rounded-2xl overflow-hidden bg-[#07172E] border border-white/15 shadow-xl transition-shadow hover:shadow-2xl hover:border-sky-500/40 relative group cursor-pointer flex flex-col justify-between"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Specular Glare / Reflection Layer */}
@@ -504,15 +504,15 @@ export function GSAPInfiniteSlider() {
                     />
                   )}
 
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07172E] via-transparent to-black/40 pointer-events-none" />
+                  {/* Solid Media Dimmer */}
+                  <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
                   {/* Top Badges */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
                     <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded bg-black/70 backdrop-blur-md border border-white/20 text-white">
                       {item.category.split(" ")[0]}
                     </span>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#D4030C] text-white shadow-xs">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#0E96E1] text-white shadow-xs">
                       {item.badge}
                     </span>
                   </div>
@@ -527,7 +527,7 @@ export function GSAPInfiniteSlider() {
                 {/* Card Content Body */}
                 <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                   <div className="space-y-1.5">
-                    <span className="text-[11px] font-semibold text-red-400 block tracking-wide uppercase">
+                    <span className="text-[11px] font-semibold text-sky-400 block tracking-wide uppercase">
                       {item.category}
                     </span>
                     <h3 className="text-base font-bold text-white group-hover:text-red-300 transition-colors leading-snug line-clamp-2">
@@ -554,7 +554,7 @@ export function GSAPInfiniteSlider() {
                   <div className="pt-2">
                     <button
                       type="button"
-                      className="w-full py-2 px-3 rounded-lg bg-white/10 hover:bg-[#D4030C] text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                      className="w-full py-2 px-3 rounded-lg bg-white/10 hover:bg-[#0E96E1] text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
                     >
                       <Maximize2 className="w-3.5 h-3.5" />
                       <span>Inspect 3D Specifications</span>
@@ -588,7 +588,7 @@ export function GSAPInfiniteSlider() {
             <button
               type="button"
               onClick={() => setSelectedCard(null)}
-              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-[#D4030C] text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-[#0E96E1] text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer"
               aria-label="Close dialog"
             >
               <X className="w-5 h-5" />
@@ -613,7 +613,7 @@ export function GSAPInfiniteSlider() {
                 />
               )}
               <div className="absolute top-4 left-4 flex gap-2">
-                <span className="text-xs font-bold bg-[#D4030C] text-white px-3 py-1 rounded shadow-xs">
+                <span className="text-xs font-bold bg-[#0E96E1] text-white px-3 py-1 rounded shadow-xs">
                   {selectedCard.badge}
                 </span>
                 <span className="text-xs font-mono bg-black/70 text-white px-2.5 py-1 rounded border border-white/20">
@@ -625,7 +625,7 @@ export function GSAPInfiniteSlider() {
             {/* Spec Breakdown Details */}
             <div className="p-6 space-y-4">
               <div>
-                <span className="text-xs font-mono text-red-400 uppercase tracking-wider">
+                <span className="text-xs font-mono text-sky-400 uppercase tracking-wider">
                   {selectedCard.category}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">

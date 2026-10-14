@@ -90,14 +90,14 @@ export function BenefitsSection() {
                 return (
                   <div
                     key={item.code}
-                    className="p-5 sm:p-6 bg-[#F8FAFC] border-2 border-[#CBD5E1] border-t-4 border-t-[#D4030C] rounded-xl shadow-sm hover:border-[#0A2540] hover:shadow-md transition-all flex flex-col justify-between"
+                    className="p-5 sm:p-6 bg-[#F8FAFC] border-2 border-[#CBD5E1] border-t-4 border-t-[#0E96E1] rounded-xl shadow-sm hover:border-[#0A2540] hover:shadow-md transition-all flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-3.5">
                         <span className="font-mono-spec text-xs font-bold text-[#64748B]">
                           [{item.code}]
                         </span>
-                        <div className="w-8 h-8 bg-white border border-[#CBD5E1] text-[#D4030C] rounded flex items-center justify-center shadow-2xs">
+                        <div className="w-8 h-8 bg-white border border-[#CBD5E1] text-[#0E96E1] rounded flex items-center justify-center shadow-2xs">
                           <Icon className="w-4 h-4" />
                         </div>
                       </div>
@@ -107,7 +107,7 @@ export function BenefitsSection() {
                         <span className="font-mono-spec text-2xl sm:text-3xl font-black text-[#0A2540] tracking-tight">
                           {item.metric}
                         </span>
-                        <span className="block text-[11px] font-mono-spec font-bold text-[#D4030C] uppercase mt-0.5">
+                        <span className="block text-[11px] font-mono-spec font-bold text-[#0E96E1] uppercase mt-0.5">
                           {item.metricLabel}
                         </span>
                       </div>

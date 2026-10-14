@@ -73,7 +73,7 @@ export function TechnicalResources() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-3xl">
             <span className="badge-tag mb-3">Technical Documentation</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
               Technical Resources
             </h2>
             <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -96,11 +96,11 @@ export function TechnicalResources() {
             return (
               <div
                 key={index}
-                className="card-clean p-6 flex flex-col justify-between hover:border-[#032356] transition-all"
+                className="card-clean p-6 flex flex-col justify-between hover:border-[#014088] transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-bold text-[#D4030C] uppercase tracking-wider bg-[#FFF2F2] px-2 py-0.5 rounded border border-[#FCD2D4]">
+                    <span className="text-[11px] font-bold text-[#0E96E1] uppercase tracking-wider bg-[#E0F2FE] px-2 py-0.5 rounded border border-[#BAE6FD]">
                       {item.category}
                     </span>
                     <span className="text-[11px] text-[#64748B] font-mono">
@@ -110,9 +110,9 @@ export function TechnicalResources() {
 
                   <div className="flex items-start gap-3 mb-3">
                     <div className="w-8 h-8 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center shrink-0 mt-0.5">
-                      <Icon className="w-4 h-4 text-[#032356]" />
+                      <Icon className="w-4 h-4 text-[#014088]" />
                     </div>
-                    <h3 className="text-sm sm:text-base font-bold text-[#032356] leading-snug">
+                    <h3 className="text-sm sm:text-base font-bold text-[#014088] leading-snug">
                       {item.title}
                     </h3>
                   </div>
@@ -129,7 +129,7 @@ export function TechnicalResources() {
                     onClick={() => {
                       alert(`Accessing: ${item.title}`);
                     }}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#032356] hover:text-[#D4030C] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#014088] hover:text-[#0E96E1] transition-colors cursor-pointer"
                   >
                     <span>View Resource</span>
                     <Download className="w-3.5 h-3.5" />

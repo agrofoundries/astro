@@ -65,7 +65,7 @@ export function ManufacturingSupport() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <span className="badge-tag mb-3">Plant Operations</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#032356] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
             Manufacturing Support
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
@@ -80,13 +80,13 @@ export function ManufacturingSupport() {
             return (
               <div
                 key={index}
-                className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between hover:border-[#032356] transition-all"
+                className="bg-white border border-[#DCE5F0] rounded-lg p-6 flex flex-col justify-between hover:border-[#014088] transition-all"
               >
                 <div>
-                  <div className="w-10 h-10 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center text-[#032356] mb-4">
-                    <Icon className="w-5 h-5 text-[#D4030C]" />
+                  <div className="w-10 h-10 rounded bg-[#F2F7FF] border border-[#DCE5F0] flex items-center justify-center text-[#014088] mb-4">
+                    <Icon className="w-5 h-5 text-[#0E96E1]" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-[#032356] mb-2">
+                  <h3 className="text-sm sm:text-base font-bold text-[#014088] mb-2">
                     {topic.title}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed">

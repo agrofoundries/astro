@@ -91,67 +91,77 @@ export function Footer() {
   };
 
   return (
-    <footer id="contact" className="w-full bg-[#032356] text-white border-t-4 border-[#D4030C] relative" role="contentinfo">
+    <footer id="contact" className="w-full bg-[#014088] text-white border-t-4 border-[#0E96E1] relative" role="contentinfo">
       {/* Main Footer Container */}
       <div className="section-container-wide py-10 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14">
           {/* Column 1: Brand & Contact Info (span 4) */}
           <div className="lg:col-span-4 space-y-6">
             {/* White Logo Emblem Card */}
-            <div className="inline-block bg-white px-4 py-2.5 rounded-lg shadow-sm border border-slate-200">
-              <Link href="/" aria-label="PRECAST PRO Home">
-                <Image
-                  src="/logo.png"
-                  alt="PRECAST PRO - Empowering Precasters"
-                  width={210}
-                  height={50}
-                  className="h-9 w-auto object-contain"
-                />
+            <div className="inline-block bg-white px-4 py-2.5 rounded-xl shadow-md border border-slate-200">
+              <Link href="/" aria-label="Astro Precast Engineering Home" className="flex items-center gap-3">
+                <div className="relative h-12 w-16 shrink-0">
+                  <Image
+                    src="/Astro Geometric Mark Logo.png"
+                    alt="Astro Geometric Mark Logo"
+                    fill
+                    className="object-contain"
+                    sizes="64px"
+                  />
+                </div>
+                <div className="flex flex-col border-l border-slate-200 pl-2.5">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#014088] font-mono leading-tight">
+                    ADVANCED PRECAST
+                  </span>
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#0E96E1] font-mono leading-tight">
+                    2026 CATALOG SPEC
+                  </span>
+                </div>
               </Link>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">
-              From engineering to digital, design to deployment — Precast Engineering Group brings every precast solution under one roof to turn ideas into real-world impact.
+              Astro Masonry &amp; Precast manufactures certified high-strength precast concrete infrastructure for municipal stormwater, underground utilities, and civil engineering across Suffolk, Nassau, and the NY metro area.
             </p>
 
             {/* Contact Details with Theme Icon Badges */}
-            <div className="space-y-3 text-xs text-slate-200 pt-2">
+            <div className="space-y-3 text-xs text-slate-200 pt-2 font-mono">
               <div className="flex items-center gap-3">
                 <div className="w-7 h-7 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0">
-                  <MapPin className="w-3.5 h-3.5 text-[#D4030C]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#0E96E1]" />
                 </div>
-                <span>105 Maxess Road, Melville, NY 11747</span>
+                <span>928 Long Island Avenue, Deer Park, NY 11729</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-7 h-7 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5 text-[#D4030C]" />
+                  <Phone className="w-3.5 h-3.5 text-[#0E96E1]" />
                 </div>
                 <a
-                  href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
-                  className="hover:text-red-400 transition-colors font-medium"
+                  href="tel:6316673300"
+                  className="hover:text-sky-400 transition-colors font-bold text-white text-sm"
                 >
-                  (631) 452-1111
+                  631-667 3300
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-7 h-7 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0">
-                  <Mail className="w-3.5 h-3.5 text-[#D4030C]" />
+                  <Mail className="w-3.5 h-3.5 text-[#0E96E1]" />
                 </div>
                 <a
-                  href="mailto:info@precasteng.com"
-                  className="hover:text-red-400 transition-colors"
+                  href="mailto:sales@astromasonry.com"
+                  className="hover:text-sky-400 transition-colors"
                 >
-                  info@precasteng.com
+                  sales@astromasonry.com
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-7 h-7 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0">
-                  <Clock className="w-3.5 h-3.5 text-[#D4030C]" />
+                  <Clock className="w-3.5 h-3.5 text-[#0E96E1]" />
                 </div>
-                <span>Mon – Fri : 8:00 AM to 6:00 PM ET</span>
+                <span>Mon – Fri : 7:00 AM to 5:00 PM EST</span>
               </div>
             </div>
 
@@ -167,7 +177,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#D4030C] hover:border-[#D4030C] hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#0E96E1] hover:border-[#0E96E1] hover:text-white transition-colors"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74V10.13H5.06v8.37z" />
@@ -179,7 +189,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X / Twitter"
-                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#D4030C] hover:border-[#D4030C] hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#0E96E1] hover:border-[#0E96E1] hover:text-white transition-colors"
                 >
                   <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -191,7 +201,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#D4030C] hover:border-[#D4030C] hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#0E96E1] hover:border-[#0E96E1] hover:text-white transition-colors"
                 >
                   <svg className="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -205,7 +215,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube"
-                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#D4030C] hover:border-[#D4030C] hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#0E96E1] hover:border-[#0E96E1] hover:text-white transition-colors"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -217,7 +227,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#D4030C] hover:border-[#D4030C] hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-slate-300 hover:bg-[#0E96E1] hover:border-[#0E96E1] hover:text-white transition-colors"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24" />
@@ -233,7 +243,7 @@ export function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {/* Manufacturing Division */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#D4030C] mb-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#0E96E1] mb-4">
                   MANUFACTURING
                 </h4>
                 <ul className="space-y-2.5 text-xs text-slate-300">
@@ -299,7 +309,7 @@ export function Footer() {
                   <Link
                     key={pill}
                     href="/applications"
-                    className="px-3 py-1 rounded-full bg-white/10 hover:bg-[#D4030C] border border-white/20 hover:border-[#D4030C] text-[11px] font-medium text-slate-200 hover:text-white transition-all"
+                    className="px-3 py-1 rounded-full bg-white/10 hover:bg-[#0E96E1] border border-white/20 hover:border-[#0E96E1] text-[11px] font-medium text-slate-200 hover:text-white transition-all"
                   >
                     {pill}
                   </Link>
@@ -334,12 +344,12 @@ export function Footer() {
                       placeholder="your@email.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full text-xs text-[#032356] placeholder-slate-400 focus:outline-none bg-transparent pr-2 font-medium"
+                      className="w-full text-xs text-[#014088] placeholder-slate-400 focus:outline-none bg-transparent pr-2 font-medium"
                     />
                     <button
                       type="submit"
                       aria-label="Subscribe"
-                      className="w-8 h-8 rounded-full bg-[#D4030C] hover:bg-[#B50209] text-white flex items-center justify-center shrink-0 transition-colors shadow-sm"
+                      className="w-8 h-8 rounded-full bg-[#0E96E1] hover:bg-[#0C82C4] text-white flex items-center justify-center shrink-0 transition-colors shadow-sm"
                     >
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -378,7 +388,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Compliance & Legal Bar */}
-      <div className="border-t border-slate-700/60 bg-[#032356] py-5 text-xs text-slate-400">
+      <div className="border-t border-slate-700/60 bg-[#014088] py-5 text-xs text-slate-400">
         <div className="section-container-wide flex flex-col md:flex-row items-center justify-between gap-4">
           <p>© 2026 Precast Engineering Group. All rights reserved.</p>
 
@@ -407,7 +417,7 @@ export function Footer() {
         type="button"
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-[#D4030C] hover:bg-[#B50209] text-white shadow-xl border border-white/20 flex items-center justify-center transition-all group"
+        className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-[#0E96E1] hover:bg-[#0C82C4] text-white shadow-xl border border-white/20 flex items-center justify-center transition-all group"
       >
         <ChevronUp className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
       </button>

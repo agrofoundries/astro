@@ -128,7 +128,7 @@ export default function QuotePage() {
                 </div>
 
                 {errorMsg && (
-                  <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+                  <div className="mb-6 p-4 rounded-xl bg-sky-50 border border-sky-200 text-[#0369A1] text-xs flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     <span>{errorMsg}</span>
                   </div>
@@ -319,15 +319,15 @@ export default function QuotePage() {
               </h3>
               <ol className="space-y-4 text-xs text-gray-600">
                 <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-red-100 text-brand-primary font-bold flex items-center justify-center shrink-0">1</span>
+                  <span className="w-5 h-5 rounded-full bg-sky-100 text-brand-primary font-bold flex items-center justify-center shrink-0">1</span>
                   <span><strong>Scope Review:</strong> Our estimating engineers inspect your drawings for structural feasibility.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-red-100 text-brand-primary font-bold flex items-center justify-center shrink-0">2</span>
+                  <span className="w-5 h-5 rounded-full bg-sky-100 text-brand-primary font-bold flex items-center justify-center shrink-0">2</span>
                   <span><strong>Value Engineering:</strong> We identify opportunities to optimize casting repetitions and freight.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-red-100 text-brand-primary font-bold flex items-center justify-center shrink-0">3</span>
+                  <span className="w-5 h-5 rounded-full bg-sky-100 text-brand-primary font-bold flex items-center justify-center shrink-0">3</span>
                   <span><strong>Comprehensive Proposal:</strong> You receive an itemized bid with clear delivery schedules and freight allowances.</span>
                 </li>
               </ol>
@@ -341,14 +341,14 @@ export default function QuotePage() {
               <div className="space-y-3 text-xs">
                 <a
                   href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
-                  className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-red-50 text-gray-900 hover:text-brand-primary font-semibold transition"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-sky-50 text-gray-900 hover:text-brand-primary font-semibold transition"
                 >
                   <Phone className="w-4 h-4 text-brand-primary" />
                   {COMPANY.phone}
                 </a>
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-red-50 text-gray-900 hover:text-brand-primary font-semibold transition"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-sky-50 text-gray-900 hover:text-brand-primary font-semibold transition"
                 >
                   <Mail className="w-4 h-4 text-brand-primary" />
                   {COMPANY.email}
@@ -356,7 +356,7 @@ export default function QuotePage() {
               </div>
             </div>
 
-            <div className="bg-[#FFF5F5] p-6 rounded-2xl border border-red-200">
+            <div className="bg-[#FFF5F5] p-6 rounded-2xl border border-sky-200">
               <div className="flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-wider mb-2">
                 <ShieldCheck className="w-4 h-4" />
                 Guaranteed Confidentiality
