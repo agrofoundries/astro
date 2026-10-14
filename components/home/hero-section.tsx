@@ -16,7 +16,7 @@ import {
 const TRUST_METRICS = [
   {
     icon: Award,
-    title: "4,000+ PSI Concrete",
+    title: "5,000+ PSI Concrete",
     subtitle: "Min 28-Day Compressive Strength",
   },
   {
@@ -107,7 +107,7 @@ export function HeroSection() {
 
           {/* Clear Supporting Description matching Astro 2026 PDF */}
           <p className="text-sm sm:text-base lg:text-[16px] text-slate-700 leading-relaxed font-normal max-w-xl mb-7 animate-fade-up [animation-delay:220ms]">
-            Astro Masonry &amp; Precast manufactures certified high-strength precast concrete structures engineered for municipal stormwater, underground utilities, and civil site work. Certified 4,000+ PSI compressive strength, AASHTO HS20-44 traffic-rated, and engineered to exact Suffolk &amp; Nassau County standards from our Long Island production plant.
+            Astro Masonry &amp; Precast manufactures certified high-strength precast concrete structures engineered for municipal stormwater, underground utilities, and civil site work. Certified 5,000+ PSI compressive strength, AASHTO HS20-44 traffic-rated, and engineered to exact Suffolk &amp; Nassau County standards from our Long Island production plant.
           </p>
 
           {/* Action CTAs (2 High-Impact Buttons) */}

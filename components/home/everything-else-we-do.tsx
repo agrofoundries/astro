@@ -90,7 +90,7 @@ const SERVICE_TABS: ServiceTab[] = [
     imageAlt: "Precast casting beds and computerized twin-shaft planetary batching plant",
     badge: "Plant Precision Casting",
     tags: [
-      "4,000+ PSI compressive strength",
+      "5,000+ PSI compressive strength",
       "Climate-controlled casting bays",
       "Twin-shaft planetary batching",
       "Monolithic single-pour structures",

@@ -37,8 +37,8 @@ const PROJECTS_DATA: ProjectItem[] = [
     status: "Completed Landmark",
     image: "/images/hero-clean-yard.jpg",
     description:
-      "Full municipal delivery of certified 4,000+ PSI precast catch basins, heavy traffic frames, and monolithic drywells meeting strict Suffolk County DPW standards.",
-    specs: ["4,000+ PSI Concrete", "AASHTO HS20-44", "Suffolk & Nassau Approved"],
+      "Full municipal delivery of certified 5,000+ PSI precast catch basins, heavy traffic frames, and monolithic drywells meeting strict Suffolk County DPW standards.",
+    specs: ["5,000+ PSI Concrete", "AASHTO HS20-44", "Suffolk & Nassau Approved"],
   },
   {
     id: "route-110-utility-corridor",
@@ -110,7 +110,7 @@ export function IconicProjectsSection() {
   const filteredProjects = PROJECTS_DATA.filter((p) => p.type === activeType);
 
   return (
-    <section id="projects-showcase" className="w-full bg-white py-14 sm:py-20 border-b border-[#D0E2F2]">
+    <section id="projects-showcase" className="w-full bg-[#F8FAFD] py-14 sm:py-20 border-b border-[#D0E2F2]">
       <div className="section-container-wide">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">

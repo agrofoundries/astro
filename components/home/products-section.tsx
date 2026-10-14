@@ -67,7 +67,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
     "categoryBadge": "PAGES 4\u201317 \u00b7 DOT DRAINAGE",
     "categoryLabel": "STORM & HIGHWAY DRAINAGE",
     "summary": "8 Models \u00b7 12\"\u00d712\" to 84\"\u00d784\" Monolithic Basins",
-    "description": "Manufactured to Suffolk & Nassau County DOT specifications with certified 4,000 PSI concrete, AASHTO HS20-44 highway traffic loading, and ASTM A1064 welded wire reinforcement centered in 6\" walls with 1.5\" minimum clear cover.",
+    "description": "Manufactured to Suffolk & Nassau County DOT specifications with certified 5,000+ PSI concrete, AASHTO HS20-44 highway traffic loading, and ASTM A1064 welded wire reinforcement centered in 6\" walls with 1.5\" minimum clear cover.",
     "image": "/images/products_3d/card_catch-basin-3d.png",
     "variables": [
       {
@@ -79,7 +79,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "description": "Catalog flagship model AR 3048 CB weighing 1,800 lbs with 4\" walls, 2'8\"\u00d73' solid cover, and WWF 6\"\u00d712\" ASTM A1064 reinforcement.",
         "features": [
           "1,800 Lbs Unit Weight",
-          "4,000 PSI Min 28-Day",
+          "5,000+ PSI Min 28-Day",
           "ASTM A-615 Grade 60",
           "Suffolk & Nassau Approved"
         ],
@@ -127,7 +127,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "ASTM C478 Spec",
-          "sub": "4,000 PSI Concrete"
+          "sub": "5,000+ PSI Concrete"
         },
         "image": "/images/products_3d/card_catch-basin-3d.png",
         "href": "/#contact"
@@ -310,7 +310,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
           "Dual Compartment",
           "PVC Sanitary Baffles",
           "Watertight Joints",
-          "4,000 PSI Mix"
+          "5,000+ PSI Mix"
         ],
         "specCapacity": {
           "label": "VOLUME",
@@ -387,7 +387,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "AASHTO HS20-44",
-          "sub": "4,000 PSI Compressive"
+          "sub": "5,000+ PSI Compressive"
         },
         "image": "/images/products_3d/card_septic-tank-3d.png",
         "href": "/#contact"
@@ -523,7 +523,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "AASHTO HS20 Loading",
-          "sub": "4,000 PSI Concrete"
+          "sub": "5,000+ PSI Concrete"
         },
         "image": "/images/products_3d/card_grease-trap-3d.png",
         "href": "/#contact"
@@ -613,7 +613,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
           "Pre-Cast Knockouts",
           "Gasketed Access Lid",
           "Leveling Flow Collars",
-          "Dense 4,000 PSI Mix"
+          "Dense 5,000+ PSI Mix"
         ],
         "specCapacity": {
           "label": "PIPE SIZE",
@@ -763,7 +763,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         },
         "specStandards": {
           "label": "STANDARDS",
-          "value": "4,000 PSI Concrete",
+          "value": "5,000+ PSI Concrete",
           "sub": "All Island Tested"
         },
         "image": "/images/products_3d/card_leaching-galley-3d.png",
@@ -838,7 +838,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "AASHTO HS20-44",
-          "sub": "4,000 PSI Compressive"
+          "sub": "5,000+ PSI Compressive"
         },
         "image": "/images/products_3d/card_low-dome-3d.png",
         "href": "/#contact"
@@ -1005,7 +1005,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "Suffolk County DOH",
-          "sub": "4,000 PSI Mix"
+          "sub": "5,000+ PSI Mix"
         },
         "image": "/images/products_3d/card_high-dome-3d.png",
         "href": "/#contact"
@@ -1079,7 +1079,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "Commercial Spec",
-          "sub": "4,000 PSI Concrete"
+          "sub": "5,000+ PSI Concrete"
         },
         "image": "/images/products_3d/card_curb-stop-3d.png",
         "href": "/#contact"
@@ -1153,7 +1153,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "ASTM A-615 Grade 60",
-          "sub": "4,000 PSI Concrete"
+          "sub": "5,000+ PSI Concrete"
         },
         "image": "/images/products_3d/card_precast-slab-3d.png",
         "href": "/#contact"
@@ -1305,7 +1305,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
           "Tongue & Groove Joint",
           "Watertight Mastic Seal",
           "Circular Rebar Cage",
-          "4,000 PSI Mix"
+          "5,000+ PSI Mix"
         ],
         "specCapacity": {
           "label": "DIAMETER",
@@ -1441,7 +1441,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
           "Calibrated Seepage Holes",
           "Soil Sand Percolation",
           "Interlocking Tongue & Groove",
-          "4,000 PSI Compressive"
+          "5,000+ PSI Compressive"
         ],
         "specCapacity": {
           "label": "APPLICATION",
@@ -1487,7 +1487,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "Suffolk & Nassau DOH",
-          "sub": "4,000 PSI Concrete"
+          "sub": "5,000+ PSI Concrete"
         },
         "image": "/images/products_3d/card_sanitary-ring-3d.png",
         "href": "/#contact"
@@ -1530,7 +1530,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "Suffolk & Nassau Highway",
-          "sub": "4,000 PSI Concrete"
+          "sub": "5,000+ PSI Concrete"
         },
         "image": "/images/products_3d/card_storm-ring-3d.png",
         "href": "/#contact"
@@ -1620,7 +1620,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
           "Wide Bearing Flange",
           "Prevents Settlement",
           "Circumferential Rebar",
-          "4,000 PSI Mix"
+          "5,000+ PSI Mix"
         ],
         "specCapacity": {
           "label": "BEARING CAPACITY",
@@ -1666,7 +1666,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "Suffolk & Nassau Civil",
-          "sub": "4,000 PSI Mix"
+          "sub": "5,000+ PSI Mix"
         },
         "image": "/images/products_3d/card_footing-ring-3d.png",
         "href": "/#contact"
@@ -1771,7 +1771,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "Suffolk Highway Dept",
-          "sub": "4,000 PSI Mix"
+          "sub": "5,000+ PSI Mix"
         },
         "image": "/images/products_3d/card_high-collar-3d.png",
         "href": "/#contact"
@@ -1833,7 +1833,7 @@ export const PRODUCT_FAMILIES: ProductFamily[] = [
         "specStandards": {
           "label": "STANDARDS",
           "value": "Nassau County Highway",
-          "sub": "4,000 PSI Concrete"
+          "sub": "5,000+ PSI Concrete"
         },
         "image": "/images/products_3d/card_high-collar-3d.png",
         "href": "/#contact"

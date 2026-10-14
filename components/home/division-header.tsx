@@ -84,10 +84,10 @@ export function DivisionHeader({
   return (
     <div
       id={id}
-      className={`w-full py-12 sm:py-16 relative overflow-hidden ${
+      className={`w-full py-12 sm:py-16 relative overflow-hidden text-white border-y ${
         isMfg
-          ? "bg-[#014088] text-white border-y border-[#014088]"
-          : "bg-white text-[#014088] border-y border-[#D0E2F2]"
+          ? "bg-[#014088] border-[#014088]"
+          : "bg-gradient-to-r from-[#014088] via-[#02336D] to-[#012754] border-[#0E96E1]/40"
       }`}
     >
       <div className="section-container-wide">
@@ -98,14 +98,14 @@ export function DivisionHeader({
             <div className="flex flex-wrap items-center gap-2.5 mb-3.5">
               <span
                 className={`px-3 py-1 rounded text-[11px] font-black uppercase tracking-wider font-mono shadow-xs ${
-                  isMfg ? "bg-[#0E96E1] text-white" : "bg-[#014088] text-white"
+                  isMfg ? "bg-[#0E96E1] text-white" : "bg-[#0E96E1] text-white"
                 }`}
               >
                 DIVISION {divisionNumber}
               </span>
               <span
                 className={`text-xs font-black uppercase tracking-widest font-mono ${
-                  isMfg ? "text-sky-200" : "text-[#556B82]"
+                  isMfg ? "text-sky-200" : "text-sky-200"
                 }`}
               >
                 {badge}
@@ -114,9 +114,7 @@ export function DivisionHeader({
 
             {/* Title */}
             <h2
-              className={`text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-[1.1] mb-2.5 ${
-                isMfg ? "text-white" : "text-[#014088]"
-              }`}
+              className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-[1.1] mb-2.5 text-white"
             >
               {title}
             </h2>
@@ -124,14 +122,10 @@ export function DivisionHeader({
             {/* Subtitle Accent Line */}
             <div className="flex items-center gap-2.5 mb-4">
               <span
-                className={`w-8 h-1 rounded-full ${
-                  isMfg ? "bg-[#0E96E1]" : "bg-[#014088]"
-                }`}
+                className="w-8 h-1 rounded-full bg-[#0E96E1]"
               />
               <span
-                className={`text-xs sm:text-sm font-extrabold uppercase tracking-wide ${
-                  isMfg ? "text-[#38BDF8]" : "text-[#0E96E1]"
-                }`}
+                className="text-xs sm:text-sm font-extrabold uppercase tracking-wide text-[#38BDF8]"
               >
                 {subtitle}
               </span>
@@ -139,9 +133,7 @@ export function DivisionHeader({
 
             {/* Description */}
             <p
-              className={`text-sm sm:text-base leading-relaxed font-normal mb-6 max-w-2xl ${
-                isMfg ? "text-slate-100" : "text-[#334155]"
-              }`}
+              className="text-sm sm:text-base leading-relaxed font-normal mb-6 max-w-2xl text-slate-100"
             >
               {description}
             </p>
@@ -150,11 +142,7 @@ export function DivisionHeader({
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href={primaryLink.href}
-                className={`inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 ${
-                  isMfg
-                    ? "bg-[#0E96E1] hover:bg-[#0C82C4] text-white shadow-md shadow-sky-500/20"
-                    : "bg-[#014088] hover:bg-[#01336D] text-white shadow-md shadow-blue-900/20"
-                }`}
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 bg-[#0E96E1] hover:bg-[#0C82C4] text-white shadow-md shadow-sky-500/20"
               >
                 {isMfg ? <Factory className="w-4 h-4" /> : <Compass className="w-4 h-4" />}
                 <span>{primaryLink.label}</span>
@@ -164,11 +152,7 @@ export function DivisionHeader({
               {secondaryLink && (
                 <Link
                   href={secondaryLink.href}
-                  className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider transition-colors active:scale-95 ${
-                    isMfg
-                      ? "bg-white text-[#014088] hover:bg-[#F0F6FC] border-2 border-white"
-                      : "bg-white text-[#014088] hover:bg-[#F0F6FC] border-2 border-[#D0E2F2]"
-                  }`}
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider transition-colors active:scale-95 bg-white text-[#014088] hover:bg-[#F0F6FC] border-2 border-white"
                 >
                   <span>{secondaryLink.label}</span>
                 </Link>
@@ -182,17 +166,11 @@ export function DivisionHeader({
               {activeMetrics.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`rounded-xl p-4 sm:p-5 transition-all flex flex-col justify-between ${
-                    isMfg
-                      ? "bg-white text-[#014088] border-2 border-white shadow-lg"
-                      : "bg-[#F0F6FC] text-[#014088] border-2 border-[#D0E2F2] hover:border-[#0E96E1] shadow-sm"
-                  }`}
+                  className="rounded-xl p-4 sm:p-5 transition-all flex flex-col justify-between bg-white text-[#014088] border-2 border-white shadow-lg"
                 >
                   <div>
                     <div
-                      className={`text-lg sm:text-xl font-black font-mono tracking-tight leading-tight mb-1.5 ${
-                        isMfg ? "text-[#014088]" : "text-[#0E96E1]"
-                      }`}
+                      className="text-lg sm:text-xl font-black font-mono tracking-tight leading-tight mb-1.5 text-[#014088]"
                     >
                       {item.value}
                     </div>

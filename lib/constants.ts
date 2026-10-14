@@ -24,7 +24,7 @@ export const COMPANY = {
 } as const;
 
 export const ASTRO_CATALOG_SPECS = {
-  concreteStrength: "4,000 PSI Minimum 28-Day Compressive Strength",
+  concreteStrength: "5,000+ PSI Minimum 28-Day Compressive Strength",
   trafficRating: "A.A.S.H.T.O. HS20-44 Heavy Highway Traffic Loading",
   reinforcementSteel: "ASTM A-615 Grade 60 & ASTM A-185-02 Reinforcing Steel",
   meshSpec: "WWF 6\" × 12\" - 6&8, W2.0 × W2.0 (ASTM A1064) Centered in 6\" Wall with 1.5\" Min Cover",
@@ -60,7 +60,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Catch Basins",
     pages: "Pages 4–17",
     headline: "Highway & Municipal Stormwater Catch Basins (AR 3048 CB)",
-    description: "Engineered highway drainage boxes fabricated with 4,000 PSI concrete and AASHTO HS20-44 traffic rating. Available with solid covers, curb frames, and side-throat inlets built for Suffolk & Nassau County DOT infrastructure.",
+    description: "Engineered highway drainage boxes fabricated with 5,000+ PSI concrete and AASHTO HS20-44 traffic rating. Available with solid covers, curb frames, and side-throat inlets built for Suffolk & Nassau County DOT infrastructure.",
     models: [
       "12\" × 12\" Catch Basin",
       "18\" × 18\" Catch Basin",
@@ -72,7 +72,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "84\" × 84\" Catch Basin",
     ],
     specs: {
-      strength: "4,000 PSI @ 28 Days",
+      strength: "5,000+ PSI @ 28 Days",
       rating: "AASHTO HS20-44",
       compliance: "Suffolk & Nassau County DOT",
       reinforcement: "WWF 6\"×12\" (ASTM A1064) in 6\" Wall",
@@ -100,7 +100,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "2,500 Gallon 2-Piece Septic Tank",
     ],
     specs: {
-      strength: "4,000 PSI Watertight Mix",
+      strength: "5,000+ PSI Watertight Mix",
       rating: "AASHTO HS20 Traffic or Non-Traffic",
       compliance: "Suffolk County Dept of Health",
       reinforcement: "ASTM A-615 Grade 60 Rebar",
@@ -150,7 +150,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "Heavy Traffic D-Box with Cast-Iron Frame",
     ],
     specs: {
-      strength: "4,000 PSI Concrete",
+      strength: "5,000+ PSI Concrete",
       rating: "Pedestrian & Traffic Surcharges",
       compliance: "Suffolk & Nassau Sanitary Codes",
       reinforcement: "Reinforced Wire Mesh",
@@ -173,7 +173,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "4' Depth Leaching Galley",
     ],
     specs: {
-      strength: "4,000 PSI Compressive Mix",
+      strength: "5,000+ PSI Compressive Mix",
       rating: "AASHTO HS20 Subsurface Loading",
       compliance: "NYS DEC Stormwater Manual",
       reinforcement: "ASTM A-615 Grade 60 Rebar",
@@ -196,7 +196,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "12' Low Dome (Tapered Cap)",
     ],
     specs: {
-      strength: "4,000 PSI Structural Concrete",
+      strength: "5,000+ PSI Structural Concrete",
       rating: "Heavy Soil Surcharge Rated",
       compliance: "Suffolk & Nassau Civil Specs",
       reinforcement: "Grade 60 Radial Reinforcement",
@@ -218,7 +218,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "10' High Dome",
     ],
     specs: {
-      strength: "4,000 PSI Structural Concrete",
+      strength: "5,000+ PSI Structural Concrete",
       rating: "Deep Burial Soil Load Rated",
       compliance: "Municipal Deep Utility Standard",
       reinforcement: "High-Tensile Steel Cage",
@@ -239,7 +239,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "6' × 5.5\" Precast Concrete Curb Stop",
     ],
     specs: {
-      strength: "4,000 PSI Concrete with Beveled Edges",
+      strength: "5,000+ PSI Concrete with Beveled Edges",
       rating: "Vehicle Impact Resistant",
       compliance: "Commercial Site Standard",
       reinforcement: "Continuous Steel Reinforcing Rods",
@@ -293,7 +293,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "12' Diameter Solid Rings (2', 3', 4' Heights)",
     ],
     specs: {
-      strength: "4,000 PSI Compressive Strength",
+      strength: "5,000+ PSI Compressive Strength",
       rating: "AASHTO HS20 Surcharge Rated",
       compliance: "ASTM C478 Precast Manhole Standard",
       reinforcement: "Circular Welded Wire Mesh (ASTM A1064)",
@@ -316,7 +316,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "10' Sanitary Rings (3', 4', 5' Heights)",
     ],
     specs: {
-      strength: "4,000 PSI Concrete",
+      strength: "5,000+ PSI Concrete",
       rating: "Subsurface Lateral Soil Pressure",
       compliance: "Suffolk County Dept of Health Services",
       reinforcement: "ASTM A-615 Grade 60 & Wire Mesh",
@@ -338,7 +338,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "12' Storm Rings (2', 3', 4', 5' Heights)",
     ],
     specs: {
-      strength: "4,000 PSI Mix Design",
+      strength: "5,000+ PSI Mix Design",
       rating: "AASHTO HS20 Roadway Infiltration",
       compliance: "Long Island Regional Stormwater Standard",
       reinforcement: "Heavy-Gauge Welded Steel Reinforcing",
@@ -362,7 +362,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "12' Concrete Footing Ring",
     ],
     specs: {
-      strength: "4,000 PSI Compressive Strength",
+      strength: "5,000+ PSI Compressive Strength",
       rating: "High Soil Bearing Capacity Support",
       compliance: "Structural Foundation Standard",
       reinforcement: "Circumferential Rebar Reinforcement",
@@ -385,7 +385,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "24\" High Collar Riser",
     ],
     specs: {
-      strength: "4,000 PSI Mix Design",
+      strength: "5,000+ PSI Mix Design",
       rating: "AASHTO HS20 Wheel Impact Rated",
       compliance: "Suffolk & Nassau Highway Adjustments",
       reinforcement: "Integral Steel Reinforcement",
