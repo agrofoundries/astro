@@ -20,6 +20,7 @@ import {
   FileText,
   Layers,
   Scale,
+  Download,
 } from "lucide-react";
 
 // ─── DATA INTERFACES ──────────────────────────────────────────────────────────
@@ -1972,6 +1973,67 @@ export function ProductsSection() {
   );
 }
 
+// ─── PER-FAMILY DRAWING PDF CATALOG MAPPING ───────────────────────────────
+
+const FAMILY_DRAWINGS: Record<string, { pdf: string; filename: string }> = {
+  "catch-basins": {
+    pdf: "/downloads/drawings/Astro-Catch-Basins-Drawings.pdf",
+    filename: "Astro-Catch-Basins-Drawings.pdf",
+  },
+  "septic-tanks": {
+    pdf: "/downloads/drawings/Astro-Septic-Tanks-Drawings.pdf",
+    filename: "Astro-Septic-Tanks-Drawings.pdf",
+  },
+  "grease-traps": {
+    pdf: "/downloads/drawings/Astro-Grease-Traps-Drawings.pdf",
+    filename: "Astro-Grease-Traps-Drawings.pdf",
+  },
+  "distribution-boxes": {
+    pdf: "/downloads/drawings/Astro-Distribution-Boxes-Drawings.pdf",
+    filename: "Astro-Distribution-Boxes-Drawings.pdf",
+  },
+  "leaching-galleys": {
+    pdf: "/downloads/drawings/Astro-Leaching-Galleys-Drawings.pdf",
+    filename: "Astro-Leaching-Galleys-Drawings.pdf",
+  },
+  "low-domes": {
+    pdf: "/downloads/drawings/Astro-Low-Domes-Drawings.pdf",
+    filename: "Astro-Low-Domes-Drawings.pdf",
+  },
+  "high-domes": {
+    pdf: "/downloads/drawings/Astro-High-Domes-Drawings.pdf",
+    filename: "Astro-High-Domes-Drawings.pdf",
+  },
+  "curb-stops": {
+    pdf: "/downloads/drawings/Astro-Curb-Stops-Drawings.pdf",
+    filename: "Astro-Curb-Stops-Drawings.pdf",
+  },
+  slabs: {
+    pdf: "/downloads/drawings/Astro-Slabs-Drawings.pdf",
+    filename: "Astro-Slabs-Drawings.pdf",
+  },
+  "solid-rings": {
+    pdf: "/downloads/drawings/Astro-Solid-Rings-Drawings.pdf",
+    filename: "Astro-Solid-Rings-Drawings.pdf",
+  },
+  "sanitary-rings": {
+    pdf: "/downloads/drawings/Astro-Sanitary-Rings-Drawings.pdf",
+    filename: "Astro-Sanitary-Rings-Drawings.pdf",
+  },
+  "storm-rings": {
+    pdf: "/downloads/drawings/Astro-Storm-Rings-Drawings.pdf",
+    filename: "Astro-Storm-Rings-Drawings.pdf",
+  },
+  footings: {
+    pdf: "/downloads/drawings/Astro-Footings-Drawings.pdf",
+    filename: "Astro-Footings-Drawings.pdf",
+  },
+  "high-collars": {
+    pdf: "/downloads/drawings/Astro-High-Collars-Drawings.pdf",
+    filename: "Astro-High-Collars-Drawings.pdf",
+  },
+};
+
 // ─── PER-FAMILY SLIDER COMPONENT ─────────────────────────────────────────────
 
 interface ProductVariableSliderProps {
@@ -1982,6 +2044,10 @@ interface ProductVariableSliderProps {
 function ProductVariableSlider({ family, mounted }: ProductVariableSliderProps) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const swiperRef = useRef<SwiperClass | null>(null);
+  const familyDrawing = FAMILY_DRAWINGS[family.id] || {
+    pdf: "/downloads/Astro-2026-Precast-Engineering-Catalog-Drawings.pdf",
+    filename: "Astro-Precast-Drawings.pdf",
+  };
 
   return (
     <div className="bg-[#F8FAFC] border-2 border-[#D0E2F2] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xs">
@@ -2006,9 +2072,21 @@ function ProductVariableSlider({ family, mounted }: ProductVariableSliderProps) 
           </p>
         </div>
 
-        {/* Prev / Next controls */}
-        <div className="flex items-center gap-2 shrink-0">
-          <div className="hidden sm:block text-[11px] font-mono font-bold text-[#64748B] mr-2">
+        {/* Category CAD Drawing Direct Download & Prev / Next controls */}
+        <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+          <a
+            href={familyDrawing.pdf}
+            download={familyDrawing.filename}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#014088] hover:bg-[#0E96E1] text-white text-xs font-black uppercase tracking-wider transition-colors shadow-xs active:scale-95 cursor-pointer"
+            title={`Download ${family.name} Engineering CAD Drawings`}
+          >
+            <Download className="w-3.5 h-3.5 text-[#0E96E1]" />
+            <span>Download Category Drawings</span>
+          </a>
+
+          <div className="hidden sm:block text-[11px] font-mono font-bold text-[#64748B] mr-1">
             Model {currentSlideIndex + 1} of {family.variables.length}
           </div>
 
@@ -2062,7 +2140,7 @@ function ProductVariableSlider({ family, mounted }: ProductVariableSliderProps) 
       {!mounted ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {family.variables.slice(0, 3).map((variable) => (
-            <VariableCard key={variable.id} variable={variable} />
+            <VariableCard key={variable.id} variable={variable} family={family} />
           ))}
         </div>
       ) : (
@@ -2092,7 +2170,7 @@ function ProductVariableSlider({ family, mounted }: ProductVariableSliderProps) 
           >
             {family.variables.map((variable) => (
               <SwiperSlide key={variable.id} className="h-auto">
-                <VariableCard variable={variable} />
+                <VariableCard variable={variable} family={family} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -2106,9 +2184,14 @@ function ProductVariableSlider({ family, mounted }: ProductVariableSliderProps) 
 
 interface VariableCardProps {
   variable: ProductVariable;
+  family: ProductFamily;
 }
 
-function VariableCard({ variable }: VariableCardProps) {
+function VariableCard({ variable, family }: VariableCardProps) {
+  const familyDrawing = FAMILY_DRAWINGS[family.id] || {
+    pdf: "/downloads/Astro-2026-Precast-Engineering-Catalog-Drawings.pdf",
+    filename: "Astro-Precast-Drawings.pdf",
+  };
   return (
     <div className="bg-white rounded-2xl border-2 border-[#D0E2F2] hover:border-[#0E96E1] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
       {/* 1. HD 3D Render Image Container */}
@@ -2206,19 +2289,23 @@ function VariableCard({ variable }: VariableCardProps) {
           </div>
         </div>
 
-        {/* 5. Bottom Action Row */}
-        <div className="pt-4 border-t border-[#F0F6FC] flex items-center justify-between">
-          <Link
-            href="/#contact"
-            className="text-xs font-bold text-[#014088] hover:text-[#0E96E1] transition-colors inline-flex items-center gap-1.5"
+        {/* 5. Bottom Action Row - Product-Specific Drawing Download + RFQ */}
+        <div className="pt-4 border-t border-[#F0F6FC] flex items-center justify-between gap-2">
+          <a
+            href={familyDrawing.pdf}
+            download={`${variable.shortName.replace(/[^a-zA-Z0-9_-]/g, "_")}_CAD_Drawing.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-bold text-[#014088] hover:text-[#0E96E1] transition-colors inline-flex items-center gap-1.5 group/dl py-1 cursor-pointer"
+            title={`Download ${variable.name} Official CAD Drawing Sheet (${family.categoryBadge})`}
           >
-            <span>Submittal Sheet</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+            <Download className="w-3.5 h-3.5 text-[#0E96E1] group-hover/dl:translate-y-0.5 transition-transform" />
+            <span className="font-extrabold">Download Drawing</span>
+          </a>
 
           <Link
             href="/#contact"
-            className="bg-[#0E96E1] hover:bg-[#0C82C4] text-white font-black py-2.5 px-5 rounded-lg text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all active:scale-95 inline-flex items-center gap-1.5"
+            className="bg-[#0E96E1] hover:bg-[#0C82C4] text-white font-black py-2 px-3.5 sm:px-4 rounded-lg text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all active:scale-95 inline-flex items-center gap-1.5 shrink-0"
           >
             <span>RFQ Quote</span>
             <ArrowRight className="w-3.5 h-3.5" />

@@ -91,7 +91,7 @@ export function Footer() {
   };
 
   return (
-    <footer id="contact" className="w-full bg-[#014088] text-white border-t-4 border-[#0E96E1] relative" role="contentinfo">
+    <footer id="footer" className="w-full bg-[#014088] text-white border-t-4 border-[#0E96E1] relative" role="contentinfo">
       {/* Main Footer Container */}
       <div className="section-container-wide py-10 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14">

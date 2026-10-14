@@ -11,6 +11,7 @@ import { EverythingElseWeDo } from "@/components/home/everything-else-we-do";
 import { SoftwareTechnology } from "@/components/home/software-technology";
 import { LocationsSection } from "@/components/home/locations-section";
 import { BlogSection } from "@/components/home/blog-section";
+import { ContactSection } from "@/components/home/contact-section";
 
 export default function HomePage() {
   return (
@@ -83,8 +84,11 @@ export default function HomePage() {
       {/* 9. Technical Insights & Blog */}
       <BlogSection />
 
-      {/* 10. Seven Offices, One Delivery Standard (Directly Before Footer) */}
+      {/* 10. Seven Offices, One Delivery Standard */}
       <LocationsSection />
+
+      {/* 11. Engineering Consultation, Quote Request & Drawing Attachment Form */}
+      <ContactSection />
     </>
   );
 }
