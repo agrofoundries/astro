@@ -31,11 +31,11 @@ const NEWS_ITEMS: NewsItem[] = [
     summary: "U.S. transportation departments expand approvals for Portland-Limestone Cement (Type IL) and ground glass pozzolan in precast elements.",
   },
   {
-    title: "Digital Fabrication and OpenBIM Interoperability for Precast Plants",
+    title: "Digital Fabrication and 3D CAD Interoperability for Precast Plants",
     category: "Industry Developments",
     date: "January 2024",
-    source: "buildingSMART International",
-    summary: "Refined IFC 4.3 standards improve interoperability between structural BIM models, automated rebar benders, and fabrication scheduling software.",
+    source: "Precast Concrete Institute",
+    summary: "Refined IFC 4.3 standards improve interoperability between structural 3D models, automated rebar benders, and fabrication scheduling software.",
   },
 ];
 

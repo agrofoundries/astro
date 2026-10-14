@@ -18,7 +18,7 @@ const CAREER_ROLES: CareerRole[] = [
     description: "Perform structural calculations, connection engineering, and PE sealing for precast and prestressed concrete projects.",
   },
   {
-    title: "Precast BIM Modeler (Tekla Structures)",
+    title: "Precast 3D Modeler (Tekla Structures)",
     department: "Detailing Department",
     location: "United States (Remote / Hybrid)",
     type: "Full-Time",
@@ -51,7 +51,7 @@ export function CareersSection() {
             Careers at Precast Engineers
           </h2>
           <p className="text-sm sm:text-base text-[#475569] mt-2">
-            We work with licensed structural engineers, Tekla BIM detailers, and precast manufacturing specialists dedicated to technical excellence.
+            We work with licensed structural engineers, Tekla structural detailers, and precast manufacturing specialists dedicated to technical excellence.
           </p>
         </div>
 

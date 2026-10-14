@@ -18,9 +18,9 @@ const SECTIONS = [
   {
     icon: FileText,
     title: "2. Use of Construction & Project Data",
-    summary: "Plain English: Your drawings and BIM models are used strictly for engineering analysis and takeoffs. We never sell or share your data.",
+    summary: "Plain English: Your drawings and CAD models are used strictly for engineering analysis and takeoffs. We never sell or share your data.",
     legal:
-      "Blueprints, CAD/BIM models, structural specifications, and contact records uploaded to our engineering desk are utilized strictly for estimating, feasibility analysis, connection detailing, and PE calculations. We do not sell, rent, or commercialize proprietary client data.",
+      "Blueprints, CAD drawings, structural specifications, and contact records uploaded to our engineering desk are utilized strictly for estimating, feasibility analysis, connection detailing, and PE calculations. We do not sell, rent, or commercialize proprietary client data.",
   },
   {
     icon: Lock,

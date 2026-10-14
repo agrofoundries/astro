@@ -31,7 +31,7 @@ const SEARCH_DATABASE: SearchIndexItem[] = [
     href: "/#services",
   },
   {
-    title: "BIM & 3D Tekla Modeling",
+    title: "Structural 3D Tekla Modeling",
     category: "Engineering Services",
     description: "LOD 400 fabrication models, clash detection, and digital field coordination.",
     href: "/#services",

@@ -1,94 +1,38 @@
 import { HeroSection } from "@/components/home/hero-section";
 import { SponsorMarquee } from "@/components/home/sponsor-marquee";
-import { DivisionNavigator } from "@/components/home/division-navigator";
-import { DivisionHeader } from "@/components/home/division-header";
-import { CompanyIntro } from "@/components/home/company-intro";
-import { IconicProjectsSection } from "@/components/home/iconic-projects";
+import { WhoWeAreStory } from "@/components/home/who-we-are-story";
 import { ProductsSection } from "@/components/home/products-section";
-import { DivisionBridge } from "@/components/home/division-bridge";
 import { EngineeringSection } from "@/components/home/engineering-section";
-import { EverythingElseWeDo } from "@/components/home/everything-else-we-do";
-import { SoftwareTechnology } from "@/components/home/software-technology";
+import { IconicProjectsSection } from "@/components/home/iconic-projects";
 import { LocationsSection } from "@/components/home/locations-section";
-import { BlogSection } from "@/components/home/blog-section";
 import { ContactSection } from "@/components/home/contact-section";
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Dual-Pillar Hero Section (Manufacturing Plant + Structural Engineering) */}
+      {/* 1. Flagship Hero Section (Advanced Precast Engineering & Infrastructure) */}
       <HeroSection />
 
-      {/* 1b. Regional Association & Sponsor Marquee (NEPCA, NJPCA, PCANY, PCAV, PCMA, PPA) */}
+      {/* 2. Regional DOT & Precast Industry Affiliations (NEPCA, NJPCA, PCANY, PCAV, PCMA, PPA) */}
       <SponsorMarquee />
 
-      {/* 1c. Dedicated Dual-Division Navigator Matrix */}
-      <DivisionNavigator />
+      {/* 3. The Visual Story: Who We Are, Deer Park Heritage, Mission & Vision, and Core Pillars */}
+      <WhoWeAreStory />
 
-      {/* ======================================================== */}
-      {/* DIVISION 01: PRECAST CONCRETE MANUFACTURING & SUPPLY    */}
-      {/* ======================================================== */}
-      <DivisionHeader
-        id="manufacturing"
-        divisionNumber="01"
-        title="Precast Concrete Manufacturing & Plant Facilities"
-        subtitle="High-Capacity Casting Beds & DOT-Approved Civil Infrastructure"
-        badge="PLANT CASTING & DOT CONCRETE PRODUCTS"
-        description="Direct high-volume plant production operating climate-controlled casting beds, computerized twin-shaft planetary batching, and synchronized overhead cranes. Fabricating heavy highway box culverts, bridge panels, utility vaults, and stormwater drainage structures."
-        primaryLink={{ label: "Browse Products Catalog", href: "/#products" }}
-        secondaryLink={{ label: "Review Plant Specifications", href: "/#manufacturing-specs" }}
-        theme="manufacturing"
-      />
-
-      {/* 2. Precision Precast Company Overview & Technical Credentials */}
-      <CompanyIntro />
-
-      {/* 3. Iconic & Ongoing Certified Projects (Replacing duplicate plant section) */}
-      <IconicProjectsSection />
-
-      {/* 4. Products Catalog (Heavy Civil Infrastructure First + Complete Line) */}
+      {/* 4. Certified Precast Products Catalog (Heavy Civil & Underground Infrastructure) */}
       <ProductsSection />
 
-      {/* ======================================================== */}
-      {/* INTEGRATION BRIDGE: 3D BIM MODEL TO PLANT CASTING BED     */}
-      {/* ======================================================== */}
-      <DivisionBridge />
-
-      {/* ======================================================== */}
-      {/* DIVISION 02: STRUCTURAL ENGINEERING & 3D BIM CONSULTING */}
-      {/* ======================================================== */}
-      <DivisionHeader
-        id="engineering"
-        divisionNumber="02"
-        title="Precast Structural Engineering & 3D BIM Services"
-        subtitle="Licensed PE Stamped Calculations & Tekla LOD 400 Detailing"
-        badge="VIRTUAL DESIGN & LICENSED PE CONSULTING"
-        description="Dedicated in-house structural engineering consultancy specializing exclusively in precast and prestressed concrete systems. Delivering licensed PE/SE stamped calculations, custom connection designs, erection sequencing, and clash-free fabrication detailing."
-        primaryLink={{ label: "View 8 Engineering Disciplines", href: "/#services" }}
-        secondaryLink={{ label: "Digital BIM Workflows", href: "/#software" }}
-        theme="engineering"
-      />
-
-      {/* 6. In-House Precast Structural Engineering & BIM Detailing */}
+      {/* 5. In-House Structural Engineering, Licensed PE Stamped Calcs & 3D Tekla Detailing */}
       <EngineeringSection />
 
-      {/* 7. Everything Else We Do (Interactive Services Showcase) */}
-      <EverythingElseWeDo />
+      {/* 6. Iconic & Ongoing Certified Civil Projects in NY/NJ Metro */}
+      <IconicProjectsSection />
 
-      {/* 8. Digital Engineering Software & CAD/CAM Automation */}
-      <SoftwareTechnology />
-
-      {/* ======================================================== */}
-      {/* TECHNICAL INSIGHTS & REGIONAL LOCATIONS NETWORK         */}
-      {/* ======================================================== */}
-      {/* 9. Technical Insights & Blog */}
-      <BlogSection />
-
-      {/* 10. Seven Offices, One Delivery Standard */}
-      <LocationsSection />
-
-      {/* 11. Engineering Consultation, Quote Request & Drawing Attachment Form */}
+      {/* 7. Estimating Desk, Realistic USA Contractor Request Form & CAD Drawing Attachment */}
       <ContactSection />
+
+      {/* 8. Deer Park, Long Island Production Plant Coordinates & Tri-State Service Area */}
+      <LocationsSection />
     </>
   );
 }

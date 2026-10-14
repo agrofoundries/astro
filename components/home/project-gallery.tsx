@@ -52,7 +52,7 @@ const GALLERY_ITEMS = [
     specs: "TOLERANCE: ±0.0625\" | ASTM C39 HYDRAULIC BREAKS",
   },
   {
-    code: "SPEC-BIM-06",
+    code: "SPEC-CAD-06",
     title: "Tekla LOD 400 Erection Modeling",
     category: "ARCHITECTURAL",
     image: "/images/engineering-team.jpg",

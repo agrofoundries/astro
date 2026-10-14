@@ -11,6 +11,7 @@ import {
   ArrowRight,
   ChevronUp,
   CheckCircle2,
+  Play,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
@@ -24,9 +25,9 @@ const SERVICES_LINKS = [
 ];
 
 const SOLUTIONS_LINKS = [
-  { label: "Licensed PE & SE Calculations", href: "/#services" },
-  { label: "Tekla 3D BIM Detailing", href: "/#services" },
-  { label: "Precast Connection Design", href: "/#services" },
+  { label: "Licensed PE & SE Calculations", href: "/#engineering" },
+  { label: "Tekla 3D Structural Detailing", href: "/#engineering" },
+  { label: "Precast Connection Design", href: "/#engineering" },
   { label: "Lifting & Rigging Engineering", href: "/#services" },
   { label: "Rebar & Reinforcement Schedules", href: "/#services" },
   { label: "Fast Material Quotes", href: "/#contact" },
@@ -65,10 +66,10 @@ const LATEST_INSIGHTS = [
     href: "/#blog",
   },
   {
-    title: "Tekla 3D BIM in Precast: Eliminating Casting Bed Clashes",
-    tag: "3D BIM",
+    title: "Tekla 3D Detailing in Precast: Eliminating Casting Bed Clashes",
+    tag: "3D CAD",
     date: "SEP 2026",
-    href: "/#blog",
+    href: "/#engineering",
   },
 ];
 
@@ -92,29 +93,111 @@ export function Footer() {
 
   return (
     <footer id="footer" className="w-full bg-[#014088] text-white border-t-4 border-[#0E96E1] relative" role="contentinfo">
+      {/* ======================================================== */}
+      {/* PRECAST IN ACTION: LEACHING GALLEY FIELD VIDEO SHOWCASE  */}
+      {/* ======================================================== */}
+      <div className="w-full bg-[#002752] border-b border-white/15 py-8 sm:py-10">
+        <div className="section-container-wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Video Player Column */}
+            <div className="lg:col-span-7">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#0E96E1]/50 shadow-2xl bg-black aspect-video group">
+                <video
+                  src="/video-leaching.mp4"
+                  controls
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  preload="metadata"
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/video-leaching.mp4" type="video/mp4" />
+                  <source src="/video-%20leaching.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute top-3 left-3 pointer-events-none">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[11px] font-mono font-bold text-white border border-white/20">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                    FIELD VIDEO · PRECAST LEACHING GALLEY INSTALLATION
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Video Narrative & Action Column */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0E96E1]/20 border border-[#0E96E1]/40 text-[#0E96E1] text-xs font-mono font-bold uppercase tracking-wider">
+                <Play className="w-3.5 h-3.5 fill-current" />
+                <span>ON-SITE PRECAST ENGINEERING</span>
+              </div>
+
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-snug">
+                Precast Leaching Galley Field Rigging &amp; Placement
+              </h3>
+
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+                Witness precision heavy crane placement and subterranean embedment of Astro engineered precast leaching galleys. Engineered for high stormwater volume retention, heavy highway wheel load distribution (AASHTO HS20-44), and decades of structural resilience.
+              </p>
+
+              <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-slate-300">
+                <div className="bg-white/10 border border-white/15 rounded-xl p-3">
+                  <div className="text-[10px] text-[#0E96E1] uppercase font-bold">LOAD RATING</div>
+                  <div className="font-bold text-white mt-0.5">AASHTO HS20-44</div>
+                </div>
+                <div className="bg-white/10 border border-white/15 rounded-xl p-3">
+                  <div className="text-[10px] text-[#0E96E1] uppercase font-bold">APPLICATIONS</div>
+                  <div className="font-bold text-white mt-0.5">Maine DOT &amp; NY Infiltration</div>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <Link
+                  href="/#products"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0E96E1] hover:bg-[#0C82C4] text-white text-xs font-black uppercase tracking-wider transition-all shadow-md active:scale-95"
+                >
+                  <span>View Leaching Specs</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <a
+                  href="/downloads/Astro-2026-Precast-Engineering-Catalog-Drawings.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all active:scale-95"
+                >
+                  <span>Download CAD Drawings</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer Container */}
       <div className="section-container-wide py-10 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14">
           {/* Column 1: Brand & Contact Info (span 4) */}
           <div className="lg:col-span-4 space-y-6">
-            {/* White Logo Emblem Card */}
-            <div className="inline-block bg-white px-4 py-2.5 rounded-xl shadow-md border border-slate-200">
-              <Link href="/" aria-label="Astro Precast Engineering Home" className="flex items-center gap-3">
-                <div className="relative h-12 w-16 shrink-0">
+            {/* Prominent Large Logo Card */}
+            <div className="bg-white p-4 sm:p-5 rounded-2xl shadow-xl border-2 border-slate-200 w-fit max-w-sm hover:border-[#0E96E1] transition-all">
+              <Link href="/" aria-label="Astro Precast Engineering Home" className="flex items-center gap-4">
+                <div className="relative h-20 sm:h-24 w-32 sm:w-40 shrink-0">
                   <Image
                     src="/Astro Geometric Mark Logo.png"
-                    alt="Astro Geometric Mark Logo"
+                    alt="Astro Masonry & Precast Logo"
                     fill
-                    className="object-contain"
-                    sizes="64px"
+                    className="object-contain object-left"
+                    sizes="160px"
                   />
                 </div>
-                <div className="flex flex-col border-l border-slate-200 pl-2.5">
-                  <span className="text-xs font-black uppercase tracking-wider text-[#014088] font-mono leading-tight">
-                    ADVANCED PRECAST
+                <div className="flex flex-col border-l-2 border-slate-200 pl-3.5">
+                  <span className="text-sm sm:text-base font-black uppercase tracking-tight text-[#014088] leading-tight font-mono">
+                    ASTRO PRECAST
                   </span>
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#0E96E1] font-mono leading-tight">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#0E96E1] font-mono leading-tight mt-0.5">
                     2026 CATALOG SPEC
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-500 mt-1 uppercase">
+                    Deer Park, NY Plant
                   </span>
                 </div>
               </Link>
@@ -263,7 +346,7 @@ export function Footer() {
               {/* Engineering Division */}
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-                  ENGINEERING &amp; BIM
+                  STRUCTURAL ENGINEERING
                 </h4>
                 <ul className="space-y-2.5 text-xs text-slate-300">
                   {SOLUTIONS_LINKS.map((item) => (

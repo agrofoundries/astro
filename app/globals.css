@@ -22,10 +22,10 @@
   --highlight-pale-blue: #E0F2FE;  /* Astro Soft Sky Highlight */
   --border-light: #D0E2F2;         /* Astro Engineered Light Border */
 
-  /* Typography Colors */
+  /* Typography Colors - High Visibility & Deep Contrast */
   --text-navy: #014088;
-  --text-body: #1E293B;
-  --text-muted: #556B82;
+  --text-body: #0F172A;
+  --text-muted: #334155;
   --text-accent: #0E96E1;
 
   /* Layout Containers - Expansive Full Width */
@@ -60,7 +60,7 @@ body {
   line-height: 1.6;
 }
 
-/* Headings - Bold, Modern Manrope Geometry */
+/* Headings - Bold, Modern Manrope Geometry with Balanced Line Height */
 h1,
 h2,
 h3,
@@ -69,7 +69,14 @@ h5,
 h6 {
   font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* Ensure all uppercase headings & labels have generous, legible letter spacing */
+.uppercase,
+[class*="uppercase"] {
+  letter-spacing: 0.035em;
 }
 
 /* Containers - Full Width Edge-to-Edge */

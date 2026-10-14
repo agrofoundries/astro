@@ -24,7 +24,7 @@ const SOFTWARE_TOPICS: SoftwareTopic[] = [
     icon: Monitor,
   },
   {
-    title: "BIM and 3D Modeling",
+    title: "Structural 3D CAD Detailing",
     category: "LOD 400 Fabrication",
     description: "Detailed intelligent 3D models containing concrete geometry, embeds, rebar cages, lifting loops, and void penetrations.",
     applications: "Tekla Structures, Autodesk Revit, Trimble Connect",
@@ -48,7 +48,7 @@ const SOFTWARE_TOPICS: SoftwareTopic[] = [
     title: "Digital Coordination",
     category: "Clash Detection & IFC",
     description: "Multi-discipline model federation with architectural, structural steel, and MEP models to eliminate jobsite conflicts.",
-    applications: "Navisworks, BIM 360, openBIM IFC formats",
+    applications: "Navisworks, Autodesk Construction Cloud, open 3D IFC formats",
     icon: Share2,
   },
   {

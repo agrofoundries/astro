@@ -146,7 +146,7 @@ export default function QuotePage() {
                         required
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        placeholder="John Doe"
+                        placeholder="David R. Henderson, P.E."
                         className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
                       />
                     </div>
@@ -159,7 +159,7 @@ export default function QuotePage() {
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="Apex Construction Inc."
+                        placeholder="Tri-State Infrastructure Partners LLC"
                         className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
                       />
                     </div>
@@ -173,7 +173,7 @@ export default function QuotePage() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="jdoe@company.com"
+                        placeholder="d.henderson@tristateinfra.com"
                         className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
                       />
                     </div>
@@ -187,7 +187,7 @@ export default function QuotePage() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="(555) 000-0000"
+                        placeholder="(516) 482-1900"
                         className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
                       />
                     </div>
@@ -221,7 +221,7 @@ export default function QuotePage() {
                         type="text"
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                        placeholder="e.g. Austin, TX"
+                        placeholder="e.g. Hauppauge Industrial Corridor, Hauppauge, NY 11788"
                         className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:border-brand-primary outline-none"
                       />
                     </div>
@@ -282,7 +282,7 @@ export default function QuotePage() {
                       rows={4}
                       value={formData.specNotes}
                       onChange={(e) => setFormData({ ...formData, specNotes: e.target.value })}
-                      placeholder="Include dimensions, square footage, design loads, or any specialized finish requirements..."
+                      placeholder="e.g. Need (12) custom precast drainage vaults with AASHTO HS-20 traffic rating, stamped PE calculation package for Suffolk County DPW approval, and coordinated crane delivery to job site..."
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:border-brand-primary outline-none"
                     />
                   </div>

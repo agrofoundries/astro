@@ -54,7 +54,7 @@ export default function RootLayout({
       lang="en"
       className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col bg-white text-[#334155]">
+      <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans">
         <AnimationProvider>
           <Header />
           <main className="flex-1">{children}</main>

@@ -10,7 +10,6 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
   ShieldCheck,
   Video,
   Layers,

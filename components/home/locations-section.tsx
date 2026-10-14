@@ -74,7 +74,7 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/default_geocode-2x.svg",
     mapQuery: "111 S Wacker Drive, Chicago, IL 60606",
     capabilities: [
-      "Tekla 3D BIM",
+      "Tekla 3D CAD Detailing",
       "Structural detailing",
       "Connection design",
       "Rebar schedules",

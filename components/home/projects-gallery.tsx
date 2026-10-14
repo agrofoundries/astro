@@ -12,7 +12,6 @@ import {
   Play,
   Pause,
   Grid3X3,
-  Sparkles,
   GalleryHorizontalEnd,
   Layers3,
   CheckCircle2,
@@ -66,7 +65,7 @@ const PROJECTS_DATA: ProjectItem[] = [
     category: "Parking Garages",
     precastSystem: "Precast Prestressed Double Tees & Shear Walls",
     scopeOfWork:
-      "Shop detailing, Tekla LOD 400 BIM modeling, gravity and lateral diaphragm design coordination.",
+      "Shop detailing, Tekla LOD 400 3D modeling, gravity and lateral diaphragm design coordination.",
     engineeringDetails:
       "10-foot wide by 60-foot clear-span double tees with cast-in-place composite topping slab; field-welded flange connectors.",
     image: "/images/hero-precast.jpg",
@@ -211,7 +210,7 @@ export function ProjectsGallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#E8F3FF] border border-[#DCE5F0] rounded-full text-xs font-semibold text-[#014088] mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#0E96E1]" />
+              <Layers className="w-3.5 h-3.5 text-[#0E96E1]" />
               <span>Interactive Precast Showcase</span>
               <span className="text-[#64748B] text-[10px]">Powered by SwiperJS</span>
             </div>

@@ -53,7 +53,7 @@ const INDUSTRIAL_PRODUCTS = [
     catalogId: "CS-SERIES",
     title: "Custom Engineered Precast Solutions",
     description: "Engineered-to-order heavy industrial precast elements, equipment foundations, crane counterweights, and specialty vaults.",
-    specs: ["Tekla LOD 400 BIM", "PE Calculations", "CNC Custom Formwork"],
+    specs: ["Tekla LOD 400 Detailing", "PE Calculations", "CNC Custom Formwork"],
     icon: Wrench,
     href: "/products#custom",
   },

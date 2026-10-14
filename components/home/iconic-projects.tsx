@@ -7,7 +7,6 @@ import {
   MapPin,
   Calendar,
   ArrowRight,
-  Sparkles,
   Clock,
   CheckCircle2,
   Building2,
@@ -177,7 +176,7 @@ export function IconicProjectsSection() {
                     {project.category}
                   </div>
                   <div className="absolute bottom-3 right-3 bg-white/95 text-[#014088] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>{project.status}</span>
                   </div>
                 </div>

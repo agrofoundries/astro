@@ -16,7 +16,6 @@ import {
   X,
   ExternalLink,
   Layers,
-  Sparkles,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
@@ -203,25 +202,26 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="w-full bg-white border-b border-[#DCE5F0] py-16 sm:py-24">
+    <section id="contact" className="w-full bg-[#F8FAFD] border-b border-[#DCE5F0] py-10 sm:py-14">
       <div className="section-container-wide">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#0E96E1] mb-2 font-mono">
-            <span className="w-3 h-0.5 bg-[#0E96E1]" />
-            <span>DIRECT PLANT &amp; ENGINEERING DESK</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#014088] uppercase tracking-tight">
-            Contact Astro <span className="text-[#0E96E1]">Precast Engineers</span>
-          </h2>
-          <p className="text-sm sm:text-base text-slate-800 mt-2 leading-relaxed font-medium">
-            Send us your project drawings, piece schedules, or RFQ details. We provide certified 5,000+ PSI precast submittals, PE-stamped calculations, and fast delivery quotes from our Deer Park, NY production plant.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-start">
+          {/* Left Column: Header + Form */}
+          <div className="lg:col-span-7 space-y-6">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#0E96E1] mb-2 font-mono">
+                <span className="w-3 h-0.5 bg-[#0E96E1]" />
+                <span>DIRECT PLANT &amp; ENGINEERING DESK</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#014088] uppercase tracking-tight">
+                Contact Astro <span className="text-[#0E96E1]">Precast Engineers</span>
+              </h2>
+              <p className="text-sm sm:text-base text-slate-800 mt-2 leading-relaxed font-medium">
+                Send us your project drawings, piece schedules, or RFQ details. We provide certified 5,000+ PSI precast submittals, PE-stamped calculations, and fast delivery quotes from our Deer Park, NY production plant.
+              </p>
+            </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-start">
-          {/* Left Column: Interactive Contact & RFQ Form with Drawing Attachment */}
-          <div className="lg:col-span-7 bg-[#F4F8FD] border-2 border-[#DCE5F0] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
+            {/* Interactive Contact & RFQ Form with Drawing Attachment */}
+            <div className="bg-white border-2 border-[#DCE5F0] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
             {isSubmitted ? (
               <div className="py-12 text-center space-y-4">
                 <div className="w-16 h-16 bg-[#E0F2FE] border-2 border-[#BAE6FD] text-[#0E96E1] rounded-full flex items-center justify-center mx-auto shadow-sm">
@@ -272,7 +272,7 @@ export function ContactSection() {
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. John Miller"
+                      placeholder="e.g. Michael Callahan (Senior Project Executive)"
                       className="w-full px-4 py-3 bg-white border border-[#DCE5F0] rounded-lg text-sm text-slate-800 font-medium focus:outline-none focus:border-[#014088] focus:ring-1 focus:ring-[#014088] transition-all shadow-2xs"
                     />
                     {errors.name && <p className="text-[11px] text-[#0E96E1] font-bold mt-1">{errors.name}</p>}
@@ -286,7 +286,7 @@ export function ContactSection() {
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      placeholder="e.g. Northeast Civil Contractors"
+                      placeholder="e.g. Suffolk Civil Contractors LLC"
                       className="w-full px-4 py-3 bg-white border border-[#DCE5F0] rounded-lg text-sm text-slate-800 font-medium focus:outline-none focus:border-[#014088] focus:ring-1 focus:ring-[#014088] transition-all shadow-2xs"
                     />
                     {errors.company && <p className="text-[11px] text-[#0E96E1] font-bold mt-1">{errors.company}</p>}
@@ -303,7 +303,7 @@ export function ContactSection() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="e.g. jmiller@contractor.com"
+                      placeholder="e.g. mcallahan@suffolkcivil.com"
                       className="w-full px-4 py-3 bg-white border border-[#DCE5F0] rounded-lg text-sm text-slate-800 font-medium focus:outline-none focus:border-[#014088] focus:ring-1 focus:ring-[#014088] transition-all shadow-2xs"
                     />
                     {errors.email && <p className="text-[11px] text-[#0E96E1] font-bold mt-1">{errors.email}</p>}
@@ -317,7 +317,7 @@ export function ContactSection() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="e.g. (631) 667-3300"
+                      placeholder="e.g. (631) 589-4200"
                       className="w-full px-4 py-3 bg-white border border-[#DCE5F0] rounded-lg text-sm text-slate-800 font-medium focus:outline-none focus:border-[#014088] focus:ring-1 focus:ring-[#014088] transition-all shadow-2xs"
                     />
                   </div>
@@ -384,7 +384,7 @@ export function ContactSection() {
                     rows={4}
                     value={formData.requirements}
                     onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
-                    placeholder="Provide details about required piece quantities, standard numbers (e.g. Suffolk & Nassau County DPW, NY State DOT), traffic loading (HS-20 / HS-25), job site delivery location, or timeline..."
+                    placeholder="e.g. Route 110 Drainage Upgrade (Phase 2), Melville, NY — Need (16) Model AR 3048 Catch Basins, (8) 1,500 Gal Monolithic Septic Tanks, and AASHTO HS20-44 traffic slabs meeting Suffolk County DPW standards. Crane offload required at job site week of Nov 12..."
                     className="w-full px-4 py-3 bg-white border border-[#DCE5F0] rounded-lg text-sm text-slate-800 font-medium focus:outline-none focus:border-[#014088] focus:ring-1 focus:ring-[#014088] transition-all resize-none shadow-2xs"
                   />
                   {errors.requirements && <p className="text-[11px] text-[#0E96E1] font-bold mt-1">{errors.requirements}</p>}
@@ -472,6 +472,7 @@ export function ContactSection() {
                 </button>
               </form>
             )}
+            </div>
           </div>
 
           {/* Right Column: Direct Channels & Drawing Domain Download Center */}
@@ -479,7 +480,7 @@ export function ContactSection() {
             {/* 1. Official Drawing Domain Download Card */}
             <div className="bg-[#014088] text-white rounded-2xl p-6 sm:p-7 border-2 border-[#1662B0] shadow-xl space-y-5">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#0E96E1] uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-[#0E96E1]" />
+                <FileText className="w-4 h-4 text-[#0E96E1]" />
                 <span>OFFICIAL DRAWING DOMAIN</span>
               </div>
 

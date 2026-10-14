@@ -73,7 +73,7 @@ export function HeroSection() {
         <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
           {/* Eyebrow Pill Badge (Matching Exact User Reference) */}
           <div className="inline-flex items-center gap-2 p-1 pl-3.5 pr-1.5 rounded-full bg-[#E1F3FE]/95 border border-[#BAE6FD] mb-4 sm:mb-5 shadow-xs w-fit animate-fade-down">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#0E96E1] shadow-[0_0_8px_#0E96E1] shrink-0 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#014088] shrink-0" />
             <span className="text-[11px] sm:text-xs font-bold tracking-wider text-[#014088] uppercase font-mono">
               ASTRO 2026 CATALOG SPECIFICATION
             </span>
@@ -121,15 +121,6 @@ export function HeroSection() {
               <span>BROWSE 2026 CATALOG</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
-
-            {/* Direct Desk Call Button */}
-            <a
-              href="tel:6316673300"
-              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-[#014088] hover:bg-[#024B9E] text-white font-black text-xs sm:text-[13px] uppercase tracking-wider shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 cursor-pointer shrink-0"
-            >
-              <Phone className="w-4 h-4 text-white" />
-              <span>631-667 3300 DIRECT DESK</span>
-            </a>
           </div>
         </div>
       </div>

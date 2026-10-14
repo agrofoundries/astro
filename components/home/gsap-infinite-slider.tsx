@@ -9,7 +9,6 @@ import {
   Play,
   Pause,
   RotateCcw,
-  Sparkles,
   Layers,
   ShieldCheck,
   Maximize2,
@@ -69,11 +68,11 @@ const GSAP_CARDS: GSAPCardItem[] = [
   },
   {
     id: "gsap-4",
-    title: "Tekla LOD 400 Digital Twin Fabrication",
-    category: "BIM & Digital Detailing",
+    title: "Tekla LOD 400 Digital Detailing Fabrication",
+    category: "CAD & Digital Detailing",
     specs: "LOD 400 • Automated CAM / PXML",
     image: "/images/engineering-team.jpg",
-    badge: "OpenBIM Certified",
+    badge: "PCI Certified",
     description: "Millimeter-accurate automated bar bending schedules directly linking 3D structural models to casting beds.",
     loadRating: "Zero Hardware Clashes",
     dotApproval: "PCI QA Procedure Manual",
@@ -372,7 +371,7 @@ export function GSAPInfiniteSlider() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs font-semibold text-white mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#0E96E1]" />
+              <Layers className="w-3.5 h-3.5 text-[#0E96E1]" />
               <span>GSAP Demo Hub Showcase</span>
               <span className="text-slate-400">• demos.gsap.com/explore</span>
             </div>

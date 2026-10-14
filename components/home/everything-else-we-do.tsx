@@ -38,7 +38,7 @@ const SERVICE_TABS: ServiceTab[] = [
     tags: [
       "Structural design and calculations",
       "FEA modeling",
-      "Precast detailing and BIM",
+      "Precast detailing and 3D CAD",
       "Structural retrofitting",
       "Reverse engineering from scans or old parts",
     ],
