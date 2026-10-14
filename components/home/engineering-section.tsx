@@ -52,7 +52,7 @@ export function EngineeringSection() {
                   <h3 className="text-sm font-bold text-[#014088] uppercase tracking-tight mb-1.5">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#475569] leading-relaxed font-normal">
+                  <p className="text-xs text-slate-800 leading-relaxed font-medium">
                     {item.description}
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export function EngineeringSection() {
             <div className="relative rounded-xl overflow-hidden border-2 border-[#CBD5E1] shadow-xl aspect-[4/5] bg-[#EAEEF3]">
               <Image
                 src="/images/engineering-team.jpg"
-                alt="PRECASTPRO structural engineers and BIM modelers reviewing shop drawings"
+                alt="Astro Precast structural engineers and BIM modelers reviewing shop drawings"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -87,7 +87,7 @@ export function EngineeringSection() {
                 <div className="text-[#0E96E1] text-xs font-black uppercase mb-1">
                   Direct Contractor Coordination
                 </div>
-                <p className="text-[#475569] text-xs leading-relaxed font-medium">
+                <p className="text-slate-800 text-xs leading-relaxed font-semibold">
                   Collaborative submittal reviews, responsive coordination, and 3D erection model integration.
                 </p>
               </div>

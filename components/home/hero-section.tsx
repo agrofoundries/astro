@@ -106,7 +106,7 @@ export function HeroSection() {
           </div>
 
           {/* Clear Supporting Description matching Astro 2026 PDF */}
-          <p className="text-sm sm:text-base lg:text-[16px] text-slate-700 leading-relaxed font-normal max-w-xl mb-7 animate-fade-up [animation-delay:220ms]">
+          <p className="text-sm sm:text-base lg:text-[16px] text-slate-800 leading-relaxed font-medium max-w-xl mb-7 animate-fade-up [animation-delay:220ms]">
             Astro Masonry &amp; Precast manufactures certified high-strength precast concrete structures engineered for municipal stormwater, underground utilities, and civil site work. Certified 5,000+ PSI compressive strength, AASHTO HS20-44 traffic-rated, and engineered to exact Suffolk &amp; Nassau County standards from our Long Island production plant.
           </p>
 
@@ -157,7 +157,7 @@ export function HeroSection() {
                     <h3 className="text-xs sm:text-sm font-bold text-[#014088] leading-tight">
                       {metric.title}
                     </h3>
-                    <p className="text-[10.5px] text-[#556B82] leading-tight mt-0.5 font-medium font-mono">
+                    <p className="text-[10.5px] text-[#014088]/80 leading-tight mt-0.5 font-bold font-mono">
                       {metric.subtitle}
                     </p>
                   </div>

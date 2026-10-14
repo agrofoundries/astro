@@ -184,7 +184,7 @@ export function IconicProjectsSection() {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-2 font-medium">
+                  <div className="flex items-center gap-1.5 text-xs text-[#014088] mb-2 font-bold font-mono">
                     <MapPin className="w-3.5 h-3.5 text-[#0E96E1]" />
                     <span>{project.location}</span>
                   </div>
@@ -193,7 +193,7 @@ export function IconicProjectsSection() {
                     {project.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 leading-relaxed font-normal mb-5">
+                  <p className="text-xs text-slate-800 leading-relaxed font-medium mb-5">
                     {project.description}
                   </p>
                 </div>
@@ -205,7 +205,7 @@ export function IconicProjectsSection() {
                   {project.specs.map((spec, i) => (
                     <span
                       key={i}
-                      className="text-[10.5px] font-mono bg-white border border-slate-200 text-[#014088] px-2.5 py-1 rounded-md font-bold"
+                      className="text-[10.5px] font-mono bg-white border border-[#D0E2F2] text-[#014088] px-2.5 py-1 rounded-md font-black"
                     >
                       {spec}
                     </span>

@@ -5,7 +5,6 @@ import { DivisionHeader } from "@/components/home/division-header";
 import { CompanyIntro } from "@/components/home/company-intro";
 import { IconicProjectsSection } from "@/components/home/iconic-projects";
 import { ProductsSection } from "@/components/home/products-section";
-import { QCAssurance } from "@/components/home/qc-assurance";
 import { DivisionBridge } from "@/components/home/division-bridge";
 import { EngineeringSection } from "@/components/home/engineering-section";
 import { EverythingElseWeDo } from "@/components/home/everything-else-we-do";
@@ -48,9 +47,6 @@ export default function HomePage() {
 
       {/* 4. Products Catalog (Heavy Civil Infrastructure First + Complete Line) */}
       <ProductsSection />
-
-      {/* 5. In-House Materials Testing & Quality Assurance Lab */}
-      <QCAssurance />
 
       {/* ======================================================== */}
       {/* INTEGRATION BRIDGE: 3D BIM MODEL TO PLANT CASTING BED     */}

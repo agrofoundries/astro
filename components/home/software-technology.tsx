@@ -70,7 +70,7 @@ export function SoftwareTechnology() {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#014088] tracking-tight">
             Engineering Software and Technology
           </h2>
-          <p className="text-sm sm:text-base text-[#475569] mt-2">
+          <p className="text-sm sm:text-base text-slate-800 font-medium mt-2">
             Modern digital modeling, structural analysis tools, and automated manufacturing workflows utilized in precast concrete engineering.
           </p>
         </div>
@@ -98,14 +98,14 @@ export function SoftwareTechnology() {
                     {tool.title}
                   </h3>
 
-                  <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                  <p className="text-xs text-slate-800 leading-relaxed mb-4 font-medium">
                     {tool.description}
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-[#F2F7FF] text-[11px]">
-                  <p className="text-[#64748B]">
-                    <strong className="text-[#014088]">Industry Tools:</strong> {tool.applications}
+                  <p className="text-slate-700 font-medium">
+                    <strong className="text-[#014088] font-bold">Industry Tools:</strong> {tool.applications}
                   </p>
                 </div>
               </div>

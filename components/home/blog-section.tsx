@@ -25,12 +25,12 @@ const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: "subsurface-leaching-galleys",
-    title: "Subsurface Stormwater Infiltration: Maine DOT Leaching Galleys vs Conventional Systems",
+    title: "Subsurface Stormwater Infiltration: Suffolk & Nassau County Leaching Galleys vs Conventional Systems",
     category: "STORMWATER DESIGN",
     readTime: "5 min read",
     date: "SEPTEMBER 2026",
     summary:
-      "How high-void precast leaching galleys maximize groundwater recharge rates while reducing the subsurface excavated footprint on commercial and municipal sites.",
+      "How high-void precast leaching galleys maximize groundwater recharge rates while reducing the subsurface excavated footprint on commercial and municipal Long Island sites.",
     image: "/images/products/leaching-galley.png",
   },
   {
@@ -101,13 +101,13 @@ export function BlogSection() {
               {/* Content */}
               <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-4 text-[11px] font-mono text-[#64748B] mb-3">
+                  <div className="flex items-center gap-4 text-[11px] font-mono text-[#014088] mb-3">
                     <span className="flex items-center gap-1.5 font-bold">
                       <Calendar className="w-3.5 h-3.5 text-[#0E96E1]" />
                       {post.date}
                     </span>
                     <span>•</span>
-                    <span className="flex items-center gap-1.5">
+                    <span className="flex items-center gap-1.5 font-bold">
                       <Clock className="w-3.5 h-3.5" />
                       {post.readTime}
                     </span>
@@ -117,7 +117,7 @@ export function BlogSection() {
                     {post.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-6 font-normal">
+                  <p className="text-xs sm:text-sm text-slate-800 leading-relaxed mb-6 font-medium">
                     {post.summary}
                   </p>
                 </div>

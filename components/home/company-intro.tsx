@@ -36,7 +36,7 @@ export function CompanyIntro() {
                 </div>
                 <div>
                   <div className="text-xs font-black text-[#014088] uppercase">AASHTO HS-20 Rated</div>
-                  <div className="text-[11px] text-[#556B82]">Suffolk &amp; Nassau Approved</div>
+                  <div className="text-[11px] text-[#014088]/80 font-bold font-mono">Suffolk &amp; Nassau Approved</div>
                 </div>
               </div>
 
@@ -46,7 +46,7 @@ export function CompanyIntro() {
                 </div>
                 <div>
                   <div className="text-xs font-black text-[#014088] uppercase">5,000+ PSI Concrete</div>
-                  <div className="text-[11px] text-[#556B82]">Deer Park, NY Production</div>
+                  <div className="text-[11px] text-[#014088]/80 font-bold font-mono">Deer Park, NY Production</div>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ export function CompanyIntro() {
               Advanced Precast Concrete &amp; Masonry Solutions
             </h2>
 
-            <p className="text-sm sm:text-base text-[#334155] leading-relaxed mb-6 font-normal">
+            <p className="text-sm sm:text-base text-slate-800 leading-relaxed mb-6 font-medium">
               Astro Masonry &amp; Precast specializes in direct precast concrete manufacturing for civil engineering contractors, underground utility installers, and municipal infrastructure projects. Operating high-capacity casting facilities in Deer Park, NY, our plant produces certified catch basins, leaching galleys, monolithic septic tanks, distribution boxes, and custom utility vaults.
             </p>
 
@@ -72,7 +72,7 @@ export function CompanyIntro() {
               {CAPABILITY_POINTS.map((point, idx) => (
                 <div key={idx} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0E96E1] shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                  <span className="text-xs sm:text-sm text-slate-800 font-semibold leading-relaxed">
                     {point}
                   </span>
                 </div>

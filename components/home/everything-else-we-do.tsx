@@ -150,7 +150,7 @@ export function EverythingElseWeDo() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#014088] tracking-tight">
               Everything Else We Do
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+            <p className="text-xs sm:text-sm text-slate-800 font-semibold mt-1">
               Complete end-to-end precast structural engineering, detailing, and manufacturing support.
             </p>
           </div>
@@ -199,8 +199,8 @@ export function EverythingElseWeDo() {
                       {tab.title}
                     </h3>
                     <p
-                      className={`text-xs leading-relaxed font-normal line-clamp-2 ${
-                        isActive ? "text-slate-200" : "text-slate-500"
+                      className={`text-xs leading-relaxed font-medium line-clamp-2 ${
+                        isActive ? "text-slate-100" : "text-slate-700"
                       }`}
                     >
                       {tab.tagline}
@@ -247,7 +247,7 @@ export function EverythingElseWeDo() {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
+                <p className="text-xs sm:text-sm text-white/90 mb-6 leading-relaxed font-medium">
                   {activeTab.tagline}
                 </p>
 
@@ -256,7 +256,7 @@ export function EverythingElseWeDo() {
                   {activeTab.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs font-medium bg-white/10 hover:bg-white/20 text-slate-100 px-3 py-1.5 rounded-full border border-white/15 transition-colors"
+                      className="text-xs font-bold bg-white/15 hover:bg-white/25 text-white px-3 py-1.5 rounded-full border border-white/20 transition-colors"
                     >
                       {tag}
                     </span>
