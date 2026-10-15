@@ -12,7 +12,7 @@ const PROJECTS_DATA = [
     image: "/images/infrastructure.jpg",
     overview: "A flagship regional transportation center requiring 420 precast prestressed bridge girders and 85 custom architectural spandrels delivered on an accelerated night-shift erection schedule.",
     challenges: "Active freight rail lines adjacent to erection crane pads required strict 4-hour night delivery windows with zero margin for delayed transport.",
-    solution: "PRECASTPRO coordinated a dedicated convoy dispatch with highway patrol escorts, arriving at the crane hook within a 15-minute margin every night.",
+    solution: "Our plant dispatch team coordinated a dedicated transport convoy, arriving at the crane hook within a 15-minute margin every night.",
     stats: [
       { label: "Girders Delivered", value: "420 Units" },
       { label: "Maximum Span", value: "115 Feet" },
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
               Project Case Studies & Performance Records
             </h1>
             <p className="text-base text-gray-600 leading-relaxed">
-              Explore how PRECASTPRO solves complex site logistics, tight urban clearances, and demanding structural specifications for major regional builders.
+              Explore how Astro Precast solves complex site logistics, tight urban clearances, and demanding structural specifications for major regional builders.
             </p>
           </div>
         </div>

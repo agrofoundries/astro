@@ -286,7 +286,18 @@ export function Header() {
               Engineering
             </Link>
 
-            {/* 5. Projects */}
+            {/* 5. Live Mockup */}
+            <Link
+              href="/mockup"
+              className="inline-flex items-center gap-1.5 text-[14.5px] xl:text-[15.5px] font-bold text-[#014088] hover:text-[#0E96E1] transition-colors whitespace-nowrap tracking-tight"
+            >
+              <span>Live Mockup</span>
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-black uppercase bg-[#0E96E1] text-white tracking-wider">
+                DEMO
+              </span>
+            </Link>
+
+            {/* 6. Projects */}
             <Link
               href="/projects"
               className="text-[14.5px] xl:text-[15.5px] font-bold text-[#014088] hover:text-[#0E96E1] transition-colors whitespace-nowrap tracking-tight"
@@ -697,6 +708,17 @@ export function Header() {
             className="block py-2 text-sm font-bold text-[#014088] hover:text-[#0E96E1] border-b border-slate-100"
           >
             Engineering
+          </Link>
+
+          <Link
+            href="/mockup"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between py-2 text-sm font-bold text-[#014088] hover:text-[#0E96E1] border-b border-slate-100"
+          >
+            <span>Live Mockup (iPad &amp; Mobile)</span>
+            <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-black uppercase bg-[#0E96E1] text-white">
+              LIVE
+            </span>
           </Link>
 
           <Link

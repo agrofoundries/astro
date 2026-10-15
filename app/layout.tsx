@@ -6,8 +6,8 @@ import { AnimationProvider } from "@/components/providers/animation-provider";
 
 export const metadata: Metadata = {
   title: {
-    default: "Astro Masonry & Precast | Advanced Precast Engineering · 2026 Catalog",
-    template: "%s | Astro Masonry & Precast",
+    default: "Astro Precast Engineering | Infrastructure, Stormwater & Utility Solutions",
+    template: "%s | Astro Precast Engineering",
   },
   icons: {
     icon: "/icon.png",
@@ -15,28 +15,28 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   description:
-    "Astro Masonry & Precast is a premier manufacturer of precast concrete catch basins, monolithic septic tanks, grease traps, leaching galleys, slabs, sanitary rings, and storm drywells. AASHTO HS20-44 traffic rated, 5,000+ PSI compressive strength, meeting Suffolk & Nassau County specifications. Plant located in Deer Park, Long Island, NY. Call 631-667 3300.",
+    "Astro Precast Engineering manufactures high-performance precast concrete solutions for stormwater drainage, sanitary wastewater, and underground utility infrastructure. Certified 5,000+ PSI compressive strength, AASHTO HS20-44 highway traffic rated, with PE-stamped submittals built to Suffolk & Nassau County specifications in Deer Park, NY. Call (631) 667-3300.",
   keywords: [
-    "Astro Masonry",
-    "Astro Precast",
-    "precast concrete catch basins",
+    "Astro Precast Engineering",
+    "precast concrete infrastructure",
+    "stormwater catch basins",
     "monolithic septic tanks",
-    "commercial grease traps",
-    "precast leaching galleys",
-    "Suffolk County precast specs",
-    "Nassau County precast specs",
+    "commercial grease interceptors",
+    "subsurface leaching galleys",
     "AASHTO HS20 traffic slabs",
-    "precast sanitary rings",
-    "precast storm rings",
-    "precast concrete Deer Park NY",
+    "precast drywell rings",
+    "Suffolk County precast specs",
+    "Nassau County DOT drainage",
+    "precast concrete manufacturer Long Island",
+    "underground utility infrastructure",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Astro Masonry & Precast",
-    title: "Astro Masonry & Precast | Advanced Precast Engineering · 2026 Catalog",
+    siteName: "Astro Precast Engineering",
+    title: "Astro Precast Engineering | Infrastructure, Stormwater & Utility Solutions",
     description:
-      "Direct manufacturer of precast catch basins, septic tanks, grease traps, leaching galleys, and traffic slabs built to Suffolk & Nassau County standards. Deer Park, NY.",
+      "Engineered precast concrete solutions for civil infrastructure, municipal stormwater, and sanitary wastewater. 5,000+ PSI certified concrete, AASHTO HS20-44 traffic loading, and direct jobsite delivery from Deer Park, NY.",
   },
   robots: {
     index: true,

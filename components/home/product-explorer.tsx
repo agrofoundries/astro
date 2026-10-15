@@ -468,7 +468,7 @@ function ProductCard({
         <div className="mt-auto pt-3 border-t border-[#F0F4F8] flex items-center gap-2">
           <Link
             href={`/quote?product=${product.id}`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0E96E1] hover:bg-[#B31217] text-white text-[11px] font-bold px-3 py-2 rounded-lg transition-colors"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0E96E1] hover:bg-[#0C82C4] text-white text-[11px] font-bold px-3 py-2 rounded-lg transition-colors"
           >
             <ArrowRight className="w-3 h-3" />
             Get Quote
@@ -515,7 +515,7 @@ function QuickViewModal({
       aria-label={`Specifications for ${product.name}`}
     >
       <div
-        className="absolute inset-0 bg-[#06182E]/75 backdrop-blur-sm"
+        className="absolute inset-0 bg-[#014088]/35 backdrop-blur-sm"
         onClick={onClose}
       />
 
@@ -647,7 +647,7 @@ function QuickViewModal({
             </a>
             <Link
               href={`/quote?product=${product.id}`}
-              className="inline-flex items-center gap-1.5 bg-[#0E96E1] hover:bg-[#B31217] text-white text-xs font-bold px-5 py-2 rounded-full transition-colors"
+              className="inline-flex items-center gap-1.5 bg-[#0E96E1] hover:bg-[#0C82C4] text-white text-xs font-bold px-5 py-2 rounded-full transition-colors"
             >
               Request Quote
               <ArrowRight className="w-3.5 h-3.5" />
@@ -682,15 +682,15 @@ function CompareDrawer({
   ];
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-50 bg-[#06182E] border-t-2 border-[#0E96E1] shadow-2xl">
+    <div className="fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-t-2 border-[#014088] shadow-2xl">
       {/* Compact bar */}
       <div
         className="section-container-wide flex items-center justify-between py-3 cursor-pointer select-none"
         onClick={() => setExpanded((v) => !v)}
       >
         <div className="flex items-center gap-3">
-          <Scale className="w-4 h-4 text-[#0E96E1] shrink-0" />
-          <span className="text-sm font-bold text-white">
+          <Scale className="w-4 h-4 text-[#014088] shrink-0" />
+          <span className="text-sm font-bold text-[#014088]">
             Comparing{" "}
             <span className="text-[#0E96E1]">{products.length}</span>
             /3 selected
@@ -699,7 +699,7 @@ function CompareDrawer({
             {products.map((p) => (
               <span
                 key={p.id}
-                className="inline-flex items-center gap-1 bg-white/10 border border-white/15 text-white text-[10px] font-semibold px-2.5 py-1 rounded-full"
+                className="inline-flex items-center gap-1 bg-[#F2F7FF] border border-[#DCE5F0] text-[#014088] text-[10px] font-semibold px-2.5 py-1 rounded-full"
               >
                 {p.name.split(" ").slice(0, 2).join(" ")}
                 <button
@@ -707,7 +707,7 @@ function CompareDrawer({
                     e.stopPropagation();
                     onRemove(p.id);
                   }}
-                  className="ml-0.5 text-slate-400 hover:text-sky-400 transition-colors"
+                  className="ml-0.5 text-[#64748B] hover:text-[#014088] transition-colors"
                   aria-label={`Remove ${p.name}`}
                 >
                   <X className="w-3 h-3" />
@@ -722,12 +722,12 @@ function CompareDrawer({
               e.stopPropagation();
               onClear();
             }}
-            className="text-xs text-slate-500 hover:text-white transition-colors"
+            className="text-xs text-[#64748B] hover:text-[#014088] transition-colors font-medium"
           >
             Clear all
           </button>
           <ChevronDown
-            className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${
+            className={`w-4 h-4 text-[#014088] transition-transform duration-300 ${
               expanded ? "rotate-180" : ""
             }`}
           />
@@ -736,18 +736,18 @@ function CompareDrawer({
 
       {/* Expanded table */}
       {expanded && (
-        <div className="border-t border-white/10 overflow-x-auto">
+        <div className="border-t border-[#DCE5F0] overflow-x-auto bg-[#F8FAFC]">
           <div className="section-container-wide">
-            <div className="flex divide-x divide-white/10">
+            <div className="flex divide-x divide-[#DCE5F0]">
               {/* Labels column */}
               <div className="w-40 shrink-0 py-5 pr-4">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B] mb-4">
                   Spec
                 </div>
                 {rows.map((r) => (
                   <div
                     key={r.label}
-                    className="py-2.5 text-[11px] text-slate-400 font-medium"
+                    className="py-2.5 text-[11px] text-[#475569] font-medium"
                   >
                     {r.label}
                   </div>
@@ -756,19 +756,19 @@ function CompareDrawer({
 
               {/* Product columns */}
               {products.map((p) => (
-                <div key={p.id} className="w-60 shrink-0 py-5 px-4">
+                <div key={p.id} className="w-60 shrink-0 py-5 px-4 bg-white">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <div className="text-[10px] font-bold uppercase tracking-wider text-[#0E96E1] mb-0.5">
                         {p.category}
                       </div>
-                      <div className="text-xs font-bold text-white leading-snug line-clamp-2">
+                      <div className="text-xs font-bold text-[#014088] leading-snug line-clamp-2">
                         {p.name}
                       </div>
                     </div>
                     <button
                       onClick={() => onRemove(p.id)}
-                      className="text-slate-600 hover:text-sky-400 transition-colors ml-2 mt-0.5 shrink-0"
+                      className="text-[#94A3B8] hover:text-[#014088] transition-colors ml-2 mt-0.5 shrink-0"
                       aria-label={`Remove ${p.name}`}
                     >
                       <X className="w-3.5 h-3.5" />
@@ -778,7 +778,7 @@ function CompareDrawer({
                   {rows.map((r) => (
                     <div
                       key={r.label}
-                      className="py-2.5 text-[11px] text-slate-300"
+                      className="py-2.5 text-[11px] text-[#334155] font-semibold"
                     >
                       {r.getValue(p)}
                     </div>
@@ -787,7 +787,7 @@ function CompareDrawer({
                   <div className="pt-4">
                     <Link
                       href={`/quote?product=${p.id}`}
-                      className="inline-flex items-center gap-1.5 bg-[#0E96E1] hover:bg-[#B31217] text-white text-[11px] font-bold px-3 py-1.5 rounded-full transition-colors"
+                      className="inline-flex items-center gap-1.5 bg-[#0E96E1] hover:bg-[#0C82C4] text-white text-[11px] font-bold px-3 py-1.5 rounded-full transition-colors"
                     >
                       Quote
                       <ArrowRight className="w-3 h-3" />
@@ -1273,7 +1273,7 @@ export function ProductExplorer() {
                 <div className="flex flex-col gap-3 shrink-0">
                   <Link
                     href="/quote"
-                    className="inline-flex items-center justify-center gap-2 bg-[#0E96E1] hover:bg-[#B31217] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 bg-[#0E96E1] hover:bg-[#0C82C4] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap"
                   >
                     Request Custom Quote
                     <ArrowRight className="w-4 h-4" />

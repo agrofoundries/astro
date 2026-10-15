@@ -48,6 +48,17 @@
   --color-border-light: #D0E2F2;
   --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
   --font-heading: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'Manrope', system-ui, -apple-system, sans-serif;
+}
+
+/* Force Manrope across entire site, overriding any mono/Consolas font references */
+*,
+.font-mono,
+[class*="font-mono"],
+code,
+kbd,
+samp {
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Base Body Styles - Bright, Clean, Manrope Typography */
@@ -60,7 +71,7 @@ body {
   line-height: 1.6;
 }
 
-/* Headings - Bold, Modern Manrope Geometry with Balanced Line Height */
+/* Headings - Clean, Elegant Manrope Typography with Natural Breathing Space */
 h1,
 h2,
 h3,
@@ -68,9 +79,31 @@ h4,
 h5,
 h6 {
   font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+h1 {
   font-weight: 800;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-weight: 700;
   line-height: 1.25;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 /* Ensure all uppercase headings & labels have generous, legible letter spacing */

@@ -48,7 +48,7 @@ export default function ApplicationsPage() {
               Built for Every Construction Sector
             </h1>
             <p className="text-base text-gray-600 leading-relaxed">
-              Discover how PRECASTPRO provides tailored structural and civil solutions across mission-critical infrastructure, commercial development, and logistics parks.
+              Discover how Astro Precast provides tailored structural and civil solutions across mission-critical infrastructure, municipal drainage, and commercial development.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Link href="/quote" className="btn-primary">

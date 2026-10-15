@@ -11,13 +11,13 @@ export default function AboutPage() {
         <div className="section-container-wide">
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
-              Company Background
+              Company History &amp; Engineering Standards
             </span>
             <h1 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight mt-2 mb-4">
-              Building the Future of Heavy Infrastructure
+              Engineered Precast Concrete Infrastructure
             </h1>
             <p className="text-base text-gray-600 leading-relaxed">
-              Founded on the principles of precision manufacturing, unbending structural safety, and true trade partnership with general contractors.
+              Founded on precision casting, 5,000+ PSI certified concrete, and dedicated partnership with civil contractors and municipal agencies.
             </p>
           </div>
         </div>
@@ -28,29 +28,29 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
-              Decades of Precast Excellence
+              Decades of Civil Precast Manufacturing
             </h2>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
-              PRECASTPRO was founded with a singular conviction: that modern construction schedules cannot afford the weather risks, labor shortages, and inconsistent quality inherent in traditional cast-in-place concrete.
+              Astro Precast was built on a singular conviction: critical underground infrastructure requires factory-controlled precision that cast-in-place methods cannot match. By engineering and casting monolithic precast structures in our automated Deer Park facility, we eliminate weather delays, reduce jobsite excavation times, and guarantee superior concrete durability.
             </p>
             <p className="text-sm text-gray-600 leading-relaxed mb-6">
-              We operate an advanced, automated precast and prestressed manufacturing facility with in-house structural engineering. Today, we supply critical infrastructure components to transportation corridors, commercial developments, and municipal water authorities.
+              Today, we manufacture certified stormwater catch basins, leaching galleys, watertight septic systems, and heavy-duty utility chambers for public works authorities, commercial developers, and civil contractors throughout Long Island and the New York metropolitan region.
             </p>
             <div className="grid grid-cols-2 gap-4 p-4 rounded-2xl bg-[#F8F9FA] border border-gray-200">
               <div>
-                <div className="text-2xl font-black text-brand-primary">PCI &amp; ASTM</div>
-                <div className="text-xs text-gray-600 font-medium">Certified Quality Standards</div>
+                <div className="text-2xl font-black text-brand-primary">5,000+ PSI</div>
+                <div className="text-xs text-gray-600 font-medium">AASHTO HS-20 &amp; ASTM Certified</div>
               </div>
               <div>
-                <div className="text-2xl font-black text-brand-primary">100% In-House</div>
-                <div className="text-xs text-gray-600 font-medium">Design &amp; Casting Production</div>
+                <div className="text-2xl font-black text-brand-primary">Deer Park, NY</div>
+                <div className="text-xs text-gray-600 font-medium">Automated Plant Production</div>
               </div>
             </div>
           </div>
           <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-gray-200">
             <Image
               src="/images/manufacturing.jpg"
-              alt="PRECASTPRO manufacturing plant"
+              alt="Astro Precast manufacturing plant and casting yard in Deer Park NY"
               fill
               className="object-cover"
             />
@@ -60,16 +60,16 @@ export default function AboutPage() {
         {/* Leadership & Engineering Principles */}
         <div>
           <h2 className="text-2xl font-black text-gray-900 mb-8 text-center">
-            Our Core Guiding Principles
+            Our Core Operating Principles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-2xl bg-[#F8F9FA] border border-gray-200">
               <div className="w-12 h-12 rounded-xl bg-sky-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
                 01
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Uncompromising Precision</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Structural Integrity &amp; Precision</h3>
               <p className="text-xs text-gray-600 leading-relaxed">
-                Tolerances matter. A quarter-inch field discrepancy costs thousands in crane delay. We laser-verify every form before casting so our pieces fit seamlessly the first time.
+                Every mix design is batched to exceed 5,000 PSI compressive strength with ASTM-certified aggregates. Formwork dimensions and knockout locations are verified before every pour to guarantee exact field fitment.
               </p>
             </div>
 
@@ -77,9 +77,9 @@ export default function AboutPage() {
               <div className="w-12 h-12 rounded-xl bg-sky-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
                 02
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Transparent Partnership</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Dedicated Contractor Partnership</h3>
               <p className="text-xs text-gray-600 leading-relaxed">
-                We believe in straightforward scheduling, upfront value engineering, and immediate communication when unforeseen design changes arise.
+                From initial bid takeoffs and PE-stamped submittal drawings to crane-synchronized jobsite deliveries, we work as an extension of your field operations to keep your projects on schedule.
               </p>
             </div>
 
@@ -87,9 +87,9 @@ export default function AboutPage() {
               <div className="w-12 h-12 rounded-xl bg-sky-100 text-brand-primary flex items-center justify-center font-bold text-lg mb-4">
                 03
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Long-Term Environmental Stewardship</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Aquifer &amp; Environmental Protection</h3>
               <p className="text-xs text-gray-600 leading-relaxed">
-                Through optimized mix designs incorporating fly ash, slag cement, and 100% recycled process wash water, we minimize the carbon footprint of structural precast.
+                Our advanced wastewater vessels, grease interceptors, and high-percolation leaching galleys protect regional aquifers and comply with the most stringent municipal environmental standards.
               </p>
             </div>
           </div>

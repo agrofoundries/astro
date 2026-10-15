@@ -17,22 +17,22 @@ const TRUST_METRICS = [
   {
     icon: Award,
     title: "5,000+ PSI Concrete",
-    subtitle: "Min 28-Day Compressive Strength",
+    subtitle: "ASTM C39 28-Day Strength",
   },
   {
     icon: ShieldCheck,
     title: "AASHTO HS20-44 Rated",
-    subtitle: "Suffolk & Nassau County Spec",
+    subtitle: "Suffolk & Nassau Approved",
   },
   {
     icon: Factory,
-    title: "WWF ASTM A1064 Steel",
-    subtitle: "Mesh Centered in 6\" Wall · 1.5\" Cover",
+    title: "ASTM A1064 Steel Cage",
+    subtitle: "Centered with 1.5\" Min Cover",
   },
   {
     icon: MapPin,
     title: "Deer Park, NY Plant",
-    subtitle: "631-667 3300 · www.astromasonry.com",
+    subtitle: "Direct Fleet Jobsite Delivery",
   },
 ];
 
@@ -75,10 +75,10 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2 p-1 pl-3.5 pr-1.5 rounded-full bg-[#E1F3FE]/95 border border-[#BAE6FD] mb-4 sm:mb-5 shadow-xs w-fit animate-fade-down">
             <span className="w-2 h-2 rounded-full bg-[#014088] shrink-0" />
             <span className="text-[11px] sm:text-xs font-bold tracking-wider text-[#014088] uppercase font-mono">
-              ASTRO 2026 CATALOG SPECIFICATION
+              CERTIFIED PRECAST SPECIFICATION
             </span>
             <span className="text-[10.5px] sm:text-xs font-bold text-[#0E96E1] bg-[#EBF7FF] px-2.5 py-0.5 rounded-full border border-[#BAE6FD] uppercase font-mono tracking-wide">
-              DEER PARK, NY • 631-667 3300
+              DEER PARK, NY • (631) 667-3300
             </span>
           </div>
 
@@ -107,7 +107,7 @@ export function HeroSection() {
 
           {/* Clear Supporting Description matching Astro 2026 PDF */}
           <p className="text-sm sm:text-base lg:text-[16px] text-slate-800 leading-relaxed font-medium max-w-xl mb-7 animate-fade-up [animation-delay:220ms]">
-            Astro Masonry &amp; Precast manufactures certified high-strength precast concrete structures engineered for municipal stormwater, underground utilities, and civil site work. Certified 5,000+ PSI compressive strength, AASHTO HS20-44 traffic-rated, and engineered to exact Suffolk &amp; Nassau County standards from our Long Island production plant.
+            Astro Precast Engineering manufactures certified high-performance precast concrete systems for municipal stormwater networks, underground utilities, and heavy civil construction. We deliver certified 5,000+ PSI compressive strength, AASHTO HS20-44 highway traffic ratings, and PE-stamped submittal sheets engineered to exact Suffolk &amp; Nassau County standards.
           </p>
 
           {/* Action CTAs (2 High-Impact Buttons) */}
@@ -118,7 +118,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-lg bg-[#0E96E1] hover:bg-[#0C82C4] text-white font-black text-xs sm:text-[13px] uppercase tracking-wider shadow-lg shadow-sky-500/25 transition-all duration-200 transform hover:-translate-y-0.5 group cursor-pointer active:scale-95 shrink-0"
             >
               <BookOpen className="w-4 h-4" />
-              <span>BROWSE 2026 CATALOG</span>
+              <span>EXPLORE 2026 CATALOG</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

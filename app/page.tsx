@@ -1,7 +1,9 @@
 import { HeroSection } from "@/components/home/hero-section";
 import { SponsorMarquee } from "@/components/home/sponsor-marquee";
 import { WhoWeAreStory } from "@/components/home/who-we-are-story";
+import { MarketsSection } from "@/components/home/markets-section";
 import { ProductsSection } from "@/components/home/products-section";
+import { LiveMockupShowcase } from "@/components/home/live-mockup-showcase";
 import { EngineeringSection } from "@/components/home/engineering-section";
 import { IconicProjectsSection } from "@/components/home/iconic-projects";
 import { LocationsSection } from "@/components/home/locations-section";
@@ -19,10 +21,16 @@ export default function HomePage() {
       {/* 3. The Visual Story: Who We Are, Deer Park Heritage, Mission & Vision, and Core Pillars */}
       <WhoWeAreStory />
 
-      {/* 4. Certified Precast Products Catalog (Heavy Civil & Underground Infrastructure) */}
+      {/* 4. Client Industries & Market Sectors Served (7 Markets in One Row) */}
+      <MarketsSection />
+
+      {/* 5. Certified Precast Products Catalog (Heavy Civil & Underground Infrastructure) */}
       <ProductsSection />
 
-      {/* 5. In-House Structural Engineering, Licensed PE Stamped Calcs & 3D Tekla Detailing */}
+      {/* 6. Live Device Mockups (iPad & Mobile Real-Time Platform Experience) */}
+      <LiveMockupShowcase />
+
+      {/* 7. In-House Structural Engineering, Licensed PE Stamped Calcs & 3D Tekla Detailing */}
       <EngineeringSection />
 
       {/* 6. Iconic & Ongoing Certified Civil Projects in NY/NJ Metro */}

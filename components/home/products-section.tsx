@@ -40,7 +40,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Catch Basins",
     title: "Precast Catch Basin System",
     description:
-      "Monolithic concrete storm drainage catch basin with reinforced walls, custom pipe knockouts, and heavy highway traffic rating.",
+      "Heavy-duty monolithic precast stormwater catch basins with reinforced structural walls, custom pipe penetrations, and AASHTO HS-20 traffic certification.",
     image: "/products-image-web/catch-basins.png",
     drawingPdf: "/downloads/drawings/Astro-Catch-Basins-Drawings.pdf",
     drawingFilename: "Astro-Catch-Basins-Drawings.pdf",
@@ -94,7 +94,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Septic Tanks",
     title: "Precast Septic Tank (Monolithic)",
     description:
-      "Heavy-duty precast residential and commercial septic tank engineered for watertight wastewater containment with cast-in baffles.",
+      "Watertight precast septic tanks engineered to ASTM C1227 with monolithic cast-in baffles, pre-installed pipe boots, and AASHTO H-20 loading capabilities.",
     image: "/products-image-web/septic-tanks.png",
     drawingPdf: "/downloads/drawings/Astro-Septic-Tanks-Drawings.pdf",
     drawingFilename: "Astro-Septic-Tanks-Drawings.pdf",
@@ -141,7 +141,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Leaching Galleys",
     title: "Precast Leaching Galley (High-Flow)",
     description:
-      "Perforated precast stormwater infiltration galley designed for maximum soil percolation and groundwater recharge across Long Island.",
+      "Engineered high-flow perforated precast galleys for rapid subgrade stormwater recharge, retention detention storage, and high-percolation infiltration.",
     image: "/products-image-web/leaching-galleys.png",
     drawingPdf: "/downloads/drawings/Astro-Leaching-Galleys-Drawings.pdf",
     drawingFilename: "Astro-Leaching-Galleys-Drawings.pdf",
@@ -181,7 +181,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Circular Slabs",
     title: "Circular Traffic Slab",
     description:
-      "Reinforced circular precast cover slab designed to withstand extreme highway wheel loads over subterranean drainage chambers.",
+      "Heavy-duty AASHTO HS-20 reinforced circular precast cover slabs and grade lids designed for intense arterial wheel loading over drainage structures.",
     image: "/products-image-web/circular-slabs.png",
     drawingPdf: "/downloads/drawings/Astro-Slabs-Drawings.pdf",
     drawingFilename: "Astro-Slabs-Drawings.pdf",
@@ -228,7 +228,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Grease Traps",
     title: "Precast Commercial Grease Interceptor",
     description:
-      "Commercial kitchen FOG interceptor built with acid-resistant concrete mix and sanitary inspection manholes.",
+      "Commercial precast FOG (fats, oils, and grease) interceptors featuring dual-compartment retention baffles, acid-resistant mix, and cleanout access manholes.",
     image: "/products-image-web/grease-traps.png",
     drawingPdf: "/downloads/drawings/Astro-Grease-Traps-Drawings.pdf",
     drawingFilename: "Astro-Grease-Traps-Drawings.pdf",
@@ -268,7 +268,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Distribution Boxes",
     title: "Precast Distribution Box",
     description:
-      "Flow distribution box with multiple knockout ports and pipe seals for balanced effluent discharge to absorption fields.",
+      "Precision-cast precast distribution boxes with multi-directional knockout penetrations and levelers for equalized gravity effluent dispersion.",
     image: "/products-image-web/d-boxes.png",
     drawingPdf: "/downloads/drawings/Astro-Distribution-Boxes-Drawings.pdf",
     drawingFilename: "Astro-Distribution-Boxes-Drawings.pdf",
@@ -294,7 +294,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Solid Rings",
     title: "Precast Solid Riser Ring",
     description:
-      "Solid concrete grade ring for precise height adjustment of manholes, catch basins, and utility vaults to road grade.",
+      "Precision-manufactured 5,000+ PSI precast solid riser grade rings for vertical dimensional adjustment of utility vaults and storm structures to finished pavement.",
     image: "/products-image-web/solid-rings.png",
     drawingPdf: "/downloads/drawings/Astro-Solid-Rings-Drawings.pdf",
     drawingFilename: "Astro-Solid-Rings-Drawings.pdf",
@@ -341,7 +341,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Sanitary Rings",
     title: "Precast Sanitary Riser Ring",
     description:
-      "Interlocking tongue-and-groove sanitary riser section with gasketed joint for municipal sanitary sewer manholes.",
+      "Watertight tongue-and-groove precast sanitary sewer riser sections with confined rubber gasket joints complying with municipal sanitary standards.",
     image: "/products-image-web/sanitary-rings.png",
     drawingPdf: "/downloads/drawings/Astro-Sanitary-Rings-Drawings.pdf",
     drawingFilename: "Astro-Sanitary-Rings-Drawings.pdf",
@@ -381,7 +381,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Storm Rings",
     title: "Precast Storm Drainage Ring",
     description:
-      "Heavy-wall round concrete storm section engineered for deep vertical storm sewer drywell installations.",
+      "High-capacity precast storm drainage barrel sections engineered for deep vertical drywells, municipal drainage collection, and high-volume runoff capture.",
     image: "/products-image-web/storm-rings.png",
     drawingPdf: "/downloads/drawings/Astro-Storm-Rings-Drawings.pdf",
     drawingFilename: "Astro-Storm-Rings-Drawings.pdf",
@@ -414,7 +414,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Footing Rings",
     title: "Precast Base Footing Ring",
     description:
-      "Flanged base footing collar providing broad load distribution and foundational stability in sandy or wet soils.",
+      "Engineered precast flanged base footing rings providing expanded soil bearing distribution, uplift resistance, and structural stability in porous subgrades.",
     image: "/products-image-web/footing-rings.png",
     drawingPdf: "/downloads/drawings/Astro-Footings-Drawings.pdf",
     drawingFilename: "Astro-Footings-Drawings.pdf",
@@ -461,7 +461,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "High Domes",
     title: "Precast High Dome Cone Top",
     description:
-      "Tapered conical dome top transitioning large drywell or cesspool diameters to standard 24\" or 30\" street access frames.",
+      "Heavy-traffic precast conical high dome reducers transitioning large-diameter drywells and basins down to standard 24\" or 30\" municipal casting frames.",
     image: "/products-image-web/high-domes.png",
     drawingPdf: "/downloads/drawings/Astro-High-Domes-Drawings.pdf",
     drawingFilename: "Astro-High-Domes-Drawings.pdf",
@@ -494,7 +494,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Low Domes",
     title: "Precast Low Dome Top",
     description:
-      "Low-profile transition top engineered for shallow subgrade depths where vertical overhead clearance is constrained.",
+      "Low-profile precast transition dome slabs engineered for shallow burial depths, high water tables, and constrained utility clearance applications.",
     image: "/products-image-web/low-domes.png",
     drawingPdf: "/downloads/drawings/Astro-Low-Domes-Drawings.pdf",
     drawingFilename: "Astro-Low-Domes-Drawings.pdf",
@@ -534,7 +534,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "High Collars",
     title: "Precast High Collar Section",
     description:
-      "Tall cylindrical collar section providing vertical clearance and easy access riser height above precast tanks.",
+      "Vertical precast collar extension sleeves providing seamless grade adjustment, access riser elevation, and inspection clearance over subterranean tanks.",
     image: "/products-image-web/high-collars.png",
     drawingPdf: "/downloads/drawings/Astro-High-Collars-Drawings.pdf",
     drawingFilename: "Astro-High-Collars-Drawings.pdf",
@@ -574,7 +574,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Curb Stops",
     title: "Precast Concrete Curb Stop",
     description:
-      "Heavy-duty commercial parking bumper with cast-in anchor holes and beveled edges to protect vehicular tires.",
+      "Precast concrete parking curb bumpers cast with 5,000+ PSI concrete, integrated rebar pin anchoring holes, and beveled tire-protecting profiles.",
     image: "/products-image-web/curb-stops.png",
     drawingPdf: "/downloads/drawings/Astro-Curb-Stops-Drawings.pdf",
     drawingFilename: "Astro-Curb-Stops-Drawings.pdf",
@@ -600,7 +600,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Gravity Blocks",
     title: "Precast Gravity Retaining Block",
     description:
-      "Interlocking high-mass concrete block designed for earth retention, soil stabilization, and material bulk storage bays.",
+      "Heavy modular precast gravity retaining blocks engineered for critical grade separation, earth retention, soil stabilization, and bulk storage bins.",
     image: "/products-image-web/gravity-blocks.png",
     drawingPdf: "/downloads/drawings/Astro-Catch-Basins-Drawings.pdf",
     drawingFilename: "Astro-Catch-Basins-Drawings.pdf",
@@ -626,7 +626,7 @@ const ECOMMERCE_PRODUCTS: EcommerceProduct[] = [
     category: "Trench Grates",
     title: "Precast Linear Trench Grate Section",
     description:
-      "Continuous linear drainage channel with heavy cast-iron grating frame for rapid surface runoff along roadways and loading docks.",
+      "Continuous precast linear trench drainage channels with integrated heavy-duty cast iron frames for rapid stormwater interception across loading docks and transitways.",
     image: "/products-image-web/trench-grates.png",
     drawingPdf: "/downloads/drawings/Astro-Catch-Basins-Drawings.pdf",
     drawingFilename: "Astro-Catch-Basins-Drawings.pdf",
@@ -709,7 +709,7 @@ export function ProductsSection() {
           </h2>
 
           <p className="text-base sm:text-lg lg:text-xl text-slate-800 mt-4 font-medium leading-relaxed max-w-3xl mx-auto">
-            Select category and dimensions below to review real-time model specifications, highway load ratings, and download stamped CAD drawings.
+            Review submittal specifications, load ratings, and engineering drawings across our full catalog of certified precast civil infrastructure systems.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-5 font-mono text-[11px] sm:text-xs font-bold text-[#014088]">
@@ -725,6 +725,18 @@ export function ProductsSection() {
               <span className="w-2 h-2 rounded-full bg-[#0088E0]" />
               SUFFOLK &amp; NASSAU APPROVED
             </span>
+          </div>
+
+          {/* Direct Link to Full Product Explorer */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/products#explorer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#014088] hover:bg-[#01336D] text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all"
+            >
+              <SlidersHorizontal className="w-4 h-4 text-[#0E96E1]" />
+              <span>Launch Full Interactive Explorer &amp; Compare</span>
+              <ArrowRight className="w-4 h-4 text-[#0E96E1]" />
+            </Link>
           </div>
         </div>
 

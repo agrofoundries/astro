@@ -17,26 +17,28 @@ import { COMPANY } from "@/lib/constants";
 
 const SERVICES_LINKS = [
   { label: "Precast Catch Basins", href: "/#products" },
-  { label: "Multi-Component Pump Stations", href: "/#products" },
-  { label: "Maine DOT Leaching Galleys", href: "/#products" },
-  { label: "NH DOT Concrete Headwalls", href: "/#products" },
-  { label: "Commercial Grease Traps", href: "/#products" },
-  { label: "Monolithic Septic Tanks", href: "/#products" },
+  { label: "Suffolk & Nassau Septic Tanks", href: "/#products" },
+  { label: "High-Flow Leaching Galleys", href: "/#products" },
+  { label: "AASHTO HS-20 Traffic Slabs", href: "/#products" },
+  { label: "Commercial Grease Interceptors", href: "/#products" },
+  { label: "Precast Solid & Storm Rings", href: "/#products" },
 ];
 
 const SOLUTIONS_LINKS = [
   { label: "Licensed PE & SE Calculations", href: "/#engineering" },
-  { label: "Tekla 3D Structural Detailing", href: "/#engineering" },
-  { label: "Precast Connection Design", href: "/#engineering" },
-  { label: "Lifting & Rigging Engineering", href: "/#services" },
-  { label: "Rebar & Reinforcement Schedules", href: "/#services" },
-  { label: "Fast Material Quotes", href: "/#contact" },
+  { label: "3D CAD & Submittal Modeling", href: "/#engineering" },
+  { label: "Live Field Mockup Demo", href: "/mockup" },
+  { label: "Custom Pipe Coring & Boots", href: "/#engineering" },
+  { label: "Buoyancy & Bearing Analysis", href: "/#engineering" },
+  { label: "DOT & DPW Agency Submittals", href: "/#services" },
+  { label: "Direct Contractor Estimating", href: "/#contact" },
 ];
 
 const COMPANY_LINKS = [
   { label: "Home", href: "/#hero" },
   { label: "About Precast Engineers", href: "/#company-intro" },
   { label: "Products & Basins", href: "/#products" },
+  { label: "Live Device Mockups", href: "/mockup" },
   { label: "Engineering Services", href: "/#services" },
   { label: "Regional Offices", href: "/#locations" },
   { label: "Technical Blog", href: "/#blog" },
@@ -54,20 +56,20 @@ const INDUSTRIES_PILLS = [
 
 const LATEST_INSIGHTS = [
   {
-    title: "State DOT Stormwater Criteria for Traffic-Rated Catch Basins",
+    title: "Suffolk & Nassau DPW Drainage Standards for Highway Catch Basins",
     tag: "STORMWATER",
     date: "OCT 2026",
     href: "/#blog",
   },
   {
-    title: "Subsurface Stormwater Retention: Maine DOT Leaching Galleys",
-    tag: "DOT SPECIFICATION",
+    title: "Subsurface Stormwater Recharge: High-Flow Leaching Galley Design",
+    tag: "RECHARGE",
     date: "SEP 2026",
     href: "/#blog",
   },
   {
-    title: "Tekla 3D Detailing in Precast: Eliminating Casting Bed Clashes",
-    tag: "3D CAD",
+    title: "Watertight Commercial Grease Interceptor Compliance to ASTM C1227",
+    tag: "SANITARY",
     date: "SEP 2026",
     href: "/#engineering",
   },
@@ -147,7 +149,7 @@ export function Footer() {
                 </div>
                 <div className="bg-white/10 border border-white/15 rounded-xl p-3">
                   <div className="text-[10px] text-[#0E96E1] uppercase font-bold">APPLICATIONS</div>
-                  <div className="font-bold text-white mt-0.5">Maine DOT &amp; NY Infiltration</div>
+                  <div className="font-bold text-white mt-0.5">Suffolk &amp; Nassau Infiltration</div>
                 </div>
               </div>
 
@@ -473,7 +475,7 @@ export function Footer() {
       {/* Bottom Compliance & Legal Bar */}
       <div className="border-t border-slate-700/60 bg-[#014088] py-5 text-xs text-slate-400">
         <div className="section-container-wide flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>© 2026 Precast Engineering Group. All rights reserved.</p>
+          <p>© 2026 Astro Precast Engineering. All rights reserved.</p>
 
           <div className="flex flex-wrap items-center gap-3 text-xs">
             <Link href="/privacy" className="hover:text-white transition-colors">

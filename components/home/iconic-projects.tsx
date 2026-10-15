@@ -36,7 +36,7 @@ const PROJECTS_DATA: ProjectItem[] = [
     status: "Completed Landmark",
     image: "/images/hero-clean-yard.jpg",
     description:
-      "Full municipal delivery of certified 5,000+ PSI precast catch basins, heavy traffic frames, and monolithic drywells meeting strict Suffolk County DPW standards.",
+      "Turnkey manufacturing and staging of certified 5,000+ PSI precast storm basins, curb inlets, and deep vertical drywells compliant with Suffolk and Nassau County DPW specifications.",
     specs: ["5,000+ PSI Concrete", "AASHTO HS20-44", "Suffolk & Nassau Approved"],
   },
   {
@@ -48,7 +48,7 @@ const PROJECTS_DATA: ProjectItem[] = [
     status: "Completed Landmark",
     image: "/images/wall-panels.jpg",
     description:
-      "High-load monolithic utility vaults, transformer pads, and precast electrical chambers engineered for regional utility distribution.",
+      "Engineered high-load precast utility vaults, electrical manholes, and transformer containment pads manufactured to protect underground municipal and commercial power infrastructure.",
     specs: ["Heavy Vault Systems", "Zero Hook Delays", "DOT Traffic Spec"],
   },
   {
@@ -60,7 +60,7 @@ const PROJECTS_DATA: ProjectItem[] = [
     status: "Completed Landmark",
     image: "/images/infrastructure.jpg",
     description:
-      "Precast reinforced concrete box culverts engineered for accelerated bridge construction, severe hydraulic flow, and heavy highway axle loadings.",
+      "High-capacity precast reinforced concrete box culverts engineered to ASTM C1577 for accelerated bridge replacement, high hydraulic flow, and severe interstate traffic loadings.",
     specs: ["High-Capacity Culverts", "ASTM C1577 Spec", "Accelerated Crane Erect"],
   },
 
@@ -68,38 +68,38 @@ const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "leaching-galley-network",
     title: "Subsurface Leaching Galley Stormwater Dissipation Network",
-    category: "Suffolk & Nassau New Showcase",
+    category: "Subsurface Recharge",
     type: "ongoing",
     location: "Deer Park Plant Staging, NY",
     status: "Active Production & Delivery",
     image: "/images/hero-precast-yard-clean.jpg",
     description:
-      "High-void slotted leaching galley structures and aggregate dissipation beds engineered to maximize groundwater recharge across sandy Long Island subsoils.",
+      "High-volume slotted precast leaching galleys and underground detention fields engineered for rapid runoff dissipation, groundwater recharge, and subsoil protection.",
     specs: ["Leaching Galleys", "High-Void Dissipation", "Suffolk Approved"],
   },
   {
     id: "norweco-fuji-wastewater",
-    title: "Norweco & Fuji Clean Advanced Sanitary Treatment Systems",
-    category: "Wastewater Treatment Systems",
+    title: "Advanced Sanitary & Wastewater Treatment Vaults",
+    category: "Wastewater Solutions",
     type: "ongoing",
     location: "Long Island Sanitary Districts, NY",
     status: "Authorized Manufacturing & Supply",
     image: "/images/commercial-building.jpg",
     description:
-      "Authorized plant casting of monolithic wastewater tanks and distribution chambers certified for advanced nitrogen reduction and environmental compliance.",
-    specs: ["Norweco Authorized", "Fuji Clean Certified", "Monolithic Tanks"],
+      "Precision-cast precast multi-compartment septic tanks, grease interceptors, and advanced treatment vessels engineered for rigorous nitrogen-reduction wastewater mandates.",
+    specs: ["Suffolk Health Approved", "ASTM C1227 Watertight", "Monolithic Tanks"],
   },
   {
     id: "nassau-box-culvert-replacement",
-    title: "Municipal Stormwater Box Culvert & Vault Modernization",
-    category: "On-Site Installation & Delivery",
+    title: "Municipal Drainage & Detention Vault Replacement",
+    category: "Municipal Civil Infrastructure",
     type: "ongoing",
     location: "Nassau County, NY",
     status: "Active Field Operations",
     image: "/images/hero-bridge.jpg",
     description:
-      "Ongoing scheduled deliveries of precast box culverts, traffic-rated curb inlets, and custom weir chambers deployed with dedicated crane logistics.",
-    specs: ["Active Pouring & Staging", "HS20-44 Traffic Rated", "Direct Plant Fleet"],
+      "Scheduled plant-to-jobsite staging of heavy-duty precast culverts, traffic-rated curb inlets, and custom weir chambers deployed via dedicated boom-truck logistics.",
+    specs: ["Active Staging & Delivery", "HS20-44 Traffic Rated", "Dedicated Fleet"],
   },
 ];
 
@@ -116,13 +116,13 @@ export function IconicProjectsSection() {
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#0E96E1] mb-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#0E96E1]" />
-              <span>CERTIFIED FIELD INSTALLATIONS</span>
+              <span>PROVEN INFRASTRUCTURE DELIVERIES</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#014088] tracking-tight uppercase">
               Iconic &amp; <span className="text-[#0E96E1]">Ongoing Projects</span>
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1 max-w-2xl">
-              From landmark civil drainage installations to active daily production runs engineered for Suffolk, Nassau, and regional municipalities.
+              Proven track record delivering certified precast drainage, sanitary, and utility systems for major civil contractors, municipalities, and DOT agencies.
             </p>
           </div>
 

@@ -60,7 +60,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Catch Basins",
     pages: "Pages 4–17",
     headline: "Highway & Municipal Stormwater Catch Basins (AR 3048 CB)",
-    description: "Engineered highway drainage boxes fabricated with 5,000+ PSI concrete and AASHTO HS20-44 traffic rating. Available with solid covers, curb frames, and side-throat inlets built for Suffolk & Nassau County DOT infrastructure.",
+    description: "Heavy-duty storm drainage catch basins precision-cast with 5,000+ PSI concrete and AASHTO HS20-44 highway wheel loading. Engineered with integrated pipe knockouts and customizable inlet throats for municipal stormwater networks, highway corridors, and commercial developments across Suffolk and Nassau counties.",
     models: [
       "12\" × 12\" Catch Basin",
       "18\" × 18\" Catch Basin",
@@ -73,7 +73,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     ],
     specs: {
       strength: "5,000+ PSI @ 28 Days",
-      rating: "AASHTO HS20-44",
+      rating: "AASHTO HS20-44 Highway Rated",
       compliance: "Suffolk & Nassau County DOT",
       reinforcement: "WWF 6\"×12\" (ASTM A1064) in 6\" Wall",
     },
@@ -87,7 +87,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Septic Tanks",
     pages: "Pages 18–28",
     headline: "Monolithic & 2-Piece Watertight Sanitary Septic Tanks (1,000 - 2,500 Gal)",
-    description: "Certified monolithic single-pour and two-piece watertight precast septic tanks equipped with sanitary PVC tees, inspection risers, and heavy traffic lids meeting Long Island sanitary wastewater codes.",
+    description: "Factory-certified monolithic and two-piece watertight precast septic tanks engineered for long-term wastewater containment and structural integrity. Equipped with integrated PVC baffles, resilient pipe seals, and heavy traffic-rated access risers meeting strict Long Island Department of Health standards.",
     models: [
       "1,000 Gallon Standard Septic Tank",
       "1,250 Gallon Monolithic Septic Tank",
@@ -115,7 +115,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Grease Traps",
     pages: "Pages 29–39",
     headline: "Commercial & Restaurant Grease Interceptors (1,000 - 2,500 Gal)",
-    description: "Heavy-duty commercial kitchen grease interceptors designed for rapid fat/oil separation, featuring internal flow baffles, sampling ports, and gas-tight sealed access covers.",
+    description: "Commercial gravity grease interceptors engineered for effective FOG (fats, oils, and grease) retention and environmental wastewater compliance. Features dual-compartment flow baffles, gas-tight inspection cleanouts, and heavy-duty traffic lids designed for commercial kitchen and food service facilities.",
     models: [
       "1,000 Gallon Grease Trap",
       "1,250 Gallon Monolithic Grease Trap",
@@ -128,7 +128,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
       "2,500 Gallon 2-Piece Grease Trap",
     ],
     specs: {
-      strength: "5,000+ PSI Acid-Resistant",
+      strength: "5,000+ PSI Acid-Resistant Mix",
       rating: "AASHTO HS20 Commercial Loading",
       compliance: "NYS Plumbing & Health Code",
       reinforcement: "ASTM A1064 Welded Wire Fabric",
@@ -143,7 +143,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Distribution Boxes",
     pages: "Pages 40–41",
     headline: "Multi-Port Septic Effluent Distribution Boxes",
-    description: "Precision-cast distribution boxes with pre-molded pipe knockouts for 4\", 6\", and 8\" sanitary lines, providing balanced gravity flow distribution across subsurface leaching lines.",
+    description: "Engineered gravity flow distribution boxes featuring multi-port knockouts and level flow controls for balanced effluent dispersion across subsurface absorption fields, built to resist aggressive soil environments.",
     models: [
       "Standard 4-Hole D-Box with Lid",
       "Multi-Port Flow Equalizer D-Box",
@@ -165,7 +165,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Leaching Galleys",
     pages: "Pages 42–47",
     headline: "Subsurface Stormwater Infiltration & Recharge Chambers (1' - 4' Depth)",
-    description: "High-capacity open-bottom precast leaching galleys with engineered side louvers and weep apertures that maximize groundwater recharge rates while saving footprint on commercial sites.",
+    description: "High-capacity subterranean stormwater infiltration chambers engineered with slotted side louvers to optimize runoff dissipation and groundwater recharge while reducing excavation footprint on commercial and municipal sites.",
     models: [
       "1' Depth Leaching Galley",
       "2' Depth Leaching Galley",
@@ -188,7 +188,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Low Domes",
     pages: "Pages 48–53",
     headline: "Tapered Transition Domes (6', 8', 10', 12' Diameters)",
-    description: "Circular tapered low-profile domes designed to transition drywell and sanitary leaching ring stacks to standard 24\" access openings.",
+    description: "Circular tapered low-profile domes designed to transition drywell and sanitary leaching ring stacks to standard 24\" access openings with maximum vertical load transfer.",
     models: [
       "6' Low Dome (Tapered Cap)",
       "8' Low Dome (Tapered Cap)",
@@ -211,7 +211,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "High Domes",
     pages: "Pages 54–58",
     headline: "Deep Vertical-Rise Conical Transition Domes (6', 8', 10' Diameters)",
-    description: "Steep-slope conical precast domes designed for deep utility vaults, reducing ring stack diameter to grade level with maximum compressive strength.",
+    description: "High-strength conical precast domes engineered for deep utility vaults, reducing ring stack diameter to grade level with maximum compressive strength under heavy highway traffic.",
     models: [
       "6' High Dome",
       "8' High Dome",
@@ -233,7 +233,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Curb Stops",
     pages: "Pages 59–62",
     headline: "Commercial Parking Bumpers & Wheel Stops (6' Length)",
-    description: "Reinforced 6-foot parking lot wheel stops with preformed anchor holes for rebar or steel pins, protecting storefronts and sidewalks.",
+    description: "Durable steel-reinforced precast parking wheel stops engineered with beveled impact edges and anchor channels to protect pedestrian walkways, building facades, and commercial parking perimeters.",
     models: [
       "6' × 4\" Precast Concrete Curb Stop",
       "6' × 5.5\" Precast Concrete Curb Stop",
@@ -254,7 +254,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Precast Slabs",
     pages: "Pages 63–84",
     headline: "Circular Solid & AASHTO HS20 Traffic Slabs (6' - 12' Diameters)",
-    description: "Heavy structural precast cover slabs manufactured in solid configurations and with 24\" offset or 24\"×48\" cleanout access openings for highway traffic loading.",
+    description: "Structural heavy highway cover slabs engineered with two-way ASTM A615 Grade 60 rebar grids. Available in solid designs or with precision 24\" single, dual, and offset cleanout openings for municipal drainage and utility vault access.",
     models: [
       "6' Circular Solid Slab",
       "8' Circular Solid Slab & 8' × 8\" Solid Slab",
@@ -284,7 +284,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Solid Rings",
     pages: "Pages 85–102",
     headline: "Solid Wall Utility & Drywell Rings (4' - 12' Diameters, 2' - 5' Heights)",
-    description: "Precision-cast solid wall modular rings with tongue-and-groove joint profile for constructing watertight manholes, utility chambers, and deep drainage shafts.",
+    description: "Modular tongue-and-groove precast concrete solid rings manufactured to ASTM C478 standards for deep utility vaults, pump station wet wells, and watertight sanitary manhole assemblies.",
     models: [
       "4' Diameter Solid Rings (2' & 4' Heights)",
       "6' Diameter Solid Rings (3' & 4' Heights)",
@@ -308,7 +308,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Sanitary Rings",
     pages: "Pages 103–115",
     headline: "Perforated Sanitary Leaching & Seepage Rings (4' - 10' Diameters)",
-    description: "Perforated modular rings engineered with calibrated seepage apertures for sanitary leaching pools and wastewater drainage beds meeting Suffolk County sanitary guidelines.",
+    description: "Perforated modular leaching rings engineered with calibrated seepage apertures for municipal and commercial subsurface wastewater dispersion, meeting Suffolk County Health Department sanitary guidelines.",
     models: [
       "4' Sanitary Rings (3' & 4' Heights)",
       "6' Sanitary Rings (3' & 4' Heights)",
@@ -331,7 +331,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Storm Rings",
     pages: "Pages 116–127",
     headline: "Heavy Civil Stormwater Drywell & Detention Rings (8' - 12' Diameters)",
-    description: "High-capacity perforated storm drywell rings with engineered intake and seepage holes designed to detain and infiltrate massive runoff volumes during heavy storm events.",
+    description: "High-volume drywell detention rings engineered with reinforced intake and infiltration ports to capture, store, and recharge massive stormwater runoff volumes during severe storm events.",
     models: [
       "8' Storm Rings (3', 3.5', 4' Heights)",
       "10' Storm Rings (3', 4', 5' Heights)",
@@ -353,7 +353,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "Footing Rings",
     pages: "Pages 128–134",
     headline: "Precast Base Footing Rings (4', 6', 8', 10', 12' Diameters)",
-    description: "Engineered foundation footing rings that provide a wide, stable bearing surface beneath solid and leaching ring stacks, preventing differential settlement in sandy Long Island soils.",
+    description: "Engineered structural base footing rings that distribute heavy subterranean loads evenly across sandy subsoils, preventing differential settling in deep manhole and drywell assemblies.",
     models: [
       "4' Concrete Footing Ring",
       "6' Concrete Footing Ring",
@@ -377,7 +377,7 @@ export const ASTRO_CATALOG_CATEGORIES: CatalogProductCategory[] = [
     shortName: "High Collars",
     pages: "Pages 135–140",
     headline: "Grade Adjustment Risers & High Collars (6\", 12\", 18\", 24\" Heights)",
-    description: "Modular precast grade adjustment collars used to elevate catch basin grates, manhole covers, and inspection cleanouts to finished road or parking asphalt grades.",
+    description: "Precision precast grade adjustment collars engineered for roadway and parking lot paving adjustments, aligning manhole covers and catch basin grates flush with finished asphalt grades.",
     models: [
       "6\" High Collar Riser",
       "12\" High Collar Riser",

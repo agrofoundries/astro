@@ -38,10 +38,10 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/northeast-office.jpg",
     mapQuery: "105 Maxess Road, Melville, NY 11747",
     capabilities: [
-      "Executive management",
-      "Global sales",
-      "Project planning",
-      "Financial operations",
+      "Executive Management",
+      "Civil Engineering & Design",
+      "Municipal Submittals",
+      "Direct Plant Dispatch",
     ],
   },
   {
@@ -56,10 +56,10 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/default_geocode-2x.svg",
     mapQuery: "3340 Peachtree Road NE, Atlanta, GA 30326",
     capabilities: [
-      "Civil drainage",
-      "DOT submittals",
-      "Project planning",
-      "Quote desk",
+      "Civil Stormwater",
+      "DOT Submittals",
+      "Hydraulic Sizing",
+      "Contractor Estimating",
     ],
   },
   {
@@ -74,10 +74,10 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/default_geocode-2x.svg",
     mapQuery: "111 S Wacker Drive, Chicago, IL 60606",
     capabilities: [
-      "Tekla 3D CAD Detailing",
-      "Structural detailing",
-      "Connection design",
-      "Rebar schedules",
+      "3D CAD & Modeling",
+      "Structural Detailing",
+      "Bearing & Buoyancy Analysis",
+      "Shop Drawings",
     ],
   },
   {
@@ -92,10 +92,10 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/default_geocode-2x.svg",
     mapQuery: "1055 W Georgia St, Vancouver, BC V6E 3P3",
     capabilities: [
-      "Seismic analysis",
-      "Precast bridges",
-      "Standards & approvals",
-      "Shop drawings",
+      "Seismic Analysis",
+      "Precast Retaining Systems",
+      "Standard Compliance",
+      "Engineering Calculations",
     ],
   },
   {
@@ -110,10 +110,10 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/default_geocode-2x.svg",
     mapQuery: "100 King St W, Toronto, ON M5X 1A9",
     capabilities: [
-      "Municipal drainage",
-      "Precast infiltration",
-      "Takeoff desk",
-      "Client liaison",
+      "Municipal Drainage",
+      "Subsurface Infiltration",
+      "Technical Takeoffs",
+      "Project Coordination",
     ],
   },
   {
@@ -128,10 +128,10 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/default_geocode-2x.svg",
     mapQuery: "400 3 Ave SW, Calgary, AB T2P 4H2",
     capabilities: [
-      "Cold climate detailing",
-      "Foundations",
-      "Rigging plans",
-      "Piece tickets",
+      "Cold Climate Mix Designs",
+      "Heavy Foundation Design",
+      "Rigging & Crane Plans",
+      "Fabrication Tickets",
     ],
   },
   {
@@ -146,10 +146,10 @@ const LOCATIONS: LocationItem[] = [
     image: "/images/default_geocode-2x.svg",
     mapQuery: "Bay Street, Nassau, Bahamas",
     capabilities: [
-      "Coastal infrastructure",
-      "Marine precast",
-      "Stormwater drainage",
-      "Technical support",
+      "Coastal Infrastructure",
+      "Corrosion-Resistant Precast",
+      "High-Percolation Drainage",
+      "Technical Support",
     ],
   },
 ];
@@ -171,17 +171,17 @@ export function LocationsSection() {
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-7 bg-[#0E96E1]" aria-hidden="true" />
             <p className="text-[11px] font-black uppercase tracking-widest text-[#0E96E1]">
-              STRATEGIC FOOTPRINT
+              STRATEGIC REGIONAL NETWORK
             </p>
             <span className="h-0.5 w-7 bg-[#0E96E1]" aria-hidden="true" />
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white uppercase">
-            Seven offices, <span className="text-[#0E96E1]">one delivery standard</span>
+            Regional Engineering, <span className="text-[#0E96E1]">Unified Quality</span>
           </h2>
 
           <p className="max-w-2xl text-xs sm:text-sm leading-relaxed text-slate-300 font-medium">
-            Regional manufacturing nodes, engineering design hubs, and strategic dispatch centers supporting civil infrastructure across North America.
+            Regional engineering hubs, technical sales desks, and dedicated dispatch nodes supporting precast infrastructure projects across North America.
           </p>
         </div>
 

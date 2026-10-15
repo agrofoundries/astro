@@ -21,61 +21,61 @@ const MILESTONES = [
     value: "5,000+",
     unit: "PSI",
     label: "Compressive Strength",
-    spec: "ASTM C39 28-Day Certified Mix",
+    spec: "ASTM C39 28-Day Strength",
   },
   {
     value: "HS20-44",
     unit: "AASHTO",
     label: "Highway Traffic Rated",
-    spec: "Suffolk & Nassau County DPW Approved",
+    spec: "Suffolk & Nassau Approved",
   },
   {
     value: "LOD 400",
     unit: "TEKLA 3D",
-    label: "Fabrication 3D Detailing",
-    spec: "Licensed PE Stamped Calculations",
+    label: "Fabrication Detailing",
+    spec: "Licensed PE Stamped Submittals",
   },
   {
     value: "100%",
-    unit: "USA",
-    label: "Domestic Sourced",
-    spec: "Deer Park, Long Island Production",
+    unit: "DOMESTIC",
+    label: "Direct Plant Fleet",
+    spec: "Deer Park, Long Island Facility",
   },
 ];
 
 const MISSION_PILLARS = [
   {
-    title: "Structural Density & Hydration",
+    title: "Dense Structural Concrete Formulations",
     description:
-      "Every batch is formulated with dense Type II/V cement, low water-cement ratio, and ASTM A1064 welded wire fabric positioned with exact 1.5-inch clear cover.",
+      "Every mix is batched with high-durability Type II/V Portland cement, low water-to-cement ratios, and ASTM A1064 steel reinforcement positioned with calibrated 1.5-inch clear cover.",
   },
   {
-    title: "Crane Schedule Alignment",
+    title: "Synchronized Rigging & Crane Delivery",
     description:
-      "We sync casting bed curing cycles directly with contractor crane critical paths, eliminating costly job site downtime with coordinated flatbed staging.",
+      "We coordinate casting schedules, curing cycles, and specialized flatbed transport directly with contractor crane critical paths to eliminate jobsite downtime.",
   },
   {
-    title: "Transparent Technical Takeoffs",
+    title: "Transparent Precast Takeoffs & Submittals",
     description:
-      "Straightforward unit pricing, accurate production lead times, and certified PE calculations provided before the first yard of concrete is batched.",
+      "Itemized unit pricing, guaranteed lead times, and comprehensive PE-stamped engineering calculations provided before initial casting commences.",
   },
 ];
 
 const VISION_PILLARS = [
   {
-    title: "Zero-Clash 3D CAD Integration",
+    title: "Zero-Clash 3D BIM & Tekla Coordination",
     description:
-      "Fusing heavy civil manufacturing with Tekla 3D virtual design, ensuring underground utility pipe knockouts and connections align flawlessly in the field.",
+      "Integrating heavy civil precast fabrication with Tekla 3D modeling to verify knockout dimensions, invert elevations, and embed locations prior to pour.",
   },
   {
-    title: "Century-Long Resilient Design",
+    title: "Century-Scale Environmental Durability",
     description:
-      "Engineered to resist aggressive Long Island coastal groundwater, chemical attack, and heavy highway axle wheel loads for over 100 years.",
+      "Precast components engineered to resist aggressive subterranean water tables, chloride exposure, and repeated heavy highway axle loadings for decades.",
   },
   {
-    title: "Turnkey Precast Solutions",
+    title: "Turnkey Civil Precast Partnership",
     description:
-      "Guiding general contractors from municipal agency approval to direct crane hook delivery with stamped engineering and verified QA certifications.",
+      "Partnering with general contractors and municipalities from initial agency approvals through crane hook delivery and verified quality documentation.",
   },
 ];
 
@@ -91,7 +91,7 @@ export function WhoWeAreStory() {
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#014088] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#0E96E1]" />
-              <span>WHO WE ARE · ASTRO PRECAST &amp; MASONRY</span>
+              <span>WHO WE ARE · ASTRO PRECAST ENGINEERING</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#014088] tracking-wide leading-[1.2] uppercase">
@@ -101,10 +101,10 @@ export function WhoWeAreStory() {
 
             <div className="space-y-4 text-slate-900 text-base sm:text-lg leading-relaxed font-medium">
               <p>
-                Founded on Long Island, Astro Masonry &amp; Precast operates enclosed high-capacity manufacturing facilities in Deer Park, New York. We are not brokers, distributors, or middlemen. We are heavy civil fabricators, master batchers, and licensed precast structural engineers dedicated to building New York and Tri-State infrastructure that endures.
+                Operating from our dedicated manufacturing complex in Deer Park, New York, Astro Precast Engineering provides integrated heavy civil precast fabrication and in-house structural engineering. We work directly with general contractors, civil engineers, and municipalities across New York and the Tri-State area to deliver robust subterranean infrastructure built to exceed specification.
               </p>
               <p>
-                From certified stormwater catch basins and monolithic watertight septic tanks to AASHTO HS20-44 traffic slabs, our production floor combines computerized twin-shaft planetary batching with precision steel gang molds. Every precast component is poured with 5,000+ PSI compressive strength, reinforced with ASTM A1064 steel mesh, and cured to strict quality assurance protocols.
+                From DOT-compliant stormwater catch basins and monolithic watertight septic tanks to AASHTO HS20-44 highway traffic slabs, our production floor combines automated precision batching with heavy-duty steel formwork. Every precast component is cast with minimum 5,000+ PSI compressive strength, reinforced with ASTM-specified steel cages, and tested to verify durability in demanding subsurface environments.
               </p>
             </div>
 
@@ -198,7 +198,7 @@ export function WhoWeAreStory() {
               Our Mission &amp; <span className="text-[#0E96E1]">Our Vision</span>
             </h2>
             <p className="text-xs sm:text-sm text-slate-900 mt-2.5 font-medium leading-relaxed">
-              Driven by structural accountability, uncompromising concrete chemistry, and virtual design precision.
+              Committed to structural reliability, certified concrete quality, and virtual design precision across every precast installation.
             </p>
           </div>
 
@@ -220,7 +220,7 @@ export function WhoWeAreStory() {
                 </h3>
 
                 <p className="text-sm sm:text-base text-slate-900 leading-relaxed font-medium mb-6">
-                  To engineer, cast, and deliver load-tested precast concrete infrastructure that withstands extreme subterranean hydrostatic pressure, severe highway traffic impact, and aggressive coastal soils for over 100 years.
+                  To engineer, manufacture, and deliver precision precast concrete infrastructure that withstands severe roadway traffic loading, groundwater hydrostatic pressure, and aggressive coastal subsoils for generations.
                 </p>
 
                 <div className="space-y-3.5">
@@ -263,7 +263,7 @@ export function WhoWeAreStory() {
                 </h3>
 
                 <p className="text-sm sm:text-base text-slate-900 leading-relaxed font-medium mb-6">
-                  To pioneer the convergence of heavy industrial precast manufacturing with Tekla 3D CAD virtual detailing — delivering zero-clash precast assemblies, PE stamped calculations, and synchronized job site crane delivery.
+                  To advance civil infrastructure through the seamless combination of heavy industrial precast production with Tekla LOD 400 3D CAD modeling, ensuring zero-clash field installation and dependable lifecycle performance.
                 </p>
 
                 <div className="space-y-3.5">

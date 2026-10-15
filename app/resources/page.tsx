@@ -31,7 +31,7 @@ const SPEC_DOWNLOADS = [
 const WHITEPAPERS = [
   {
     title: "Embodied Carbon Reduction in High-Strength Precast Mixes",
-    author: "PRECASTPRO Engineering Division",
+    author: "Astro Precast Technical Division",
     date: "2024 Research Report",
     desc: "An experimental study examining 30-40% supplementary cementitious material replacement in 8,500 PSI mix designs.",
   },

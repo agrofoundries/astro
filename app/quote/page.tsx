@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { 
   Building2, 
@@ -11,7 +11,10 @@ import {
   Mail, 
   Clock, 
   ShieldCheck, 
-  AlertCircle 
+  AlertCircle,
+  Loader2,
+  Paperclip,
+  X
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
@@ -29,9 +32,12 @@ export default function QuotePage() {
     filesAttached: false,
   });
 
+  const [attachedFile, setAttachedFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [resultNotice, setResultNotice] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleCheckbox = (cat: string) => {
     setFormData((prev) => {
@@ -44,7 +50,7 @@ export default function QuotePage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
 
@@ -55,11 +61,40 @@ export default function QuotePage() {
     }
 
     setSubmitting(true);
-    // Simulate processing
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      const data = new FormData();
+      data.append("fullName", formData.fullName.trim());
+      data.append("company", formData.company.trim());
+      data.append("email", formData.email.trim());
+      data.append("phone", formData.phone.trim());
+      data.append("projectType", formData.projectType);
+      data.append("location", formData.location.trim());
+      data.append("timeline", formData.timeline);
+      data.append("productCategories", JSON.stringify(formData.productCategories));
+      data.append("specNotes", formData.specNotes.trim());
+      data.append("formSource", "Detailed Quote Page");
+      if (attachedFile) {
+        data.append("file", attachedFile);
+      }
+
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        body: data,
+      });
+
+      const json = await res.json();
+      if (!res.ok || !json.success) {
+        throw new Error(json.message || "Failed to submit quote request.");
+      }
+
+      setResultNotice(json.message || "Quote request received.");
       setSubmitted(true);
-    }, 800);
+    } catch (err: any) {
+      console.error("Quote submit error:", err);
+      setErrorMsg(err?.message || "There was an error submitting your request. Please try again or call (631) 667-3300.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -83,18 +118,26 @@ export default function QuotePage() {
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
                   Quote Request Received!
                 </h2>
-                <p className="text-base text-gray-600 max-w-lg mx-auto mb-6">
+                <p className="text-base text-gray-600 max-w-lg mx-auto mb-4">
                   Thank you, <strong className="text-gray-900">{formData.fullName}</strong>. An engineering estimator has been assigned to your project scope and will follow up within 24–48 business hours.
                 </p>
+                {resultNotice && (
+                  <div className="inline-block px-4 py-2 mb-6 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-xs font-semibold">
+                    {resultNotice}
+                  </div>
+                )}
                 <div className="p-4 bg-gray-50 rounded-xl max-w-md mx-auto text-left text-xs text-gray-600 mb-8 border border-gray-200">
                   <div className="font-bold text-gray-800 mb-1">Confirmation Summary:</div>
                   <div>Company: {formData.company || "N/A"}</div>
                   <div>Project: {formData.projectType} ({formData.location || "Location pending"})</div>
                   <div>Target Schedule: {formData.timeline}</div>
+                  {attachedFile && <div>Attached: {attachedFile.name} ({(attachedFile.size / (1024 * 1024)).toFixed(2)} MB)</div>}
                 </div>
                 <button
                   onClick={() => {
                     setSubmitted(false);
+                    setAttachedFile(null);
+                    setResultNotice(null);
                     setFormData({
                       fullName: "",
                       company: "",
@@ -288,23 +331,77 @@ export default function QuotePage() {
                   </div>
 
                   {/* File Upload Box */}
-                  <div className="p-6 border-2 border-dashed border-gray-300 rounded-2xl bg-gray-50 hover:bg-white text-center cursor-pointer transition">
-                    <FileUp className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                    <div className="text-xs font-bold text-gray-800">
-                      Upload Architectural / Structural Plans (PDF, DWG, ZIP)
-                    </div>
-                    <p className="text-[11px] text-gray-500 mt-1">
-                      Max file size: 50MB. Multi-file packages accepted.
-                    </p>
+                  <div 
+                    onClick={() => fileInputRef.current?.click()}
+                    className={`p-6 border-2 border-dashed rounded-2xl text-center cursor-pointer transition ${
+                      attachedFile 
+                        ? "border-emerald-500 bg-emerald-50/40" 
+                        : "border-gray-300 bg-gray-50 hover:bg-white"
+                    }`}
+                  >
+                    <input 
+                      type="file" 
+                      ref={fileInputRef} 
+                      onChange={(e) => {
+                        if (e.target.files && e.target.files[0]) {
+                          setAttachedFile(e.target.files[0]);
+                        }
+                      }}
+                      className="hidden" 
+                      accept=".dwg,.dxf,.pdf,.zip,.png,.jpg,.jpeg" 
+                    />
+                    {attachedFile ? (
+                      <div className="flex items-center justify-between gap-3 text-left">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                            <Paperclip className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-gray-900">{attachedFile.name}</div>
+                            <div className="text-[11px] text-gray-500">{(attachedFile.size / (1024 * 1024)).toFixed(2)} MB &bull; File attached ready to dispatch</div>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setAttachedFile(null);
+                          }}
+                          className="p-1 text-gray-400 hover:text-rose-600 rounded"
+                          aria-label="Remove attached file"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      </div>
+                    ) : (
+                      <>
+                        <FileUp className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                        <div className="text-xs font-bold text-gray-800">
+                          Upload Architectural / Structural Plans (PDF, DWG, ZIP)
+                        </div>
+                        <p className="text-[11px] text-gray-500 mt-1">
+                          Max file size: 50MB. Multi-file packages accepted.
+                        </p>
+                      </>
+                    )}
                   </div>
 
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="btn-primary w-full justify-center py-4 text-base"
+                    className="btn-primary w-full justify-center py-4 text-base cursor-pointer disabled:opacity-50"
                   >
-                    {submitting ? "Submitting Request..." : "Submit Quote Request"}
-                    <Send className="w-4 h-4 ml-2" />
+                    {submitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 ml-2 animate-spin" />
+                        <span>Submitting Request...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit Quote Request</span>
+                        <Send className="w-4 h-4 ml-2" />
+                      </>
+                    )}
                   </button>
                 </form>
               </div>

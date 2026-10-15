@@ -6,23 +6,23 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const ENGINEERING_FEATURES = [
   {
     code: "ENG-01",
-    title: "LOD 400 CAD & Tekla Detailing",
-    description: "Every rebar cage, embed plate, lifting insert, and architectural reveal is modeled in full 3D to eliminate field clashes with MEP and structural steel.",
+    title: "3D CAD & Submittal Modeling",
+    description: "Every structural wall, knockout penetration, joint keyway, and lifting anchor is modeled in full 3D to eliminate utility clashes with storm trunks, water mains, and site power.",
   },
   {
     code: "ENG-02",
-    title: "Licensed Professional Engineers (PE / SE)",
-    description: "In-house structural engineering group providing stamped calculation packages for submittals across municipal and DOT jurisdictions.",
+    title: "Licensed PE / SE Stamped Calculations",
+    description: "In-house engineering team delivering sealed calculation packages, soil bearing assessments, and buoyancy checks for municipal, DOT, and county health approvals.",
   },
   {
     code: "ENG-03",
-    title: "Custom Connection & Embed Design",
-    description: "Engineered bearing seats, weld plates, expansion joints, and slotted seismic connections designed for accelerated field erection.",
+    title: "Custom Penetrations & Resilient Boots",
+    description: "Flexible watertight pipe boots, cast-in ductile iron frames, internal weir walls, and baffle configurations custom-cast to project civil invert elevations.",
   },
   {
     code: "ENG-04",
-    title: "Pre-Pour Value Engineering Review",
-    description: "We optimize panel dimensions, pick weights, and casting line repetitions to minimize crane mobilization time and shipping costs.",
+    title: "Value Engineering & Constructability",
+    description: "We optimize structure heights, monolithic pick weights, and joint alignments to accelerate jobsite rigging, minimize trench open times, and reduce installed costs.",
   },
 ];
 
@@ -34,10 +34,10 @@ export function EngineeringSection() {
           {/* Engineering Text & Technical Specs */}
           <div className="lg:col-span-7">
             <SectionHeading
-              eyebrow="Virtual Design & Detailing"
+              eyebrow="Engineering & Submittal Support"
               specCode="CAD / LOD 400"
               title="In-House Precast Structural Engineering &amp; CAD Detailing"
-              description="Our specialized structural engineers turn complex architectural blueprints into constructible, high-performance precast systems. We detail every connection and verify tolerances before a single yard of concrete is cast."
+              description="Our dedicated civil and structural engineering group translates project civil plans and utility layouts into build-ready precast solutions. We engineer every connection, verify hydrodynamic and structural loads, and deliver stamped submittal drawings."
             />
 
             <div className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -99,7 +99,7 @@ export function EngineeringSection() {
                   </span>
                 </div>
                 <p className="text-slate-800 text-xs leading-relaxed font-semibold">
-                  Precast catch basin fabrication sheet with WWF mesh reinforcement, wall thickness dimensions, and municipal approval notes.
+                  Engineered catch basin fabrication submittal detailing welded wire reinforcement, wall thicknesses, knockouts, and DOT compliance.
                 </p>
               </div>
             </div>

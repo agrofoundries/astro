@@ -7,22 +7,22 @@ const VALUES = [
   {
     icon: Shield,
     title: "Structural Rigor",
-    desc: "Uncompromising engineering compliance in mix designs, rebar cage clear covers, and steam hydration cycles.",
+    desc: "Uncompromising mix quality, continuous ASTM testing, exact rebar cover clearances, and controlled plant curing cycles.",
   },
   {
     icon: Target,
     title: "Crane Schedule Respect",
-    desc: "We align manufacturing runs with erection critical paths, eliminating costly crane downtime.",
+    desc: "Dedicated plant staging and synchronized jobsite deliveries keep your heavy crane and installation crews operating without downtime.",
   },
   {
     icon: HeartHandshake,
     title: "Transparent Takeoffs",
-    desc: "Clear unit itemization, realistic lead-time projections, and proactive field engineering support.",
+    desc: "Comprehensive itemized estimates, stamped engineering submittal packages, and proactive field engineering support from bid to backfill.",
   },
   {
     icon: Users,
     title: "Zero-Harm Safety",
-    desc: "PCI & ISNetworld Grade-A certified safety culture across casting bays and interstate freight rigging.",
+    desc: "Rigorous quality control protocols, OSHA-compliant rigging, and zero-compromise safety standards across our plant and transit fleet.",
   },
 ];
 
@@ -35,12 +35,12 @@ export function AboutSection() {
             <SectionHeading
               eyebrow="Company Background"
               specCode="ASTRO PRECAST"
-              title="Astro Precast & Masonry Manufacturing"
-              description="Founded on high quality standards, reliable concrete strength, and straightforward partnership with Long Island and NY metro contractors."
+              title="Astro Precast & Infrastructure Manufacturing"
+              description="Built on engineering excellence, certified concrete strength, and dependable partnership with municipal agencies and civil infrastructure contractors."
             />
 
             <p className="text-xs sm:text-sm text-[#475569] leading-relaxed font-normal mt-3">
-              Astro Masonry &amp; Precast operates enclosed precast concrete plant casting beds in Deer Park, NY. From stamped engineering calculations through site delivery, we manufacture certified 5,000+ PSI precast drainage structures, septic tanks, and utility vaults for essential infrastructure.
+              Operating automated precast production facilities in Deer Park, NY, Astro Precast manufactures high-performance civil infrastructure products. From licensed PE calculations and custom core drilling to direct boom-truck delivery, we supply contractors and municipalities with drainage structures, sanitary systems, and utility vaults built for multi-generational durability.
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -83,7 +83,7 @@ export function AboutSection() {
                 </div>
 
                 <div className="p-5 sm:p-6 bg-[#014088] text-white flex flex-col justify-center rounded-xl shadow-sm">
-                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-white">4,000</div>
+                  <div className="font-mono-spec text-2xl sm:text-3xl font-black text-white">5,000+</div>
                   <div className="font-mono-spec text-[10px] font-bold uppercase tracking-wider text-sky-200 mt-1">
                     PSI COMPRESSIVE STRENGTH
                   </div>

@@ -3,37 +3,37 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const TESTIMONIALS = [
   {
-    quote: "PRECASTPRO delivered 350 wall panels across 14 consecutive days during our highway expansion shutdown. Not a single panel arrived out of tolerance, and their dispatch team stayed in constant radio sync with our crane rigger.",
+    quote: "Astro Precast delivered 120 custom storm catch basins and heavy slabs across 10 consecutive days during our arterial drainage modernization. Every unit matched our invert elevation sheets, and their boom dispatch kept our excavation crews completely on schedule.",
     author: "Marcus Vance",
-    role: "Senior Project Manager",
-    company: "Apex Heavy Civil Construction",
+    role: "Senior Civil Project Manager",
+    company: "Apex Civil Construction LLC",
     rating: 5,
-    projectRef: "I-35 EXPANSION",
+    projectRef: "SUFFOLK HWY CORRIDOR",
   },
   {
-    quote: "Their engineering division caught three critical clashes in the structural steel interface prior to casting. That value engineering review saved our client over $180,000 and two weeks in field modification downtime.",
+    quote: "Astro's precast engineering team caught two invert conflicts with existing underground utilities before casting our vault sections. That pre-pour review saved our project tens of thousands in delays and earned immediate municipal sign-off.",
     author: "Elena Rostova, PE",
-    role: "Principal Structural Engineer",
-    company: "Vanguard Design Group",
+    role: "Principal Infrastructure Engineer",
+    company: "Vanguard Civil Design Group",
     rating: 5,
-    projectRef: "HORIZON TOWER",
+    projectRef: "ROUTE 110 UTILITY VAULT",
   },
   {
-    quote: "When erecting in dense urban corridors with 4-hour night street permits, you need a precast partner who understands just-in-time delivery. PRECASTPRO has been our sole precast supplier for three regional distribution hubs.",
+    quote: "Operating in constrained municipal utility corridors requires absolute scheduling reliability. Astro Precast has been our go-to manufacturer for watertight septic vessels, leaching fields, and heavy highway slabs across Nassau and Suffolk.",
     author: "Darren Holt",
-    role: "VP of Construction",
-    company: "Summit Logistics Development",
+    role: "VP of Field Operations",
+    company: "Tri-State Infrastructure Developers",
     rating: 5,
-    projectRef: "APEX GATEWAY",
+    projectRef: "REGIONAL DRAINAGE",
   },
 ];
 
 const TRUST_BADGES = [
-  "PCI PLANT CERTIFIED (MNL-116)",
-  "ACI CORPORATE MEMBER",
-  "AASHTO APPROVED PRECASTER",
-  "ISNETWORLD SAFETY RATED (GRADE A)",
-  "STATE DOT REGISTERED",
+  "5,000+ PSI COMPRESSIVE STRENGTH",
+  "AASHTO HS20-44 TRAFFIC RATED",
+  "SUFFOLK COUNTY DPW APPROVED",
+  "NASSAU COUNTY HEALTH COMPLIANT",
+  "ASTM C1227 & C478 CERTIFIED",
 ];
 
 export function TrustSection() {
@@ -44,7 +44,7 @@ export function TrustSection() {
           eyebrow="Contractor Confidence"
           specCode="FIELD VERIFIED"
           title="Trusted by General Contractors, Structural Engineers &amp; DOT Agencies"
-          description="Heavy civil developers and commercial general contractors rely on PRECASTPRO for structural compliance, dimensional precision, and uncompromising jobsite safety."
+          description="Civil infrastructure contractors, municipal public works authorities, and utility engineers rely on Astro Precast for certified 5,000+ PSI strength, precise invert dimensions, and on-time jobsite staging."
           centered
         />
 
